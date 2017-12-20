@@ -1,8 +1,11 @@
 
 import subprocess
 import pandas as pd
+import numpy as np 
+import os
+from enum import Enum
 
-daisyexecutable = 'C:/Program Files/Daisy 5.37/bin/Daisy.exe'
+daisyexecutable = r'C:\Program Files\Daisy 5.49\bin\Daisy.exe'
 
 class DaisyDlf(object):
     def __init__(self, DlfFileName):
@@ -50,11 +53,11 @@ class DaisyDlf(object):
                     raw.append(map(float, line.split('\t')[DateTimeIndex:]))
                     timedata = list(map(int, line.split('\t')[0:DateTimeIndex]))
                     if DateTimeIndex == 3:
-                        TimeSteps.append(pd.Timestamp(timedata[0],timedata[1],timedata[2]))
+                        TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2]))
                     elif DateTimeIndex == 4:   
-                        TimeSteps.append(pd.Timestamp(timedata[0],timedata[1],timedata[2],timedata[3]))
+                        TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3]))
                     elif DateTimeIndex == 5:
-                        TimeSteps.append(pd.Timestamp(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
+                        TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
 
 
         #Create a dataframe to hold the data 
@@ -145,16 +148,19 @@ class DaisyEntry(object):
         ToReturn =self.Words[index]
         try:
             ToReturn = int(ToReturn)
-        except:
+        except ValueError:
             try:
                 ToReturn = float(ToReturn)
-            except:
-                ToReturn2=1
+            except ValueError:
+                pass
         finally:              
             return ToReturn
         
     #Sets the value
     def setvalue(self, value, index=0):
+        while len(self.Words)<index+1:
+            self.Words.append('')
+        
         self.Words[index] = str(value)
     
     def write(self, sr, tab):
@@ -174,6 +180,25 @@ class DaisyEntry(object):
         for w in self.AfterWords:
             sr.write(' ')
             sr.write(w)
+
+
+
+class DaisyTime(object):
+    def __init__(self, DaisyTimeEntry):
+        self.DaisyTimeEntry =DaisyTimeEntry
+
+    @property
+    def time(self):
+        c = self.DaisyTimeEntry        
+        return pd.datetime(c.getvalue(0),c.getvalue(1),c.getvalue(2))
+
+    @time.setter
+    def time(self, time):
+        c = self.DaisyTimeEntry
+        c.setvalue(time.year,0)
+        c.setvalue(time.month,1)
+        c.setvalue(time.day,2)
+
       
 
 class DaisyModel(object):
@@ -183,7 +208,10 @@ class DaisyModel(object):
         self.Output =[]
         with open(self.DaisyInputfile,'r') as f:
             self.Input.Read(f)
-    
+        self.starttime = DaisyTime(self.Input['defprogram']['time'])
+        self.endtime = DaisyTime(self.Input['defprogram']['stop'])
+            
+
     #Saves the file to a new filename
     def SaveAs(self, DaisyInputFile):
         self.DaisyInputfile = DaisyInputFile
@@ -197,7 +225,9 @@ class DaisyModel(object):
     #Calls the Daisy executable and runs the simulation.
     #Remember to save first    
     def Run(self):
-        subprocess.call([daisyexecutable, self.DaisyInputfile])
+        CREATE_NO_WINDOW = 0x08000000
+        subprocess.call([daisyexecutable, self.DaisyInputfile], creationflags=CREATE_NO_WINDOW)
+
         
 #    def LoadOutput(self):
 #        indir = os.path.dirname(os.path.abspath(self.DaisyInputfile))
@@ -206,4 +236,58 @@ class DaisyModel(object):
 #               print(f)
 
 
+class MultiDaisy(object):
+    def __init__(self, DaisyInputfile):
+        self.ChildModels =[]    
+        self.ParentModel = DaisyModel(DaisyInputfile)
+        Motherdir = os.path.dirname(self.ParentModel.DaisyInputfile)
+        self.workdir = os.path.join(Motherdir, 'MultiDaisy')
+        self.starttime = self.ParentModel.starttime.time
+        self.endtime = self.ParentModel.endtime.time
+        
+    def Split(self, NumberOfModels, NumberOfSimYears, NumberOfWarmUpYears, overwrite=True):
+        if overwrite:
+            import shutil
+            try:
+                shutil.rmtree(self.workdir) #Delete the working directory
+            except OSError:
+                pass
+        os.mkdir(self.workdir)
+        for i in range(0,NumberOfModels):
+            currentdir =os.path.join(self.workdir,str(i))
+            os.mkdir(currentdir)
+            self.ParentModel.starttime.time = self.starttime.replace(year=self.starttime.year +i*NumberOfSimYears) 
+            self.ParentModel.endtime.time = self.starttime.replace(year=self.starttime.year +(i+1)*NumberOfSimYears+ NumberOfWarmUpYears)
+            self.ParentModel.Input['defprogram']['activate_output']['after'].setvalue(self.starttime.year +i*NumberOfSimYears +NumberOfWarmUpYears)
+            self.ParentModel.SaveAs(os.path.join(currentdir, 'DaisyModel.dai'))
+        self.SetModelStatus(DaisyModelStatus.NotRun)
+    
+    def SetModelStatus(self, status):
+        for root, dirs, filenames in os.walk(self.workdir):
+            for d in dirs:
+                for file in DaisyModelStatus:
+                    try:
+                        os.remove(os.path.join(root,d,file.name))
+                    except OSError:
+                        pass
+                open(os.path.join(root,d, status.name), 'a').close()
+
+    def CollectResults(self, DlfFileName):
+        ToReturn=[]
+        for root, dirs, filenames in os.walk(self.workdir):
+            for d in dirs:
+                if not os.path.isfile(os.path.join(root, d, DaisyModelStatus.NotRun.name)): #Do not take files that needs to be run
+                    try:
+                        ToReturn.append(DaisyDlf(os.path.join(root, d, DlfFileName)))
+                    except:
+                        pass
+        return pd.concat( [x.Data for x in ToReturn]).sort_index()
+            
+
+class DaisyModelStatus(Enum):
+    NotRun =1
+    Running =2
+    Done = 3
+
+        
 
