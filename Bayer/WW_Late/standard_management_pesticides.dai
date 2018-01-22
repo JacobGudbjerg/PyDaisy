@@ -1,0 +1,103 @@
+;;; test-focus.dai -- Sample file using the Daisy libraries.
+
+(input file "chemistry-base.dai")
+
+(defchemical iodosulfuron-methyl-sodium herbicide
+  ;; From PPDB.
+  (molar_mass 529.24 [g/mol])
+  ;; From Bayer.
+  (decompose_halftime 3.2 [d])
+  (decompose_products (0.55 [] metsulfuron-methyl))
+  (adsorption Freundlich (K_OC 33.4 [mL/g]) (m 0.87 [])))
+
+(defchemical metsulfuron-methyl metabolite
+  ;; From PPDB.
+  (molar_mass 381.36 [g/mol])
+  ;; From Bayer.
+  (decompose_halftime 13.2 [d])
+  (adsorption Freundlich (K_OC 14.0 [mL/g]) (m 1.0 [])))
+
+(defchemical mesosulfuron-methyl herbicide
+  ;; From PPDB.
+  (molar_mass 503.51 [g/mol])
+  ;; From Bayer.
+  (decompose_halftime 34.1 [d])
+  (adsorption Freundlich (K_OC 64.0 [mL/g]) (m 0.91 [])))
+  
+
+(defchemistry SB default
+  (trace iodosulfuron-methyl-sodium metsulfuron-methyl))
+
+(defchemical iodosulfuron-methyl-sodium-spring iodosulfuron-methyl-sodium
+  (decompose_products (0.55 [] metsulfuron-methyl-spring)))
+  
+(defchemical metsulfuron-methyl-spring metsulfuron-methyl)
+
+(defchemical iodosulfuron-methyl-sodium-autumn iodosulfuron-methyl-sodium
+  (decompose_products (0.55 [] metsulfuron-methyl-autumn)))
+  
+(defchemical metsulfuron-methyl-autumn metsulfuron-methyl)
+
+(defchemistry WW default
+  (trace iodosulfuron-methyl-sodium-autumn metsulfuron-methyl-autumn
+	 iodosulfuron-methyl-sodium-spring metsulfuron-methyl-spring 
+	 mesosulfuron-methyl))
+
+(defunit [L/ha/h] SIfactor
+  (length 1)
+  (time -1)
+  (factor 2.778e-11))
+
+(defaction "Hussar OD; SB" progn 
+  (remove_solute iodosulfuron-methyl-sodium)
+  (remove_solute metsulfuron-methyl)
+  (irrigate_overhead 80e2 [L/ha/h]
+		     (remaining_time 1e-2 [h])
+		     (solute (iodosulfuron-methyl-sodium 0.0125 [%]))))
+
+(defaction "Atlantis OD; WW; Autumn" progn
+  (remove_solute iodosulfuron-methyl-sodium-autumn)
+  (remove_solute metsulfuron-methyl-autumn)
+  (remove_solute mesosulfuron-methyl)
+  (irrigate_overhead 125e2 [L/ha/h] 
+		     (remaining_time 1e-2 [h])
+		     (solute (iodosulfuron-methyl-sodium-autumn 0.0012 [%])
+			     (mesosulfuron-methyl 0.006 [%]))))
+  
+(defaction "Hussar OD; WW; Spring" progn 
+  (remove_solute iodosulfuron-methyl-sodium-spring)
+  (remove_solute metsulfuron-methyl-spring)
+  (irrigate_overhead 80e2 [L/ha/h] 
+		     (remaining_time 1e-2 [h])
+		     (solute (iodosulfuron-methyl-sodium-spring 0.0125 [%]))))
+    
+    	 
+(input file "tillage.dai")
+(input file "ncrop.dai")
+
+(defcrop "WW" "Winter Wheat; N1994")
+(defcrop "SB" "Spring Barley; N1994")
+(defcrop "CC" "Winter Rape")
+
+(defaction "WW" activity
+  (wait_mm_dd 9 8)(plowing)
+  (wait_mm_dd 9 10)(seed_bed_preparation)(sow "WW")
+  (wait (or (crop_ds_after "WW" 2.0)(mm_dd 8 20)))
+  (harvest "WW" (stub 8 [cm])(stem 0.7)(leaf 0.7)))
+
+  
+(defaction "SB w. CC" activity
+  (wait_mm_dd 1 11)
+  (plowing)
+  (wait_mm_dd 4 15) 
+  (seed_bed_preparation)
+  (sow "SB")
+  (wait_mm_dd 8 10) 
+  (harvest "SB")
+  (wait_mm_dd 8 15)
+  (sow "CC")
+  (wait_mm_dd 11 1)
+  (plowing))
+  
+
+;;; standard_management_pesticides.dai ends here

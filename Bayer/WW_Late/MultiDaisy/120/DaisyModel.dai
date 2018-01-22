@@ -1,0 +1,400 @@
+ 
+  (path &old "./../../../Flak" "/home/projects/cu_10095/apps/daisy/lib" "/home/projects/cu_10095/data/Git/PyDaisy/Bayer" "/home/projects/cu_10095/data/Git/PyDaisy/Bayer/WW_Late")
+  (input file "flak_soil.dai")
+  (input file "log.dai")
+  (input file "flak_biopores.dai")
+  (input file "standard_management_pesticides.dai")
+  (defunit [kWh/d/m^2] SIfactor 
+    (mass 1)
+    (time -3)
+    (factor 41.67) )
+  (defweather Hourly combine 
+    (entry 
+      (	 
+        (use Precip)
+        (source table 
+          (file "Control_hourly_daisy.dwf")) )
+      (
+        (source table 
+          (file "Control_daily_daisy.dwf"))) ))
+  (defaction WW_early 
+    (while 
+      (repeat "WW")
+      (BBCH 
+        (file "BBCHWinterWheatSpringBarley.csv")
+        (crop "Winter wheat")
+        (from 13)
+        (to 32)
+        (from_start false)
+        (when 
+          (and 
+            (before_mm_dd 6 1)
+            (after_mm_dd 3 1) ))
+        (do "Hussar OD; WW; Spring") )
+      (BBCH 
+        (file "BBCHWinterWheatSpringBarley.csv")
+        (crop "Winter wheat")
+        (from 10)
+        (to 12)
+        (when true)
+        (do "Atlantis OD; WW; Autumn") ) ))
+  (defaction WW_late 
+    (while 
+      (repeat "WW")
+      (BBCH 
+        (file "BBCHWinterWheatSpringBarley.csv")
+        (crop "Winter wheat")
+        (from 13)
+        (to 32)
+        (from_start false)
+        (when false)
+        (do "Hussar OD; WW; Spring") )
+      (BBCH 
+        (file "BBCHWinterWheatSpringBarley.csv")
+        (crop "Winter wheat")
+        (from 10)
+        (to 12)
+        (when false)
+        (do "Atlantis OD; WW; Autumn") ) ))
+  (defaction SB_early 
+    (while 
+      (repeat "SB w. CC")
+      (BBCH 
+        (file "BBCHWinterWheatSpringBarley.csv")
+        (crop "Spring barley")
+        (from 13)
+        (to 29)
+        (when true)
+        (do "Hussar OD; SB") ) ))
+  (defaction SB_late 
+    (while 
+      (repeat "SB w. CC")
+      (BBCH 
+        (file "BBCHWinterWheatSpringBarley.csv")
+        (crop "Spring barley")
+        (from 13)
+        (to 29)
+        (when false)
+        (do "Hussar OD; SB") ) ))
+  (defcolumn "Flakkeberg 2D WW" default 
+    (OrganicMatter none)
+    (Chemistry multi 
+      (combine WW))
+    (Soil 
+      (MaxRootingDepth 100 [cm])
+      (horizons 
+        (-3 "Flakkeberg Ap surface")
+        (-15 "Flakkeberg Ap")
+        (-25 "Flakkeberg Ap ani")
+        (-33 "Flakkeberg Bplow")
+        (-100 "Flakkeberg Bt")
+        (-200 "Flakkeberg Cc(g)") ) )
+    (Movement rectangle 
+      (matrix_water 
+        (Mollerup 
+          (K_average geometric))
+        (v+h) )
+      (drainpoints 
+        (-110.0 [cm] 1 [cm]))
+      (Geometry 
+        (zplus -1.5 -3 -5.5 -10 -13 -15 -18 -22 -25 -27 -30 -33 -40 -50 -60 -75 -90 -100 -120 -125 -150[cm])
+        (xplus 25 50 100 150 300 500 650 800 [cm]) )
+      (Tertiary 
+        (biopores 
+          (classes 
+            ("matrix_all_BB_R")
+            ("drain_2mm")
+            ("drain_10mm") ))) )
+    (Groundwater aquitard 
+      (pressure_table const -150 [cm])
+      (K_aquitard 0.1 [mm/h])
+      (Z_aquitard 200 [cm]) ) )
+  (defcolumn "Flakkeberg 2D SB" default 
+    (OrganicMatter none)
+    (Chemistry multi 
+      (combine SB))
+    (Soil 
+      (MaxRootingDepth 100 [cm])
+      (horizons 
+        (-3 "Flakkeberg Ap surface")
+        (-15 "Flakkeberg Ap")
+        (-25 "Flakkeberg Ap ani")
+        (-33 "Flakkeberg Bplow")
+        (-100 "Flakkeberg Bt")
+        (-200 "Flakkeberg Cc(g)") ) )
+    (Movement rectangle 
+      (matrix_water 
+        (Mollerup 
+          (K_average geometric))
+        (v+h) )
+      (drainpoints 
+        (-110.0 [cm] 1 [cm]))
+      (Geometry 
+        (zplus -1.5 -3 -5.5 -10 -13 -15 -18 -22 -25 -27 -30 -33 -40 -50 -60 -75 -90 -100 -120 -125 -150[cm])
+        (xplus 25 50 100 150 300 500 650 800 [cm]) )
+      (Tertiary 
+        (biopores 
+          (classes 
+            ("matrix_all_BB_R")
+            ("drain_2mm")
+            ("drain_10mm") ))) )
+    (Groundwater aquitard 
+      (pressure_table const -150 [cm])
+      (K_aquitard 0.1 [mm/h])
+      (Z_aquitard 200 [cm]) ) )
+  (deflog "Drain data WW" column 
+    (where "${colfid}WW_drain_data.dlf")
+    (when hourly)
+    (declare unit String "Base unit.")
+    (unit "g/ha")
+    (entries 
+      (interval 
+        (tag "Matrix water")
+        (path column "${column}" SoilWater S_soil_drain)
+        (spec fixed SoilWater S_soil_drain)
+        (handle sum)
+        (dimension "mm") )
+      (interval 
+        (tag "Biopore water")
+        (path column "${column}" SoilWater S_p_drain)
+        (spec fixed SoilWater S_p_drain)
+        (handle sum)
+        (dimension "mm") )
+      (interval 
+        (path column "${column}" Chemistry "*" trace "iodosulfuron-methyl-sodium-spring" S_soil_drain)
+        (tag "Soil-iodo-spring")
+        (negate true)
+        (handle sum)
+        (dimension "${unit}")
+        (spec chemical default S_soil_drain) )
+      (interval 
+        (path column "${column}" Chemistry "*" trace "iodosulfuron-methyl-sodium-spring" S_p_drain)
+        (tag "Biopores-iodo-spring")
+        (handle sum)
+        (dimension "${unit}")
+        (spec chemical default S_p_drain) )
+      (interval 
+        (path column "${column}" Chemistry "*" trace "metsulfuron-methyl-spring" S_soil_drain)
+        (tag "Soil-mets-spring")
+        (negate true)
+        (handle sum)
+        (dimension "${unit}")
+        (spec chemical default S_soil_drain) )
+      (interval 
+        (path column "${column}" Chemistry "*" trace "metsulfuron-methyl-spring" S_p_drain)
+        (tag "Biopores-mets-spring")
+        (handle sum)
+        (dimension "${unit}")
+        (spec chemical default S_p_drain) )
+      (interval 
+        (path column "${column}" Chemistry "*" trace "iodosulfuron-methyl-sodium-autumn" S_soil_drain)
+        (tag "Soil-iodo-autumn")
+        (negate true)
+        (handle sum)
+        (dimension "${unit}")
+        (spec chemical default S_soil_drain) )
+      (interval 
+        (path column "${column}" Chemistry "*" trace "iodosulfuron-methyl-sodium-autumn" S_p_drain)
+        (tag "Biopores-iodo-autumn")
+        (handle sum)
+        (dimension "${unit}")
+        (spec chemical default S_p_drain) )
+      (interval 
+        (path column "${column}" Chemistry "*" trace "metsulfuron-methyl-autumn" S_soil_drain)
+        (tag "Soil-mets-autumn")
+        (negate true)
+        (handle sum)
+        (dimension "${unit}")
+        (spec chemical default S_soil_drain) )
+      (interval 
+        (path column "${column}" Chemistry "*" trace "metsulfuron-methyl-autumn" S_p_drain)
+        (tag "Biopores-mets-autumn")
+        (handle sum)
+        (dimension "${unit}")
+        (spec chemical default S_p_drain) )
+      (interval 
+        (path column "${column}" Chemistry "*" trace "mesosulfuron-methyl" S_soil_drain)
+        (tag "Soil-meso")
+        (negate true)
+        (handle sum)
+        (dimension "${unit}")
+        (spec chemical default S_soil_drain) )
+      (interval 
+        (path column "${column}" Chemistry "*" trace "mesosulfuron-methyl" S_p_drain)
+        (tag "Biopores-meso")
+        (handle sum)
+        (dimension "${unit}")
+        (spec chemical default S_p_drain) ) ) )
+  (deflog "Drain data SB" column 
+    (where "${colfid}SB_drain_data.dlf")
+    (when hourly)
+    (declare unit String "Base unit.")
+    (unit "g/ha")
+    (entries 
+      (interval 
+        (tag "Matrix water")
+        (path column "${column}" SoilWater S_soil_drain)
+        (spec fixed SoilWater S_soil_drain)
+        (handle sum)
+        (dimension "mm") )
+      (interval 
+        (tag "Biopore water")
+        (path column "${column}" SoilWater S_p_drain)
+        (spec fixed SoilWater S_p_drain)
+        (handle sum)
+        (dimension "mm") )
+      (interval 
+        (path column "${column}" Chemistry "*" trace "iodosulfuron-methyl-sodium" S_soil_drain)
+        (tag "Soil-iodo")
+        (negate true)
+        (handle sum)
+        (dimension "${unit}")
+        (spec chemical default S_soil_drain) )
+      (interval 
+        (path column "${column}" Chemistry "*" trace "iodosulfuron-methyl-sodium" S_p_drain)
+        (tag "Biopores-iodo")
+        (handle sum)
+        (dimension "${unit}")
+        (spec chemical default S_p_drain) )
+      (interval 
+        (path column "${column}" Chemistry "*" trace "metsulfuron-methyl" S_soil_drain)
+        (tag "Soil-mets")
+        (negate true)
+        (handle sum)
+        (dimension "${unit}")
+        (spec chemical default S_soil_drain) )
+      (interval 
+        (path column "${column}" Chemistry "*" trace "metsulfuron-methyl" S_p_drain)
+        (tag "Biopores-mets")
+        (handle sum)
+        (dimension "${unit}")
+        (spec chemical default S_p_drain) ) ) )
+  (defprogram "WW_early" Daisy 
+    (column "Flakkeberg 2D WW")
+    (weather Hourly)
+    (time 4962 6 30 23)
+    (stop 4992 6 30 23)
+    (manager WW_early)
+    (activate_output 
+      (after 4967 06 30 23))
+    (description "Flakkeberg !D")
+    (log_prefix "WW_Early_")
+    (output harvest 
+      ("Drain data WW")
+      ("Surface Water Balance" 
+        (when hourly)
+        (where "surfacewaterbalance.dlf") )
+      ("Soil Water Content"
+        (when hourly)
+        (where "soil_water_content.dlf") )
+      ("Field chemical" 
+        (when hourly)
+        (chemical iodosulfuron-methyl-sodium-autumn)
+        (where "iodoA_hourly.dlf") )
+      ("Field chemical" 
+        (when hourly)
+        (chemical metsulfuron-methyl-autumn)
+        (where "metsA_hourly.dlf") )
+      ("Field chemical" 
+        (when hourly)
+        (chemical iodosulfuron-methyl-sodium-spring)
+        (where "iodoS_hourly.dlf") )
+      ("Field chemical" 
+        (when hourly)
+        (chemical metsulfuron-methyl-spring)
+        (where "metsS_hourly.dlf") )
+      ("Field chemical" 
+        (when hourly)
+        (chemical mesosulfuron-methyl)
+        (where "meso_hourly.dlf") ) ) )
+  (defprogram "WW_late" Daisy 
+    (column "Flakkeberg 2D WW")
+    (weather Hourly)
+    (time 1962 06 30 23)
+    (stop 2007 06 30 23)
+    (manager WW_late)
+    (activate_output 
+      (after 2005 06 30 23))
+    (description "Flakkeberg !D")
+    (log_prefix "WW_Late_")
+    (output harvest 
+      ("Drain data WW")
+      ("Surface Water Balance" 
+        (when hourly)
+        (where "surfacewaterbalance.dlf") )
+      ("Soil Water Content"
+        (when hourly)
+        (where "soil_water_content.dlf") )
+      ("Field chemical" 
+        (when hourly)
+        (chemical iodosulfuron-methyl-sodium-autumn)
+        (where "iodoA_hourly.dlf") )
+      ("Field chemical" 
+        (when hourly)
+        (chemical metsulfuron-methyl-autumn)
+        (where "metsA_hourly.dlf") )
+      ("Field chemical" 
+        (when hourly)
+        (chemical iodosulfuron-methyl-sodium-spring)
+        (where "iodoS_hourly.dlf") )
+      ("Field chemical" 
+        (when hourly)
+        (chemical metsulfuron-methyl-spring)
+        (where "metsS_hourly.dlf") )
+      ("Field chemical" 
+        (when hourly)
+        (chemical mesosulfuron-methyl)
+        (where "meso_hourly.dlf") ) ) )
+  (defprogram "SB_early" Daisy 
+    (column "Flakkeberg 2D SB")
+    (weather Hourly)
+    (time 1962 06 30 23)
+    (stop 2007 06 30 23)
+    (manager SB_early)
+    (activate_output 
+      (after 2005 06 30 23))
+    (description "Flakkeberg !D")
+    (log_prefix "SB_Early_")
+    (output harvest 
+      ("Drain data SB")
+      ("Surface Water Balance" 
+        (when hourly)
+        (where "surfacewaterbalance.dlf") )
+      ("Soil Water Content"
+        (when hourly)
+        (where "soil_water_content.dlf") )
+      ("Field chemical" 
+        (when hourly)
+        (chemical iodosulfuron-methyl-sodium)
+        (where "iodo_hourly.dlf") )
+      ("Field chemical" 
+        (when hourly)
+        (chemical metsulfuron-methyl)
+        (where "mets_hourly.dlf") ) ) )
+  (defprogram "SB_late" Daisy 
+    (column "Flakkeberg 2D SB")
+    (weather Hourly)
+    (time 1962 06 30 23)
+    (stop 2007 06 30 23)
+    (manager SB_late)
+    (activate_output 
+      (after 2005 06 30 23))
+    (description "Flakkeberg !D")
+    (log_prefix "SB_Late_")
+    (output harvest 
+      ("Drain data SB")
+      ("Surface Water Balance" 
+        (when hourly)
+        (where "surfacewaterbalance.dlf") )
+      ("Soil Water Content"
+        (when hourly)
+        (where "soil_water_content.dlf") )
+      ("Field chemical" 
+        (when hourly)
+        (chemical iodosulfuron-methyl-sodium)
+        (where "iodo_hourly.dlf") )
+      ("Field chemical" 
+        (when hourly)
+        (chemical metsulfuron-methyl)
+        (where "mets_hourly.dlf") ) ) )
+  (run WW_late) 

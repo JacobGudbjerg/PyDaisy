@@ -1,0 +1,41 @@
+;; biopores.dai - biopore parametization for Flakkeberg to use in PESTCAST based on bioporeparametization 3B from (Jørgensen et al., 2017), men kun til < 2 m
+
+(defbiopore common matrix
+   (K_wall_relative 1 [%]))
+            
+  ; Fælles matrix pore fra rørrendegård          
+  (defbiopore "matrix_all_BB_R"
+   (common (height_start 0 [cm])
+   	   (height_end -120 [cm])
+   	   (density 25.5 [m^-2])
+   	   (diameter 4 [mm])))           
+
+; Smoke forsøge 
+
+(defbiopore "drain_10mm"
+   (drain  (height_start 0 [cm])
+           (height_end -90 [cm])
+           (diameter 10 [mm])
+           (pipe_position -110 [cm])
+           (density (plf x (range [m^-2])
+	                   (domain [cm])
+	                   (points (0 0.75)(50 0))))))   
+	                  
+(defbiopore "drain_2mm"
+   (drain  (height_start 0 [cm])
+           (height_end -90 [cm])
+           (diameter 2 [mm])
+           (pipe_position -110 [cm])
+           (density (plf x (range [m^-2])
+	                   (domain [cm])
+	                   (points (0 4)(50 0))))))  	             
+	                   
+; Biopore in wheel track 
+ (defbiopore "drain_WT"
+    (drain  (height_start 0 [cm])
+            (height_end -90 [cm])
+            (diameter 10 [mm])
+            (pipe_position -110 [cm])
+            (density 0.5 [m^-2])))
+            
+;; flak_biopores.dai end	                   
