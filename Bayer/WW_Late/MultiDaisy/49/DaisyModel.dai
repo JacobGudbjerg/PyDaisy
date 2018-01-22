@@ -396,5 +396,4 @@
       ("Field chemical" 
         (when hourly)
         (chemical metsulfuron-methyl)
-        (where "mets_hourly.dlf") ) ) )
-  (run WW_late) 
+        (where "mets_hourly.dlf") ) ) ) 
