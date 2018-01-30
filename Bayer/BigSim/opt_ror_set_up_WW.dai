@@ -1,0 +1,138 @@
+;; Set up file for test of soil description for ror_soil
+
+(path &old "/home/projects/cu_10095/apps/daisy/lib" "/home/projects/cu_10095/data/Git/PyDaisy/Bayer")
+
+; Input files 
+(input file "ror-soil.dai")
+(input file "output.dai")
+(input file "ror_biopores.dai")
+
+(defunit [kWh/d/m^2] SIfactor 
+  (mass 1)
+  (time -3)
+  (factor 41.67))
+  
+;; Weather data
+(defweather Hourly combine
+  (entry ((use Precip)
+	  (source table (file "Control_hourly_daisy.dwf")))
+	 ((source table (file "Control_daily_daisy.dwf")))))
+
+
+;; Management  
+(input file "PA_standard_management_pesticides.dai")
+
+;, Defining column 2D
+(defcolumn "Rorrende 2D WW" default
+  (OrganicMatter none) 	
+  (Chemistry multi (combine WW))
+  (Soil (MaxRootingDepth 150 [cm])
+        (horizons (-3 "Rorrende Ap surface")
+        	  (-15 "Rorrende Ap")
+        	  (-25 "Rorrende Ap ani")
+                  (-33 "Rorrende Bplow")
+                  (-120 "Rorrende Bt")
+                  (-200 "Rorrende C"))
+        (border -27 [cm])         
+        (zones ((box  (top finite -33 [cm]) (bottom finite -120 [cm])
+		                        (left finite 0 [cm]) (right finite 25 [cm]))
+                "Drain_ditch")))
+        (Movement rectangle
+        (matrix_water (Mollerup (K_average geometric)) (v+h)) 
+        (drainpoints (-110.0 [cm] 1 [cm]))
+        (Geometry (zplus -1.5 -3 
+                         -5.5 -10 -14 -18 -22 -25 
+                         -27 -30 -33              
+                         -40 -50 -60 -75 -90 -100 -120 
+                         -125 -150 -170 -200 [cm])
+                  (xplus 25 50 100 150 300 500 650 800 [cm])) 
+     	(Tertiary (biopores 
+                        (classes ("matrix_all_BB")
+                     	      	 ("drain_2mm")
+                     	      	 ("drain_6mm")
+                     	      ))))                         
+  	(Groundwater aquitard
+  		(pressure_table const -120 [cm])
+        	(K_aquitard 0.35 [mm/h])
+        	(Z_aquitard 200 [cm]))
+               	)
+
+(defcolumn "Rorrende 2D SB" default
+  (OrganicMatter none) 	
+  (Chemistry multi (combine SB))
+  (Soil (MaxRootingDepth 150 [cm])
+        (horizons (-3 "Rorrende Ap surface")
+        	  (-15 "Rorrende Ap")
+        	  (-25 "Rorrende Ap ani")
+                  (-33 "Rorrende Bplow")
+                  (-120 "Rorrende Bt")
+                  (-200 "Rorrende C"))
+        (border -27 [cm])         
+        (zones ((box  (top finite -33 [cm]) (bottom finite -120 [cm])
+		                        (left finite 0 [cm]) (right finite 25 [cm]))
+                "Drain_ditch")))
+        (Movement rectangle
+        (matrix_water (Mollerup (K_average geometric)) (v+h)) 
+        (drainpoints (-110.0 [cm] 1 [cm]))
+        (Geometry (zplus -1.5 -3 
+                         -5.5 -10 -14 -18 -22 -25 
+                         -27 -30 -33              
+                         -40 -50 -60 -75 -90 -100 -120 
+                         -125 -150 -170 -200 [cm])
+                  (xplus 25 50 100 150 300 500 650 800 [cm])) 
+     	(Tertiary (biopores 
+                        (classes ("matrix_all_BB")
+                     	      	 ("drain_2mm")
+                     	      	 ("drain_6mm")
+                     	      ))))                         
+  	(Groundwater aquitard
+  		(pressure_table const -120 [cm])
+        	(K_aquitard 0.35 [mm/h])
+        	(Z_aquitard 200 [cm]))
+               	)
+               	
+
+;; 2 version of activities where pesticides is sprayed every day (all)
+
+(defprogram "WW_spray_all" Daisy
+	;;Selecting coloumn 
+(column "Rorrende 2D WW")              
+(weather Hourly)
+	;; Simulation start and stop dates.
+  (time 1962 01 01 01)
+  (stop 4961 12 29 23)
+	;;Management acivity
+(manager "WW Spray")
+	;; Selecting output 
+(activate_output (after 2005 06 30 23))
+(description "Ror-soil")
+(log_prefix "WW Spray")
+(output harvest
+	("Drain data WW")
+	("Field water" (when yearly))
+	)
+)
+
+(defprogram "SB_spray_all" Daisy
+	;;Selecting coloumn 
+(column "Rorrende 2D WW")              
+(weather Hourly)
+	;; Simulation start and stop dates.
+  (time 2005 06 30 23)
+  (stop 2006 06 30 23)
+	;;Management acivity
+(manager "SB Spray")
+	;; Selecting output 
+(activate_output (after 2005 06 30 23))
+(description "Ror-soil")
+(log_prefix "SB Spray")
+(output harvest
+	("Drain data WW")
+	)
+)
+
+;(run "SB_spray_all")
+;(run "WW_spray_all")
+
+        
+;; Ror_set_up.dai end here. 

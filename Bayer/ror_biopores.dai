@@ -1,0 +1,42 @@
+;;; biopores.dai for Rorrendegaard 
+
+(defbiopore common matrix
+   (K_wall_relative 1 [%]))
+;  (allow_upward_flow false))
+           
+;; Fælles biopore klasse
+ (defbiopore "matrix_all_BB"
+   (common (height_start 0 [cm])
+   	   (height_end -120 [cm])
+   	   (density 26 [m^-2])
+   	   (diameter 4 [mm])))     
+   	   
+ ;; Drain biopore
+ (defbiopore "drain_2mm"
+   (drain  (height_start 0 [cm])
+           (height_end -90 [cm])
+           (diameter 2 [mm])
+           (pipe_position -110 [cm])
+           (density (plf x (range [m^-2])
+	   	           (domain [cm])
+	                   (points (0 1.76)(50 0))))))
+           
+(defbiopore "drain_6mm"
+   (drain  (height_start 0 [cm])
+           (height_end -90 [cm])
+           (diameter 6 [mm])
+           (pipe_position -110 [cm])
+           (density (plf x (range [m^-2])
+	                   (domain [cm])
+	                   (points (0 0.74)(50 0))))))
+ 
+ ; Biopore in wheel track
+ (defbiopore "drain_WT"
+    (drain  (height_start 0 [cm])
+            (height_end -90 [cm])
+            (diameter 6 [mm])
+            (pipe_position -110 [cm])
+            (density 1 [m^-2])))
+ 
+ 
+;;; biopores.dai ends here

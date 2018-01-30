@@ -1,0 +1,73 @@
+;;; ror-soil.dai -- soil for Agrovand experiments.
+
+(defsecondary A pressure
+  (h_lim 2.5 [pF])
+  (alpha 0.00001 [h^-1])) 
+
+(defsecondary B pressure 
+  (h_lim 3 [pF])
+  (alpha 0.00001 [h^-1])) 
+
+(defhorizon "Rorrende Ap" USDA3
+  (description "3-15 cm")
+  (clay 0.107)(silt 0.222)(sand 0.671)(humus 0.024)
+  (dry_bulk_density 1.45 [g/cm^3])
+  (hydraulic hypres
+  (topsoil true))
+  (secondary_domain A)
+  )
+  
+(defhorizon "Rorrende Ap ani" USDA3
+  (description "15-25 cm")
+  (clay 0.107)(silt 0.222)(sand 0.671)(humus 0.024)
+  (dry_bulk_density 1.45 [g/cm^3])
+  (hydraulic hypres
+  (topsoil true))
+  (anisotropy 10) 
+  (secondary_domain A)
+  )
+  
+(defhorizon "Rorrende Ap surface WT" "Rorrende Ap"
+  (description "0-3 cm")
+  (hydraulic hypres
+  	(K_sat 0.04 [cm/h])))
+             
+
+(defhorizon "Rorrende Ap surface" "Rorrende Ap"
+  (description "0-3 cm")
+  (hydraulic hypres
+  	(K_sat 1.14155[cm/h]))
+  (anisotropy 10)
+  (secondary_domain A)
+  )
+             
+
+(defhorizon "Rorrende Bplow" USDA3
+  (description "25-33 cm") 
+  (clay 0.148)(silt 0.214)(sand 0.638) (humus 0.016)
+  (dry_bulk_density 1.78 [g/cm^3])
+  (hydraulic hypres)	
+  (secondary_domain B)
+  )               
+
+(defhorizon "Rorrende Bt" USDA3
+  (description "33-120 cm")
+  (clay 0.222)(silt 0.195)(sand 0.583)(humus 0.016)
+  (dry_bulk_density 1.66 [g/cm^3])
+  (secondary_domain B)
+    )  
+                                          
+(defhorizon "Rorrende C" USDA3
+  (description "120-200 cm")
+  (clay 0.207)(silt 0.235)(sand 0.558) (humus 0.01)
+  (dry_bulk_density 1.69 [g/cm^3]) 
+  (secondary_domain B)
+  )
+  
+(defhorizon "Drain_ditch" ISSS4
+  (clay 0.213)(silt 0.190)(coarse_sand 0.244)(fine_sand  0.339)(humus 0.014)
+  (dry_bulk_density 1.65 [g/cm^3])
+  (secondary_domain B)
+  )
+
+;; ror-soil.dai ends here.
