@@ -1,0 +1,72 @@
+ 
+  (path &old "/home/projects/cu_10095/apps/daisy/lib" "/home/projects/cu_10095/data/Git/PyDaisy/Bayer")
+  (input file "ror-soil.dai")
+  (input file "output_WW.dai")
+  (input file "ror_biopores.dai")
+  (defunit [kWh/d/m^2] SIfactor 
+    (mass 1)
+    (time -3)
+    (factor 41.67) )
+  (defweather Hourly combine 
+    (entry 
+      (	 
+        (use Precip)
+        (source table 
+          (file "Control_hourly_daisy.dwf")) )
+      (
+        (source table 
+          (file "Control_daily_daisy.dwf"))) ))
+  (input file "management_all_pest_applications.dai")
+  (defcolumn "Rorrende 2D" default 
+    (OrganicMatter none)
+    (Chemistry multi 
+      (combine WW))
+    (Soil 
+      (MaxRootingDepth 150 [cm])
+      (horizons 
+        (-3 "Rorrende Ap surface")
+        (-15 "Rorrende Ap")
+        (-25 "Rorrende Ap ani")
+        (-33 "Rorrende Bplow")
+        (-120 "Rorrende Bt")
+        (-200 "Rorrende C") )
+      (border -27 [cm])
+      (zones 
+        ( 
+          (box 
+            (top finite -33 [cm])
+            (bottom finite -120 [cm])
+            (left finite 0 [cm])
+            (right finite 25 [cm]) ) "Drain_ditch")) )
+    (Movement rectangle 
+      (matrix_water 
+        (Mollerup 
+          (K_average geometric))
+        (v+h) )
+      (drainpoints 
+        (-110.0 [cm] 1 [cm]))
+      (Geometry 
+        (zplus -1.5 -3 -5.5 -10 -14 -18 -22 -25 -27 -30 -33 -40 -50 -60 -75 -90 -100 -120 -125 -150 -170 -200 [cm])
+        (xplus 25 50 100 150 300 500 650 800 [cm]) )
+      (Tertiary 
+        (biopores 
+          (classes 
+            ("matrix_all_BB")
+            ("drain_2mm")
+            ("drain_6mm") ))) )
+    (Groundwater aquitard 
+      (pressure_table const -120 [cm])
+      (K_aquitard 0.35 [mm/h])
+      (Z_aquitard 200 [cm]) ) )
+  (defprogram "WW_spray_all" Daisy
+    (column "Rorrende 2D")
+    (manager "WW Spray")
+    (weather Hourly)
+    (time 2382 1 1 01)
+    (stop 2407 1 1 23)
+    (activate_output 
+      (after 2387 06 30 23))
+    (description "Ror-soil")
+    (log_prefix "WW Spray")
+    (output harvest 
+      ("Drain data WW") ) ) 
