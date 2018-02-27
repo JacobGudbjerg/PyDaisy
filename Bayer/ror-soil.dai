@@ -2,11 +2,11 @@
 
 (defsecondary A pressure
   (h_lim 2.5 [pF])
-  (alpha 0.00001 [h^-1])) 
+  (alpha 0.0001 [h^-1])) 
 
 (defsecondary B pressure 
   (h_lim 3 [pF])
-  (alpha 0.00001 [h^-1])) 
+  (alpha 0.0001 [h^-1])) 
 
 (defhorizon "Rorrende Ap" USDA3
   (description "3-15 cm")
@@ -14,7 +14,7 @@
   (dry_bulk_density 1.45 [g/cm^3])
   (hydraulic hypres
   (topsoil true))
-  (secondary_domain A)
+ (secondary_domain A)
   )
   
 (defhorizon "Rorrende Ap ani" USDA3
@@ -46,14 +46,16 @@
   (description "25-33 cm") 
   (clay 0.148)(silt 0.214)(sand 0.638) (humus 0.016)
   (dry_bulk_density 1.78 [g/cm^3])
-  (hydraulic hypres)	
-  (secondary_domain B)
+  (hydraulic hypres
+  	(K_sat 0.09 [cm/h]))	
+  (secondary_domain A)
   )               
 
 (defhorizon "Rorrende Bt" USDA3
   (description "33-120 cm")
   (clay 0.222)(silt 0.195)(sand 0.583)(humus 0.016)
   (dry_bulk_density 1.66 [g/cm^3])
+  ;(anisotropy 10)
   (secondary_domain B)
     )  
                                           

@@ -36,6 +36,6 @@
             (height_end -90 [cm])
             (diameter 10 [mm])
             (pipe_position -110 [cm])
-            (density 0.5 [m^-2])))
+            (density 0.75 [m^-2])))
             
 ;; flak_biopores.dai end	                   

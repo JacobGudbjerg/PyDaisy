@@ -36,7 +36,7 @@
             (height_end -90 [cm])
             (diameter 6 [mm])
             (pipe_position -110 [cm])
-            (density 1 [m^-2])))
+            (density 0.74 [m^-2])))
  
  
 ;;; biopores.dai ends here
