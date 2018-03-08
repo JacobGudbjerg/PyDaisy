@@ -1,10 +1,11 @@
 
 import subprocess
 import pandas as pd
+import numpy as np
 import os
 from enum import Enum
 
-daisyexecutable = r'C:\Program Files\Daisy 5.49\bin\Daisy.exe'
+daisyexecutable = r'C:\Program Files\Daisy 5.57\bin\Daisy.exe'
 
 class DaisyDlf(object):
     def __init__(self, DlfFileName):
@@ -58,9 +59,23 @@ class DaisyDlf(object):
                     elif DateTimeIndex == 5:
                         TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
 
-
         #Create a dataframe to hold the data 
         self.Data = pd.DataFrame(raw, columns=ColumnHeaders[DateTimeIndex:], index=TimeSteps)
+        self.Data = self.Data.loc[:,~self.Data.columns.duplicated()]
+
+
+        Ncolumns=ColumnHeaders[DateTimeIndex:]
+        checked = []
+        todelete =[]
+        for i in np.arange(0, len(Ncolumns)):
+            if Ncolumns[i] not in checked:
+                checked.append(Ncolumns[i])
+            else:
+                todelete.append(i)
+
+        if len(todelete)>0:
+            self.Data = self.Data[checked]
+        
 
     def getYCoordinates(self):
         #Check if we got coordinates
@@ -273,16 +288,21 @@ class MultiDaisy(object):
 
     def CollectResults(self, DlfFileName):
         ToReturn=[]
+        
+        for dlf in self.ResultsDirLoop(DlfFileName):
+            try:
+                ToReturn.append(DaisyDlf(os.path.join(dlf, DlfFileName)))
+            except:
+                pass
+        return pd.concat( [x.Data for x in ToReturn]).sort_index()
+    
+    def ResultsDirLoop(self):
         for root, dirs, filenames in os.walk(self.workdir):
             for d in dirs:
                 if not os.path.isfile(os.path.join(root, d, DaisyModelStatus.NotRun.name)): #Do not take files that needs to be run
-                    try:
-                        ToReturn.append(DaisyDlf(os.path.join(root, d, DlfFileName)))
-                    except:
-                        pass
-        return pd.concat( [x.Data for x in ToReturn]).sort_index()
-            
+                    yield os.path.join(root, d)
 
+            
 class DaisyModelStatus(Enum):
     NotRun =1
     Running =2
