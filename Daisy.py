@@ -1,18 +1,17 @@
 
 import subprocess
 import pandas as pd
-import numpy as np 
+import numpy as np
 import os
 from enum import Enum
 
-daisyexecutable = r'C:\Program Files\Daisy 5.49\bin\Daisy.exe'
+daisyexecutable = r'C:\Program Files\Daisy 5.57\bin\Daisy.exe'
 
 class DaisyDlf(object):
     def __init__(self, DlfFileName):
         self.DlfFileName = DlfFileName
         self.Description=''
-        self.HeaderItems=[]
-        
+        self.HeaderItems={}
         SectionIndex=0
         DateTimeIndex=3
         raw=[]
@@ -30,9 +29,11 @@ class DaisyDlf(object):
                     if (line.startswith('--------------------')): #We have come to the start of the data section
                         SectionIndex=SectionIndex+1
                         continue
+                    elif (line.startswith('#')):
+                         continue                    
                     else:
                         split = line.split(':',1)
-                        self.HeaderItems.append( (split[0], split[1].lstrip()) )
+                        self.HeaderItems[split[0]] = split[1].lstrip()
                         if(split[0]=='LOG'):
                             self.Description += split[1]
                         elif (split[0]=='SIMFILE'):
@@ -59,10 +60,13 @@ class DaisyDlf(object):
                     elif DateTimeIndex == 5:
                         TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
 
-
         #Create a dataframe to hold the data 
         self.Data = pd.DataFrame(raw, columns=ColumnHeaders[DateTimeIndex:], index=TimeSteps)
+        #A trick to remove duplicate columns. Based on the header
+        self.Data = self.Data.loc[:,~self.Data.columns.duplicated()]
 
+
+    #Returns the y-coordinates if it is a 2d file
     def getYCoordinates(self):
         #Check if we got coordinates
         if '@' in self.Data.columns[0]:
@@ -75,6 +79,7 @@ class DaisyDlf(object):
                 return list(map(lambda s: float(s.split('@')[1]), self.Data.columns))
         return
 
+    #Returns the x-coordinates if there are any. Splits on "@"
     def getXCoordinates(self):
         #Check if we got coordinates
         if '@' in self.Data.columns[0]:
@@ -112,7 +117,7 @@ class DaisyEntry(object):
                 self.Children.append(child)
             elif (nextchar == ')' and not InCitation):
                 return
-            elif (nextchar == ';'):
+            elif (nextchar == ';' and not InCitation):
                 self.Comment.append( (len(self.Children), sr.readline()))
             elif (nextchar !='\n') :
                 if(nextchar == '"'):
@@ -130,7 +135,7 @@ class DaisyEntry(object):
                         CurrentWord =self.AfterWords
                         if(len(CurrentWord)==0):
                             CurrentWord.append('')
-                    if (nextchar== ' ' or nextchar== '\t'):
+                    if ((nextchar== ' ' or nextchar== '\t') and not InCitation):
                         if ( CurrentWord[len(CurrentWord) - 1]):
                             CurrentWord.append('')
                     else:
@@ -163,6 +168,7 @@ class DaisyEntry(object):
         
         self.Words[index] = str(value)
     
+    # write the entry to a stream
     def write(self, sr, tab):
         sr.write(self.Keyword)
         for w in self.Words:
@@ -182,10 +188,13 @@ class DaisyEntry(object):
             sr.write(w)
 
 
-
+#A class wrapping a Daisy time
 class DaisyTime(object):
     def __init__(self, DaisyTimeEntry):
         self.DaisyTimeEntry =DaisyTimeEntry
+    
+    def __str__(self):
+        return self.time.strftime("%Y-%m-%d %H:%M:%S")
 
     @property
     def time(self):
@@ -200,7 +209,6 @@ class DaisyTime(object):
         c.setvalue(time.day,2)
 
       
-
 class DaisyModel(object):
     def __init__(self, DaisyInputfile):
         self.DaisyInputfile =DaisyInputfile
@@ -208,8 +216,14 @@ class DaisyModel(object):
         self.Output =[]
         with open(self.DaisyInputfile,'r') as f:
             self.Input.Read(f)
-        self.starttime = DaisyTime(self.Input['defprogram']['time'])
-        self.endtime = DaisyTime(self.Input['defprogram']['stop'])
+        #now a small section that makes the start and end of the simulation visible    
+        top=self.Input
+        if any (c.Keyword=='defprogram' for c in top.Children):
+            top=top['defprogram']
+        if any (c.Keyword=='time' for c in top.Children):
+            self.starttime = DaisyTime(top['time'])
+        if any (c.Keyword=='stop' for c in top.Children):
+            self.endtime = DaisyTime(top['stop'])
             
 
     #Saves the file to a new filename
@@ -274,16 +288,21 @@ class MultiDaisy(object):
 
     def CollectResults(self, DlfFileName):
         ToReturn=[]
+        
+        for dlf in self.ResultsDirLoop(DlfFileName):
+            try:
+                ToReturn.append(DaisyDlf(os.path.join(dlf, DlfFileName)))
+            except:
+                pass
+        return pd.concat( [x.Data for x in ToReturn]).sort_index()
+    
+    def ResultsDirLoop(self):
         for root, dirs, filenames in os.walk(self.workdir):
             for d in dirs:
                 if not os.path.isfile(os.path.join(root, d, DaisyModelStatus.NotRun.name)): #Do not take files that needs to be run
-                    try:
-                        ToReturn.append(DaisyDlf(os.path.join(root, d, DlfFileName)))
-                    except:
-                        pass
-        return pd.concat( [x.Data for x in ToReturn]).sort_index()
-            
+                    yield os.path.join(root, d)
 
+            
 class DaisyModelStatus(Enum):
     NotRun =1
     Running =2
