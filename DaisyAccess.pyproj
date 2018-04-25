@@ -5,8 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{746caa78-98aa-48e3-8f1c-00eebc476b7e}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>
-    </StartupFile>
+    <StartupFile>DaisyTest.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>

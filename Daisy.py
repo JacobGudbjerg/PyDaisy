@@ -1,3 +1,7 @@
+"""
+Various helper classes to read and manipulate Daisy input and output files.
+"""
+
 
 import subprocess
 import pandas as pd
@@ -8,6 +12,9 @@ from enum import Enum
 daisyexecutable = r'C:\Program Files\Daisy 5.57\bin\Daisy.exe'
 
 class DaisyDlf(object):
+    """
+    Reads a Daisy .dlf- or .dwf-file.
+    """
     def __init__(self, DlfFileName):
         self.DlfFileName = DlfFileName
         self.Description=''
@@ -39,7 +46,7 @@ class DaisyDlf(object):
                         elif (split[0]=='SIMFILE'):
                             self.SimFile = split[1].strip()
                 elif SectionIndex == 2: #Column names
-                    ColumnHeaders=line.split('\t')
+                    ColumnHeaders=line.split()
                     if 'minute' in ColumnHeaders:
                         DateTimeIndex=5
                     elif 'hour' in ColumnHeaders:
@@ -47,12 +54,12 @@ class DaisyDlf(object):
                     SectionIndex=SectionIndex+1
                     continue
                 elif (SectionIndex == 3): #Column units. This may be an empty line 
-                    self.ColumnUnits=line.split('\t')[DateTimeIndex:]
+                    self.ColumnUnits=line.split()[DateTimeIndex:]
                     SectionIndex=SectionIndex+1
                     continue
                 elif (SectionIndex == 4 and line): #Data
-                    raw.append(map(float, line.split('\t')[DateTimeIndex:]))
-                    timedata = list(map(int, line.split('\t')[0:DateTimeIndex]))
+                    raw.append(map(float, line.split()[DateTimeIndex:]))
+                    timedata = list(map(int, line.split()[0:DateTimeIndex]))
                     if DateTimeIndex == 3:
                         TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2]))
                     elif DateTimeIndex == 4:   
@@ -66,8 +73,10 @@ class DaisyDlf(object):
         self.Data = self.Data.loc[:,~self.Data.columns.duplicated()]
 
 
-    #Returns the y-coordinates if it is a 2d file
     def getYCoordinates(self):
+        """
+        Returns the y-coordinates if it is a 2d file
+        """
         #Check if we got coordinates
         if '@' in self.Data.columns[0]:
             #Check if we got 2 coordinates
@@ -79,8 +88,11 @@ class DaisyDlf(object):
                 return list(map(lambda s: float(s.split('@')[1]), self.Data.columns))
         return
 
-    #Returns the x-coordinates if there are any. Splits on "@"
     def getXCoordinates(self):
+        """
+        Returns the x-coordinates if there are any. Splits on "@"
+        """
+
         #Check if we got coordinates
         if '@' in self.Data.columns[0]:
             #Check if we got 2 coordinates
@@ -89,7 +101,6 @@ class DaisyDlf(object):
                 l.sort()
                 return l
         return
-
 
 
 class DaisyEntry(object):
@@ -142,15 +153,22 @@ class DaisyEntry(object):
                         CurrentWord[len(CurrentWord) - 1] += nextchar
 
     def __getitem__(self, index):
+        """
+        Returns the first i'th item or the first item with that Keyword. Index shoul be string or integer
+        """
         if type(index) is str:
             return next(c for c in self.Children if c.Keyword==index)
         else:
             return self.Children[index]
 
                     
-    #Returns the value as integer, float or string   
     def getvalue(self, index=0):
-        ToReturn =self.Words[index]
+        """
+        Returns the i'th value as integer, float or string. Default index value is 0
+        """
+        return self.__tryCast(self.Words[index])
+
+    def __tryCast(ToReturn):
         try:
             ToReturn = int(ToReturn)
         except ValueError:
@@ -160,16 +178,29 @@ class DaisyEntry(object):
                 pass
         finally:              
             return ToReturn
+
+
+    def getvalues(self):
+        """
+        Returns a list with all values. Integer, float or string
+        """
+        for w in self.Words:
+            yield self.__tryCast(w)
+
         
-    #Sets the value
     def setvalue(self, value, index=0):
+        """
+        sets the i'th value. Default index value is 0
+        """
         while len(self.Words)<index+1:
             self.Words.append('')
         
         self.Words[index] = str(value)
     
-    # write the entry to a stream
-    def write(self, sr, tab):
+    def __write(self, sr, tab):
+        """
+        Writes the entry to a stream. Recursive
+        """
         sr.write(self.Keyword)
         for w in self.Words:
             sr.write(' ')
@@ -179,7 +210,7 @@ class DaisyEntry(object):
         for c in self.Children:
             sr.write('\n' +tab)
             sr.write('(')
-            c.write(sr, tab)
+            c.__write(sr, tab)
             sr.write(')')
 
         #Now write the words that appear after the children
@@ -188,8 +219,10 @@ class DaisyEntry(object):
             sr.write(w)
 
 
-#A class wrapping a Daisy time
 class DaisyTime(object):
+    """
+    class wrapping a Daisy time
+    """
     def __init__(self, DaisyTimeEntry):
         self.DaisyTimeEntry =DaisyTimeEntry
     
@@ -198,7 +231,8 @@ class DaisyTime(object):
 
     @property
     def time(self):
-        c = self.DaisyTimeEntry        
+        c = self.DaisyTimeEntry
+
         return pd.datetime(c.getvalue(0),c.getvalue(1),c.getvalue(2))
 
     @time.setter
@@ -210,10 +244,12 @@ class DaisyTime(object):
 
       
 class DaisyModel(object):
+    """
+    A class that reads a daisy input file (.dai-file)
+    """
     def __init__(self, DaisyInputfile):
         self.DaisyInputfile =DaisyInputfile
         self.Input = DaisyEntry('',[])
-        self.Output =[]
         with open(self.DaisyInputfile,'r') as f:
             self.Input.Read(f)
         #now a small section that makes the start and end of the simulation visible    
@@ -226,13 +262,18 @@ class DaisyModel(object):
             self.endtime = DaisyTime(top['stop'])
             
 
-    #Saves the file to a new filename
+    
     def SaveAs(self, DaisyInputFile):
+        """
+        Saves the file to a new filename
+        """
         self.DaisyInputfile = DaisyInputFile
         self.Save()
-            
-    #Saves the Dai-file. Comments will be lost    
+               
     def Save(self):
+        """
+        Saves the Dai-file. Comments will be lost
+        """
         with open(self.DaisyInputfile, 'w') as f:
             self.Input.write(f, '')
     
@@ -255,7 +296,7 @@ class MultiDaisy(object):
         self.ChildModels =[]    
         self.ParentModel = DaisyModel(DaisyInputfile)
         Motherdir = os.path.dirname(self.ParentModel.DaisyInputfile)
-        self.workdir = os.path.join(Motherdir, 'MultiDaisy')
+        self.__workdir = os.path.join(Motherdir, 'MultiDaisy')
         self.starttime = self.ParentModel.starttime.time
         self.endtime = self.ParentModel.endtime.time
         
@@ -266,18 +307,19 @@ class MultiDaisy(object):
                 shutil.rmtree(self.workdir) #Delete the working directory
             except OSError:
                 pass
-        os.mkdir(self.workdir)
+        os.mkdir(self.__workdir)
         for i in range(0,NumberOfModels):
-            currentdir =os.path.join(self.workdir,str(i))
+            currentdir =os.path.join(self.__workdir,str(i))
             os.mkdir(currentdir)
             self.ParentModel.starttime.time = self.starttime.replace(year=self.starttime.year +i*NumberOfSimYears) 
             self.ParentModel.endtime.time = self.starttime.replace(year=self.starttime.year +(i+1)*NumberOfSimYears+ NumberOfWarmUpYears)
             self.ParentModel.Input['defprogram']['activate_output']['after'].setvalue(self.starttime.year +i*NumberOfSimYears +NumberOfWarmUpYears)
             self.ParentModel.SaveAs(os.path.join(currentdir, 'DaisyModel.dai'))
+
         self.SetModelStatus(DaisyModelStatus.NotRun)
     
     def SetModelStatus(self, status):
-        for root, dirs, filenames in os.walk(self.workdir):
+        for root, dirs, filenames in os.walk(self.__workdir):
             for d in dirs:
                 for file in DaisyModelStatus:
                     try:
@@ -296,11 +338,15 @@ class MultiDaisy(object):
                 pass
         return pd.concat( [x.Data for x in ToReturn]).sort_index()
     
-    def ResultsDirLoop(self):
+    def DirLoop(self):
         for root, dirs, filenames in os.walk(self.workdir):
             for d in dirs:
-                if not os.path.isfile(os.path.join(root, d, DaisyModelStatus.NotRun.name)): #Do not take files that needs to be run
                     yield os.path.join(root, d)
+
+    def ResultsDirLoop(self):
+        for d in DirLoop(self):
+            if not os.path.isfile(os.path.join(d, DaisyModelStatus.NotRun.name)): #Do not take files that needs to be run
+                yield d
 
             
 class DaisyModelStatus(Enum):
