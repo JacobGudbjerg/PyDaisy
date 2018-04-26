@@ -46,7 +46,7 @@ class DaisyDlf(object):
                         elif (split[0]=='SIMFILE'):
                             self.SimFile = split[1].strip()
                 elif SectionIndex == 2: #Column names
-                    ColumnHeaders=line.split()
+                    ColumnHeaders=line.split('\t')
                     if 'minute' in ColumnHeaders:
                         DateTimeIndex=5
                     elif 'hour' in ColumnHeaders:
@@ -54,12 +54,13 @@ class DaisyDlf(object):
                     SectionIndex=SectionIndex+1
                     continue
                 elif (SectionIndex == 3): #Column units. This may be an empty line 
-                    self.ColumnUnits=line.split()[DateTimeIndex:]
+                    self.ColumnUnits=line.split('\t')[DateTimeIndex:]
                     SectionIndex=SectionIndex+1
                     continue
                 elif (SectionIndex == 4 and line): #Data
-                    raw.append(map(float, line.split()[DateTimeIndex:]))
-                    timedata = list(map(int, line.split()[0:DateTimeIndex]))
+                    splitted = line.split() #Splits on space and tab
+                    timedata = list(map(int, splitted[0:DateTimeIndex])) #First columns are time data
+                    raw.append(map(float, splitted[DateTimeIndex:])) #Now data
                     if DateTimeIndex == 3:
                         TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2]))
                     elif DateTimeIndex == 4:   
@@ -168,7 +169,7 @@ class DaisyEntry(object):
         """
         return self.__tryCast(self.Words[index])
 
-    def __tryCast(ToReturn):
+    def __tryCast(self, ToReturn):
         try:
             ToReturn = int(ToReturn)
         except ValueError:
