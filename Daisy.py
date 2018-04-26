@@ -195,7 +195,7 @@ class DaisyEntry(object):
         
         self.Words[index] = str(value)
     
-    def __write(self, sr, tab):
+    def write(self, sr, tab):
         """
         Writes the entry to a stream. Recursive
         """
@@ -208,7 +208,7 @@ class DaisyEntry(object):
         for c in self.Children:
             sr.write('\n' +tab)
             sr.write('(')
-            c.__write(sr, tab)
+            c.write(sr, tab)
             sr.write(')')
 
         #Now write the words that appear after the children
@@ -273,23 +273,21 @@ class DaisyModel(object):
         Saves the Dai-file. Comments will be lost
         """
         with open(self.DaisyInputfile, 'w') as f:
-            self.Input.__write(f, '')
+            self.Input.write(f, '')
     
-    #Calls the Daisy executable and runs the simulation.
-    #Remember to save first    
     def Run(self):
+        """
+        Calls the Daisy executable and runs the simulation.
+        Remember to save first    
+        """
         CREATE_NO_WINDOW = 0x08000000
         subprocess.call([daisyexecutable, self.DaisyInputfile], creationflags=CREATE_NO_WINDOW)
 
-        
-#    def LoadOutput(self):
-#        indir = os.path.dirname(os.path.abspath(self.DaisyInputfile))
-#        for root, dirs, filenames in os.walk(indir):
-#            for f in filenames:
-#               print(f)
-
 
 class MultiDaisy(object):
+    """
+    A class that helps running daisy in parallel.
+    """
     def __init__(self, DaisyInputfile):
         self.ChildModels =[]    
         self.ParentModel = DaisyModel(DaisyInputfile)
@@ -299,6 +297,9 @@ class MultiDaisy(object):
         self.endtime = self.ParentModel.endtime.time
         
     def Split(self, NumberOfModels, NumberOfSimYears, NumberOfWarmUpYears, overwrite=True):
+        """
+        Splits a simulation into smaller time steps by creating new Daisy Input files in individual directories 
+        """
         if overwrite:
             import shutil
             try:
@@ -317,6 +318,9 @@ class MultiDaisy(object):
         self.SetModelStatus(DaisyModelStatus.NotRun)
     
     def SetModelStatus(self, status):
+        """
+        Set model status for all sub models
+        """
         for root, dirs, filenames in os.walk(self.__workdir):
             for d in dirs:
                 for file in DaisyModelStatus:
@@ -326,9 +330,11 @@ class MultiDaisy(object):
                         pass
                 open(os.path.join(root,d, status.name), 'a').close()
 
-    def CollectResults(self, DlfFileName):
+    def ConcatenateResults(self, DlfFileName):
+        """
+        Concatenates the results stored in DlfFileName in to one DaisyDlf
+        """
         ToReturn=[]
-        
         for dlf in self.ResultsDirLoop(DlfFileName):
             try:
                 ToReturn.append(DaisyDlf(os.path.join(dlf, DlfFileName)))
@@ -337,11 +343,17 @@ class MultiDaisy(object):
         return pd.concat( [x.Data for x in ToReturn]).sort_index()
     
     def DirLoop(self):
+        """
+        Iterates through all the multi daisy directories
+        """
         for root, dirs, filenames in os.walk(self.workdir):
             for d in dirs:
                     yield os.path.join(root, d)
 
     def ResultsDirLoop(self):
+        """
+        Iterates through all the multi daisy directories where the model is running og done
+        """
         for d in DirLoop(self):
             if not os.path.isfile(os.path.join(d, DaisyModelStatus.NotRun.name)): #Do not take files that needs to be run
                 yield d
