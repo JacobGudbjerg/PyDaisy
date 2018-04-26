@@ -1,11 +1,8 @@
 """
 Various helper classes to read and manipulate Daisy input and output files.
 """
-
-
 import subprocess
 import pandas as pd
-import numpy as np
 import os
 from enum import Enum
 
@@ -276,7 +273,7 @@ class DaisyModel(object):
         Saves the Dai-file. Comments will be lost
         """
         with open(self.DaisyInputfile, 'w') as f:
-            self.Input.write(f, '')
+            self.Input.__write(f, '')
     
     #Calls the Daisy executable and runs the simulation.
     #Remember to save first    
@@ -305,7 +302,7 @@ class MultiDaisy(object):
         if overwrite:
             import shutil
             try:
-                shutil.rmtree(self.workdir) #Delete the working directory
+                shutil.rmtree(self.__workdir) #Delete the working directory
             except OSError:
                 pass
         os.mkdir(self.__workdir)
