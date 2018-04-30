@@ -33,12 +33,22 @@ class Test_DaisyTest(unittest.TestCase):
         """
         dlf = DaisyDlf(r'.\TestData\soil_water_content.dlf')
 
+        dlz = DaisyDlf('Flak_SB_spray.dlf', r'.\TestData\daisy.log0.zip')
+
+        self.assertEqual(7490, len(dlz.Data.index))
+        
+
+
     def test_multiDaisy(self):
         """
         Test of the Multi Daisy functionality.
         """
         m=MultiDaisy(r'.\TestData\DaisyModel.dai')
-        m.Split(5,5,2)
+#        m.Split(5,5,2)
+        m.ConcatenateResults('Flak_SB_spray.dlf')
+
+
+
 
 if __name__ == '__main__':
     unittest.main()

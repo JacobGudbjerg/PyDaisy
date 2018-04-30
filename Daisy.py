@@ -4,6 +4,7 @@ Various helper classes to read and manipulate Daisy input and output files.
 import subprocess
 import pandas as pd
 import os
+import zipfile
 from enum import Enum
 
 daisyexecutable = r'C:\Program Files\Daisy 5.57\bin\Daisy.exe'
@@ -11,59 +12,76 @@ daisyexecutable = r'C:\Program Files\Daisy 5.57\bin\Daisy.exe'
 class DaisyDlf(object):
     """
     Reads a Daisy .dlf- or .dwf-file.
+    Can read directly from a zipped archive
     """
-    def __init__(self, DlfFileName):
+    def __init__(self, DlfFileName, ZipFileName=''):
         self.DlfFileName = DlfFileName
         self.Description=''
         self.HeaderItems={}
+        filename, file_extension = os.path.splitext(DlfFileName)
+
+        if ZipFileName!='':
+            with zipfile.ZipFile(ZipFileName,'r') as z:
+                with z.open(DlfFileName) as f:
+                    self.__readfromfilestream(f, True)
+        else:
+            #Read the file line by line.
+            with open(self.DlfFileName, 'rU') as f:
+                self.__readfromfilestream(f)
+
+    def __readfromfilestream(self, f, IsZip=False):
+        """
+        Read the data line by line. If it is from a zipped archived, data are read as bytes and converted to string using utf-8
+        """
         SectionIndex=0
         DateTimeIndex=3
         raw=[]
         TimeSteps = []
-    
-    #Read the file line by line.
-        with open(self.DlfFileName, 'rU') as f:
-            for line in f:
-                line =line.rstrip()      
-                if(SectionIndex == 0 and line): #Headline
-                    self.HeadLine=line
+
+        #Loop the data line by line
+        for line in f:
+            if IsZip:
+                line=line.decode("utf-8") #Decode byte arrays from zipped files
+            line =line.rstrip()      
+            if(SectionIndex == 0 and line): #Headline
+                self.HeadLine=line
+                SectionIndex=SectionIndex+1
+                continue
+            elif(SectionIndex==1 and line):#File Header section (Key, value)
+                if (line.startswith('--------------------')): #We have come to the start of the data section
                     SectionIndex=SectionIndex+1
                     continue
-                if(SectionIndex==1 and line):#File Header section (Key, value)
-                    if (line.startswith('--------------------')): #We have come to the start of the data section
-                        SectionIndex=SectionIndex+1
-                        continue
-                    elif (line.startswith('#')):
-                         continue                    
-                    else:
-                        split = line.split(':',1)
-                        self.HeaderItems[split[0]] = split[1].lstrip()
-                        if(split[0]=='LOG'):
-                            self.Description += split[1]
-                        elif (split[0]=='SIMFILE'):
-                            self.SimFile = split[1].strip()
-                elif SectionIndex == 2: #Column names
-                    ColumnHeaders=line.split('\t')
-                    if 'minute' in ColumnHeaders:
-                        DateTimeIndex=5
-                    elif 'hour' in ColumnHeaders:
-                        DateTimeIndex=4
-                    SectionIndex=SectionIndex+1
-                    continue
-                elif (SectionIndex == 3): #Column units. This may be an empty line 
-                    self.ColumnUnits=line.split('\t')[DateTimeIndex:]
-                    SectionIndex=SectionIndex+1
-                    continue
-                elif (SectionIndex == 4 and line): #Data
-                    splitted = line.split() #Splits on space and tab
-                    timedata = list(map(int, splitted[0:DateTimeIndex])) #First columns are time data
-                    raw.append(map(float, splitted[DateTimeIndex:])) #Now data
-                    if DateTimeIndex == 3:
-                        TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2]))
-                    elif DateTimeIndex == 4:   
-                        TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3]))
-                    elif DateTimeIndex == 5:
-                        TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
+                elif (line.startswith('#')):
+                        continue                    
+                else:
+                    split = line.split(':',1)
+                    self.HeaderItems[split[0]] = split[1].lstrip()
+                    if(split[0]=='LOG'):
+                        self.Description += split[1]
+                    elif (split[0]=='SIMFILE'):
+                        self.SimFile = split[1].strip()
+            elif SectionIndex == 2: #Column names
+                ColumnHeaders=line.split('\t')
+                if 'minute' in ColumnHeaders:
+                    DateTimeIndex=5
+                elif 'hour' in ColumnHeaders:
+                    DateTimeIndex=4
+                SectionIndex=SectionIndex+1
+                continue
+            elif (SectionIndex == 3): #Column units. This may be an empty line 
+                self.ColumnUnits=line.split('\t')[DateTimeIndex:]
+                SectionIndex=SectionIndex+1
+                continue
+            elif (SectionIndex == 4 and line): #Data
+                splitted = line.split() #Splits on space and tab
+                timedata = list(map(int, splitted[0:DateTimeIndex])) #First columns are time data
+                raw.append(map(float, splitted[DateTimeIndex:])) #Now data
+                if DateTimeIndex == 3:
+                    TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2]))
+                elif DateTimeIndex == 4:   
+                    TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3]))
+                elif DateTimeIndex == 5:
+                    TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
 
         #Create a dataframe to hold the data 
         self.Data = pd.DataFrame(raw, columns=ColumnHeaders[DateTimeIndex:], index=TimeSteps)
@@ -238,7 +256,7 @@ class DaisyTime(object):
         c = self.DaisyTimeEntry
         time = pd.datetime(c.getvalue(0),c.getvalue(1),c.getvalue(2))
         if(len(c.Words)>3):
-            time.hour=c.getvalue(3)
+            time+=pd.to_timedelta(c.getvalue(3), unit='h')
         if(len(c.Words)>4):
             time.minute=c.getvalue(4)
         if(len(c.Words)>5):
@@ -355,7 +373,7 @@ class MultiDaisy(object):
         Concatenates the results stored in DlfFileName in to one DaisyDlf
         """
         ToReturn=[]
-        for dlf in self.ResultsDirLoop(DlfFileName):
+        for dlf in self.ResultsDirLoop():
             try:
                 ToReturn.append(DaisyDlf(os.path.join(dlf, DlfFileName)))
             except:
@@ -366,7 +384,7 @@ class MultiDaisy(object):
         """
         Iterates through all the multi daisy directories
         """
-        for root, dirs, filenames in os.walk(self.workdir):
+        for root, dirs, filenames in os.walk(self.__workdir):
             for d in dirs:
                     yield os.path.join(root, d)
 
@@ -374,7 +392,7 @@ class MultiDaisy(object):
         """
         Iterates through all the multi daisy directories where the model is running og done
         """
-        for d in DirLoop(self):
+        for d in self.DirLoop():
             if not os.path.isfile(os.path.join(d, DaisyModelStatus.NotRun.name)): #Do not take files that needs to be run
                 yield d
 

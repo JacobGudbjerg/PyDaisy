@@ -19,10 +19,15 @@
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BayerTest.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Daisy.py" />
     <Compile Include="DaisyTest.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MakeStats.py" />
+    <Compile Include="parExtract.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|ContinuumAnalytics|Anaconda36-64" />
