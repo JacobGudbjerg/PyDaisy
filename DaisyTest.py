@@ -11,6 +11,9 @@ class Test_DaisyTest(unittest.TestCase):
         self.assertEqual(17, len(d.Input.Children))
         self.assertEqual(1993, d.starttime.time.year)
         d.SaveAs(r'./TestData/Exercise01_saved.dai')
+        d_saved = DaisyModel(r'.\TestData\Exercise01_saved.dai')
+        self.assertEqual(d.endtime, d_saved.endtime)
+
 
     #Taastrup weather file
     def test_daisyweatherfile(self):

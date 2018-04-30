@@ -227,11 +227,24 @@ class DaisyTime(object):
     def __str__(self):
         return self.time.strftime("%Y-%m-%d %H:%M:%S")
 
+    def __eq__(self, Other):
+        """
+        Two DaisyTimes are equal if the underlying timesteps are equal
+        """
+        return isinstance(Other, DaisyTime) and self.time.__eq__(Other.time)
+
     @property
     def time(self):
         c = self.DaisyTimeEntry
+        time = pd.datetime(c.getvalue(0),c.getvalue(1),c.getvalue(2))
+        if(len(c.Words)>3):
+            time.hour=c.getvalue(3)
+        if(len(c.Words)>4):
+            time.minute=c.getvalue(4)
+        if(len(c.Words)>5):
+            time.second=c.getvalue(5)
 
-        return pd.datetime(c.getvalue(0),c.getvalue(1),c.getvalue(2))
+        return time
 
     @time.setter
     def time(self, time):
@@ -239,6 +252,13 @@ class DaisyTime(object):
         c.setvalue(time.year,0)
         c.setvalue(time.month,1)
         c.setvalue(time.day,2)
+        if(time.hour != 0 or time.minute !=0 or time.second!=0):
+            c.setvalue(time.hour, 3)
+        if(time.minute !=0 or time.second!=0):
+            c.setvalue(time.minute, 4)
+        if(time.second!=0):
+            c.setvalue(time.second, 5)
+
 
       
 class DaisyModel(object):
