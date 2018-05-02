@@ -98,7 +98,7 @@ def RunSingle(workdir):
        
     pesticide = DaisyDlf(os.path.join(workdir, dlffilename)).Data
     sprayfile =DaisyDlf(os.path.join(workdir, sprayfilename))
-    b=BayerExtract()
+    b=BayerExtract(place, crop)
     return b.Extract(pesticide, sprayfile)
 
 
