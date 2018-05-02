@@ -89,7 +89,7 @@ class BayerExtract(object):
     
         return Results
 
-def RunSingle(self, workdir):
+def RunSingle(workdir):
     print('Running ' + workdir)
     dlffilename = 'WW SprayWW_drain_data.dlf'
     sprayfilename =place + '_SB_spray.dlf'
