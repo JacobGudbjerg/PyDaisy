@@ -121,7 +121,7 @@ if __name__ == '__main__':
     start = time.time()
     MD = MultiDaisy(Daisyfile)
     workdirs=[]
-    for d in MD.ResultsDirLoop:
+    for d in MD.ResultsDirLoop():
         workdirs.append(d)
     RunMany(workdirs)
     

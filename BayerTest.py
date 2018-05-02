@@ -6,7 +6,7 @@ class Test_BayerTest(unittest.TestCase):
     def test_A(self):
         drain=DaisyDlf('Flak_SB_drain_data.dlf', r'.\TestData\daisy.log0.zip')
         d=DaisyDlf('Flak_SB_spray.dlf', r'.\TestData\daisy.log0.zip')
-        b=BayerExtract('flak','barley')
+        b=BayerExtract('Flak','Barley')
         res = b.Extract(drain.Data, d)
 
 if __name__ == '__main__':

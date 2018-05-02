@@ -330,7 +330,7 @@ class MultiDaisy(object):
         self.ChildModels =[]    
         self.ParentModel = DaisyModel(DaisyInputfile)
         Motherdir = os.path.dirname(self.ParentModel.DaisyInputfile)
-        self.__workdir = os.path.join(Motherdir, 'MultiDaisy')
+        self.workdir = os.path.join(Motherdir, 'MultiDaisy')
         self.starttime = self.ParentModel.starttime.time
         self.endtime = self.ParentModel.endtime.time
         
@@ -341,12 +341,12 @@ class MultiDaisy(object):
         if overwrite:
             import shutil
             try:
-                shutil.rmtree(self.__workdir) #Delete the working directory
+                shutil.rmtree(self.workdir) #Delete the working directory
             except OSError:
                 pass
         os.mkdir(self.__workdir)
         for i in range(0,NumberOfModels):
-            currentdir =os.path.join(self.__workdir,str(i))
+            currentdir =os.path.join(self.workdir,str(i))
             os.mkdir(currentdir)
             self.ParentModel.starttime.time = self.starttime.replace(year=self.starttime.year +i*NumberOfSimYears) 
             self.ParentModel.endtime.time = self.starttime.replace(year=self.starttime.year +(i+1)*NumberOfSimYears+ NumberOfWarmUpYears)
@@ -359,7 +359,7 @@ class MultiDaisy(object):
         """
         Set model status for all sub models
         """
-        for root, dirs, filenames in os.walk(self.__workdir):
+        for root, dirs, filenames in os.walk(self.workdir):
             for d in dirs:
                 for file in DaisyModelStatus:
                     try:
@@ -384,9 +384,9 @@ class MultiDaisy(object):
         """
         Iterates through all the multi daisy directories
         """
-        for root, dirs, filenames in os.walk(self.__workdir):
+        for root, dirs, filenames in os.walk(self.workdir):
             for d in dirs:
-                    yield os.path.join(root, d)
+                yield os.path.join(root, d)
 
     def ResultsDirLoop(self):
         """
