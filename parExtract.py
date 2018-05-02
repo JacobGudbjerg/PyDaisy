@@ -14,19 +14,19 @@ import pandas as pd
 import numpy as np
 from Daisy import MultiDaisy, DaisyDlf
 
-place ='flak'
-crop ='barley'
+place ='Flak'
+crop ='Barley'
 outputfilename =place + '_' + crop + '.csv'
-Daisyfile=r'/home/projects/cu_10095/data/Git/PyDaisy/Bayer/'+ place + '_' + crop + r'/DaisyModel.dai'
+Daisyfile=r'/home/projects/cu_10095/data/Git/PyDaisy/Bayer/Opt_2018_april/'+ place + '_' + crop + r'/Opt_flak_2018_all_pests_barley.dai'
 
-NumberOfProcesses=32
+NumberOfProcesses=28
 
 
 class BayerExtract(object):
     
     def __init__(self, place, crop):
         self.pestnames =[]
-        if(crop=='barley'):
+        if(crop=='Barley'):
           for i in np.arange(1,22):
               self.pestnames.append({'SprayName':'iodo-'+str(i),'PestNames':['iodo-'+str(i), 'mets-'+str(i)]})
         else:
@@ -35,16 +35,6 @@ class BayerExtract(object):
           for i in np.arange(1,17):
               self.pestnames.append({'SprayName':'iodo-autumn-'+str(i),'PestNames':['iodo-autumn-'+str(i), 'mets-autumn-'+str(i), 'meso-'+str(i)]})
     
-    def RunSingle(self, workdir):
-        print('Running ' + workdir)
-        dlffilename = 'WW SprayWW_drain_data.dlf'
-        sprayfilename ='Flak_SB_spray.dlf'
-        if(crop=='barley'):
-          dlffilename = 'SB SpraySB_drain_data.dlf'
-       
-        pesticide = DaisyDlf(os.path.join(workdir, dlffilename)).Data
-        sprayfile =DaisyDlf(os.path.join(workdir, sprayfilename))
-        return (pesticide, sprayfile)
     
     
     def Extract(self, pesticide, sprayfile):        
@@ -98,6 +88,19 @@ class BayerExtract(object):
                     Results.append(result)
     
         return Results
+
+def RunSingle(self, workdir):
+    print('Running ' + workdir)
+    dlffilename = 'WW SprayWW_drain_data.dlf'
+    sprayfilename =place + '_SB_spray.dlf'
+    if(crop=='Barley'):
+        dlffilename = place + '_SB_drain_data.dlf'
+       
+    pesticide = DaisyDlf(os.path.join(workdir, dlffilename)).Data
+    sprayfile =DaisyDlf(os.path.join(workdir, sprayfilename))
+    b=BayerExtract()
+    return b.Extract(pesticide, sprayfile)
+
 
 #Runs all the daisy-simulations in the list of workdirs in parallel.
 def RunMany(workdirs):
