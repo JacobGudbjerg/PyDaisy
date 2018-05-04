@@ -8,6 +8,7 @@ class Test_BayerTest(unittest.TestCase):
         d=DaisyDlf('Flak_SB_spray.dlf', r'.\TestData\daisy.log0.zip')
         b=BayerExtract('Flak','Barley')
         res = b.Extract(drain.Data, d)
+        k=2
 
 if __name__ == '__main__':
     unittest.main()

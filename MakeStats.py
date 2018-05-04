@@ -73,7 +73,7 @@ def Stats(SingleYearLeaching, moleculename):
                     if nb_events[i]>0: #Second event, we have an interval
                         MinInterval[i] = min(MinInterval[i], CurrentInterval[i])
                     CurrentInterval[i]=0
-                CurrentMaxEvent[i]=CurrentMaxEvent[i]+1
+                CurrentMaxEvent[i]+=1
             else:
                 CurrentInterval[i]=CurrentInterval[i]+1
                 if(CurrentMaxEvent[i]>0):
@@ -95,6 +95,7 @@ def Stats(SingleYearLeaching, moleculename):
         toreturn['MaxConcentration_BCF'+moleculename[l]] = max_conc[l]
         toreturn['Accumulated_leaching'+moleculename[l]] = pest_acc[l]
         toreturn['MaxConcentration_BFF'+moleculename[l]] = max_conc_BFF[l]
+        toreturn['MaxConcentration_drains'+moleculename[l]] = max_conc_drains[l]
     
     for i in np.arange(0, NoOfLimits):
         toreturn['nb_events_' + str(i) ]=nb_events[i]

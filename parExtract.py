@@ -78,7 +78,7 @@ class BayerExtract(object):
                 if len(data)>0: #no drain flow! Really?
                     print(Appdate)
                     print(pest_name)
-                    result = ms.Stats(np.array(data).T,[item[0:4] for item in pest_name['PestNames']])
+                    result = ms.Stats(np.array(data),[item[0:4] for item in pest_name['PestNames']])
                     result['AppDate'] = Appdate
                     result['PestName'] = pest_name['SprayName']
                     result['PestType'] = pest_name['SprayName'][0:4]
