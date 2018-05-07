@@ -14,10 +14,10 @@ import pandas as pd
 import numpy as np
 from Daisy import MultiDaisy, DaisyDlf
 
-place ='Flak'
-crop ='Barley'
+place ='Ror'
+crop ='Wheat'
 outputfilename =place + '_' + crop + '.csv'
-Daisyfile=r'/home/projects/cu_10095/data/Git/PyDaisy/Bayer/Opt_2018_april/'+ place + '_' + crop + r'/Opt_flak_2018_all_pests_barley.dai'
+Daisyfile=r'/home/projects/cu_10095/data/Git/PyDaisy/Bayer/Opt_2018_april/'+ place + '_' + crop + r'/Opt_ror_2018_all_pests_wheat.dai'
 
 NumberOfProcesses=28
 
@@ -30,8 +30,8 @@ class BayerExtract(object):
           for i in np.arange(1,22):
               self.pestnames.append({'SprayName':'iodo-'+str(i),'PestNames':['iodo-'+str(i), 'mets-'+str(i)]})
         else:
-          for i in np.arange(1,77):
-              self.pestnames.append({'SprayName':'iodo-'+str(i),'PestNames':['iodo-autumn-'+str(i), 'mets-autumn-'+str(i)]})
+#          for i in np.arange(1,77):
+#              self.pestnames.append({'SprayName':'iodo-'+str(i),'PestNames':['iodo-'+str(i), 'mets-'+str(i)]})
           for i in np.arange(1,17):
               self.pestnames.append({'SprayName':'iodo-autumn-'+str(i),'PestNames':['iodo-autumn-'+str(i), 'mets-autumn-'+str(i), 'meso-'+str(i)]})
     
@@ -64,38 +64,40 @@ class BayerExtract(object):
                 data = []
                 start = pesticide.index.get_loc(Appdate)            
                 #Now loop the timesteps in the current simulation
-                for j in np.arange(start, start+hours):
-                    drainwater = PestArray[j, MatrixWaterIndex]+PestArray[j, BioporeWaterIndex]
-                    if drainwater>1e-10:
-                        temp=[]
-                        temp.append(drainwater)
-                        for k in molrange:
-                            bioporepest =PestArray[j, PesticideBioporesIndex[k]]
-                            pest = PestArray[j, PesticideMatrixIndex[k]] + bioporepest
-                            temp.append(pest)
-                        data.append(temp)
-    
-                if len(data)>0: #no drain flow! Really?
-                    print(Appdate)
-                    print(pest_name)
-                    result = ms.Stats(np.array(data),[item[0:4] for item in pest_name['PestNames']])
-                    result['AppDate'] = Appdate
-                    result['PestName'] = pest_name['SprayName']
-                    result['PestType'] = pest_name['SprayName'][0:4]
-                    if  'autumn' in pest_name['SprayName']: #Look for autumn in name
-                        result['Season'] = 'autumn'
+                if(start + hours<len(PestArray)):
+                    for j in np.arange(start, start+hours):
+                        drainwater = PestArray[j, MatrixWaterIndex]+PestArray[j, BioporeWaterIndex]
+                        if drainwater>1e-10:
+                            temp=[]
+                            temp.append(drainwater)
+                            for k in molrange:
+                                bioporepest =PestArray[j, PesticideBioporesIndex[k]]
+                                pest = PestArray[j, PesticideMatrixIndex[k]] + bioporepest
+                                temp.append(pest)
+                            data.append(temp)
+      
+                    if len(data)>0: #no drain flow! Really?
+  #                    print(Appdate)
+                       result = ms.Stats(np.array(data),[item[0:4] for item in pest_name['PestNames']])
+                       result['AppDate'] = Appdate
+                       result['PestName'] = pest_name['SprayName']
+                       result['PestType'] = pest_name['SprayName'][0:4]
+                       if 'autumn' in pest_name['SprayName']: #Look for autumn in name
+                           result['Season'] = 'autumn'
+                       else:
+                           result['Season'] = 'spring'
+                       Results.append(result)
                     else:
-                        result['Season'] = 'spring'
-                    Results.append(result)
-    
+                       print('no drain flow!?! ' + str(Appdate))
         return Results
 
 def RunSingle(workdir):
     print('Running ' + workdir)
-    dlffilename = 'WW SprayWW_drain_data.dlf'
-    sprayfilename =place + '_SB_spray.dlf'
+    dlffilename = place + '_WW_drain_data.dlf'
+    sprayfilename = place + '_WW_spray.dlf'
     if(crop=='Barley'):
         dlffilename = place + '_SB_drain_data.dlf'
+        sprayfilename = place + '_SB_spray.dlf'
        
     pesticide = DaisyDlf(os.path.join(workdir, dlffilename)).Data
     sprayfile =DaisyDlf(os.path.join(workdir, sprayfilename))

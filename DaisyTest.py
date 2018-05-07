@@ -45,7 +45,6 @@ class Test_DaisyTest(unittest.TestCase):
         """
         m=MultiDaisy(r'.\TestData\DaisyModel.dai')
 #        m.Split(5,5,2)
-#        m.ConcatenateResults('Flak_SB_spray.dlf')
         workdirs=[]
         for d in m.DirLoop():
             workdirs.append(d)
@@ -59,6 +58,10 @@ class Test_DaisyTest(unittest.TestCase):
 
           #  workdirs.append(d)
         self.assertEqual(2,len(workdirs))
+        res = m.ConcatenateResults('Flak_SB_spray.dlf', ['Temp 0-30','Temp 30-60'])
+
+        k=0
+
 
 
 

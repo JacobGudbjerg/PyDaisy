@@ -368,17 +368,14 @@ class MultiDaisy(object):
                         pass
                 open(os.path.join(root,d, status.name), 'a').close()
 
-    def ConcatenateResults(self, DlfFileName):
+    def ConcatenateResults(self, DlfFileName, Columns=[]):
         """
         Concatenates the results stored in DlfFileName in to one DaisyDlf
         """
         ToReturn=[]
         for dlf in self.ResultsDirLoop():
-            try:
-                ToReturn.append(DaisyDlf(os.path.join(dlf, DlfFileName)))
-            except:
-                pass
-        return pd.concat( [x.Data for x in ToReturn]).sort_index()
+            ToReturn.append(DaisyDlf(os.path.join(dlf, DlfFileName)).Data[Columns])
+        return pd.concat( [x for x in ToReturn]).sort_index()
     
     def DirLoop(self):
         """
