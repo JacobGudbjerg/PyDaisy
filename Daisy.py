@@ -6,6 +6,7 @@ import pandas as pd
 import os
 import zipfile
 from enum import Enum
+from datetime import datetime
 
 daisyexecutable = r'C:\Program Files\Daisy 5.57\bin\Daisy.exe'
 
@@ -48,7 +49,7 @@ class DaisyDlf(object):
                 SectionIndex=SectionIndex+1
                 continue
             elif(SectionIndex==1 and line):#File Header section (Key, value)
-                if (line.startswith('--------------------')): #We have come to the start of the data section
+                if (line.startswith('--------')): #We have come to the start of the data section
                     SectionIndex=SectionIndex+1
                     continue
                 elif (line.startswith('#')):
@@ -66,6 +67,8 @@ class DaisyDlf(object):
                     DateTimeIndex=5
                 elif 'hour' in ColumnHeaders:
                     DateTimeIndex=4
+                elif 'Date' in ColumnHeaders:
+                    DateTimeIndex=1
                 SectionIndex=SectionIndex+1
                 continue
             elif (SectionIndex == 3): #Column units. This may be an empty line 
@@ -74,14 +77,18 @@ class DaisyDlf(object):
                 continue
             elif (SectionIndex == 4 and line): #Data
                 splitted = line.split() #Splits on space and tab
-                timedata = list(map(int, splitted[0:DateTimeIndex])) #First columns are time data
+                if DateTimeIndex == 1: #Time is in a single column
+                    TimeSteps.append(datetime.strptime(splitted[0], '%Y-%m-%dT%H:%M:%S'))
+                else: #Time is in multiple columns
+                    timedata = list(map(int, splitted[0:DateTimeIndex])) #First columns are time data
+                    if DateTimeIndex == 3:
+                        TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2]))
+                    elif DateTimeIndex == 4:   
+                        TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3]))
+                    elif DateTimeIndex == 5:
+                        TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
+
                 raw.append(map(float, splitted[DateTimeIndex:])) #Now data
-                if DateTimeIndex == 3:
-                    TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2]))
-                elif DateTimeIndex == 4:   
-                    TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3]))
-                elif DateTimeIndex == 5:
-                    TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
 
         #Create a dataframe to hold the data 
         self.Data = pd.DataFrame(raw, columns=ColumnHeaders[DateTimeIndex:], index=TimeSteps)

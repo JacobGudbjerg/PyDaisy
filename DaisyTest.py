@@ -27,6 +27,10 @@ class Test_DaisyTest(unittest.TestCase):
         self.assertEqual('Precip', dwf.Data.columns[2])
         self.assertEqual('RefEvap', dwf.Data.columns[3])
 
+        dwf2 = DaisyDlf(r'.\TestData\Withdates.dwf')
+        self.assertEqual(48, len(dwf2.Data.index))
+
+
     def test_daisyDlfFile(self):
         """
         Test on a 2d dlf file with soil water content
