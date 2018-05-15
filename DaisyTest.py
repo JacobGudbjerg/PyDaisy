@@ -32,8 +32,11 @@ class Test_DaisyTest(unittest.TestCase):
         dwf2 = DaisyDlf(r'.\TestData\Withdates.dwf')
         self.assertEqual(48, len(dwf2.Data.index))
 
-        inde = dwf2.getIndex(datetime(1962,1,2))
-        self.assertEqual(24, inde)
+        self.assertEqual(24, dwf2.getIndex(datetime(1962,1,2)))
+        self.assertEqual(0, dwf2.getIndex(datetime(1962,1,1)))
+        self.assertEqual(1, dwf2.getIndex(datetime(1962,1,1,1)))
+        dwf2.timestep=None
+        self.assertEqual(24, dwf2.getIndex(datetime(1962,1,2)))
         self.assertEqual(0, dwf2.getIndex(datetime(1962,1,1)))
         self.assertEqual(1, dwf2.getIndex(datetime(1962,1,1,1)))
 

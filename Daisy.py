@@ -113,9 +113,9 @@ class DaisyDlf(object):
         Gets the index of a timestep. This method is fast if the timesteps are equidistant
         """
         if self.timestep != None:
-            return (Timestep-self.startTime)/self.timestep
+            return int( (Timestep-self.startTime)/self.timestep)
         else:
-            return self.Data.index.iloc(Timestep)
+            return self.Data.index.get_loc(Timestep)
 
 
 
