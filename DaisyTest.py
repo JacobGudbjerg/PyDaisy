@@ -50,7 +50,6 @@ class Test_DaisyTest(unittest.TestCase):
 
         self.assertEqual(7490, len(dlz.Data.index))
 
-        dldrain =DaisyDlf('c:\test\Flakiodo1.csv')
         
 
 
