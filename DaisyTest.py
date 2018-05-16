@@ -1,4 +1,6 @@
 import unittest
+from datetime import datetime
+
 from Daisy import *
 
 
@@ -30,6 +32,13 @@ class Test_DaisyTest(unittest.TestCase):
         dwf2 = DaisyDlf(r'.\TestData\Withdates.dwf')
         self.assertEqual(48, len(dwf2.Data.index))
 
+        self.assertEqual(24, dwf2.getIndex(datetime(1962,1,2)))
+        self.assertEqual(0, dwf2.getIndex(datetime(1962,1,1)))
+        self.assertEqual(1, dwf2.getIndex(datetime(1962,1,1,1)))
+        dwf2.timestep=None
+        self.assertEqual(24, dwf2.getIndex(datetime(1962,1,2)))
+        self.assertEqual(0, dwf2.getIndex(datetime(1962,1,1)))
+        self.assertEqual(1, dwf2.getIndex(datetime(1962,1,1,1)))
 
     def test_daisyDlfFile(self):
         """
@@ -40,6 +49,8 @@ class Test_DaisyTest(unittest.TestCase):
         dlz = DaisyDlf('Flak_SB_spray.dlf', r'.\TestData\daisy.log0.zip')
 
         self.assertEqual(7490, len(dlz.Data.index))
+
+        dldrain =DaisyDlf('c:\test\Flakiodo1.csv')
         
 
 

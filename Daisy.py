@@ -6,7 +6,7 @@ import pandas as pd
 import os
 import zipfile
 from enum import Enum
-from datetime import datetime
+from datetime import datetime, timedelta
 
 daisyexecutable = r'C:\Program Files\Daisy 5.57\bin\Daisy.exe'
 
@@ -87,13 +87,37 @@ class DaisyDlf(object):
                         TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3]))
                     elif DateTimeIndex == 5:
                         TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
-
-                raw.append(map(float, splitted[DateTimeIndex:])) #Now data
+                #Now data        
+                raw.append(map(float, splitted[DateTimeIndex:])) 
 
         #Create a dataframe to hold the data 
         self.Data = pd.DataFrame(raw, columns=ColumnHeaders[DateTimeIndex:], index=TimeSteps)
         #A trick to remove duplicate columns. Based on the header
         self.Data = self.Data.loc[:,~self.Data.columns.duplicated()]
+        self.__setStartTime()
+
+    def __setStartTime(self):
+        """
+        Sets starttime and timestep if times are equidistant
+        """
+        self.startTime = self.Data.index[0]
+        self.timestep = self.Data.index[1]- self.Data.index[0]
+
+        for i in range(1, len(self.Data.index)):
+            if self.timestep != self.Data.index[i]- self.Data.index[i-1]:
+                self.timestep=None
+                break
+
+    def getIndex(self, Timestep):
+        """
+        Gets the index of a timestep. This method is fast if the timesteps are equidistant
+        """
+        if self.timestep != None:
+            return int( (Timestep-self.startTime)/self.timestep)
+        else:
+            return self.Data.index.get_loc(Timestep)
+
+
 
 
     def getYCoordinates(self):
