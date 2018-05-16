@@ -407,6 +407,7 @@ class MultiDaisy(object):
         for dlf in self.ResultsDirLoop():
             ToReturn.append(DaisyDlf(os.path.join(dlf, DlfFileName)).Data[Columns])
         temp= pd.concat( [x for x in ToReturn]).sort_index()
+        #Remove duplicate entries on index
         return temp[~temp.index.duplicated(keep='first')]
     
     def DirLoop(self):
