@@ -77,19 +77,22 @@ class DaisyDlf(object):
                 SectionIndex=SectionIndex+1
                 continue
             elif (SectionIndex == 4 and line): #Data
-                splitted = line.split() #Splits on space and tab
-                if DateTimeIndex == 1: #Time is in a single column
-                    TimeSteps.append(datetime.strptime(splitted[0], '%Y-%m-%dT%H:%M:%S'))
-                else: #Time is in multiple columns
-                    timedata = list(map(int, splitted[0:DateTimeIndex])) #First columns are time data
-                    if DateTimeIndex == 3:
-                        TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2]))
-                    elif DateTimeIndex == 4:   
-                        TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3]))
-                    elif DateTimeIndex == 5:
-                        TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
-                #Now data        
-                raw.append(map(float, splitted[DateTimeIndex:])) 
+                try:
+                    splitted = line.split() #Splits on space and tab
+                    if DateTimeIndex == 1: #Time is in a single column
+                        TimeSteps.append(datetime.strptime(splitted[0], '%Y-%m-%dT%H:%M:%S'))
+                    else: #Time is in multiple columns
+                        timedata = list(map(int, splitted[0:DateTimeIndex])) #First columns are time data
+                        if DateTimeIndex == 3:
+                            TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2]))
+                        elif DateTimeIndex == 4:   
+                            TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3]))
+                        elif DateTimeIndex == 5:
+                            TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
+                    #Now data        
+                    raw.append(map(float, splitted[DateTimeIndex:]))
+                except:
+                    pass
 
         #Create a dataframe to hold the data 
         self.Data = pd.DataFrame(raw, columns=ColumnHeaders[DateTimeIndex:], index=TimeSteps)

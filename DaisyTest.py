@@ -50,6 +50,7 @@ class Test_DaisyTest(unittest.TestCase):
 
         self.assertEqual(7490, len(dlz.Data.index))
 
+        dlz = DaisyDlf(r'.\TestData\Ror_WW_surface_chemicals.dlf')
         
 
 
