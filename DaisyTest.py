@@ -72,7 +72,8 @@ class Test_DaisyTest(unittest.TestCase):
 
           #  workdirs.append(d)
         self.assertEqual(2,len(workdirs))
-        res = m.ConcatenateResults('Flak_SB_spray.dlf', ['Temp 0-30','Temp 30-60'])
+        res = m.ConcatenateResults('Flak_SB_spray.dlf')
+        
 
         k=0
 

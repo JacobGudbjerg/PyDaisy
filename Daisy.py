@@ -19,6 +19,7 @@ class DaisyDlf(object):
         self.DlfFileName = DlfFileName
         self.Description=''
         self.HeaderItems={}
+        self.__starttimeset=False
         filename, file_extension = os.path.splitext(DlfFileName)
 
         if ZipFileName!='':
@@ -94,7 +95,6 @@ class DaisyDlf(object):
         self.Data = pd.DataFrame(raw, columns=ColumnHeaders[DateTimeIndex:], index=TimeSteps)
         #A trick to remove duplicate columns. Based on the header
         self.Data = self.Data.loc[:,~self.Data.columns.duplicated()]
-        self.__setStartTime()
 
     def __setStartTime(self):
         """
@@ -107,17 +107,19 @@ class DaisyDlf(object):
             if self.timestep != self.Data.index[i]- self.Data.index[i-1]:
                 self.timestep=None
                 break
+        self.__starttimeset =True
 
     def getIndex(self, Timestep):
         """
         Gets the index of a timestep. This method is fast if the timesteps are equidistant
         """
+        if not self.__starttimeset:
+            self.__setStartTime()
+
         if self.timestep != None:
             return int( (Timestep-self.startTime)/self.timestep)
         else:
             return self.Data.index.get_loc(Timestep)
-
-
 
 
     def getYCoordinates(self):
@@ -405,7 +407,10 @@ class MultiDaisy(object):
         """
         ToReturn=[]
         for dlf in self.ResultsDirLoop():
-            ToReturn.append(DaisyDlf(os.path.join(dlf, DlfFileName)).Data[Columns])
+            if len(Columns)==0:
+                ToReturn.append(DaisyDlf(os.path.join(dlf, DlfFileName)).Data)
+            else:
+                ToReturn.append(DaisyDlf(os.path.join(dlf, DlfFileName)).Data[Columns])
         temp= pd.concat( [x for x in ToReturn]).sort_index()
         #Remove duplicate entries on index
         return temp[~temp.index.duplicated(keep='first')]
