@@ -19,6 +19,7 @@ class DaisyDlf(object):
         self.DlfFileName = DlfFileName
         self.Description=''
         self.HeaderItems={}
+        self.__starttimeset=False
         filename, file_extension = os.path.splitext(DlfFileName)
 
         if ZipFileName!='':
@@ -76,25 +77,27 @@ class DaisyDlf(object):
                 SectionIndex=SectionIndex+1
                 continue
             elif (SectionIndex == 4 and line): #Data
-                splitted = line.split() #Splits on space and tab
-                if DateTimeIndex == 1: #Time is in a single column
-                    TimeSteps.append(datetime.strptime(splitted[0], '%Y-%m-%dT%H:%M:%S'))
-                else: #Time is in multiple columns
-                    timedata = list(map(int, splitted[0:DateTimeIndex])) #First columns are time data
-                    if DateTimeIndex == 3:
-                        TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2]))
-                    elif DateTimeIndex == 4:   
-                        TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3]))
-                    elif DateTimeIndex == 5:
-                        TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
-                #Now data        
-                raw.append(map(float, splitted[DateTimeIndex:])) 
+                try:
+                    splitted = line.split() #Splits on space and tab
+                    if DateTimeIndex == 1: #Time is in a single column
+                        TimeSteps.append(datetime.strptime(splitted[0], '%Y-%m-%dT%H:%M:%S'))
+                    else: #Time is in multiple columns
+                        timedata = list(map(int, splitted[0:DateTimeIndex])) #First columns are time data
+                        if DateTimeIndex == 3:
+                            TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2]))
+                        elif DateTimeIndex == 4:   
+                            TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3]))
+                        elif DateTimeIndex == 5:
+                            TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
+                    #Now data        
+                    raw.append(map(float, splitted[DateTimeIndex:]))
+                except:
+                    pass
 
         #Create a dataframe to hold the data 
         self.Data = pd.DataFrame(raw, columns=ColumnHeaders[DateTimeIndex:], index=TimeSteps)
         #A trick to remove duplicate columns. Based on the header
         self.Data = self.Data.loc[:,~self.Data.columns.duplicated()]
-        self.__setStartTime()
 
     def __setStartTime(self):
         """
@@ -107,17 +110,19 @@ class DaisyDlf(object):
             if self.timestep != self.Data.index[i]- self.Data.index[i-1]:
                 self.timestep=None
                 break
+        self.__starttimeset =True
 
     def getIndex(self, Timestep):
         """
         Gets the index of a timestep. This method is fast if the timesteps are equidistant
         """
+        if not self.__starttimeset:
+            self.__setStartTime()
+
         if self.timestep != None:
             return int( (Timestep-self.startTime)/self.timestep)
         else:
             return self.Data.index.get_loc(Timestep)
-
-
 
 
     def getYCoordinates(self):
@@ -405,7 +410,10 @@ class MultiDaisy(object):
         """
         ToReturn=[]
         for dlf in self.ResultsDirLoop():
-            ToReturn.append(DaisyDlf(os.path.join(dlf, DlfFileName)).Data[Columns])
+            if len(Columns)==0:
+                ToReturn.append(DaisyDlf(os.path.join(dlf, DlfFileName)).Data)
+            else:
+                ToReturn.append(DaisyDlf(os.path.join(dlf, DlfFileName)).Data[Columns])
         temp= pd.concat( [x for x in ToReturn]).sort_index()
         #Remove duplicate entries on index
         return temp[~temp.index.duplicated(keep='first')]

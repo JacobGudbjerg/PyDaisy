@@ -50,6 +50,7 @@ class Test_DaisyTest(unittest.TestCase):
 
         self.assertEqual(7490, len(dlz.Data.index))
 
+        dlz = DaisyDlf(r'.\TestData\Ror_WW_surface_chemicals.dlf')
         
 
 
@@ -72,7 +73,8 @@ class Test_DaisyTest(unittest.TestCase):
 
           #  workdirs.append(d)
         self.assertEqual(2,len(workdirs))
-        res = m.ConcatenateResults('Flak_SB_spray.dlf', ['Temp 0-30','Temp 30-60'])
+        res = m.ConcatenateResults('Flak_SB_spray.dlf')
+        
 
         k=0
 
