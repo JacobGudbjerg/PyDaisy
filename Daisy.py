@@ -120,7 +120,7 @@ class DaisyDlf(object):
             self.__setStartTime()
 
         if self.timestep != None:
-            return int( (Timestep-self.startTime)/self.timestep)
+            return int( (Timestep-self.startTime).total_seconds()/self.timestep.total_seconds())
         else:
             return self.Data.index.get_loc(Timestep)
 
