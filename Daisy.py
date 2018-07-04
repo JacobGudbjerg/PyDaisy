@@ -120,7 +120,7 @@ class DaisyDlf(object):
             self.__setStartTime()
 
         if self.timestep != None:
-            return int( (Timestep-self.startTime)/self.timestep)
+            return int( (Timestep-self.startTime).total_seconds()/self.timestep.total_seconds())
         else:
             return self.Data.index.get_loc(Timestep)
 
@@ -154,6 +154,20 @@ class DaisyDlf(object):
                 return l
         return
 
+
+class WeatherFileWriter(object):
+
+    @staticmethod
+    def Write(Filename, WeatherData):
+        """
+        Writes a Daisy weather-file based on the data in the dataframe WeatherData.
+        """
+        with open(Filename, 'wU') as f:
+            #Write the header section
+
+            #Now write the weather data
+            for row in WeatherData:
+                
 
 class DaisyEntry(object):
     def __init__(self, Keyword, Words):
