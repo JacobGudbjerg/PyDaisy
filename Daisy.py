@@ -155,6 +155,20 @@ class DaisyDlf(object):
         return
 
 
+class WeatherFileWriter(object):
+
+    @staticmethod
+    def Write(Filename, WeatherData):
+        """
+        Writes a Daisy weather-file based on the data in the dataframe WeatherData.
+        """
+        with open(Filename, 'wU') as f:
+            #Write the header section
+
+            #Now write the weather data
+            for row in WeatherData:
+                
+
 class DaisyEntry(object):
     def __init__(self, Keyword, Words):
         self.Keyword = Keyword
