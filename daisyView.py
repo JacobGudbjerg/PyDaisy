@@ -1,10 +1,11 @@
+# -*- coding: utf-8 -*-
 import numpy as np
 import matplotlib.pyplot as plt
 from Daisy import DaisyDlf
 from scipy.interpolate import griddata
 
 
-result = DaisyDlf('C:/Projects/DaisyProjects/Pestpore/2d/soil_water_content.dlf')
+result = DaisyDlf(r'.\TestData\soil_water_content.dlf')
 ydata = result.getYCoordinates()
 xdata = result.getXCoordinates();
 
@@ -22,12 +23,6 @@ plt.imshow(grid_z0.T, extent=[min(xdata),max(xdata),min(ydata), max(ydata)], ori
 plt.show()
 
 
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Apr 10 14:02:09 2018
-
-@author: jpq949
-"""
 
 import tkinter as tk
 import tkinter.ttk as ttk
