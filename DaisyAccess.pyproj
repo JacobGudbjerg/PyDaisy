@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{746caa78-98aa-48e3-8f1c-00eebc476b7e}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>DaisyTest.py</StartupFile>
+    <StartupFile>daisyView.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -19,15 +19,11 @@
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="BayerTest.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Daisy.py" />
     <Compile Include="DaisyTest.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MakeStats.py" />
-    <Compile Include="parExtract.py" />
+    <Compile Include="daisyView.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|ContinuumAnalytics|Anaconda36-64" />
