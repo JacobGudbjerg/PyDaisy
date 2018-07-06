@@ -3,6 +3,7 @@ Various helper classes to read and manipulate Daisy input and output files.
 """
 import subprocess
 import pandas as pd
+import csv
 import os
 import zipfile
 from enum import Enum
@@ -154,21 +155,35 @@ class DaisyDlf(object):
                 return l
         return
 
-
-class WeatherFileWriter(object):
-
-    @staticmethod
-    def Write(Filename, WeatherData):
+    def save(self, FileName):
         """
-        Writes a Daisy weather-file based on the data in the dataframe WeatherData.
+        Writes the data to a file. Use this method to write Daisy Weather files
+        Only writes daily values
         """
-        with open(Filename, 'wU') as f:
+        with open(FileName, 'w') as f:
+            f.write(self.HeadLine)
             #Write the header section
+            for key,value in self.HeaderItems.items():
+                f.write(key + ': ' + value + '\n')
+
+            f.write('------------------------------------------------------------------------------\n')
+            f.write('Year\tMonth\tDay')
+            for cu in self.Data.columns:
+                f.write('\t')
+                f.write(cu)
+            f.write('\n')
+
+
+            f.write('year\tmonth\tmday')
+            for cu in self.ColumnUnits:
+                f.write('\t')
+                f.write(cu)
+            f.write('\n')
 
             #Now write the weather data
-            for row in WeatherData:
-                
+            self.Data.to_csv(f, header=False, sep='\t', date_format='%Y\t%m\t%d', encoding='utf-8', quoting=csv.QUOTE_NONE, escapechar=" ")
 
+                
 class DaisyEntry(object):
     def __init__(self, Keyword, Words):
         self.Keyword = Keyword
@@ -326,7 +341,6 @@ class DaisyTime(object):
             c.setvalue(time.minute, 4)
         if(time.second!=0):
             c.setvalue(time.second, 5)
-
 
       
 class DaisyModel(object):

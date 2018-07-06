@@ -28,6 +28,7 @@ class Test_DaisyTest(unittest.TestCase):
         self.assertEqual('AirTemp', dwf.Data.columns[1])
         self.assertEqual('Precip', dwf.Data.columns[2])
         self.assertEqual('RefEvap', dwf.Data.columns[3])
+        dwf.save(r'.\TestData\Taastrup6201_saved.dwf')
 
         dwf2 = DaisyDlf(r'.\TestData\Withdates.dwf')
         self.assertEqual(48, len(dwf2.Data.index))
