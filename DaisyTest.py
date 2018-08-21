@@ -78,11 +78,15 @@ class Test_DaisyTest(unittest.TestCase):
         k=0
 
     def test_multiDaisy2(self):
-        DaisyFileName='history.dai'
-        workdir=r'C:\Projects\DaisyProjects\DaisyDK\Test'
-               
-        MultiDaisy().RunSubFolders(workdir, DaisyFileName, NumberOfProcesses=6)
+
+        m=MultiDaisy(r'.\TestData\DaisyModel.dai')
+        m.SetModelStatus(DaisyModelStatus.NotRun)
+
+        MultiDaisy().RunSubFolders(r'.\TestData\MultiDaisy', 'DaisyModel.dai')
+
+        MultiDaisy().RunSubFolders(r'.\TestData\MultiDaisy', 'DaisyModel.dai', UseStatusFiles=True)
         
+        MultiDaisy().RunSubFolders(r'.\TestData\MultiDaisy', 'DaisyModel.dai', UseStatusFiles=True)
 
 
 if __name__ == '__main__':

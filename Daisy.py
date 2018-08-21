@@ -507,8 +507,6 @@ class MultiDaisy(object):
         Run a single simulation. This method should only be used by RunMany from this class.
         """        
         workdir = os.path.dirname(FileNames[0])
-        with open(r'C:\test\md.log', 'w') as f:
-            f.write('Open')
 
         try:
             if len(FileNames)>1:
@@ -545,8 +543,7 @@ class MultiDaisy(object):
         """
         DaisyFiles=[]
         Continue=True
-        if not UseStatusFiles:
-            Alreadyrun=[]
+        Alreadyrun=[]
            
         while (Continue):
             Continue=False
@@ -562,7 +559,7 @@ class MultiDaisy(object):
                         DaisyFile = os.path.join(workdir, DaisyFileName)
                         if UseStatusFiles: #This will fail if the "NotRun" file is not there
                             Notrun=os.path.join(workdir, DaisyModelStatus.NotRun.name)
-                            InQueue =os.path.join(workdir,DaisyModelStatus.Queue)
+                            InQueue =os.path.join(workdir,DaisyModelStatus.Queue.name)
                             os.rename(Notrun,InQueue)
                         if DaisyFile not in Alreadyrun and os.path.isfile(DaisyFile):
                             DaisyFiles.append(os.path.join(workdir, DaisyFileName)) #Add the directory to the list of directories that needs to be simulated
