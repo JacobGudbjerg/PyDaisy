@@ -2,14 +2,19 @@
 Various helper classes to read and manipulate Daisy input and output files.
 """
 import subprocess
+import platform
+import sys
 import pandas as pd
 import csv
 import os
 import zipfile
 from enum import Enum
 from datetime import datetime, timedelta
+from multiprocessing import Pool
 
-daisyexecutable = r'C:\Program Files\Daisy 5.57\bin\Daisy.exe'
+daisyexecutable = r'C:\Program Files\Daisy 5.64\bin\Daisy.exe'
+if platform.system()=='Linux':
+    daisyexecutable = r'/home/projects/cu_10095/apps/daisy/obj/daisy'
 
 class DaisyDlf(object):
     """
@@ -91,14 +96,15 @@ class DaisyDlf(object):
                         elif DateTimeIndex == 5:
                             TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
                     #Now data        
-                    raw.append(map(float, splitted[DateTimeIndex:]))
+                    raw.append(map(self.__converter , splitted[DateTimeIndex:]))
                 except:
                     pass
 
-        #Create a dataframe to hold the data 
-        self.Data = pd.DataFrame(raw, columns=ColumnHeaders[DateTimeIndex:], index=TimeSteps)
-        #A trick to remove duplicate columns. Based on the header
-        self.Data = self.Data.loc[:,~self.Data.columns.duplicated()]
+        if len(raw)>0:
+            #Create a dataframe to hold the data 
+            self.Data = pd.DataFrame(raw, columns=ColumnHeaders[DateTimeIndex:], index=TimeSteps)
+            #A trick to remove duplicate columns. Based on the header
+            self.Data = self.Data.loc[:,~self.Data.columns.duplicated()]
 
     def __setStartTime(self):
         """
@@ -158,31 +164,54 @@ class DaisyDlf(object):
     def save(self, FileName):
         """
         Writes the data to a file. Use this method to write Daisy Weather files
-        Only writes daily values
-        """
+        Only writes daily and hourly values
+        """        
+        #Make sure timestep is set
+        self.__setStartTime()
+        self.HeaderItems['Begin']=self.Data.index[0].strftime('%Y-%m-%d')
+        self.HeaderItems['End']=self.Data.index[len(self.Data.index)-1].strftime('%Y-%m-%d')
+        self.HeaderItems['Timestep']= str(self.timestep.components.hours) + ' hours'
+        
+#        with codecs.open(FileName, encoding='utf-8', mode='w') as f:
         with open(FileName, 'w') as f:
             f.write(self.HeadLine)
+            f.write('\n')
             #Write the header section
             for key,value in self.HeaderItems.items():
                 f.write(key + ': ' + value + '\n')
 
             f.write('------------------------------------------------------------------------------\n')
             f.write('Year\tMonth\tDay')
+            if(self.timestep==pd.to_timedelta(1, unit="H")):
+                f.write('\tHour')
+            
             for cu in self.Data.columns:
                 f.write('\t')
                 f.write(cu)
             f.write('\n')
 
-
             f.write('year\tmonth\tmday')
+            if(self.timestep==pd.to_timedelta(1, unit="H")):
+                f.write('\thour')
+
             for cu in self.ColumnUnits:
                 f.write('\t')
                 f.write(cu)
             f.write('\n')
 
+            date_format='%Y\t%m\t%d'
+            if(self.timestep==pd.to_timedelta(1, unit="H")):
+                date_format='%Y\t%m\t%d\t%H'
+            
+            
             #Now write the weather data
-            self.Data.to_csv(f, header=False, sep='\t', date_format='%Y\t%m\t%d', encoding='utf-8', quoting=csv.QUOTE_NONE, escapechar=" ")
+            self.Data.to_csv(f, header=False, sep='\t', date_format=date_format, float_format='%.2f', encoding='utf-8', quoting=csv.QUOTE_NONE, escapechar=" ")
 
+    def __converter(self, value):
+        try:
+            return float(value)
+        except:
+            return value
                 
 class DaisyEntry(object):
     def __init__(self, Keyword, Words):
@@ -235,10 +264,13 @@ class DaisyEntry(object):
 
     def __getitem__(self, index):
         """
-        Returns the first i'th item or the first item with that Keyword. Index shoul be string or integer
+        Returns the first i'th item or the first item with that Keyword. Index should be string or integer
         """
         if type(index) is str:
-            return next(c for c in self.Children if c.Keyword==index)
+            itere = list(c for c in self.Children if c.Keyword==index)
+            if(len(itere)==1):
+                return itere[0]
+            return itere
         else:
             return self.Children[index]
 
@@ -299,7 +331,6 @@ class DaisyEntry(object):
             sr.write(' ')
             sr.write(w)
 
-
 class DaisyTime(object):
     """
     class wrapping a Daisy time
@@ -341,8 +372,7 @@ class DaisyTime(object):
             c.setvalue(time.minute, 4)
         if(time.second!=0):
             c.setvalue(time.second, 5)
-
-      
+     
 class DaisyModel(object):
     """
     A class that reads a daisy input file (.dai-file)
@@ -355,9 +385,9 @@ class DaisyModel(object):
         #now a small section that makes the start and end of the simulation visible    
         top=self.Input
         if any (c.Keyword=='defprogram' for c in top.Children):
-            top=top['defprogram']
+            top=(top['defprogram'])
         if any (c.Keyword=='time' for c in top.Children):
-            self.starttime = DaisyTime(top['time'])
+            self.starttime = DaisyTime((top['time']))
         if any (c.Keyword=='stop' for c in top.Children):
             self.endtime = DaisyTime(top['stop'])
             
@@ -382,21 +412,31 @@ class DaisyModel(object):
         Calls the Daisy executable and runs the simulation.
         Remember to save first    
         """
-        CREATE_NO_WINDOW = 0x08000000
-        subprocess.call([daisyexecutable, self.DaisyInputfile], creationflags=CREATE_NO_WINDOW)
+        if platform.system()=='Linux':
+            sys.stdout.flush()
+            subprocess.call([daisyexecutable, '-q', self.DaisyInputfile, '-p'], cwd = os.path.abspath(self.DaisyInputfile))
+        else:
+            CREATE_NO_WINDOW = 0x08000000
+            subprocess.call([daisyexecutable, os.path.abspath(self.DaisyInputfile)], creationflags=CREATE_NO_WINDOW)
 
-
+class DaisyModelStatus(Enum):
+    NotRun =1
+    Queue=2
+    Running =3
+    Done = 4
+    
 class MultiDaisy(object):
     """
     A class that helps running daisy in parallel.
     """
-    def __init__(self, DaisyInputfile):
-        self.ChildModels =[]    
-        self.ParentModel = DaisyModel(DaisyInputfile)
-        Motherdir = os.path.dirname(self.ParentModel.DaisyInputfile)
-        self.workdir = os.path.join(Motherdir, 'MultiDaisy')
-        self.starttime = self.ParentModel.starttime.time
-        self.endtime = self.ParentModel.endtime.time
+    def __init__(self, DaisyInputfile=''):
+        if DaisyInputfile !='':
+            self.ChildModels =[]    
+            self.ParentModel = DaisyModel(DaisyInputfile)
+            Motherdir = os.path.dirname(self.ParentModel.DaisyInputfile)
+            self.workdir = os.path.join(Motherdir, 'MultiDaisy')
+            self.starttime = self.ParentModel.starttime.time
+            self.endtime = self.ParentModel.endtime.time
         
     def Split(self, NumberOfModels, NumberOfSimYears, NumberOfWarmUpYears, overwrite=True):
         """
@@ -462,11 +502,80 @@ class MultiDaisy(object):
             if not os.path.isfile(os.path.join(d, DaisyModelStatus.NotRun.name)): #Do not take files that needs to be run
                 yield d
 
-            
-class DaisyModelStatus(Enum):
-    NotRun =1
-    Running =2
-    Done = 3
+    def RunSingle(self, FileNames):
+        """
+        Run a single simulation. This method should only be used by RunMany from this class.
+        """        
+        workdir = os.path.dirname(FileNames[0])
+        with open(r'C:\test\md.log', 'w') as f:
+            f.write('Open')
+
+        try:
+            if len(FileNames)>1:
+                os.rename(os.path.join(workdir, FileNames[1]), os.path.join(workdir, FileNames[2]))
+            dm = DaisyModel(FileNames[0])
+            dm.Run()
+            modelrun=1
+            if len(FileNames)>1:
+                os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir, FileNames[3] ))
+        except OSError: 
+           modelrun=0
+           pass    
+        return modelrun
+
+    def RunMany(self, DaisyFiles, NumberOfProcesses=6, Queue='', Running= DaisyModelStatus.Running.name, Done=DaisyModelStatus.Done.name):
+        """
+        Runs all the daisy-simulations in the list of Daisyfiles in parallel. Can use renaming of files to indicate status
+        """
+        print('Running ' + str (len(DaisyFiles)) + ' directories on ' + str(NumberOfProcesses) + ' parallel processes')
+        pp= Pool(NumberOfProcesses)
+        
+        FileNamesList=[]
+        for f in DaisyFiles:
+            if Queue!='':
+                FileNamesList.append([f, Queue, Running, Done])
+            else:
+                FileNamesList.append([f])
+        pp.map(self.RunSingle, FileNamesList)
+        pp.terminate
+    
+    def RunSubFolders(self, MotherFolder, DaisyFileName, MaxBatchSize=5000, NumberOfProcesses=6, UseStatusFiles=False, recursive=False):
+        """
+        Runs all the Daisy simulations found below the MotherFolder
+        """
+        DaisyFiles=[]
+        Continue=True
+        if not UseStatusFiles:
+            Alreadyrun=[]
+           
+        while (Continue):
+            Continue=False
+            if recursive:
+                items = os.walk(MotherFolder)
+            else:
+                items = [next(os.walk(MotherFolder))]
+
+            for root, dirs, filenames in items:
+                for d in dirs:
+                    try: 
+                        workdir = os.path.join(root, d)
+                        DaisyFile = os.path.join(workdir, DaisyFileName)
+                        if UseStatusFiles: #This will fail if the "NotRun" file is not there
+                            Notrun=os.path.join(workdir, DaisyModelStatus.NotRun.name)
+                            InQueue =os.path.join(workdir,DaisyModelStatus.Queue)
+                            os.rename(Notrun,InQueue)
+                        if DaisyFile not in Alreadyrun and os.path.isfile(DaisyFile):
+                            DaisyFiles.append(os.path.join(workdir, DaisyFileName)) #Add the directory to the list of directories that needs to be simulated
+                    except OSError: 
+                        pass
+                    if len(DaisyFiles)==MaxBatchSize:
+                        self.RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses)
+                        if not UseStatusFiles:
+                            Alreadyrun.extend(DaisyFiles)
+                        DaisyFiles=[]
+                        Continue=True #After the simulation have finished look for more
+        self.RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses)
+
 
         
 

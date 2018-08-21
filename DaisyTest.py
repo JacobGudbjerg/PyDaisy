@@ -53,8 +53,6 @@ class Test_DaisyTest(unittest.TestCase):
 
         dlz = DaisyDlf(r'.\TestData\Ror_WW_surface_chemicals.dlf')
         
-
-
     def test_multiDaisy(self):
         """
         Test of the Multi Daisy functionality.
@@ -79,7 +77,12 @@ class Test_DaisyTest(unittest.TestCase):
 
         k=0
 
-
+    def test_multiDaisy2(self):
+        DaisyFileName='history.dai'
+        workdir=r'C:\Projects\DaisyProjects\DaisyDK\Test'
+               
+        MultiDaisy().RunSubFolders(workdir, DaisyFileName, NumberOfProcesses=6)
+        
 
 
 if __name__ == '__main__':
