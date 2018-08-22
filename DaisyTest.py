@@ -88,6 +88,12 @@ class Test_DaisyTest(unittest.TestCase):
         
         MultiDaisy().RunSubFolders(r'.\TestData\MultiDaisy', 'DaisyModel.dai', UseStatusFiles=True)
 
+    def test_multiDaisy3(self):
+
+
+        MultiDaisy().RunSubFolders(r'C:\Projects\DaisyProjects\DaisyDK\Barley', 'actual.dai')
+
+
 
 if __name__ == '__main__':
     unittest.main()
