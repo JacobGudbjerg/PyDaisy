@@ -83,6 +83,7 @@ class Test_DaisyTest(unittest.TestCase):
         m.SetModelStatus(DaisyModelStatus.Done)
 
         res = m.ConcatenateResults('Flak_SB_spray.dlf')
+        self.assertIsNotNone(res)
 
 
     def test_multiDaisy(self):
