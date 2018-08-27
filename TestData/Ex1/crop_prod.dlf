@@ -1,0 +1,12 @@
+dlf-0.0 -- Crop Production (defined in 'log.dai').
+
+VERSION: 5.64
+LOGFILE: crop_prod.dlf
+RUN: Mon Aug 27 15:04:29 2018
+
+COLUMN: *
+CROP: *
+INTERVAL: box none
+
+LOG: A log table for a specific crop.
+

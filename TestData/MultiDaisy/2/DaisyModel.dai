@@ -56,8 +56,8 @@
     (column "Flakkeberg 2D")
     (manager "SB Spray")
     (weather Hourly)
-    (time 1972 1 1 01)
-    (stop 1979 1 1 01)
+    (time 1972 1 1 1)
+    (stop 1979 1 1 1)
     (activate_output 
       (after 1974 06 30 23))
     (description "Flak-soil")

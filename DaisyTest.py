@@ -16,6 +16,13 @@ class Test_DaisyTest(unittest.TestCase):
         d_saved = DaisyModel(r'.\TestData\Exercise01_saved.dai')
         self.assertEqual(d.endtime, d_saved.endtime)
 
+        status = d.Run()
+        self.assertEqual(0, status)
+        modelwitherror = DaisyModel(r'./TestData/Exercise01_witherror.dai')
+        status = modelwitherror.Run()
+        self.assertEqual(1, status)
+
+
 
     #Taastrup weather file
     def test_daisyweatherfile(self):
@@ -53,34 +60,38 @@ class Test_DaisyTest(unittest.TestCase):
 
         dlz = DaisyDlf(r'.\TestData\Ror_WW_surface_chemicals.dlf')
         
-    def test_multiDaisy(self):
+    def test_splitDaisy(self):
         """
         Test of the Multi Daisy functionality.
         """
-        m=MultiDaisy(r'.\TestData\DaisyModel.dai')
-#        m.Split(5,5,2)
-        workdirs=[]
-        for d in m.DirLoop():
-            workdirs.append(d)
+        m=SplitDaisy(r'.\TestData\DaisyModel.dai')
+        m.Split(5,5,2, overwrite=False)
 
-          #  workdirs.append(d)
+        MultiDaisy().RunSubFolders(m.workdir, 'DaisyModel.dai', UseStatusFiles=True)
+
+
+        workdirs=list(m.DirLoop())
         self.assertEqual(5,len(workdirs))
 
-        workdirs=[]
-        for d in m.ResultsDirLoop():
-            workdirs.append(d)
+        #No models have run.
+        workdirs=list(m.ResultsDirLoop())
+        self.assertEqual(0,len(workdirs))
 
-          #  workdirs.append(d)
-        self.assertEqual(2,len(workdirs))
         res = m.ConcatenateResults('Flak_SB_spray.dlf')
-        
+        self.assertIsNone(res);
 
-        k=0
+        m.SetModelStatus(DaisyModelStatus.Done)
 
-    def test_multiDaisy2(self):
+        res = m.ConcatenateResults('Flak_SB_spray.dlf')
 
-        m=MultiDaisy(r'.\TestData\DaisyModel.dai')
+
+    def test_multiDaisy(self):
+
+        m=SplitDaisy(r'.\TestData\DaisyModel.dai')
         m.SetModelStatus(DaisyModelStatus.NotRun)
+
+        MultiDaisy().RunSingle([r'.\TestData\MultiDaisy\0\DaisyModel.dai', DaisyModelStatus.NotRun.name, DaisyModelStatus.Queue.name, DaisyModelStatus.Done.name ])
+
 
         MultiDaisy().RunSubFolders(r'.\TestData\MultiDaisy', 'DaisyModel.dai')
 
@@ -88,10 +99,6 @@ class Test_DaisyTest(unittest.TestCase):
         
         MultiDaisy().RunSubFolders(r'.\TestData\MultiDaisy', 'DaisyModel.dai', UseStatusFiles=True)
 
-    def test_multiDaisy3(self):
-
-
-        MultiDaisy().RunSubFolders(r'C:\Projects\DaisyProjects\DaisyDK\Barley', 'actual.dai')
 
 
 
