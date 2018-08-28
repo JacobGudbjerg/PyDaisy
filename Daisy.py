@@ -511,6 +511,7 @@ class SplitDaisy(object):
             if os.path.isfile(os.path.join(d, DaisyModelStatus.Running.name)) or os.path.isfile(os.path.join(d, DaisyModelStatus.Done.name)): 
                 yield d
 
+
 class MultiDaisy(object):
 
     def RunSingle(self, FileNames):
