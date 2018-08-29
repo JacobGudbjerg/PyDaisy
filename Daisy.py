@@ -14,7 +14,7 @@ from multiprocessing import Pool
 
 daisyexecutable = r'C:\Program Files\Daisy 5.65\bin\Daisy.exe'
 if platform.system()=='Linux':
-    daisyexecutable = r'/home/projects/cu_10095/apps/daisy/obj/daisy'
+    daisyexecutable = r'/home/projects/cu_10095/apps/daisy/daisy'
 
 class DaisyDlf(object):
     """
