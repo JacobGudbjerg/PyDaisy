@@ -12,9 +12,9 @@ from enum import Enum
 from datetime import datetime, timedelta
 from multiprocessing import Pool
 
-daisyexecutable = r'C:\Program Files\Daisy 5.64\bin\Daisy.exe'
+daisyexecutable = r'C:\Program Files\Daisy 5.65\bin\Daisy.exe'
 if platform.system()=='Linux':
-    daisyexecutable = r'/home/projects/cu_10095/apps/daisy/obj/daisy'
+    daisyexecutable = r'/home/projects/cu_10095/apps/daisy/daisy'
 
 class DaisyDlf(object):
     """
@@ -414,29 +414,29 @@ class DaisyModel(object):
         """
         if platform.system()=='Linux':
             sys.stdout.flush()
-            subprocess.call([daisyexecutable, '-q', self.DaisyInputfile, '-p'], cwd = os.path.abspath(self.DaisyInputfile))
+            return subprocess.call([daisyexecutable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], cwd = os.path.dirname(self.DaisyInputfile))
         else:
             CREATE_NO_WINDOW = 0x08000000
-            subprocess.call([daisyexecutable, os.path.abspath(self.DaisyInputfile)], creationflags=CREATE_NO_WINDOW)
+            return subprocess.call([daisyexecutable, os.path.abspath(self.DaisyInputfile)], creationflags=CREATE_NO_WINDOW)
 
 class DaisyModelStatus(Enum):
     NotRun =1
     Queue=2
     Running =3
     Done = 4
+    Failed = 5
     
-class MultiDaisy(object):
+class SplitDaisy(object):
     """
-    A class that helps running daisy in parallel.
+    A class that helps splitting and daisy input files and joining resultfiles.
     """
-    def __init__(self, DaisyInputfile=''):
-        if DaisyInputfile !='':
-            self.ChildModels =[]    
-            self.ParentModel = DaisyModel(DaisyInputfile)
-            Motherdir = os.path.dirname(self.ParentModel.DaisyInputfile)
-            self.workdir = os.path.join(Motherdir, 'MultiDaisy')
-            self.starttime = self.ParentModel.starttime.time
-            self.endtime = self.ParentModel.endtime.time
+    def __init__(self, DaisyInputfile):
+        self.ChildModels =[]    
+        self.ParentModel = DaisyModel(DaisyInputfile)
+        Motherdir = os.path.dirname(self.ParentModel.DaisyInputfile)
+        self.workdir = os.path.join(Motherdir, 'MultiDaisy')
+        self.starttime = self.ParentModel.starttime.time
+        self.endtime = self.ParentModel.endtime.time
         
     def Split(self, NumberOfModels, NumberOfSimYears, NumberOfWarmUpYears, overwrite=True):
         """
@@ -448,10 +448,12 @@ class MultiDaisy(object):
                 shutil.rmtree(self.workdir) #Delete the working directory
             except OSError:
                 pass
-        os.mkdir(self.__workdir)
+        if not os.path.isdir(self.workdir):
+            os.mkdir(self.workdir)
         for i in range(0,NumberOfModels):
             currentdir =os.path.join(self.workdir,str(i))
-            os.mkdir(currentdir)
+            if not os.path.isdir(currentdir):
+                os.mkdir(currentdir)
             self.ParentModel.starttime.time = self.starttime.replace(year=self.starttime.year +i*NumberOfSimYears) 
             self.ParentModel.endtime.time = self.starttime.replace(year=self.starttime.year +(i+1)*NumberOfSimYears+ NumberOfWarmUpYears)
             self.ParentModel.Input['defprogram']['activate_output']['after'].setvalue(self.starttime.year +i*NumberOfSimYears +NumberOfWarmUpYears)
@@ -459,6 +461,7 @@ class MultiDaisy(object):
 
         self.SetModelStatus(DaisyModelStatus.NotRun)
     
+
     def SetModelStatus(self, status):
         """
         Set model status for all sub models
@@ -479,9 +482,15 @@ class MultiDaisy(object):
         ToReturn=[]
         for dlf in self.ResultsDirLoop():
             if len(Columns)==0:
-                ToReturn.append(DaisyDlf(os.path.join(dlf, DlfFileName)).Data)
+                try:
+                    ToReturn.append(DaisyDlf(os.path.join(dlf, DlfFileName)).Data)
+                except IOError: #If the file is not there
+                    pass
             else:
                 ToReturn.append(DaisyDlf(os.path.join(dlf, DlfFileName)).Data[Columns])
+        if len(ToReturn)==0:
+            return None
+        
         temp= pd.concat( [x for x in ToReturn]).sort_index()
         #Remove duplicate entries on index
         return temp[~temp.index.duplicated(keep='first')]
@@ -496,11 +505,14 @@ class MultiDaisy(object):
 
     def ResultsDirLoop(self):
         """
-        Iterates through all the multi daisy directories where the model is running og done
+        Iterates through all the multi daisy directories where the model is running or done
         """
         for d in self.DirLoop():
-            if not os.path.isfile(os.path.join(d, DaisyModelStatus.NotRun.name)): #Do not take files that needs to be run
+            if os.path.isfile(os.path.join(d, DaisyModelStatus.Running.name)) or os.path.isfile(os.path.join(d, DaisyModelStatus.Done.name)): 
                 yield d
+
+
+class MultiDaisy(object):
 
     def RunSingle(self, FileNames):
         """
@@ -512,13 +524,17 @@ class MultiDaisy(object):
             if len(FileNames)>1:
                 os.rename(os.path.join(workdir, FileNames[1]), os.path.join(workdir, FileNames[2]))
             dm = DaisyModel(FileNames[0])
-            dm.Run()
-            modelrun=1
+            modelrun=dm.Run()
             if len(FileNames)>1:
-                os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir, FileNames[3] ))
-        except OSError: 
-           modelrun=0
-           pass    
+                if modelrun==0:
+                    os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir, FileNames[3] ))
+                else:
+                    os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir, DaisyModelStatus.Failed ))
+        except: 
+            if len(FileNames)>1:
+                os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir,  DaisyModelStatus.Failed.name ))
+            modelrun=1
+            pass    
         return modelrun
 
     def RunMany(self, DaisyFiles, NumberOfProcesses=6, Queue='', Running= DaisyModelStatus.Running.name, Done=DaisyModelStatus.Done.name):
@@ -566,12 +582,17 @@ class MultiDaisy(object):
                     except OSError: 
                         pass
                     if len(DaisyFiles)==MaxBatchSize:
-                        self.RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses)
-                        if not UseStatusFiles:
+                        if UseStatusFiles:
+                            self.RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses, Queue = DaisyModelStatus.Queue.name)
+                        else:
+                            self.RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses)
                             Alreadyrun.extend(DaisyFiles)
                         DaisyFiles=[]
                         Continue=True #After the simulation have finished look for more
-        self.RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses)
+        if UseStatusFiles:
+            self.RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses, Queue = DaisyModelStatus.Queue.name)
+        else:
+            self.RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses)
 
 
         

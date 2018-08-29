@@ -77,7 +77,7 @@
         ("Field water" (to -400 [cm])(when daily)
          (where "Daily_FWB.dlf"))  
 ;;      Nitrogen balance 0-100 cm  
-        ("Field nitrogen" (to -400 [cm])(when daily)
+        ("Field nitrogen" (to -100 [cm])(when daily)
           (where "Daily_FNB.dlf"))  
 ;;      Soil profile data
         ("Soil Water Content"       (when daily))
