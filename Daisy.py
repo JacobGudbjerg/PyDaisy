@@ -414,7 +414,7 @@ class DaisyModel(object):
         """
         if platform.system()=='Linux':
             sys.stdout.flush()
-            return subprocess.call([daisyexecutable, '-q', self.DaisyInputfile, '-p ' + self.Input['run'].getvalue() ], cwd = os.path.dirname(self.DaisyInputfile))
+            return subprocess.call([daisyexecutable, '-q', self.DaisyInputfile, '-p ', self.Input['run'].getvalue() ], cwd = os.path.dirname(self.DaisyInputfile))
         else:
             CREATE_NO_WINDOW = 0x08000000
             return subprocess.call([daisyexecutable, os.path.abspath(self.DaisyInputfile)], creationflags=CREATE_NO_WINDOW)
