@@ -16,6 +16,9 @@ daisyexecutable = r'C:\Program Files\Daisy 5.65\bin\Daisy.exe'
 if platform.system()=='Linux':
     daisyexecutable = r'/home/projects/cu_10095/apps/daisy/daisy'
 
+def DaisyInstalled():
+    return os.path.isfile(daisyexecutable)
+
 class DaisyDlf(object):
     """
     Reads a Daisy .dlf- or .dwf-file.
@@ -511,7 +514,6 @@ class SplitDaisy(object):
             if os.path.isfile(os.path.join(d, DaisyModelStatus.Running.name)) or os.path.isfile(os.path.join(d, DaisyModelStatus.Done.name)): 
                 yield d
 
-
 class MultiDaisy(object):
 
     def RunSingle(self, FileNames):
@@ -541,7 +543,7 @@ class MultiDaisy(object):
         """
         Runs all the daisy-simulations in the list of Daisyfiles in parallel. Can use renaming of files to indicate status
         """
-        print('Running ' + str (len(DaisyFiles)) + ' directories on ' + str(NumberOfProcesses) + ' parallel processes')
+        print('Running ' + str (len(DaisyFiles)) + ' daisy models on ' + str(NumberOfProcesses) + ' parallel processes')
         pp= Pool(NumberOfProcesses)
         
         FileNamesList=[]
