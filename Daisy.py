@@ -514,7 +514,6 @@ class SplitDaisy(object):
             if os.path.isfile(os.path.join(d, DaisyModelStatus.Running.name)) or os.path.isfile(os.path.join(d, DaisyModelStatus.Done.name)): 
                 yield d
 
-<<<<<<< HEAD
 
 
 def RunSingle(FileNames):
@@ -531,46 +530,6 @@ def RunSingle(FileNames):
         if len(FileNames)>1:
             if modelrun==0:
                 os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir, FileNames[3] ))
-=======
-class MultiDaisy(object):
-
-    def RunSingle(self, FileNames):
-        """
-        Run a single simulation. This method should only be used by RunMany from this class.
-        """        
-        workdir = os.path.dirname(FileNames[0])
-
-        try:
-            if len(FileNames)>1:
-                os.rename(os.path.join(workdir, FileNames[1]), os.path.join(workdir, FileNames[2]))
-            dm = DaisyModel(FileNames[0])
-            modelrun=dm.Run()
-            if len(FileNames)>1:
-                if modelrun==0:
-                    os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir, FileNames[3] ))
-                else:
-                    os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir, DaisyModelStatus.Failed ))
-        except: 
-            if len(FileNames)>1:
-                os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir,  DaisyModelStatus.Failed.name ))
-            modelrun=1
-            pass    
-        return modelrun
-
-    def RunMany(self, DaisyFiles, NumberOfProcesses=6, Queue='', Running= DaisyModelStatus.Running.name, Done=DaisyModelStatus.Done.name):
-        """
-        Runs all the daisy-simulations in the list of Daisyfiles in parallel. Can use renaming of files to indicate status
-        """
-        print('Running ' + str (len(DaisyFiles)) + ' daisy models on ' + str(NumberOfProcesses) + ' parallel processes')
-        pp= Pool(NumberOfProcesses)
-        
-        FileNamesList=[]
-        for f in DaisyFiles:
-            if Queue!='':
-                FileNamesList.append([f, Queue, Running, Done])
->>>>>>> 65d647cf92975311d4c30871d8e5e9b96ddf8757
-            else:
-                os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir, DaisyModelStatus.Failed ))
     except: 
         if len(FileNames)>1:
             os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir,  DaisyModelStatus.Failed.name ))
@@ -634,7 +593,3 @@ def RunSubFolders(MotherFolder, DaisyFileName, MaxBatchSize=5000, NumberOfProces
         RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses, Queue = DaisyModelStatus.Queue.name)
     else:
         RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses)
-
-
-        
-
