@@ -8,7 +8,7 @@ Surface: reference
 ScreenHeight: 2.0 m
 Begin: 1962-04-01
 End: 2001-10-07
-Timestep: 0 hours
+Timestep: 24 hours
 Note: lines, all starting with `Note:'.
 NH4WetDep: 0.9 ppm
 NH4DryDep: 2.2 kgN/ha/year

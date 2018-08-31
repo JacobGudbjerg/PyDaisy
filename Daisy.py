@@ -512,87 +512,86 @@ class SplitDaisy(object):
                 yield d
 
 
-class MultiDaisy(object):
 
-    def RunSingle(self, FileNames):
-        """
-        Run a single simulation. This method should only be used by RunMany from this class.
-        """        
-        workdir = os.path.dirname(FileNames[0])
+def RunSingle(FileNames):
+    """
+    Run a single simulation. This method should only be used by RunMany from this class.
+    """        
+    workdir = os.path.dirname(FileNames[0])
 
-        try:
-            if len(FileNames)>1:
-                os.rename(os.path.join(workdir, FileNames[1]), os.path.join(workdir, FileNames[2]))
-            dm = DaisyModel(FileNames[0])
-            modelrun=dm.Run()
-            if len(FileNames)>1:
-                if modelrun==0:
-                    os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir, FileNames[3] ))
-                else:
-                    os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir, DaisyModelStatus.Failed ))
-        except: 
-            if len(FileNames)>1:
-                os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir,  DaisyModelStatus.Failed.name ))
-            modelrun=1
-            pass    
-        return modelrun
+    try:
+        if len(FileNames)>1:
+            os.rename(os.path.join(workdir, FileNames[1]), os.path.join(workdir, FileNames[2]))
+        dm = DaisyModel(FileNames[0])
+        modelrun=dm.Run()
+        if len(FileNames)>1:
+            if modelrun==0:
+                os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir, FileNames[3] ))
+            else:
+                os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir, DaisyModelStatus.Failed ))
+    except: 
+        if len(FileNames)>1:
+            os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir,  DaisyModelStatus.Failed.name ))
+        modelrun=1
+        pass    
+    return modelrun
 
-    def RunMany(self, DaisyFiles, NumberOfProcesses=6, Queue='', Running= DaisyModelStatus.Running.name, Done=DaisyModelStatus.Done.name):
-        """
-        Runs all the daisy-simulations in the list of Daisyfiles in parallel. Can use renaming of files to indicate status
-        """
-        print('Running ' + str (len(DaisyFiles)) + ' directories on ' + str(NumberOfProcesses) + ' parallel processes')
-        pp= Pool(NumberOfProcesses)
+def RunMany(DaisyFiles, NumberOfProcesses=6, Queue='', Running= DaisyModelStatus.Running.name, Done=DaisyModelStatus.Done.name):
+    """
+    Runs all the daisy-simulations in the list of Daisyfiles in parallel. Can use renaming of files to indicate status
+    """
+    print('Running ' + str (len(DaisyFiles)) + ' directories on ' + str(NumberOfProcesses) + ' parallel processes')
+    pp= Pool(NumberOfProcesses)
         
-        FileNamesList=[]
-        for f in DaisyFiles:
-            if Queue!='':
-                FileNamesList.append([f, Queue, Running, Done])
-            else:
-                FileNamesList.append([f])
-        pp.map(self.RunSingle, FileNamesList)
-        pp.terminate
-    
-    def RunSubFolders(self, MotherFolder, DaisyFileName, MaxBatchSize=5000, NumberOfProcesses=6, UseStatusFiles=False, recursive=False):
-        """
-        Runs all the Daisy simulations found below the MotherFolder
-        """
-        DaisyFiles=[]
-        Continue=True
-        Alreadyrun=[]
-           
-        while (Continue):
-            Continue=False
-            if recursive:
-                items = os.walk(MotherFolder)
-            else:
-                items = [next(os.walk(MotherFolder))]
-
-            for root, dirs, filenames in items:
-                for d in dirs:
-                    try: 
-                        workdir = os.path.join(root, d)
-                        DaisyFile = os.path.join(workdir, DaisyFileName)
-                        if UseStatusFiles: #This will fail if the "NotRun" file is not there
-                            Notrun=os.path.join(workdir, DaisyModelStatus.NotRun.name)
-                            InQueue =os.path.join(workdir,DaisyModelStatus.Queue.name)
-                            os.rename(Notrun,InQueue)
-                        if DaisyFile not in Alreadyrun and os.path.isfile(DaisyFile):
-                            DaisyFiles.append(os.path.join(workdir, DaisyFileName)) #Add the directory to the list of directories that needs to be simulated
-                    except OSError: 
-                        pass
-                    if len(DaisyFiles)==MaxBatchSize:
-                        if UseStatusFiles:
-                            self.RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses, Queue = DaisyModelStatus.Queue.name)
-                        else:
-                            self.RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses)
-                            Alreadyrun.extend(DaisyFiles)
-                        DaisyFiles=[]
-                        Continue=True #After the simulation have finished look for more
-        if UseStatusFiles:
-            self.RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses, Queue = DaisyModelStatus.Queue.name)
+    FileNamesList=[]
+    for f in DaisyFiles:
+        if Queue!='':
+            FileNamesList.append([f, Queue, Running, Done])
         else:
-            self.RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses)
+            FileNamesList.append([f])
+    pp.map(RunSingle, FileNamesList)
+    pp.terminate
+    
+def RunSubFolders(MotherFolder, DaisyFileName, MaxBatchSize=5000, NumberOfProcesses=6, UseStatusFiles=False, recursive=False):
+    """
+    Runs all the Daisy simulations found below the MotherFolder
+    """
+    DaisyFiles=[]
+    Continue=True
+    Alreadyrun=[]
+           
+    while (Continue):
+        Continue=False
+        if recursive:
+            items = os.walk(MotherFolder)
+        else:
+            items = [next(os.walk(MotherFolder))]
+
+        for root, dirs, filenames in items:
+            for d in dirs:
+                try: 
+                    workdir = os.path.join(root, d)
+                    DaisyFile = os.path.join(workdir, DaisyFileName)
+                    if UseStatusFiles: #This will fail if the "NotRun" file is not there
+                        Notrun=os.path.join(workdir, DaisyModelStatus.NotRun.name)
+                        InQueue =os.path.join(workdir,DaisyModelStatus.Queue.name)
+                        os.rename(Notrun,InQueue)
+                    if DaisyFile not in Alreadyrun and os.path.isfile(DaisyFile):
+                        DaisyFiles.append(os.path.join(workdir, DaisyFileName)) #Add the directory to the list of directories that needs to be simulated
+                except OSError: 
+                    pass
+                if len(DaisyFiles)==MaxBatchSize:
+                    if UseStatusFiles:
+                        RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses, Queue = DaisyModelStatus.Queue.name)
+                    else:
+                        RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses)
+                        Alreadyrun.extend(DaisyFiles)
+                    DaisyFiles=[]
+                    Continue=True #After the simulation have finished look for more
+    if UseStatusFiles:
+        RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses, Queue = DaisyModelStatus.Queue.name)
+    else:
+        RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses)
 
 
         
