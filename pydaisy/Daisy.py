@@ -135,7 +135,7 @@ class DaisyDlf(object):
             return self.Data.index.get_loc(Timestep)
 
 
-    def getYCoordinates(self):
+    def get_y_coordinates(self):
         """
         Returns the y-coordinates if it is a 2d file
         """
@@ -150,7 +150,7 @@ class DaisyDlf(object):
                 return list(map(lambda s: float(s.split('@')[1]), self.Data.columns))
         return
 
-    def getXCoordinates(self):
+    def get_x_coordinates(self):
         """
         Returns the x-coordinates if there are any. Splits on "@"
         """
@@ -215,6 +215,7 @@ class DaisyDlf(object):
             return float(value)
         except:
             return value
+
                 
 class DaisyEntry(object):
     def __init__(self, Keyword, Words):
@@ -227,7 +228,7 @@ class DaisyEntry(object):
     def __str__(self):
         return self.Keyword
     
-    def Read(self, sr):
+    def read(self, sr):
         keywordread = False
         self.Keyword = ''
         InCitation=False
@@ -237,7 +238,7 @@ class DaisyEntry(object):
                 break
             if (nextchar == '(' and not InCitation):
                 child = DaisyEntry('',[])
-                child.Read(sr)
+                child.read(sr)
                 self.Children.append(child)
             elif (nextchar == ')' and not InCitation):
                 return
@@ -384,7 +385,7 @@ class DaisyModel(object):
         self.DaisyInputfile =DaisyInputfile
         self.Input = DaisyEntry('',[])
         with open(self.DaisyInputfile,'r') as f:
-            self.Input.Read(f)
+            self.Input.read(f)
         #now a small section that makes the start and end of the simulation visible    
         top=self.Input
         if any (c.Keyword=='defprogram' for c in top.Children):
@@ -394,23 +395,22 @@ class DaisyModel(object):
         if any (c.Keyword=='stop' for c in top.Children):
             self.endtime = DaisyTime(top['stop'])
             
-
     
-    def SaveAs(self, DaisyInputFile):
+    def save_as(self, DaisyInputFile):
         """
         Saves the file to a new filename
         """
         self.DaisyInputfile = DaisyInputFile
-        self.Save()
+        self.save()
                
-    def Save(self):
+    def save(self):
         """
         Saves the Dai-file. Comments will be lost
         """
         with open(self.DaisyInputfile, 'w') as f:
             self.Input.write(f, '')
     
-    def Run(self):
+    def run(self):
         """
         Calls the Daisy executable and runs the simulation.
         Remember to save first    
@@ -429,6 +429,7 @@ class DaisyModelStatus(Enum):
     Done = 4
     Failed = 5
     
+
 class SplitDaisy(object):
     """
     A class that helps splitting and daisy input files and joining resultfiles.
@@ -460,7 +461,7 @@ class SplitDaisy(object):
             self.ParentModel.starttime.time = self.starttime.replace(year=self.starttime.year +i*NumberOfSimYears) 
             self.ParentModel.endtime.time = self.starttime.replace(year=self.starttime.year +(i+1)*NumberOfSimYears+ NumberOfWarmUpYears)
             self.ParentModel.Input['defprogram']['activate_output']['after'].setvalue(self.starttime.year +i*NumberOfSimYears +NumberOfWarmUpYears)
-            self.ParentModel.SaveAs(os.path.join(currentdir, 'DaisyModel.dai'))
+            self.ParentModel.save_as(os.path.join(currentdir, 'DaisyModel.dai'))
 
         self.SetModelStatus(DaisyModelStatus.NotRun)
     
@@ -469,14 +470,13 @@ class SplitDaisy(object):
         """
         Set model status for all sub models
         """
-        for root, dirs, filenames in os.walk(self.workdir):
-            for d in dirs:
-                for file in DaisyModelStatus:
-                    try:
-                        os.remove(os.path.join(root,d,file.name))
-                    except OSError:
-                        pass
-                open(os.path.join(root,d, status.name), 'a').close()
+        for d in self.DirLoop():
+            for file in DaisyModelStatus:
+                try:
+                    os.remove(os.path.join(d,file.name))
+                except OSError:
+                    pass
+            open(os.path.join(d, status.name), 'a').close()
 
     def ConcatenateResults(self, DlfFileName, Columns=[]):
         """
@@ -526,10 +526,12 @@ def RunSingle(FileNames):
         if len(FileNames)>1:
             os.rename(os.path.join(workdir, FileNames[1]), os.path.join(workdir, FileNames[2]))
         dm = DaisyModel(FileNames[0])
-        modelrun=dm.Run()
+        modelrun=dm.run()
         if len(FileNames)>1:
             if modelrun==0:
                 os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir, FileNames[3] ))
+            else:
+                os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir, DaisyModelStatus.Failed.name ))
     except: 
         if len(FileNames)>1:
             os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir,  DaisyModelStatus.Failed.name ))

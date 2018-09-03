@@ -1,7 +1,7 @@
 import unittest
 from datetime import datetime
 
-from Daisy import *
+from pydaisy.Daisy import *
 
 
 class Test_DaisyTest(unittest.TestCase):
@@ -9,17 +9,17 @@ class Test_DaisyTest(unittest.TestCase):
         """
         Test on reading the Exercise01.dai file distributed with Daisy
         """
-        d= DaisyModel(r'./TestData/Exercise01.dai')
+        d= DaisyModel(r'./../TestData/Exercise01.dai')
         self.assertEqual(17, len(d.Input.Children))
         self.assertEqual(1993, d.starttime.time.year)
-        d.SaveAs(r'./TestData/Exercise01_saved.dai')
-        d_saved = DaisyModel(r'.\TestData\Exercise01_saved.dai')
+        d.save_as(r'./../TestData/Exercise01_saved.dai')
+        d_saved = DaisyModel(r'./../TestData\Exercise01_saved.dai')
         self.assertEqual(d.endtime, d_saved.endtime)
 
-        status = d.Run()
+        status = d.run()
         self.assertEqual(0, status)
-        modelwitherror = DaisyModel(r'./TestData/Exercise01_witherror.dai')
-        status = modelwitherror.Run()
+        modelwitherror = DaisyModel(r'./../TestData/Exercise01_witherror.dai')
+        status = modelwitherror.run()
         self.assertEqual(1, status)
 
 
@@ -29,15 +29,15 @@ class Test_DaisyTest(unittest.TestCase):
         """
         Test on Taastrup weather file distributed with Daisy
         """
-        dwf = DaisyDlf(r'.\TestData\Taastrup6201.dwf')
+        dwf = DaisyDlf(r'./../TestData\Taastrup6201.dwf')
         self.assertEqual(14435, len(dwf.Data.index))
         self.assertEqual('GlobRad', dwf.Data.columns[0])
         self.assertEqual('AirTemp', dwf.Data.columns[1])
         self.assertEqual('Precip', dwf.Data.columns[2])
         self.assertEqual('RefEvap', dwf.Data.columns[3])
-        dwf.save(r'.\TestData\Taastrup6201_saved.dwf')
+        dwf.save(r'./../TestData\Taastrup6201_saved.dwf')
 
-        dwf2 = DaisyDlf(r'.\TestData\Withdates.dwf')
+        dwf2 = DaisyDlf(r'./../TestData\Withdates.dwf')
         self.assertEqual(48, len(dwf2.Data.index))
 
         self.assertEqual(24, dwf2.getIndex(datetime(1962,1,2)))
@@ -52,22 +52,22 @@ class Test_DaisyTest(unittest.TestCase):
         """
         Test on a 2d dlf file with soil water content
         """
-        dlf = DaisyDlf(r'.\TestData\soil_water_content.dlf')
+        dlf = DaisyDlf(r'./../TestData\soil_water_content.dlf')
 
-        dlz = DaisyDlf('Flak_SB_spray.dlf', r'.\TestData\daisy.log0.zip')
+        dlz = DaisyDlf('Flak_SB_spray.dlf', r'./../TestData\daisy.log0.zip')
 
         self.assertEqual(7490, len(dlz.Data.index))
 
-        dlz = DaisyDlf(r'.\TestData\Ror_WW_surface_chemicals.dlf')
+        dlz = DaisyDlf(r'./../TestData\Ror_WW_surface_chemicals.dlf')
         
     def test_splitDaisy(self):
         """
         Test of the Multi Daisy functionality.
         """
-        m=SplitDaisy(r'.\TestData\DaisyModel.dai')
+        m=SplitDaisy(r'./../TestData\DaisyModel.dai')
         m.Split(5,5,2, overwrite=False)
 
-        MultiDaisy().RunSubFolders(m.workdir, 'DaisyModel.dai', UseStatusFiles=True)
+        RunSubFolders(m.workdir, 'DaisyModel.dai', UseStatusFiles=True)
 
 
         workdirs=list(m.DirLoop())
@@ -88,17 +88,17 @@ class Test_DaisyTest(unittest.TestCase):
 
     def test_multiDaisy(self):
 
-        m=SplitDaisy(r'.\TestData\DaisyModel.dai')
+        m=SplitDaisy(r'./../TestData\DaisyModel.dai')
         m.SetModelStatus(DaisyModelStatus.NotRun)
 
-        MultiDaisy().RunSingle([r'.\TestData\MultiDaisy\0\DaisyModel.dai', DaisyModelStatus.NotRun.name, DaisyModelStatus.Queue.name, DaisyModelStatus.Done.name ])
+        RunSingle([r'./../TestData\MultiDaisy\0\DaisyModel.dai', DaisyModelStatus.NotRun.name, DaisyModelStatus.Queue.name, DaisyModelStatus.Done.name ])
 
 
-        MultiDaisy().RunSubFolders(r'.\TestData\MultiDaisy', 'DaisyModel.dai')
+        RunSubFolders(r'./../TestData\MultiDaisy', 'DaisyModel.dai')
 
-        MultiDaisy().RunSubFolders(r'.\TestData\MultiDaisy', 'DaisyModel.dai', UseStatusFiles=True)
+        RunSubFolders(r'./../TestData\MultiDaisy', 'DaisyModel.dai', UseStatusFiles=True)
         
-        MultiDaisy().RunSubFolders(r'.\TestData\MultiDaisy', 'DaisyModel.dai', UseStatusFiles=True)
+        RunSubFolders(r'./../TestData\MultiDaisy', 'DaisyModel.dai', UseStatusFiles=True)
 
 
 

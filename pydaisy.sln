@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "pydaisy", "pydaisy\pydaisy.pyproj", "{AE803F61-2275-45BF-9A17-9E2B4BD02F50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5F99A45B-6CEB-447C-B00B-D25336C276F2}"
+	ProjectSection(SolutionItems) = preProject
+		README.rst = README.rst
+		setup.py = setup.py
+	EndProjectSection
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "TestProject", "TestProject\TestProject.pyproj", "{4AEACA0E-D460-44D4-A243-7EA3A1FEFD2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE803F61-2275-45BF-9A17-9E2B4BD02F50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE803F61-2275-45BF-9A17-9E2B4BD02F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AEACA0E-D460-44D4-A243-7EA3A1FEFD2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AEACA0E-D460-44D4-A243-7EA3A1FEFD2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33246DB4-1D2F-4D85-B6D6-0D566CBC0A1E}
+	EndGlobalSection
+EndGlobal
