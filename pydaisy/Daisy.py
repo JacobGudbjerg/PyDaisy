@@ -88,18 +88,19 @@ class DaisyDlf(object):
             elif (SectionIndex == 4 and line): #Data
                 try:
                     splitted = line.split() #Splits on space and tab
-                    if DateTimeIndex == 1: #Time is in a single column
-                        TimeSteps.append(datetime.strptime(splitted[0], '%Y-%m-%dT%H:%M:%S'))
-                    else: #Time is in multiple columns
-                        timedata = list(map(int, splitted[0:DateTimeIndex])) #First columns are time data
-                        if DateTimeIndex == 3:
-                            TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2]))
-                        elif DateTimeIndex == 4:   
-                            TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3]))
-                        elif DateTimeIndex == 5:
-                            TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
-                    #Now data        
-                    raw.append(map(self.__converter , splitted[DateTimeIndex:]))
+                    if len(splitted)==len(ColumnHeaders): #We need to make sure the line is complete
+                        if DateTimeIndex == 1: #Time is in a single column
+                            TimeSteps.append(datetime.strptime(splitted[0], '%Y-%m-%dT%H:%M:%S'))
+                        else: #Time is in multiple columns
+                            timedata = list(map(int, splitted[0:DateTimeIndex])) #First columns are time data
+                            if DateTimeIndex == 3:
+                                TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2]))
+                            elif DateTimeIndex == 4:   
+                                TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3]))
+                            elif DateTimeIndex == 5:
+                                TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
+                        #Now data        
+                        raw.append(map(self.__converter , splitted[DateTimeIndex:]))
                 except:
                     pass
 
@@ -477,6 +478,17 @@ class SplitDaisy(object):
                 except OSError:
                     pass
             open(os.path.join(d, status.name), 'a').close()
+
+    def print_status(self):
+        statusdic={}
+        for file in DaisyModelStatus:
+            statusdic[file]=0
+        for d in self.DirLoop():
+            for file in DaisyModelStatus:
+                if os.path.isfile(os.path.join(d, file.name)):
+                    statusdic[file] +=1
+        print(statusdic)
+
 
     def ConcatenateResults(self, DlfFileName, Columns=[]):
         """

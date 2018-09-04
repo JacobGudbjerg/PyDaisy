@@ -59,6 +59,10 @@ class Test_DaisyTest(unittest.TestCase):
         self.assertEqual(7490, len(dlz.Data.index))
 
         dlz = DaisyDlf(r'./../TestData\Ror_WW_surface_chemicals.dlf')
+
+
+    def test_daisyDlfFileTemp(self):
+        errorinfile = DaisyDlf(r'C:\GitHub\RainProof\Flak_SB\MultiDaisy\148\drain_Hussar OD SB.dlf')
         
     def test_splitDaisy(self):
         """
@@ -66,6 +70,8 @@ class Test_DaisyTest(unittest.TestCase):
         """
         m=SplitDaisy(r'./../TestData\DaisyModel.dai')
         m.Split(5,5,2, overwrite=False)
+
+        m.print_status()
 
         RunSubFolders(m.workdir, 'DaisyModel.dai', UseStatusFiles=True)
 
