@@ -16,7 +16,7 @@ daisyexecutable = r'C:\Program Files\Daisy 5.65\bin\Daisy.exe'
 if platform.system()=='Linux':
     daisyexecutable = r'/home/projects/cu_10095/apps/daisy/daisy'
 
-def DaisyInstalled():
+def daisy_installed():
     return os.path.isfile(daisyexecutable)
 
 class DaisyDlf(object):
@@ -123,7 +123,7 @@ class DaisyDlf(object):
                 break
         self.__starttimeset =True
 
-    def getIndex(self, Timestep):
+    def get_index(self, Timestep):
         """
         Gets the index of a timestep. This method is fast if the timesteps are equidistant
         """
@@ -443,7 +443,7 @@ class SplitDaisy(object):
         self.starttime = self.ParentModel.starttime.time
         self.endtime = self.ParentModel.endtime.time
         
-    def Split(self, NumberOfModels, NumberOfSimYears, NumberOfWarmUpYears, overwrite=True):
+    def split(self, NumberOfModels, NumberOfSimYears, NumberOfWarmUpYears, overwrite=True):
         """
         Splits a simulation into smaller time steps by creating new Daisy Input files in individual directories 
         """
@@ -464,14 +464,14 @@ class SplitDaisy(object):
             self.ParentModel.Input['defprogram']['activate_output']['after'].setvalue(self.starttime.year +i*NumberOfSimYears +NumberOfWarmUpYears)
             self.ParentModel.save_as(os.path.join(currentdir, 'DaisyModel.dai'))
 
-        self.SetModelStatus(DaisyModelStatus.NotRun)
+        self.set_model_status(DaisyModelStatus.NotRun)
     
 
-    def SetModelStatus(self, status):
+    def set_model_status(self, status):
         """
         Set model status for all sub models
         """
-        for d in self.DirLoop():
+        for d in self.dir_loop():
             for file in DaisyModelStatus:
                 try:
                     os.remove(os.path.join(d,file.name))
@@ -483,19 +483,21 @@ class SplitDaisy(object):
         statusdic={}
         for file in DaisyModelStatus:
             statusdic[file]=0
-        for d in self.DirLoop():
+        for d in self.dir_loop():
             for file in DaisyModelStatus:
                 if os.path.isfile(os.path.join(d, file.name)):
                     statusdic[file] +=1
+                    if( file == DaisyModelStatus.Failed):
+                        print (d)
         print(statusdic)
 
 
-    def ConcatenateResults(self, DlfFileName, Columns=[]):
+    def concatenate_results(self, DlfFileName, Columns=[]):
         """
         Concatenates the results stored in DlfFileName in to one DaisyDlf
         """
         ToReturn=[]
-        for dlf in self.ResultsDirLoop():
+        for dlf in self.results_dir_loop():
             if len(Columns)==0:
                 try:
                     ToReturn.append(DaisyDlf(os.path.join(dlf, DlfFileName)).Data)
@@ -510,7 +512,7 @@ class SplitDaisy(object):
         #Remove duplicate entries on index
         return temp[~temp.index.duplicated(keep='first')]
     
-    def DirLoop(self):
+    def dir_loop(self):
         """
         Iterates through all the multi daisy directories
         """
@@ -518,17 +520,17 @@ class SplitDaisy(object):
             for d in dirs:
                 yield os.path.join(root, d)
 
-    def ResultsDirLoop(self):
+    def results_dir_loop(self):
         """
         Iterates through all the multi daisy directories where the model is running or done
         """
-        for d in self.DirLoop():
+        for d in self.dir_loop():
             if os.path.isfile(os.path.join(d, DaisyModelStatus.Running.name)) or os.path.isfile(os.path.join(d, DaisyModelStatus.Done.name)): 
                 yield d
 
 
 
-def RunSingle(FileNames):
+def run_single(FileNames):
     """
     Run a single simulation. This method should only be used by RunMany from this class.
     """        
@@ -551,7 +553,7 @@ def RunSingle(FileNames):
         pass    
     return modelrun
 
-def RunMany(DaisyFiles, NumberOfProcesses=6, Queue='', Running= DaisyModelStatus.Running.name, Done=DaisyModelStatus.Done.name):
+def run_many(DaisyFiles, NumberOfProcesses=6, Queue='', Running= DaisyModelStatus.Running.name, Done=DaisyModelStatus.Done.name):
     """
     Runs all the daisy-simulations in the list of Daisyfiles in parallel. Can use renaming of files to indicate status
     """
@@ -564,10 +566,10 @@ def RunMany(DaisyFiles, NumberOfProcesses=6, Queue='', Running= DaisyModelStatus
             FileNamesList.append([f, Queue, Running, Done])
         else:
             FileNamesList.append([f])
-    pp.map(RunSingle, FileNamesList)
+    pp.map(run_single, FileNamesList)
     pp.terminate
     
-def RunSubFolders(MotherFolder, DaisyFileName, MaxBatchSize=5000, NumberOfProcesses=6, UseStatusFiles=False, recursive=False):
+def run_sub_folders(MotherFolder, DaisyFileName, MaxBatchSize=5000, NumberOfProcesses=6, UseStatusFiles=False, recursive=False):
     """
     Runs all the Daisy simulations found below the MotherFolder
     """
@@ -597,13 +599,13 @@ def RunSubFolders(MotherFolder, DaisyFileName, MaxBatchSize=5000, NumberOfProces
                     pass
                 if len(DaisyFiles)==MaxBatchSize:
                     if UseStatusFiles:
-                        RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses, Queue = DaisyModelStatus.Queue.name)
+                        run_many(DaisyFiles, NumberOfProcesses=NumberOfProcesses, Queue = DaisyModelStatus.Queue.name)
                     else:
-                        RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses)
+                        run_many(DaisyFiles, NumberOfProcesses=NumberOfProcesses)
                         Alreadyrun.extend(DaisyFiles)
                     DaisyFiles=[]
                     Continue=True #After the simulation have finished look for more
     if UseStatusFiles:
-        RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses, Queue = DaisyModelStatus.Queue.name)
+        run_many(DaisyFiles, NumberOfProcesses=NumberOfProcesses, Queue = DaisyModelStatus.Queue.name)
     else:
-        RunMany(DaisyFiles, NumberOfProcesses=NumberOfProcesses)
+        run_many(DaisyFiles, NumberOfProcesses=NumberOfProcesses)

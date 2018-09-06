@@ -40,13 +40,13 @@ class Test_DaisyTest(unittest.TestCase):
         dwf2 = DaisyDlf(r'./../TestData\Withdates.dwf')
         self.assertEqual(48, len(dwf2.Data.index))
 
-        self.assertEqual(24, dwf2.getIndex(datetime(1962,1,2)))
-        self.assertEqual(0, dwf2.getIndex(datetime(1962,1,1)))
-        self.assertEqual(1, dwf2.getIndex(datetime(1962,1,1,1)))
+        self.assertEqual(24, dwf2.get_index(datetime(1962,1,2)))
+        self.assertEqual(0, dwf2.get_index(datetime(1962,1,1)))
+        self.assertEqual(1, dwf2.get_index(datetime(1962,1,1,1)))
         dwf2.timestep=None
-        self.assertEqual(24, dwf2.getIndex(datetime(1962,1,2)))
-        self.assertEqual(0, dwf2.getIndex(datetime(1962,1,1)))
-        self.assertEqual(1, dwf2.getIndex(datetime(1962,1,1,1)))
+        self.assertEqual(24, dwf2.get_index(datetime(1962,1,2)))
+        self.assertEqual(0, dwf2.get_index(datetime(1962,1,1)))
+        self.assertEqual(1, dwf2.get_index(datetime(1962,1,1,1)))
 
     def test_daisyDlfFile(self):
         """
@@ -59,52 +59,48 @@ class Test_DaisyTest(unittest.TestCase):
         self.assertEqual(7490, len(dlz.Data.index))
 
         dlz = DaisyDlf(r'./../TestData\Ror_WW_surface_chemicals.dlf')
-
-
-    def test_daisyDlfFileTemp(self):
-        errorinfile = DaisyDlf(r'C:\GitHub\RainProof\Flak_SB\MultiDaisy\148\drain_Hussar OD SB.dlf')
         
     def test_splitDaisy(self):
         """
         Test of the Multi Daisy functionality.
         """
         m=SplitDaisy(r'./../TestData\DaisyModel.dai')
-        m.Split(5,5,2, overwrite=False)
+        m.split(5,5,2, overwrite=False)
 
         m.print_status()
 
-        RunSubFolders(m.workdir, 'DaisyModel.dai', UseStatusFiles=True)
+        run_sub_folders(m.workdir, 'DaisyModel.dai', UseStatusFiles=True)
 
 
-        workdirs=list(m.DirLoop())
+        workdirs=list(m.dir_loop())
         self.assertEqual(5,len(workdirs))
 
         #No models have run.
-        workdirs=list(m.ResultsDirLoop())
+        workdirs=list(m.results_dir_loop())
         self.assertEqual(0,len(workdirs))
 
-        res = m.ConcatenateResults('Flak_SB_spray.dlf')
+        res = m.concatenate_results('Flak_SB_spray.dlf')
         self.assertIsNone(res);
 
-        m.SetModelStatus(DaisyModelStatus.Done)
+        m.set_model_status(DaisyModelStatus.Done)
 
-        res = m.ConcatenateResults('Flak_SB_spray.dlf')
+        res = m.concatenate_results('Flak_SB_spray.dlf')
         self.assertIsNotNone(res)
 
 
     def test_multiDaisy(self):
 
         m=SplitDaisy(r'./../TestData\DaisyModel.dai')
-        m.SetModelStatus(DaisyModelStatus.NotRun)
+        m.set_model_status(DaisyModelStatus.NotRun)
 
-        RunSingle([r'./../TestData\MultiDaisy\0\DaisyModel.dai', DaisyModelStatus.NotRun.name, DaisyModelStatus.Queue.name, DaisyModelStatus.Done.name ])
+        run_single([r'./../TestData\MultiDaisy\0\DaisyModel.dai', DaisyModelStatus.NotRun.name, DaisyModelStatus.Queue.name, DaisyModelStatus.Done.name ])
 
 
-        RunSubFolders(r'./../TestData\MultiDaisy', 'DaisyModel.dai')
+        run_sub_folders(r'./../TestData\MultiDaisy', 'DaisyModel.dai')
 
-        RunSubFolders(r'./../TestData\MultiDaisy', 'DaisyModel.dai', UseStatusFiles=True)
+        run_sub_folders(r'./../TestData\MultiDaisy', 'DaisyModel.dai', UseStatusFiles=True)
         
-        RunSubFolders(r'./../TestData\MultiDaisy', 'DaisyModel.dai', UseStatusFiles=True)
+        run_sub_folders(r'./../TestData\MultiDaisy', 'DaisyModel.dai', UseStatusFiles=True)
 
 
 
