@@ -5,6 +5,7 @@ import subprocess
 import platform
 import sys
 import pandas as pd
+import numpy as np
 import csv
 import os
 import zipfile
@@ -29,6 +30,7 @@ class DaisyDlf(object):
         self.Description=''
         self.HeaderItems={}
         self.__starttimeset=False
+        self.__numpydata = np.array([])
         filename, file_extension = os.path.splitext(DlfFileName)
 
         if ZipFileName!='':
@@ -134,6 +136,13 @@ class DaisyDlf(object):
             return int( (Timestep-self.startTime).total_seconds()/self.timestep.total_seconds())
         else:
             return self.Data.index.get_loc(Timestep)
+
+
+    @property
+    def numpydata(self):
+        if self.__numpydata.size==0:
+            self.__numpydata = self.Data.values
+        return self.__numpydata
 
 
     def get_y_coordinates(self):

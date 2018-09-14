@@ -54,6 +54,10 @@ class Test_DaisyTest(unittest.TestCase):
         """
         dlf = DaisyDlf(r'./../TestData\soil_water_content.dlf')
 
+        npdata = dlf.numpydata
+
+        nldata = dlf.numpydata
+
         dlz = DaisyDlf('Flak_SB_spray.dlf', r'./../TestData\daisy.log0.zip')
 
         self.assertEqual(7490, len(dlz.Data.index))
