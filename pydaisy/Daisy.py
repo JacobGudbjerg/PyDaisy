@@ -39,7 +39,7 @@ class DaisyDlf(object):
                     self.__readfromfilestream(f, True)
         else:
             #Read the file line by line.
-            with open(self.DlfFileName, 'rU') as f:
+            with open(self.DlfFileName) as f:
                 self.__readfromfilestream(f)
 
     def __readfromfilestream(self, f, IsZip=False):
