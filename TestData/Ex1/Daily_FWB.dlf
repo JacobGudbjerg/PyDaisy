@@ -2,7 +2,7 @@ dlf-0.0 -- Field water (defined in 'log-std.dai').
 
 VERSION: 5.65
 LOGFILE: Daily_FWB.dlf
-RUN: Wed Sep 26 12:43:27 2018
+RUN: Thu Sep 27 14:49:12 2018
 
 COLUMN: *
 INTERVAL: box [-400; none]
