@@ -59,58 +59,12 @@ class Test_DaisyTest(unittest.TestCase):
         nldata = dlf.numpydata
 
         dlz = DaisyDlf('Flak_SB_spray.dlf', r'./../TestData\daisy.log0.zip')
-
-        dlz_sub = DaisyDlf('daisy.log1/Flak_SB_harvest.dlf', r'./../TestData\daisy.log1.zip')
-
-
         self.assertEqual(7490, len(dlz.Data.index))
 
-        dlz = DaisyDlf(r'./../TestData\Ror_WW_surface_chemicals.dlf')
-        
-    def test_splitDaisy(self):
-        """
-        Test of the Multi Daisy functionality.
-        """
-        m=SplitDaisy(r'./../TestData\DaisyModel.dai')
-        m.split(5,5,2, overwrite=False)
+        dlz_sub = DaisyDlf('daisy.log1/subdir/Flak_SB_spray.dlf', r'./../TestData\daisy.log1.zip')
+        self.assertEqual(7490, len(dlz_sub.Data.index))
 
-        m.print_status()
-
-        run_sub_folders(m.workdir, 'DaisyModel.dai', UseStatusFiles=True)
-
-
-        workdirs=list(m.dir_loop())
-        self.assertEqual(5,len(workdirs))
-
-        #No models have run.
-        workdirs=list(m.results_dir_loop())
-        self.assertEqual(0,len(workdirs))
-
-        res = m.concatenate_results('Flak_SB_spray.dlf')
-        self.assertIsNone(res);
-
-        m.set_model_status(DaisyModelStatus.Done)
-
-        res = m.concatenate_results('Flak_SB_spray.dlf')
-        self.assertIsNotNone(res)
-
-
-    def test_multiDaisy(self):
-
-        m=SplitDaisy(r'./../TestData\DaisyModel.dai')
-        m.set_model_status(DaisyModelStatus.NotRun)
-
-        run_single([r'./../TestData\MultiDaisy\0\DaisyModel.dai', DaisyModelStatus.NotRun.name, DaisyModelStatus.Queue.name, DaisyModelStatus.Done.name ])
-
-
-        run_sub_folders(r'./../TestData\MultiDaisy', 'DaisyModel.dai')
-
-        run_sub_folders(r'./../TestData\MultiDaisy', 'DaisyModel.dai', UseStatusFiles=True)
-        
-        run_sub_folders(r'./../TestData\MultiDaisy', 'DaisyModel.dai', UseStatusFiles=True)
-
-
-
+      
 
 if __name__ == '__main__':
     unittest.main()
