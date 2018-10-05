@@ -64,6 +64,10 @@ class Test_DaisyTest(unittest.TestCase):
         dlz_sub = DaisyDlf('daisy.log1/subdir/Flak_SB_spray.dlf', r'./../TestData\daisy.log1.zip')
         self.assertEqual(7490, len(dlz_sub.Data.index))
 
+        dlf_harvest = DaisyDlf(r'./../TestData\harvest.dlf')
+        self.assertEqual(4.86207, dlf_harvest.Data['stem_DM'][0])
+        self.assertEqual('M5_2D', dlf_harvest.Data['column'][0])
+
       
 
 if __name__ == '__main__':
