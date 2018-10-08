@@ -1,5 +1,7 @@
 import unittest
+import sys
 from datetime import datetime
+sys.path.append(r'../')
 
 from pydaisy.Daisy import *
 
@@ -52,11 +54,20 @@ class Test_DaisyTest(unittest.TestCase):
         """
         Test on a 2d dlf file with soil water content
         """
+
+        dlf_harvest = DaisyDlf(r'./../TestData\DailyP-harvest.dlf')
+
+
         dlf = DaisyDlf(r'./../TestData\soil_water_content.dlf')
 
         npdata = dlf.numpydata
-
         nldata = dlf.numpydata
+
+        nldata[0][0]=11
+        self.assertEqual(npdata[0][0], nldata[0][0])
+
+        self.assertEqual(dlf.Data.values[0][0], nldata[0][0])
+
 
         dlz = DaisyDlf('Flak_SB_spray.dlf', r'./../TestData\daisy.log0.zip')
         self.assertEqual(7490, len(dlz.Data.index))
@@ -67,6 +78,19 @@ class Test_DaisyTest(unittest.TestCase):
         dlf_harvest = DaisyDlf(r'./../TestData\harvest.dlf')
         self.assertEqual(4.86207, dlf_harvest.Data['stem_DM'][0])
         self.assertEqual('M5_2D', dlf_harvest.Data['column'][0])
+
+
+
+        
+
+
+    @unittest.skip("Only works on Jacobs PLEN PC")
+    def test_netpath(self):
+
+        dai = DaisyModel(r'\\a00519.science.domain\jpq949\Documents\test-pp2.dai')
+        self.assertEqual('"Bromide"', dai.Input['defchemical'].getvalue())
+
+        dwf = DaisyDlf(r'\\a00519.science.domain\jpq949\Documents\Flak_SB_spray.dlf')
 
       
 

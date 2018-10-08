@@ -1,0 +1,50 @@
+dlf-0.0 -- harvest
+
+VERSION: 5.64
+LOGFILE: harvest.dlf
+RUN: Thu Oct 04 14:55:11 2018
+
+SIMFILE: \\a00519.science.domain\tqc268\Documents\StyrN\Clovergrass\Foulum\Scenario_foulum\Runfile_foulum.dai
+SIM: Arable farm rotation; Soil: 1D/ResFarm/Biopores/Free; Weather: Daily values
+
+--------------------
+year	month	day	column	crop	stem_DM	dead_DM	leaf_DM	sorg_DM	stem_N	dead_N	leaf_N	sorg_N	WStress	NStress	WP_ET	HI
+					Mg DM/ha	Mg DM/ha	Mg DM/ha	Mg DM/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	d	d	kg/m^3	
+1970	8	7	ResFarm 1D; Biopores; Free drainage; FAO	Spring Barley	5.45612	0.583818	0.238291	4.66092	43.0601	3.81955	5.89297	108.35	6.29628	0	1.67488	0.365395
+1970	8	7	ResFarm 1D; Biopores; Free drainage; FAO	Ryegrass	0	0	0	0	0	0	0	0	3.20874	0	0	0
+1970	8	7	ResFarm 1D; Biopores; Free drainage; FAO	Wclover	0	0	0	0	0	0	0	0	6.7268	0	0	0
+1971	6	1	ResFarm 1D; Biopores; Free drainage; FAO	Ryegrass	0.744319	0	0.440671	0.0139669	11.2284	0	10.7896	0.296741	35.9712	23.3586	0.00560683	0.00816392
+1971	6	1	ResFarm 1D; Biopores; Free drainage; FAO	Wclover	0.466142	0	0.306733	0	9.27134	0	14.0681	0	38.2677	0	0	0
+1971	7	10	ResFarm 1D; Biopores; Free drainage; FAO	Ryegrass	2.12603	0	1.94107	0.00628631	20.46	0	27.1497	0.09602	0	3.55576	0.00477612	0.00130026
+1971	7	10	ResFarm 1D; Biopores; Free drainage; FAO	Wclover	0.409207	0	0.285944	0	8.15603	0	13.2549	0	0	0.0616617	0	0
+1971	8	10	ResFarm 1D; Biopores; Free drainage; FAO	Ryegrass	0.406803	0	0.379533	0	5.47399	0	7.83843	0	0	5.02548	0	0
+1971	8	10	ResFarm 1D; Biopores; Free drainage; FAO	Wclover	0.631067	0	0.527944	0	12.0074	0	23.1295	0	0	0.0450939	0	0
+1971	9	20	ResFarm 1D; Biopores; Free drainage; FAO	Ryegrass	0.58861	0	0.515933	0	5.82145	0	7.43686	0	0	16.2691	0	0
+1971	9	20	ResFarm 1D; Biopores; Free drainage; FAO	Wclover	0.42748	0	0.348602	0	8.28315	0	15.7045	0	0	0.0721341	0	0
+1972	6	1	ResFarm 1D; Biopores; Free drainage; FAO	Ryegrass	1.08798	0	0.375532	0.0191185	18.8979	0	10.8702	0.458613	0	18.4261	0.00720921	0.00979316
+1972	6	1	ResFarm 1D; Biopores; Free drainage; FAO	Wclover	1.86071	0	1.4134	0	36.1499	0	63.0972	0	0	0.0587811	0	0
+1972	7	10	ResFarm 1D; Biopores; Free drainage; FAO	Ryegrass	2.43526	0	1.68626	0.0244631	25.1135	0	25.8345	0.399329	0	0.0408619	0.0177859	0.00489058
+1972	7	10	ResFarm 1D; Biopores; Free drainage; FAO	Wclover	0.49284	0	0.252119	0	9.85727	0	11.8529	0	0	0.0718278	0	0
+1972	8	10	ResFarm 1D; Biopores; Free drainage; FAO	Ryegrass	0.545534	0	0.562992	0	8.45502	0	14.498	0	0	2.06836	0	0
+1972	8	10	ResFarm 1D; Biopores; Free drainage; FAO	Wclover	0.75962	0	0.581093	0	14.5449	0	25.6947	0	0	0.0171611	0	0
+1972	9	20	ResFarm 1D; Biopores; Free drainage; FAO	Ryegrass	0.746468	0	0.699823	6.75081e-005	7.09945	0	9.56825	0.0010021	0	17.5247	6.48863e-005	3.18724e-005
+1972	9	20	ResFarm 1D; Biopores; Free drainage; FAO	Wclover	0.380222	0	0.281006	0	7.35012	0	12.6252	0	0	0.072172	0	0
+1973	6	1	ResFarm 1D; Biopores; Free drainage; FAO	Ryegrass	0.684174	0	0.183292	0.00752228	12.0439	0	5.37736	0.18049	0	20.8455	0.00306411	0.0055075
+1973	6	1	ResFarm 1D; Biopores; Free drainage; FAO	Wclover	1.45373	0	0.959592	0	27.9488	0	42.3094	0	0	0.0448427	0	0
+1973	7	10	ResFarm 1D; Biopores; Free drainage; FAO	Ryegrass	2.10122	0	1.65798	0.00902172	27.8818	0	34.9448	0.174241	0	0.00700157	0.0083367	0.00199563
+1973	7	10	ResFarm 1D; Biopores; Free drainage; FAO	Wclover	0.408196	0	0.218368	0	8.05253	0	10.0901	0	0	0.0718772	0	0
+1973	8	10	ResFarm 1D; Biopores; Free drainage; FAO	Ryegrass	0.424728	0	0.453524	0	4.75216	0	7.20708	0	0	1.11194	0	0
+1973	8	10	ResFarm 1D; Biopores; Free drainage; FAO	Wclover	0.704494	0	0.577123	0	13.5076	0	25.5691	0	0	0.0231246	0	0
+1973	9	20	ResFarm 1D; Biopores; Free drainage; FAO	Ryegrass	0.577617	0	0.441577	0.000637988	5.51833	0	6.13065	0.00963841	0	21.3877	0.000588515	0.00038871
+1973	9	20	ResFarm 1D; Biopores; Free drainage; FAO	Wclover	0.513892	0	0.423451	0	9.93545	0	19.0142	0	0	0.0721341	0	0
+1974	6	1	ResFarm 1D; Biopores; Free drainage; FAO	Ryegrass	0.765495	0	0.230764	0.0134381	13.2268	0	6.64675	0.322754	0	15.9308	0.00508801	0.00917662
+1974	6	1	ResFarm 1D; Biopores; Free drainage; FAO	Wclover	2.17259	0	1.44659	3.98812e-006	42.821	0	65.5189	0.000119065	0	0.0764214	1.51e-006	8.21123e-007
+1974	7	10	ResFarm 1D; Biopores; Free drainage; FAO	Ryegrass	2.1798	0	1.50042	0.0192895	26.9814	0	28.9805	0.355845	0	0.0238596	0.0132786	0.00431996
+1974	7	10	ResFarm 1D; Biopores; Free drainage; FAO	Wclover	0.474095	0	0.196638	0	9.45646	0	9.21938	0	0	0.0718772	0	0
+1974	8	10	ResFarm 1D; Biopores; Free drainage; FAO	Ryegrass	0.475035	0	0.51704	0	6.33247	0	10.5559	0	0	0.204383	0	0
+1974	8	10	ResFarm 1D; Biopores; Free drainage; FAO	Wclover	0.866253	0	0.633566	0	16.4771	0	27.7499	0	0	0.00622867	0	0
+1974	9	20	ResFarm 1D; Biopores; Free drainage; FAO	Ryegrass	0.513893	0	0.431771	2.85373e-006	4.98913	0	6.07646	4.31223e-005	0.0327771	20.4961	2.86737e-006	1.76991e-006
+1974	9	20	ResFarm 1D; Biopores; Free drainage; FAO	Wclover	0.378549	0	0.258138	0	7.41037	0	11.8016	0	0.0119362	0.0721341	0	0
+1975	8	9	ResFarm 1D; Biopores; Free drainage; FAO	Spring Barley	4.97317	0.460171	0.253476	4.55244	37.2707	2.79165	6.01648	101.573	9.16802	4.05327	1.80099	0.380283
+1975	8	9	ResFarm 1D; Biopores; Free drainage; FAO	Ryegrass	0	0	0	0	0	0	0	0	5.19333	0	0	0
+1975	8	9	ResFarm 1D; Biopores; Free drainage; FAO	Wclover	0	0	0	0	0	0	0	0	8.12768	0	0	0

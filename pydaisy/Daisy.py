@@ -89,7 +89,7 @@ class DaisyDlf(object):
                 continue
             elif (SectionIndex == 4 and line): #Data
                 try:
-                    splitted = line.split() #Splits on space and tab
+                    splitted = line.split('\t') #Splits on space and tab
                     if len(splitted)==len(ColumnHeaders): #We need to make sure the line is complete
                         if DateTimeIndex == 1: #Time is in a single column
                             TimeSteps.append(datetime.strptime(splitted[0], '%Y-%m-%dT%H:%M:%S'))
@@ -140,6 +140,9 @@ class DaisyDlf(object):
 
     @property
     def numpydata(self):
+        """
+        Returns the data as a numpy data set.
+        """
         if self.__numpydata.size==0:
             self.__numpydata = self.Data.values
         return self.__numpydata

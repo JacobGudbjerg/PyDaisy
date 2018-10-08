@@ -6,7 +6,8 @@
     <ProjectGuid>{4aeaca0e-d460-44d4-a243-7ea3a1fefd2c}</ProjectGuid>
     <ProjectHome />
     <StartupFile>DaisyTest.py</StartupFile>
-    <SearchPath>..\..\PyDaisy</SearchPath>
+    <SearchPath>
+    </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
