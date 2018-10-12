@@ -31,6 +31,7 @@ class DaisyDlf(object):
         self.HeaderItems={}
         self.__starttimeset=False
         self.__numpydata = np.array([])
+        self.__tab_and_space_delimiter=True
         filename, file_extension = os.path.splitext(DlfFileName)
 
         if ZipFileName!='':
@@ -50,6 +51,7 @@ class DaisyDlf(object):
         DateTimeIndex=3
         raw=[]
         TimeSteps = []
+        FirstEntry = True
 
         #Loop the data line by line
         for line in f:
@@ -89,7 +91,15 @@ class DaisyDlf(object):
                 continue
             elif (SectionIndex == 4 and line): #Data
                 try:
-                    splitted = line.split('\t') #Splits on space and tab
+                    #Guess the delimiter based on the number of ColumnHeaders.
+                    if FirstEntry:
+                        if len(line.split()) != len(ColumnHeaders):
+                            self.__tab_and_space_delimiter = False
+                    if self.__tab_and_space_delimiter:
+                        splitted = line.split() #Splits on space and tab
+                    else:
+                        splitted = line.split('\t') #Splits on tab. This is necessary if one of the strings has spaces in it
+
                     if len(splitted)==len(ColumnHeaders): #We need to make sure the line is complete
                         if DateTimeIndex == 1: #Time is in a single column
                             TimeSteps.append(datetime.strptime(splitted[0], '%Y-%m-%dT%H:%M:%S'))
