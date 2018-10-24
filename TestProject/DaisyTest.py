@@ -18,6 +18,9 @@ class Test_DaisyTest(unittest.TestCase):
         d_saved = DaisyModel(r'./../TestData\Exercise01_saved.dai')
         self.assertEqual(d.endtime, d_saved.endtime)
 
+        notthere = d.Input['NotThere']
+        self.assertIsNone(notthere)
+
         status = d.run()
         self.assertEqual(0, status)
         modelwitherror = DaisyModel(r'./../TestData/Exercise01_witherror.dai')

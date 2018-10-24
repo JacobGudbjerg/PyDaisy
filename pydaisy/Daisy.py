@@ -295,9 +295,12 @@ class DaisyEntry(object):
         """
         if type(index) is str:
             itere = list(c for c in self.Children if c.Keyword==index)
-            if(len(itere)==1):
+            if len(itere)==0:
+                return None
+            elif len(itere)==1:
                 return itere[0]
-            return itere
+            else:
+                return itere
         else:
             return self.Children[index]
 
