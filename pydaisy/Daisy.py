@@ -433,9 +433,15 @@ class DaisyModel(object):
         """
         Saves the Dai-file. Comments will be lost
         """
+        self.ensure_dir(self.DaisyInputfile)
         with open(self.DaisyInputfile, 'w') as f:
             self.Input.write(f, '')
     
+    def ensure_dir(self, file_path):
+        directory = os.path.dirname(file_path)
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+
     def run(self):
         """
         Calls the Daisy executable and runs the simulation.
