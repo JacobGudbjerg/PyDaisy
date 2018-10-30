@@ -433,9 +433,11 @@ class DaisyModel(object):
         """
         Saves the Dai-file. Comments will be lost
         """
+        ensure_dir(self.DaisyInputfile)
         with open(self.DaisyInputfile, 'w') as f:
             self.Input.write(f, '')
     
+
     def run(self):
         """
         Calls the Daisy executable and runs the simulation.
@@ -535,3 +537,8 @@ def run_sub_folders(MotherFolder, DaisyFileName, MaxBatchSize=5000, NumberOfProc
         run_many(DaisyFiles, NumberOfProcesses=NumberOfProcesses, Queue = DaisyModelStatus.Queue.name)
     else:
         run_many(DaisyFiles, NumberOfProcesses=NumberOfProcesses)
+
+def ensure_dir(file_path):
+    directory = os.path.dirname(file_path)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
