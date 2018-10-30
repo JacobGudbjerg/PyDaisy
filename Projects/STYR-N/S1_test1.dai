@@ -1,6 +1,6 @@
 ;; Including external library-files
 
-;(path "common" $old)
+(path "./common" &old)
 (input file "ryegrass.dai")(input file "wclover.dai")
 (input file "pea.dai") (input file "wwheat.dai") (input file "fodderbeet.dai")
 
