@@ -1,16 +1,16 @@
 dlf-0.0 -- Crop (defined in 'log-std.dai').
 
 VERSION: 5.64
-LOGFILE: Fodder Beet.dlf
-RUN: Tue Oct 30 13:00:05 2018
+LOGFILE: Winter Wheat.dlf
+RUN: Tue Oct 30 13:47:56 2018
 
 COLUMN: *
-CROP: Fodder Beet
+CROP: Winter Wheat
 INTERVAL: box none
 
 LOG: Crop development and production.
 
-SIMFILE: H:\Documents\PyDaisy\Projects\STYR-N\S1_test1.dai
+SIMFILE: H:\Documents\PyDaisy\Projects\STYR-N\S1_IND_4\setup.dai
 SIM: Foulum; Weather: Daily values
 
 --------------------
