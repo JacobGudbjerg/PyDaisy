@@ -1,0 +1,31 @@
+;; Including external library-files
+
+(input file "../Common/S1_test.dai")       
+(input file "../Common/Foulum_soil_vg.dai")   
+(input file "../Common/OutputLog_2.dai")   
+
+;---------------------------------------------------------------------------------
+;; Weather data & Description that will occur in all output files
+(defunit [kWh/d/m^2] SIfactor (mass 1)(time -3)(factor 41.67))
+(weather default "../Common/Daily_foulum_1984-2017.dwf")
+(description "Foulum; Weather: Daily values")
+;When you have run the simulation be sure to rename the daisy.log 
+;so you can keep the runtime information
+(log_prefix "DailyP-")
+
+;---------------------------------------------------------------------------------
+(manager activity  (repeat ("A_F_R"))) 
+
+(defcolumn "Foulum; FAO" "Foulum column"
+(Bioclimate default (pet FAO_PM)))
+;;  Selecting column
+(column "Foulum; FAO")
+
+
+;; Beginning and end of simulation.
+(time 1993 03 31)
+(stop 2001 12 31)
+
+;(activate_output (after 1970 03 31 23))
+
+
