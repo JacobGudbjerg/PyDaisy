@@ -1,15 +1,15 @@
 dlf-0.0 -- Organic Matter (defined in 'log.dai').
 
-VERSION: 5.64
+VERSION: 5.65
 LOGFILE: Annual-OM.dlf
-RUN: Wed Oct 31 11:38:16 2018
+RUN: Wed Oct 31 13:29:16 2018
 
 COLUMN: *
 INTERVAL: box none
 
 LOG: Information about all organic matter pools.
 
-SIMFILE: H:\Documents\PyDaisy\Projects\STYR-N\S1_IND_4\setup.dai
+SIMFILE: C:\GitHub\PyDaisy\Projects\STYR-N\S1_IND_4\setup.dai
 SIM: Foulum; Weather: Daily values
 
 --------------------
@@ -17,4 +17,4 @@ year	month	mday	hour	SOM1-N	SOM1-C	SOM2-N	SOM2-C	SOM3-N	SOM3-C	SMB1-N	SMB1-C	SMB
 				kg N/ha	kg C/ha	kg N/ha	kg C/ha	kg N/ha	kg C/ha	kg N/ha	kg C/ha	kg N/ha	kg C/ha	kg N/ha	kg C/ha	kg N/ha	kg C/ha	kg N/ha	kg C/ha	kg N/ha	kg C/ha
 1993	3	31	0	670.856	8155.53	1360.32	16566.6	4219.42	50582.7	71.5849	479.619	47.9693	321.394	4.26667	384	7.73333	96	00.00	00.00	0	0
 1993	9	1	0	675.868	8205.76	1346.34	16380	4219.42	50582.7	71.5235	479.207	7.1308	47.7763	1.8475	166.275	0.0018238	0.0226402	00.00	00.00	0	0
-1994	9	1	0	683.222	8279.18	1308.21	15911.6	4219.42	50582.7	71.1147	476.469	1.52768	10.2355	0.508145	45.7331	0.000454888	3.68301e-006	00.00	00.00	0	0
+1994	9	1	0	682.278	8269.79	1316.1	16004.8	4219.42	50582.7	70.5029	472.369	15.0022	100.514	7.72854	576.007	4.26953	15.1284	00.00	00.00	0	0

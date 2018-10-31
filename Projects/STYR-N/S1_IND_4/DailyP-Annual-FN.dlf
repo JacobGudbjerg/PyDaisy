@@ -1,8 +1,8 @@
 dlf-0.0 -- Field nitrogen (defined in 'log-std.dai').
 
-VERSION: 5.64
+VERSION: 5.65
 LOGFILE: Annual-FN.dlf
-RUN: Wed Oct 31 11:38:16 2018
+RUN: Wed Oct 31 13:29:16 2018
 
 COLUMN: *
 INTERVAL: box none
@@ -23,7 +23,7 @@ LOG:
 LOG: For the balances of this log to work, you must include the entire
 LOG: root zone
 
-SIMFILE: H:\Documents\PyDaisy\Projects\STYR-N\S1_IND_4\setup.dai
+SIMFILE: C:\GitHub\PyDaisy\Projects\STYR-N\S1_IND_4\setup.dai
 SIM: Foulum; Weather: Daily values
 
 --------------------
@@ -31,4 +31,4 @@ year	month	mday	hour	Min-Surface-Fertilizer	Min-Soil-Fertilizer	Deposition	Matri
 				kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha
 1993	3	31	0	00.00	00.00	00.00	00.00	00.00	00.00	00.00	00.00	0	12.3882	0	0	00.00	00.00	00.00	00.00	00.00	00.00	00.00	00.00	00.00	00.00	00.00	00.00	0	6382.16	0
 1993	9	1	0	0	0	5.7489	11.6996	-0	-0	0	0	0.0263287	51.5335	0	0	60.0246	-0	-0	0	1.25354	13.6488	0	0	0	0	0	0	0	6322.13	0
-1994	9	1	0	0	0	15.7328	55.9648	-0	-0	0	0	0.0332494	43.5197	0	0	42.9247	-0	-0	0	1.0565	9.64304	0	0	4.8	0	8.34607	0	0	6284.01	0
+1994	9	1	0	0	0	15.7328	55.7611	-0	-0	0	0	0.0733168	15.3876	0	0	53.4578	-0	39.8426	0	1.1618	8.52405	223.12	0	12.8	0	29.4706	20.1577	0.000283764	6315.3	229.134

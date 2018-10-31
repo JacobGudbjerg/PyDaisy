@@ -36,7 +36,7 @@ tree = ttk.Treeview(root)
 
 def daisy_browse():
 
-    filename=(filedialog.askopenfilename(title = "Select daisy file", filetypes = (("model files",'*.dai'))))
+    filename=filedialog.askopenfilename(title = "Select daisy file", filetypes = ({"model files",'*.dai'}))
 
     name, ext = os.path.splitext(filename)
 

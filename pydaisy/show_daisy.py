@@ -11,7 +11,7 @@ class MyFrame(Frame):
         self.grid(sticky=W+E+N+S)
 
         Label(self.master, text="Daisy file").grid(row=1)
-        self.e1 = Entry(self.master, w)
+        self.e1 = Entry(self.master)
         self.e1.grid(row=1, column=1)
 
         self.button = Button(self.master, text="Browse", command=self.load_file, width=10)
