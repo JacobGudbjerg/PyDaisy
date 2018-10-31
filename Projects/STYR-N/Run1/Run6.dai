@@ -1,6 +1,6 @@
 ;; Including external library-files
 
-(input file "../Common/S1_test.dai")       
+(input file "../Common/S1_test1.dai")       
 (input file "../Common/Foulum_soil_vg.dai")   
 (input file "../Common/OutputLog_2.dai")   
 

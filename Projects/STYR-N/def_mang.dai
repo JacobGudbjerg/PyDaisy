@@ -1,6 +1,6 @@
 ;; Including external library-files
-(input file "ryegrass.dai")(input file "wclover.dai")
-(input file "pea.dai") (input file "wwheat.dai") (input file "fodderbeet.dai")
+(input file "ryegrass.dai")(input file "wclover.dai") (input file "dk-maize.dai")
+(input file "pea.dai") (input file "wwheat.dai") (input file "fodderbeet.dai") 
 
 (input file "tillage.dai") (input file "fertilizer.dai")
 (input file "../Common/Org_fert.dai")   

@@ -2,7 +2,7 @@ dlf-0.0 -- Crop (defined in 'log-std.dai').
 
 VERSION: 5.64
 LOGFILE: Fodder Beet.dlf
-RUN: Tue Oct 30 13:47:56 2018
+RUN: Wed Oct 31 11:38:16 2018
 
 COLUMN: *
 CROP: Fodder Beet

@@ -2,7 +2,7 @@ dlf-0.0 -- harvest
 
 VERSION: 5.64
 LOGFILE: harvest.dlf
-RUN: Tue Oct 30 13:47:56 2018
+RUN: Wed Oct 31 11:38:16 2018
 
 SIMFILE: H:\Documents\PyDaisy\Projects\STYR-N\S1_IND_4\setup.dai
 SIM: Foulum; Weather: Daily values
@@ -10,13 +10,3 @@ SIM: Foulum; Weather: Daily values
 --------------------
 year	month	day	column	crop	stem_DM	dead_DM	leaf_DM	sorg_DM	stem_N	dead_N	leaf_N	sorg_N	WStress	NStress	WP_ET	HI
 					Mg DM/ha	Mg DM/ha	Mg DM/ha	Mg DM/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	d	d	kg/m^3	
-1993	8	29	Foulum; FAO	SB	0.51716	0.132929	0.0417409	1.50478	2.34209	0.650563	0.409738	13.9217	27.6719	47.0567	0.717416	0.488432
-1993	8	29	Foulum; FAO	Ryegrass	0	0	0	0	0	0	0	0	1.92055	50.6581	0	0
-1993	8	29	Foulum; FAO	Wclover	0	0	0	0	0	0	0	0	2.36447	0	0	0
-1993	10	31	Foulum; FAO	Ryegrass	0	0	0	0	0	0	0	0	0	13.521	0	0
-1993	10	31	Foulum; FAO	Wclover	0	0	0	0	0	0	0	0	0	0	0	0
-1994	8	16	Foulum; FAO	SB	0.665701	0.101091	0.0692395	0.953305	3.21474	0.494542	0.908427	13.1932	28.4238	37.0491	0.497378	0.367763
-1994	8	16	Foulum; FAO	Ryegrass	0	0	0	0	0	0	0	0	18.7904	26.9318	0	0
-1994	8	16	Foulum; FAO	Wclover	0	0	0	0	0	0	0	0	14.6806	0	0	0
-1994	10	31	Foulum; FAO	Ryegrass	0	0	0	0	0	0	0	0	0	47.6631	0	0
-1994	10	31	Foulum; FAO	Wclover	0	0	0	0	0	0	0	0	0	0	0	0

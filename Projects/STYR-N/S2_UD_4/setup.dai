@@ -15,50 +15,6 @@
     (cut "Wclover" 
       (stub 5 [cm])) )
   (defaction "SB_CG_1993" activity 
-    (wait_mm_dd 04 15)
-    (plowing)
-    (wait_mm_dd 04 20)
-    (seed_bed_preparation)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
-    (wait 
-      (or 
-        (crop_ds_after "SB" 2.0)
-        (mm_dd 9 1) ))
-    (harvest "SB" 
-      (sorg 0.99)
-      (stem 0.7)
-      (stub 10 [cm]) )
-    (cut "Ryegrass" 
-      (stub 10 [cm]))
-    (cut "Wclover" 
-      (stub 10 [cm]))
-    (wait_mm_dd 10 31)
-    (activity 
-      (cut_grass))
-    (wait_mm_dd 04 15)
-    (plowing)
-    (wait_mm_dd 04 20)
-    (seed_bed_preparation)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
-    (wait 
-      (or 
-        (crop_ds_after "SB" 2.0)
-        (mm_dd 9 1) ))
-    (harvest "SB" 
-      (sorg 0.99)
-      (stem 0.7)
-      (stub 10 [cm]) )
-    (cut "Ryegrass" 
-      (stub 10 [cm]))
-    (cut "Wclover" 
-      (stub 10 [cm]))
-    (wait_mm_dd 10 31)
-    (activity 
-      (cut_grass))
     (wait_mm_dd 4 21)
     (plowing)
     (wait_mm_dd 4 22)
@@ -105,9 +61,6 @@
       (cut_grass))
     (wait_mm_dd 04 15)
     (wait_mm_dd 04 20)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
     (wait 
       (or 
         (crop_ds_after "SB" 2.0)
@@ -127,9 +80,6 @@
     (plowing)
     (wait_mm_dd 04 20)
     (seed_bed_preparation)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
     (wait 
       (or 
         (crop_ds_after "SB" 2.0)
@@ -147,9 +97,6 @@
       (cut_grass))
     (wait_mm_dd 04 15)
     (wait_mm_dd 04 20)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
     (wait 
       (or 
         (crop_ds_after "SB" 2.0)
@@ -169,9 +116,6 @@
     (plowing)
     (wait_mm_dd 04 20)
     (seed_bed_preparation)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
     (wait 
       (or 
         (crop_ds_after "SB" 2.0)
@@ -233,9 +177,6 @@
       (cut_grass))
     (wait_mm_dd 04 15)
     (wait_mm_dd 04 20)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
     (wait 
       (or 
         (crop_ds_after "SB" 2.0)
@@ -255,9 +196,6 @@
     (plowing)
     (wait_mm_dd 04 20)
     (seed_bed_preparation)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
     (wait 
       (or 
         (crop_ds_after "SB" 2.0)
@@ -407,9 +345,6 @@
       (cut_grass))
     (wait_mm_dd 04 15)
     (wait_mm_dd 04 20)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
     (wait 
       (or 
         (crop_ds_after "SB" 2.0)
@@ -429,9 +364,6 @@
     (plowing)
     (wait_mm_dd 04 20)
     (seed_bed_preparation)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
     (wait 
       (or 
         (crop_ds_after "SB" 2.0)
@@ -449,51 +381,6 @@
       (cut_grass))
     (wait_mm_dd 04 15)
     (wait_mm_dd 04 20)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
-    (wait 
-      (or 
-        (crop_ds_after "SB" 2.0)
-        (mm_dd 9 1) ))
-    (harvest "SB" 
-      (sorg 0.99)
-      (stem 0.7)
-      (stub 10 [cm]) )
-    (cut "Ryegrass" 
-      (stub 10 [cm]))
-    (cut "Wclover" 
-      (stub 10 [cm]))
-    (wait_mm_dd 10 31)
-    (activity 
-      (cut_grass))
-    (wait_mm_dd 04 15)
-    (plowing)
-    (wait_mm_dd 04 20)
-    (seed_bed_preparation)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
-    (wait 
-      (or 
-        (crop_ds_after "SB" 2.0)
-        (mm_dd 9 1) ))
-    (harvest "SB" 
-      (sorg 0.99)
-      (stem 0.7)
-      (stub 10 [cm]) )
-    (cut "Ryegrass" 
-      (stub 10 [cm]))
-    (cut "Wclover" 
-      (stub 10 [cm]))
-    (wait_mm_dd 10 31)
-    (activity 
-      (cut_grass))
-    (wait_mm_dd 04 15)
-    (wait_mm_dd 04 20)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
     (wait 
       (or 
         (crop_ds_after "SB" 2.0)
@@ -513,9 +400,6 @@
     (plowing)
     (wait_mm_dd 04 20)
     (seed_bed_preparation)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
     (wait 
       (or 
         (crop_ds_after "SB" 2.0)
@@ -533,51 +417,6 @@
       (cut_grass))
     (wait_mm_dd 04 15)
     (wait_mm_dd 04 20)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
-    (wait 
-      (or 
-        (crop_ds_after "SB" 2.0)
-        (mm_dd 9 1) ))
-    (harvest "SB" 
-      (sorg 0.99)
-      (stem 0.7)
-      (stub 10 [cm]) )
-    (cut "Ryegrass" 
-      (stub 10 [cm]))
-    (cut "Wclover" 
-      (stub 10 [cm]))
-    (wait_mm_dd 10 31)
-    (activity 
-      (cut_grass))
-    (wait_mm_dd 04 15)
-    (plowing)
-    (wait_mm_dd 04 20)
-    (seed_bed_preparation)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
-    (wait 
-      (or 
-        (crop_ds_after "SB" 2.0)
-        (mm_dd 9 1) ))
-    (harvest "SB" 
-      (sorg 0.99)
-      (stem 0.7)
-      (stub 10 [cm]) )
-    (cut "Ryegrass" 
-      (stub 10 [cm]))
-    (cut "Wclover" 
-      (stub 10 [cm]))
-    (wait_mm_dd 10 31)
-    (activity 
-      (cut_grass))
-    (wait_mm_dd 04 15)
-    (wait_mm_dd 04 20)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
     (wait 
       (or 
         (crop_ds_after "SB" 2.0)
@@ -597,9 +436,78 @@
     (plowing)
     (wait_mm_dd 04 20)
     (seed_bed_preparation)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
+    (wait 
+      (or 
+        (crop_ds_after "SB" 2.0)
+        (mm_dd 9 1) ))
+    (harvest "SB" 
+      (sorg 0.99)
+      (stem 0.7)
+      (stub 10 [cm]) )
+    (cut "Ryegrass" 
+      (stub 10 [cm]))
+    (cut "Wclover" 
+      (stub 10 [cm]))
+    (wait_mm_dd 10 31)
+    (activity 
+      (cut_grass))
+    (wait_mm_dd 04 15)
+    (wait_mm_dd 04 20)
+    (wait 
+      (or 
+        (crop_ds_after "SB" 2.0)
+        (mm_dd 9 1) ))
+    (harvest "SB" 
+      (sorg 0.99)
+      (stem 0.7)
+      (stub 10 [cm]) )
+    (cut "Ryegrass" 
+      (stub 10 [cm]))
+    (cut "Wclover" 
+      (stub 10 [cm]))
+    (wait_mm_dd 10 31)
+    (activity 
+      (cut_grass))
+    (wait_mm_dd 04 15)
+    (plowing)
+    (wait_mm_dd 04 20)
+    (seed_bed_preparation)
+    (wait 
+      (or 
+        (crop_ds_after "SB" 2.0)
+        (mm_dd 9 1) ))
+    (harvest "SB" 
+      (sorg 0.99)
+      (stem 0.7)
+      (stub 10 [cm]) )
+    (cut "Ryegrass" 
+      (stub 10 [cm]))
+    (cut "Wclover" 
+      (stub 10 [cm]))
+    (wait_mm_dd 10 31)
+    (activity 
+      (cut_grass))
+    (wait_mm_dd 04 15)
+    (wait_mm_dd 04 20)
+    (wait 
+      (or 
+        (crop_ds_after "SB" 2.0)
+        (mm_dd 9 1) ))
+    (harvest "SB" 
+      (sorg 0.99)
+      (stem 0.7)
+      (stub 10 [cm]) )
+    (cut "Ryegrass" 
+      (stub 10 [cm]))
+    (cut "Wclover" 
+      (stub 10 [cm]))
+    (wait_mm_dd 10 31)
+    (activity 
+      (cut_grass))
+    (wait_mm_dd 04 15)
+    (plowing)
+    (wait_mm_dd 04 20)
+    (seed_bed_preparation)
     (wait 
       (or 
         (crop_ds_after "SB" 2.0)
@@ -661,9 +569,6 @@
       (cut_grass))
     (wait_mm_dd 04 15)
     (wait_mm_dd 04 20)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
     (wait 
       (or 
         (crop_ds_after "SB" 2.0)
@@ -683,9 +588,6 @@
     (plowing)
     (wait_mm_dd 04 20)
     (seed_bed_preparation)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
     (wait 
       (or 
         (crop_ds_after "SB" 2.0)
@@ -703,9 +605,6 @@
       (cut_grass))
     (wait_mm_dd 04 15)
     (wait_mm_dd 04 20)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
     (wait 
       (or 
         (crop_ds_after "SB" 2.0)
@@ -725,9 +624,6 @@
     (plowing)
     (wait_mm_dd 04 20)
     (seed_bed_preparation)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
     (wait 
       (or 
         (crop_ds_after "SB" 2.0)
@@ -789,9 +685,6 @@
       (cut_grass))
     (wait_mm_dd 04 15)
     (wait_mm_dd 04 20)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
     (wait 
       (or 
         (crop_ds_after "SB" 2.0)
@@ -811,9 +704,6 @@
     (plowing)
     (wait_mm_dd 04 20)
     (seed_bed_preparation)
-    (sow "SB")
-    (sow "Ryegrass")
-    (sow "Wclover")
     (wait 
       (or 
         (crop_ds_after "SB" 2.0)

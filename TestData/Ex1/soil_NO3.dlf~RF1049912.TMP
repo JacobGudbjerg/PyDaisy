@@ -1,0 +1,12 @@
+dlf-0.0 -- Soil NO3 Concentration (defined in 'log.dai').
+
+VERSION: 5.65
+LOGFILE: soil_NO3.dlf
+RUN: Mon Oct 08 15:17:54 2018
+
+COLUMN: *
+INTERVAL: box none
+
+LOG: Amount of nitrate in all numeric soil layers.
+LOG: This include both the nitrogen and oxygen atoms of the nitrate.
+

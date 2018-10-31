@@ -1,0 +1,23 @@
+dlf-0.0 -- Field water (defined in 'log-std.dai').
+
+VERSION: 5.65
+LOGFILE: Daily_FWB.dlf
+RUN: Mon Oct 08 15:17:54 2018
+
+COLUMN: *
+INTERVAL: box [-400; none]
+
+LOG: Information about water input, output and content for the system.
+LOG: 
+LOG: The intended use of this log is large scale water balance, for
+LOG: example reservoir management. It provide information about how
+LOG: much water is in the field (down to a specified depth), where it
+LOG: is located in the field (surface, soil matrix or in biopores), as
+LOG: well as the sources, sinks and amounts of water entering or
+LOG: leaving the system.  It does not provide information about
+LOG: internal translocation of water between surface, soil matrix and
+LOG: biopores, use see the 'Soil water' log instead for that.
+LOG: 
+LOG: For the balances of this log to work, you must include the entire
+LOG: root zone, as well as the biopore zone.
+

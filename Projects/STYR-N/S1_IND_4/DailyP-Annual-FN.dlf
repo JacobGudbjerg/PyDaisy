@@ -2,7 +2,7 @@ dlf-0.0 -- Field nitrogen (defined in 'log-std.dai').
 
 VERSION: 5.64
 LOGFILE: Annual-FN.dlf
-RUN: Tue Oct 30 13:47:56 2018
+RUN: Wed Oct 31 11:38:16 2018
 
 COLUMN: *
 INTERVAL: box none
@@ -30,5 +30,5 @@ SIM: Foulum; Weather: Daily values
 year	month	mday	hour	Min-Surface-Fertilizer	Min-Soil-Fertilizer	Deposition	Matrix-Leaching	Biopore-Leaching	Soil-Drain	Biopore-Drain	Surface-Loss	Min-Surface	Min-Soil	Min-Biopores	Error	Mineralization	Immobilization	Crop-Uptake	Volatilization	N2O-Nitrification	Denitrification	Fixated	Org-Fertilizer	Seed	Harvest	Residuals-Surface	Residuals-Soil	Org-Surface	Org-Soil	Crop
 				kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha
 1993	3	31	0	00.00	00.00	00.00	00.00	00.00	00.00	00.00	00.00	0	12.3882	0	0	00.00	00.00	00.00	00.00	00.00	00.00	00.00	00.00	00.00	00.00	00.00	00.00	0	6382.16	0
-1993	9	1	0	0	0	5.7489	0.713621	-0	-0	0	0.150445	0.0457023	2.16867	0	0	55.0699	0.0218404	67.1115	0	1.06521	1.92992	32.0946	0	4.8	17.3241	7.41456	6.99459	3.09885	6338.42	72.2729
-1994	9	1	0	0	0	15.7328	0.421957	-0	-0	0	0.0742373	0.0422952	2.85846	0	0	81.3678	0.171327	84.553	0	1.64107	9.55264	21.5191	0	4.8	17.8109	20.6074	82.4998	2.39448	6361.03	62.2268
+1993	9	1	0	0	0	5.7489	11.6996	-0	-0	0	0	0.0263287	51.5335	0	0	60.0246	-0	-0	0	1.25354	13.6488	0	0	0	0	0	0	0	6322.13	0
+1994	9	1	0	0	0	15.7328	55.9648	-0	-0	0	0	0.0332494	43.5197	0	0	42.9247	-0	-0	0	1.0565	9.64304	0	0	4.8	0	8.34607	0	0	6284.01	0
