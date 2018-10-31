@@ -2,14 +2,14 @@ dlf-0.0 -- Organic Matter (defined in 'log.dai').
 
 VERSION: 5.64
 LOGFILE: Annual-OM.dlf
-RUN: Tue Oct 30 13:00:05 2018
+RUN: Tue Oct 30 13:47:56 2018
 
 COLUMN: *
 INTERVAL: box none
 
 LOG: Information about all organic matter pools.
 
-SIMFILE: H:\Documents\PyDaisy\Projects\STYR-N\S1_test1.dai
+SIMFILE: H:\Documents\PyDaisy\Projects\STYR-N\S1_IND_4\setup.dai
 SIM: Foulum; Weather: Daily values
 
 --------------------
