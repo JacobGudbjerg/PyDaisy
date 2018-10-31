@@ -1,6 +1,8 @@
+import os
 from tkinter import *
 from tkinter.filedialog import askopenfilename
 from tkinter.messagebox import showerror
+from daisyView import *
 
 class MyFrame(Frame):
     def __init__(self):
@@ -21,11 +23,9 @@ class MyFrame(Frame):
         fname = askopenfilename(filetypes=(("Daisy files", "*.dai;*.dlf;*.dwf"), ("All files", "*.*") ))
         self.e1.insert(1, fname)
         if fname:
-            try:
-                print("""here it comes: self.settings["template"].set(fname)""")
-            except:                     # <- naked except is a bad idea
-                showerror("Open Source File", "Failed to read file\n'%s'" % fname)
-            return
+            name, ext = os.path.splitext(fname)
+            if ext.lower()=='.dai':
+                dai_view(fname)
 
 
 if __name__ == "__main__":

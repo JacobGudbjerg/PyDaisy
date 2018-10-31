@@ -30,17 +30,14 @@ class heatmap(object):
         plt.show()
 
 
-root = tk.Tk()
-tree = ttk.Treeview(root)
 
 
-def daisy_browse():
+def dai_view(object):
+    def __init__(self, filename):
+        root = tk.Tk()
+        self.tree = ttk.Treeview(root)
 
-    filename=filedialog.askopenfilename(title = "Select daisy file", filetypes = ({"model files",'*.dai'}))
 
-    name, ext = os.path.splitext(filename)
-
-    if lower(ext)=='.dai':
         dm = DaisyModel(filename)
         root.title = dm.DaisyInputfile
 
@@ -58,16 +55,12 @@ def daisy_browse():
         Button(master, text='Show', command=show_entry_fields).grid(row=3, column=1, sticky=W, pady=4)
 
 
-def selectItem(a):
-    curItem = tree.focus()
-    print (tree.item(curItem))
+    def selectItem(self, a):
+        curItem = self.tree.focus()
+        print (self.tree.item(curItem))
 
-def recursiveadd(tree, parent_item_id, DaisyEntry):
-    for cc in DaisyEntry.Children:
-        child_item_id=tree.insert(parent_item_id, 3, text=cc.Keyword, values=cc.Words )
-#        child_item_id=tree.insert(parent_item_id, 3, text=cc.Keyword, values=(' '.join(cc.Words),len(cc.Words) ))
-        recursiveadd(tree, child_item_id, cc)
-
-
-if __name__=='__main__':
-    daisy_browse()
+    def recursiveadd(self, parent_item_id, DaisyEntry):
+        for cc in DaisyEntry.Children:
+            child_item_id=self.tree.insert(parent_item_id, 3, text=cc.Keyword, values=cc.Words )
+    #        child_item_id=tree.insert(parent_item_id, 3, text=cc.Keyword, values=(' '.join(cc.Words),len(cc.Words) ))
+            recursiveadd(self.tree, child_item_id, cc)
