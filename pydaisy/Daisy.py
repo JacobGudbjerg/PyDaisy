@@ -9,6 +9,7 @@ import numpy as np
 import csv
 import os
 import zipfile
+import copy
 from enum import Enum
 from datetime import datetime, timedelta
 from multiprocessing import Pool
@@ -339,6 +340,12 @@ class DaisyEntry(object):
             self.Words.append('')
         
         self.Words[index] = str(value)
+
+    def copy(self):
+        """
+        Returns a deep copy of this entry. This should be used when you want to insert this entry in another entry
+        """
+        return copy.deepcopy(self)
     
     def write(self, sr, tab):
         """
