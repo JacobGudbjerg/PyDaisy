@@ -33,8 +33,8 @@ class heatmap(object):
 
 
 class dai_view(object):
-    def __init__(self, filename, root):
-#        root = tk.Tk()
+    def __init__(self, filename):
+        root = tk.Tk()
         self.tree = ttk.Treeview(root)
 
 
