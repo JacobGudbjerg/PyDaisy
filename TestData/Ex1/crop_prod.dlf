@@ -2,7 +2,7 @@ dlf-0.0 -- Crop Production (defined in 'log.dai').
 
 VERSION: 5.65
 LOGFILE: crop_prod.dlf
-RUN: Wed Oct 31 13:00:27 2018
+RUN: Thu Nov 01 11:43:03 2018
 
 COLUMN: *
 CROP: *
