@@ -32,23 +32,23 @@ class heatmap(object):
 
 
 
-def dai_view(object):
-    def __init__(self, filename):
-        root = tk.Tk()
+class dai_view(object):
+    def __init__(self, filename, root):
+#        root = tk.Tk()
         self.tree = ttk.Treeview(root)
 
 
         dm = DaisyModel(filename)
         root.title = dm.DaisyInputfile
 
-        tree["columns"]=('Par1', 'Par2')
-        tree.column("Par1", width=100 )
-        tree.column("Par2", width=100)
-        tree.heading("Par1", text="Par1")
-        tree.heading("Par2", text="Par2")
-        recursiveadd(tree, "", dm.Input)
-        tree.pack()
-        tree.bind('<ButtonRelease-1>', selectItem)
+        self.tree["columns"]=('Par1', 'Par2')
+        self.tree.column("Par1", width=100 )
+        self.tree.column("Par2", width=100)
+        self.tree.heading("Par1", text="Par1")
+        self.tree.heading("Par2", text="Par2")
+        self.recursiveadd("", dm.Input)
+        self.tree.pack()
+        self.tree.bind('<ButtonRelease-1>', self.selectItem)
         root.mainloop()
 
         Button(master, text='Quit', command=master.quit).grid(row=3, column=0, sticky=W, pady=4)
@@ -62,5 +62,4 @@ def dai_view(object):
     def recursiveadd(self, parent_item_id, DaisyEntry):
         for cc in DaisyEntry.Children:
             child_item_id=self.tree.insert(parent_item_id, 3, text=cc.Keyword, values=cc.Words )
-    #        child_item_id=tree.insert(parent_item_id, 3, text=cc.Keyword, values=(' '.join(cc.Words),len(cc.Words) ))
-            recursiveadd(self.tree, child_item_id, cc)
+            self.recursiveadd(child_item_id, cc)

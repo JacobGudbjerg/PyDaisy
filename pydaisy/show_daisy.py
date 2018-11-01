@@ -25,7 +25,7 @@ class MyFrame(Frame):
         if fname:
             name, ext = os.path.splitext(fname)
             if ext.lower()=='.dai':
-                dai_view(fname)
+                d=dai_view(fname, self.master)
 
 
 if __name__ == "__main__":
