@@ -12,11 +12,11 @@
 (cut "Ryegrass"	(stub 5 [cm]))
 (cut "Wclover" 	(stub 5 [cm])) )
      
-(defaction "SB_CG_1993" activity)
+(defaction "S1_1994-2010" activity)
   
  ;; Arable Farm Rotation
 (defaction "A_F_R" activity
-  "SB_CG_1993")
+  "S1_1994-2010")
   
 (input file "Foulum_soil_vg.dai")   
 (input file "OutputLog_2.dai")   
@@ -40,5 +40,5 @@
 
 
 ;; Beginning and end of simulation.
-(time 1993 03 31)
-(stop 1995 03 31)
+(time 1994 02 31)
+(stop 1996 03 31)

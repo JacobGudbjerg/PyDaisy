@@ -1,8 +1,8 @@
 dlf-0.0 -- Crop (defined in 'log-std.dai').
 
-VERSION: 5.64
+VERSION: 5.65
 LOGFILE: Fodder Beet.dlf
-RUN: Wed Oct 31 11:38:16 2018
+RUN: Wed Oct 31 13:29:16 2018
 
 COLUMN: *
 CROP: Fodder Beet
@@ -10,7 +10,7 @@ INTERVAL: box none
 
 LOG: Crop development and production.
 
-SIMFILE: H:\Documents\PyDaisy\Projects\STYR-N\S1_IND_4\setup.dai
+SIMFILE: C:\GitHub\PyDaisy\Projects\STYR-N\S1_IND_4\setup.dai
 SIM: Foulum; Weather: Daily values
 
 --------------------

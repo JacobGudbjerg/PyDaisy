@@ -187,6 +187,7 @@ class DaisyDlf(object):
                 l.sort()
                 return l
         return
+    
 
     def save(self, FileName):
         """
@@ -248,6 +249,7 @@ class DaisyEntry(object):
         self.AfterWords = []
         self.Children =[]
         self.Comment = []
+        self.keyword_description=''
         
     def __str__(self):
         return self.Keyword
@@ -351,6 +353,9 @@ class DaisyEntry(object):
         """
         Writes the entry to a stream. Recursive
         """
+        if self.keyword_description != '':
+            sr.write(';' +         self.keyword_description + '\n') 
+            
         sr.write(self.Keyword)
         for w in self.Words:
             sr.write(' ')
@@ -443,7 +448,12 @@ class DaisyModel(object):
         ensure_dir(self.DaisyInputfile)
         with open(self.DaisyInputfile, 'w') as f:
             self.Input.write(f, '')
-    
+
+    def copy(self):
+        """
+        Returns a deep copy of this entry. This should be used when you want to insert this entry in another entry
+        """
+        return copy.deepcopy(self)    
 
     def run(self):
         """
