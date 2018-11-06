@@ -14,7 +14,6 @@ import copy
 sys.path.append(r'../../pydaisy')
 from Daisy import *
 
-#xls = pd.ExcelFile(r'S1-3_1993_2010_UD4.xlsx')
 xl = pd.read_excel(r'S1-3_1993_2010_UD4.xlsx', None)
 for sheet in xl.items():
     df=sheet[1]
@@ -24,8 +23,6 @@ for sheet in xl.items():
     unique_name = str(df['block'][i]) +'_' + df['field'][i]+'_' + str(df['treatment'][i])
     newfile= copy.deepcopy(template)    
     block = newfile.Input['defaction'][1]
-    
-    #for i in range(1,len(df, sheet_name)):
         
     for i in range(0,len(df)):
         block.Children.append(DaisyEntry('wait_mm_dd', [str(df['date'][i].month), str(df['date'][i].day)]))
@@ -46,11 +43,11 @@ for sheet in xl.items():
             fert.Children.append(DaisyEntry('to', ['-15', '[cm]']))
             block.Children.append(fert)        
         else:
-             block.Children.append(DaisyEntry(df['action'][i],[]))
+            block.Children.append(DaisyEntry(df['action'][i],[]))
         
     filename = os.path.join(unique_name, 'setup.dai')
     newfile.save_as(filename)
+    #newfile.run()
 
-
-run_sub_folders(r'H:\Documents\PyDaisy\Projects\STYR-N','setup.dai')
+#run_sub_folders(r'H:\Documents\PyDaisy\Projects\STYR-N','setup.dai')
 

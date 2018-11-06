@@ -22,11 +22,11 @@ DMG =DMharv.groupby('crop')
 # def zero_to_nan(values):
  #   """Replace every 0 with 'nan' and return a copy."""
  #   return [float('nan') if x==0 else x for x in values]
-sb=DMG.get_group('SB').sum(axis=1)
 rg = DMG.get_group('Ryegrass').sum(axis=1)
 wc = DMG.get_group('Wclover').sum(axis=1)
-df2= pd.DataFrame([rg, wc, sb]).T
-df2.columns =['Ryegrass', 'Wclover', 'Barley']
+df2= pd.DataFrame([rg, wc]).T
+df2.columns =['Ryegrass', 'Wclover']
+
 # df2.index = df2.index.normalize()
 
 
