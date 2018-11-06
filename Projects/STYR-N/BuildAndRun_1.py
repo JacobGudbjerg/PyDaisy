@@ -40,6 +40,7 @@ for i in range(0,len(df)):
             sow = DaisyEntry('sow', ['"' + crop.strip() +'"'])
             block.Children.append(sow)
 <<<<<<< HEAD
+<<<<<<< HEAD
             
         if str(df['Seeding2'][i] != 'NaT'):
             if df['Seeding2'][i]<df['Harvest1'][i]: 
@@ -72,6 +73,8 @@ for i in range(0,len(df)):
         #    for crop in df['Sow_crop2'][i].split(','):
          #       sow = DaisyEntry('sow', ['"' + crop.strip() +'"'])
           #      block.Children.append(sow)      
+=======
+>>>>>>> 171e22902dcafc7e7c5cc5289b9fab49107d4636
 =======
 >>>>>>> 171e22902dcafc7e7c5cc5289b9fab49107d4636
     
