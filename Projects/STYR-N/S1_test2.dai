@@ -1,7 +1,7 @@
 ;; Including external library-files
 
 (path "./common" "./../common" &old)
-(input file "ryegrass.dai")(input file "wclover.dai")  (input file "dk-maize.dai") (input file "sbarley.dai")
+(input file "ryegrass.dai")(input file "wclover.dai")  (input file "dk-maize.dai") (input file "dk-wrape.dai")
 (input file "pea.dai") (input file "wwheat.dai") (input file "fodderbeet.dai") (input file "swheat.dai")
 
 (input file "tillage.dai") (input file "fertilizer.dai")
@@ -40,5 +40,5 @@
 
 
 ;; Beginning and end of simulation.
-(time 1994 02 31)
+(time 1994 03 01)
 (stop 1996 03 31)
