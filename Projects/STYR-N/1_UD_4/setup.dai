@@ -1,0 +1,23 @@
+ 
+  (path "./common" "./../common" &old)
+  (input file "ryegrass.dai")
+  (input file "wclover.dai")
+  (input file "dk-maize.dai")
+  (input file "sbarley.dai")
+  (input file "pea.dai")
+  (input file "wwheat.dai")
+  (input file "fodderbeet.dai")
+  (input file "swheat.dai")
+  (input file "tillage.dai")
+  (input file "fertilizer.dai")
+  (input file "Org_fert.dai")
+  (input file "Springbarley_MES_23_2.dai")
+  (defaction cut_grass activity
+    (cut "Ryegrass" 
+      (stub 5 [cm]))
+    (cut "Wclover" 
+      (stub 5 [cm])) )
+  (defaction "S1_1994-2010" activity
+    (wait_mm_dd 4 1)
+    (sow
+      (
