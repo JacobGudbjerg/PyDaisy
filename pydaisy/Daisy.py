@@ -14,7 +14,7 @@ from enum import Enum
 from datetime import datetime, timedelta
 from multiprocessing import Pool
 
-daisyexecutable = r'C:\Program Files\Daisy 5.65\bin\Daisy.exe'
+daisyexecutable = r'C:\Program Files\Daisy 5.64\bin\Daisy.exe'
 if platform.system()=='Linux':
     daisyexecutable = r'/home/projects/cu_10095/apps/daisy/daisy'
 
