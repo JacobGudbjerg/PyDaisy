@@ -22,10 +22,10 @@ class Test_DaisyTest(unittest.TestCase):
         self.assertIsNone(notthere)
 
         status = d.run()
-        self.assertEqual(0, status)
+        self.assertEqual(0, status.returncode)
         modelwitherror = DaisyModel(r'./../TestData/Exercise01_witherror.dai')
         status = modelwitherror.run()
-        self.assertEqual(1, status)
+        self.assertEqual(1, status.returncode)
 
 
 

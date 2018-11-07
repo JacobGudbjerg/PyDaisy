@@ -464,8 +464,7 @@ class DaisyModel(object):
             sys.stdout.flush()
             return subprocess.call([daisyexecutable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], cwd = os.path.dirname(self.DaisyInputfile))
         else:
-            CREATE_NO_WINDOW = 0x08000000
-            return subprocess.call([daisyexecutable, os.path.abspath(self.DaisyInputfile)], creationflags=CREATE_NO_WINDOW)
+            return subprocess.run([daisyexecutable, os.path.abspath(self.DaisyInputfile)], shell=True)
 
 class DaisyModelStatus(Enum):
     NotRun =1
@@ -503,6 +502,8 @@ def run_many(DaisyFiles, NumberOfProcesses=6, Queue='', Running= DaisyModelStatu
     Runs all the daisy-simulations in the list of Daisyfiles in parallel. Can use renaming of files to indicate status
     """
     print('Running ' + str (len(DaisyFiles)) + ' directories on ' + str(NumberOfProcesses) + ' parallel processes')
+    
+    print (__name__)
     pp= Pool(NumberOfProcesses)
         
     FileNamesList=[]
@@ -512,7 +513,7 @@ def run_many(DaisyFiles, NumberOfProcesses=6, Queue='', Running= DaisyModelStatu
         else:
             FileNamesList.append([f])
     pp.map(run_single, FileNamesList)
-    pp.terminate
+    pp.terminate()
     
 def run_sub_folders(MotherFolder, DaisyFileName, MaxBatchSize=5000, NumberOfProcesses=6, UseStatusFiles=False, recursive=False):
     """
