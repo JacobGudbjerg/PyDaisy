@@ -2,7 +2,7 @@
 
 (path "./common" "./../common" &old)
 (input file "ryegrass.dai")(input file "wclover.dai")  (input file "dk-maize.dai") (input file "dk-wrape.dai")
-(input file "pea.dai") (input file "wwheat.dai") (input file "fodderbeet.dai") (input file "swheat.dai")
+(input file "pea.dai") (input file "wwheat.dai") (input file "fodderbeet.dai") (input file "swheat.dai")(input file "dk-pea.dai")
 
 (input file "tillage.dai") (input file "fertilizer.dai")
 (input file "Org_fert.dai")   

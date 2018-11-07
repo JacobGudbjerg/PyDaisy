@@ -8,6 +8,7 @@
   (input file "wwheat.dai")
   (input file "fodderbeet.dai")
   (input file "swheat.dai")
+  (input file "dk-pea.dai")
   (input file "tillage.dai")
   (input file "fertilizer.dai")
   (input file "Org_fert.dai")
