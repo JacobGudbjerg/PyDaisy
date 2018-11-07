@@ -10,7 +10,7 @@ import sys
 sys.path.append(r'h:\Documents\PyDaisy')
 
 from pydaisy.Daisy import *
-dlf = DaisyDlf(r'h:\Documents\PyDaisy\Projects\STYR-N\1_UD_4\DailyP-harvest.dlf')
+dlf = DaisyDlf(r'h:\Documents\PyDaisy\Projects\STYR-N\IND_1_4\DailyP-harvest.dlf')
 
 df = dlf.Data  
 

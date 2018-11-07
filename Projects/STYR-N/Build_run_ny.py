@@ -14,13 +14,13 @@ import copy
 sys.path.append(r'../../pydaisy')
 from Daisy import *
 
-xl = pd.read_excel(r'S1-3_1993_2010_UD4.xlsx', None)
+xl = pd.read_excel(r'Treat4_S1_S3_IND_UD1.xlsx', None)
 for sheet in xl.items():
     df=sheet[1]
 
     template = DaisyModel(r'S1_test2.dai')
     i=0
-    unique_name = str(df['block'][i]) +'_' + df['field'][i]+'_' + str(df['treatment'][i])
+    unique_name = str(df['block'][i]) +'_' + str(df['field'][i])+'_' + str(df['treatment'][i])
     newfile= copy.deepcopy(template)    
     block = newfile.Input['defaction'][1]
         
@@ -41,7 +41,11 @@ for sheet in xl.items():
             fert.Children.append(DaisyEntry('equivalent_weight',[ str(df['amount'][i]) , '[kg N/ha]']))
             fert.Children.append(DaisyEntry('from', ['-5', '[cm]']))
             fert.Children.append(DaisyEntry('to', ['-15', '[cm]']))
-            block.Children.append(fert)        
+            block.Children.append(fert)
+        elif df['action'][i]== 'irrigate':
+            irri= DaisyEntry('irrigate_overhead', [str(df['amount'][i]), '[mm/h]'])
+            #irri.Children.append(DaisyEntry('[str(df['amount'][i]), '[mm/h]'))
+            block.Children.append(irri)
         else:
             block.Children.append(DaisyEntry(df['action'][i],[]))
         
