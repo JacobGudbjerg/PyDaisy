@@ -3,6 +3,7 @@
   (input file "ryegrass.dai")
   (input file "wclover.dai")
   (input file "dk-maize.dai")
+  (input file "dk-rye.dai")
   (input file "dk-wrape.dai")
   (input file "pea.dai")
   (input file "wwheat.dai")
@@ -18,7 +19,7 @@
       (stub 5 [cm]))
     (cut "Wclover" 
       (stub 5 [cm])) )
-  (defaction "S1_1994-2010" activity
+  (defaction "S1-3_1994-2010" activity
     (wait_mm_dd 4 21)
     (fertilize
       ("my_cattle_slurry")
@@ -163,15 +164,13 @@
       (stub 7 [cm]))
     (wait_mm_dd 4 7)
     (plowing)
-    (wait_mm_dd 4 7)
-    (plowing)
     (wait_mm_dd 4 10)
     (sow "Aert")
     (wait_mm_dd 9 6)
     (harvest "Aert"
       (stub 7 [cm]))
     (wait_mm_dd 9 13)
-    (sow "Vinterrug")
+    (sow "Rug")
     (wait_mm_dd 4 19)
     (plowing)
     (wait_mm_dd 4 27)
@@ -329,7 +328,7 @@
       (stub 7 [cm]))
     (cut "Wclover"
       (stub 7 [cm])))
-  (defaction "A_F_R" activity "S1_1994-2010")
+  (defaction "A_F_R" activity "S1-3_1994-2010")
   (input file "Foulum_soil_vg.dai")
   (input file "OutputLog_2.dai")
   (defunit [kWh/d/m^2] SIfactor 

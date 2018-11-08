@@ -3,6 +3,7 @@
   (input file "ryegrass.dai")
   (input file "wclover.dai")
   (input file "dk-maize.dai")
+  (input file "dk-rye.dai")
   (input file "dk-wrape.dai")
   (input file "pea.dai")
   (input file "wwheat.dai")
@@ -18,7 +19,7 @@
       (stub 5 [cm]))
     (cut "Wclover" 
       (stub 5 [cm])) )
-  (defaction "S1_1994-2010" activity
+  (defaction "S1-3_1994-2010" activity
     (wait_mm_dd 4 20)
     (fertilize
       ("my_cattle_slurry")
@@ -42,6 +43,8 @@
     (plowing)
     (wait_mm_dd 4 28)
     (sow "SB")
+    (sow "Ryegrass")
+    (sow "Wclover")
     (wait_mm_dd 8 16)
     (harvest "SB"
       (stub 7 [cm]))
@@ -121,7 +124,7 @@
       (stub 7 [cm]))
     (cut "Wclover"
       (stub 7 [cm]))
-    (wait_mm_dd 7 30)
+    (wait_mm_dd 8 1)
     (cut "Ryegrass"
       (stub 7 [cm]))
     (cut "Wclover"
@@ -184,7 +187,7 @@
     (harvest "Aert"
       (stub 7 [cm]))
     (wait_mm_dd 9 13)
-    (sow "Vinterrug")
+    (sow "Rug")
     (wait_mm_dd 3 28)
     (plowing)
     (wait_mm_dd 4 3)
@@ -313,7 +316,8 @@
     (wait_mm_dd 4 15)
     (plowing)
     (wait_mm_dd 4 22)
-    (sow "Spring Barley/Ryegrass")
+    (sow "SB")
+    (sow "Ryegrass")
     (wait_mm_dd 6 14)
     (fertilize
       ("my_cattle_slurry")
@@ -323,20 +327,8 @@
     (wait_mm_dd 7 2)
     (irrigate_overhead 40.0 [mm/h])
     (wait_mm_dd 7 28)
-    (irrigate_overhead 45.0 [mm/h])
-    (wait_mm_dd 3 23)
-    (fertilize
-      ("my_cattle_slurry")
-      (equivalent_weight 95.0 [kg N/ha])
-      (from -5 [cm])
-      (to -15 [cm]))
-    (wait_mm_dd 6 16)
-    (fertilize
-      ("my_cattle_slurry")
-      (equivalent_weight 106.0 [kg N/ha])
-      (from -5 [cm])
-      (to -15 [cm])))
-  (defaction "A_F_R" activity "S1_1994-2010")
+    (irrigate_overhead 45.0 [mm/h]))
+  (defaction "A_F_R" activity "S1-3_1994-2010")
   (input file "Foulum_soil_vg.dai")
   (input file "OutputLog_2.dai")
   (defunit [kWh/d/m^2] SIfactor 
