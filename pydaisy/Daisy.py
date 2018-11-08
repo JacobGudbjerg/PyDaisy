@@ -503,8 +503,8 @@ def run_many(DaisyFiles, NumberOfProcesses=6, Queue='', Running= DaisyModelStatu
     """
     print('Running ' + str (len(DaisyFiles)) + ' directories on ' + str(NumberOfProcesses) + ' parallel processes')
     
-    print (__name__)
     pp= Pool(NumberOfProcesses)
+    print(__name__)
         
     FileNamesList=[]
     for f in DaisyFiles:
