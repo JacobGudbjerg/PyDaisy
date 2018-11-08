@@ -33,7 +33,10 @@ for sheet in xl.items():
                     block.Children.append(sow)  
         elif df['action'][i]=='harvest':
             for crop in df['what'][i].split(','):
-                    harvest = DaisyEntry('harvest', ['"' + crop.strip() +'"'])
+                  #harvest = DaisyEntry('sow', ['"' + crop.strip() +'"'])
+                    harvest = DaisyEntry('"'+ df['action'][i]+'"', ['"' + crop.strip() +'"'])
+                    #harvest.Children.append(DaisyEntry(['"' + crop.strip() +'"'])
+                    harvest.Children.append(DaisyEntry('stub', ['7 [cm]']))
                     block.Children.append(harvest)  
         elif df['action'][i]=='fertilize':
             fert = DaisyEntry('fertilize',[])
@@ -52,6 +55,7 @@ for sheet in xl.items():
     filename = os.path.join(unique_name, 'setup.dai')
     newfile.save_as(filename)
     #newfile.run()
-
+#(cut "Ryegrass" (stub 5 [cm])
+#(fertilize ("my_cattle_slurry") (equivalent_weight 60 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
 #run_sub_folders(r'H:\Documents\PyDaisy\Projects\STYR-N','setup.dai')
 
