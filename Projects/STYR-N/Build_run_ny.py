@@ -52,5 +52,5 @@ if __name__ =='__main__':
         filename = os.path.join(unique_name, 'setup.dai')
         newfile.save_as(filename)
     
-run_sub_folders(r'H:\Documents\PyDaisy\Projects\STYR-N','setup.dai')
+    run_sub_folders(r'..\STYR-N','setup.dai')
 
