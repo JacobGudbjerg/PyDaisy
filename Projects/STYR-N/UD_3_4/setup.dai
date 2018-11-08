@@ -121,10 +121,15 @@
       (stub 7 [cm]))
     (cut "Wclover"
       (stub 7 [cm]))
+    (wait_mm_dd 7 30)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (cut "Wclover"
+      (stub 7 [cm]))
     (wait_mm_dd 4 16)
     (fertilize
       ("my_cattle_slurry")
-      (equivalent_weight nan [kg N/ha])
+      (equivalent_weight 100.0 [kg N/ha])
       (from -5 [cm])
       (to -15 [cm]))
     (wait_mm_dd 6 2)
@@ -132,6 +137,13 @@
       (stub 7 [cm]))
     (cut "Wclover"
       (stub 7 [cm]))
+    (wait_mm_dd 8 1)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (cut "Wclover"
+      (stub 7 [cm]))
+    (wait_mm_dd 4 1)
+    (plowing)
     (wait_mm_dd 3 29)
     (fertilize
       ("my_cattle_slurry")
