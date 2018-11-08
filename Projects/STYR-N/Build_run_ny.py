@@ -13,49 +13,44 @@ import copy
 
 sys.path.append(r'../../pydaisy')
 from Daisy import *
-
-xl = pd.read_excel(r'Treat4_S1_S3_IND_UD1.xlsx', None)
-for sheet in xl.items():
-    df=sheet[1]
-
-    template = DaisyModel(r'S1_test2.dai')
-    i=0
-    unique_name = str(df['block'][i]) +'_' + str(df['field'][i])+'_' + str(df['treatment'][i])
-    newfile= copy.deepcopy(template)    
-    block = newfile.Input['defaction'][1]
-        
-    for i in range(0,len(df)):
-        block.Children.append(DaisyEntry('wait_mm_dd', [str(df['date'][i].month), str(df['date'][i].day)]))
-        
-        if df['action'][i]=='sow':
-            for crop in df['what'][i].split(','):
-                    sow = DaisyEntry('sow', ['"' + crop.strip() +'"'])
-                    block.Children.append(sow)  
-        elif df['action'][i]=='harvest' or 'cut' :
-            for crop in df['what'][i].split(','):
-                  #harvest = DaisyEntry('sow', ['"' + crop.strip() +'"'])
-                    harvest = DaisyEntry('"'+ df['action'][i]+'"', ['"' + crop.strip() +'"'])
-                    #harvest.Children.append(DaisyEntry(['"' + crop.strip() +'"'])
-                    harvest.Children.append(DaisyEntry('stub', ['7 [cm]']))
-                    block.Children.append(harvest)  
-        elif df['action'][i]=='fertilize':
-            fert = DaisyEntry('fertilize',[])
-            fert.Children.append(DaisyEntry('"' + df['what'][i]+'"',[]))
-            fert.Children.append(DaisyEntry('equivalent_weight',[ str(df['amount'][i]) , '[kg N/ha]']))
-            fert.Children.append(DaisyEntry('from', ['-5', '[cm]']))
-            fert.Children.append(DaisyEntry('to', ['-15', '[cm]']))
-            block.Children.append(fert)
-        elif df['action'][i]== 'irrigate':
-            irri= DaisyEntry('irrigate_overhead', [str(df['amount'][i]), '[mm/h]'])
-            #irri.Children.append(DaisyEntry('[str(df['amount'][i]), '[mm/h]'))
-            block.Children.append(irri)
-        else:
-            block.Children.append(DaisyEntry(df['action'][i],[]))
-        
-    filename = os.path.join(unique_name, 'setup.dai')
-    newfile.save_as(filename)
-    #newfile.run()
-#(cut "Ryegrass" (stub 5 [cm])
-#(fertilize ("my_cattle_slurry") (equivalent_weight 60 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
-#run_sub_folders(r'H:\Documents\PyDaisy\Projects\STYR-N','setup.dai')
+if __name__ =='__main__':
+    xl = pd.read_excel(r'Treat4_S1_S3.xlsx', None)
+    for sheet in xl.items():
+        df=sheet[1]
+    
+        template = DaisyModel(r'S1_test2.dai')
+        i=0
+        unique_name = str(df['block'][i]) +'_' + str(df['field'][i])+'_' + str(df['treatment'][i])
+        newfile= copy.deepcopy(template)    
+        block = newfile.Input['defaction'][1]
+            
+        for i in range(0,len(df)):
+            block.Children.append(DaisyEntry('wait_mm_dd', [str(df['date'][i].month), str(df['date'][i].day)]))
+            
+            if df['action'][i]=='sow':
+                for crop in df['what'][i].split(','):
+                        sow = DaisyEntry('sow', ['"' + crop.strip() +'"'])
+                        block.Children.append(sow)  
+            elif df['action'][i]=='harvest' or df['action'][i]=='cut' :
+                for crop in df['what'][i].split(','):
+                        harvest = DaisyEntry(df['action'][i], ['"' + crop.strip() +'"'])
+                        harvest.Children.append(DaisyEntry('stub', ['7 [cm]']))
+                        block.Children.append(harvest)  
+            elif df['action'][i]=='fertilize':
+                fert = DaisyEntry('fertilize',[])
+                fert.Children.append(DaisyEntry('"' + df['what'][i]+'"',[]))
+                fert.Children.append(DaisyEntry('equivalent_weight',[ str(df['amount'][i]) , '[kg N/ha]']))
+                fert.Children.append(DaisyEntry('from', ['-5', '[cm]']))
+                fert.Children.append(DaisyEntry('to', ['-15', '[cm]']))
+                block.Children.append(fert)
+            elif df['action'][i]== 'irrigate':
+                irri= DaisyEntry('irrigate_overhead', [str(df['amount'][i]), '[mm/h]'])
+                block.Children.append(irri)
+            else:
+                block.Children.append(DaisyEntry(df['action'][i],[]))
+            
+        filename = os.path.join(unique_name, 'setup.dai')
+        newfile.save_as(filename)
+    
+run_sub_folders(r'H:\Documents\PyDaisy\Projects\STYR-N','setup.dai')
 
