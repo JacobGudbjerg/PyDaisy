@@ -31,7 +31,7 @@ for sheet in xl.items():
             for crop in df['what'][i].split(','):
                     sow = DaisyEntry('sow', ['"' + crop.strip() +'"'])
                     block.Children.append(sow)  
-        elif df['action'][i]=='harvest':
+        elif df['action'][i]=='harvest' or 'cut' :
             for crop in df['what'][i].split(','):
                   #harvest = DaisyEntry('sow', ['"' + crop.strip() +'"'])
                     harvest = DaisyEntry('"'+ df['action'][i]+'"', ['"' + crop.strip() +'"'])
