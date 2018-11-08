@@ -1,6 +1,6 @@
 ;; Including external library-files
 
-(path "./common" "./../common" &old)
+(path "./common" "./../../common" &old)
 (input file "ryegrass.dai")(input file "wclover.dai")  (input file "dk-maize.dai") (input file "dk-rye.dai") (input file "dk-wrape.dai")
 (input file "pea.dai") (input file "wwheat.dai") (input file "fodderbeet.dai") (input file "swheat.dai")(input file "dk-pea.dai")
 

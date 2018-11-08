@@ -11,7 +11,8 @@ import pandas as pd
 import os
 import copy
 
-sys.path.append(r'../../pydaisy')
+sys.path.append(r'../../../pydaisy')
+
 from Daisy import *
 if __name__ =='__main__':
     xl = pd.read_excel(r'Treat4_S1_S3.xlsx', None)
@@ -52,5 +53,5 @@ if __name__ =='__main__':
         filename = os.path.join(unique_name, 'setup.dai')
         newfile.save_as(filename)
     
-    run_sub_folders(r'..\STYR-N','setup.dai')
+    run_sub_folders(r'.','setup.dai')
 
