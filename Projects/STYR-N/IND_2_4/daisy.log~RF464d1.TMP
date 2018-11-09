@@ -1,0 +1,1392 @@
+Has 'Software\Daisy 5.64 (w64)' registry entry.
+Using 'C:\Program Files\Daisy 5.64' as daisy home.
+Reseting current directory to 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4'
+Daisy crop/soil simulation version 5.64. (May 22 2018)
+Copyright 1996 - 2016 Per Abrahamsen, Søren Hansen and KU.
+Changing directory to 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4' success
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Opening absolute file name 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4\setup.dai'
+* Parsing file: 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4\setup.dai'
+Path set to:
+0: './common'
+1: './../common'
+2: '.'
+3: 'C:\Program Files\Daisy 5.64/lib'
+4: 'C:\Program Files\Daisy 5.64/sample'
+done
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'ryegrass.dai'
+Trying './common\ryegrass.dai'
+Trying './../common\ryegrass.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4\ryegrass.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\ryegrass.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'wclover.dai'
+Trying './common\wclover.dai'
+Trying './../common\wclover.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4\wclover.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\wclover.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'dk-maize.dai'
+Trying './common\dk-maize.dai'
+Trying './../common\dk-maize.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4\dk-maize.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\dk-maize.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'dk-wrape.dai'
+Trying './common\dk-wrape.dai'
+Trying './../common\dk-wrape.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4\dk-wrape.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\dk-wrape.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'pea.dai'
+Trying './common\pea.dai'
+Trying './../common\pea.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4\pea.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\pea.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'wwheat.dai'
+Trying './common\wwheat.dai'
+Trying './../common\wwheat.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4\wwheat.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\wwheat.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'fodderbeet.dai'
+Trying './common\fodderbeet.dai'
+Trying './../common\fodderbeet.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4\fodderbeet.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\fodderbeet.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'swheat.dai'
+Trying './common\swheat.dai'
+Trying './../common\swheat.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4\swheat.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\swheat.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'dk-pea.dai'
+Trying './common\dk-pea.dai'
+Trying './../common\dk-pea.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4\dk-pea.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\dk-pea.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'tillage.dai'
+Trying './common\tillage.dai'
+Trying './../common\tillage.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4\tillage.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\tillage.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'fertilizer.dai'
+Trying './common\fertilizer.dai'
+Trying './../common\fertilizer.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4\fertilizer.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\fertilizer.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'Org_fert.dai'
+Trying './common\Org_fert.dai'
+Trying './../common\Org_fert.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'Springbarley_MES_23_2.dai'
+Trying './common\Springbarley_MES_23_2.dai'
+Trying './../common\Springbarley_MES_23_2.dai' success!
+** Parsing file: 'Springbarley_MES_23_2.dai'
+*** input
+**** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'sbarley.dai'
+Trying './common\sbarley.dai'
+Trying './../common\sbarley.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4\sbarley.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\sbarley.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'Foulum_soil_vg.dai'
+Trying './common\Foulum_soil_vg.dai'
+Trying './../common\Foulum_soil_vg.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'OutputLog_2.dai'
+Trying './common\OutputLog_2.dai'
+Trying './../common\OutputLog_2.dai' success!
+** Parsing file: 'OutputLog_2.dai'
+*** input
+**** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'log.dai'
+Trying './common\log.dai'
+Trying './../common\log.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4\log.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\log.dai' success!
+*** Parsing file: 'log.dai'
+**** input
+***** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'log-std.dai'
+Trying './common\log-std.dai'
+Trying './../common\log-std.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4\log-std.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\log-std.dai' success!
+Command line: C:\Program Files\Daisy 5.64\bin\daisy.exe H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4\setup.dai
+Storing 'daisy.log' in 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4'
+* weather: default weather_initialize
+** source_initialize
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_2_4':
+Looking for file 'Daily_foulum_1984-2017.dwf'
+Trying './common\Daily_foulum_1984-2017.dwf'
+Trying './../common\Daily_foulum_1984-2017.dwf' success!
+* column: Foulum; FAO initialize
+** Soil
+*** Horizons
+**** horizon: Foulum 0-10 initialize_base
+(CEC 12.3856 [cmolc/kg]) ; Estimated from clay and humus.
+(quartz 0.638149 []) ; Estimated from texture.
+h	h	Theta	K
+cm	pF		cm/h
+0		0.391	1.60417
+-1	0	0.39051	0.663137
+-10	1	0.382698	0.205528
+-100	2	0.312691	0.00415536
+-1000	3	0.187682	2.75571e-006
+-15848.9	4.2	0.093274	1.77303e-010
+**** horizon: Foulum 10-30 initialize_base
+(CEC 11.7971 [cmolc/kg]) ; Estimated from clay and humus.
+(quartz 0.637616 []) ; Estimated from texture.
+h	h	Theta	K
+cm	pF		cm/h
+0		0.414	4.33333
+-1	0	0.413069	1.8016
+-10	1	0.397654	0.473556
+-100	2	0.290613	0.00938941
+-1000	3	0.156561	2.38003e-005
+-15848.9	4.2	0.0704604	1.30047e-008
+**** horizon: Foulum 30-50 initialize_base
+(CEC 8.94337 [cmolc/kg]) ; Estimated from clay and humus.
+(quartz 0.609576 []) ; Estimated from texture.
+h	h	Theta	K
+cm	pF		cm/h
+0		0.391	19.7917
+-1	0	0.386456	4.4347
+-10	1	0.335311	0.302168
+-100	2	0.21391	0.00126012
+-1000	3	0.131935	2.50576e-006
+-15848.9	4.2	0.0834798	1.34958e-009
+**** horizon: Foulum 50-70 initialize_base
+(CEC 6.99994 [cmolc/kg]) ; Estimated from clay and humus.
+(quartz 0.626751 []) ; Estimated from texture.
+h	h	Theta	K
+cm	pF		cm/h
+0		0.331	2.75
+-1	0	0.327034	0.261744
+-10	1	0.293551	0.0170145
+-100	2	0.213858	0.000124232
+-1000	3	0.145267	4.92294e-007
+-15848.9	4.2	0.0906118	6.03998e-010
+**** horizon: Foulum 70-90 initialize_base
+(CEC 7.58411 [cmolc/kg]) ; Estimated from clay and humus.
+(quartz 0.621119 []) ; Estimated from texture.
+h	h	Theta	K
+cm	pF		cm/h
+0		0.304	2.54167
+-1	0	0.303348	0.629617
+-10	1	0.294902	0.149176
+-100	2	0.241324	0.00398847
+-1000	3	0.162127	1.82928e-005
+-15848.9	4.2	0.0961987	2.00676e-008
+*** Geometry
+(zplus -2.5 -5 -10 -16 -23 -30 -36 -43 -50 -56 -63 -70 -76 -83 -90); 15 cells.
+** bioclimate: default initialize
+Difrad choosen: DPF
+** tertiary: old initialize
+Adding macropores to -90 cm
+** movement: vertical initialize_derived
+Bottom heat delay = -0.315391
+** OrganicStandard
+lay	humus	humus	input	input	AOM	SMB1	SMB2	SOM1	SOM2	SOM3	dSMB1	dSMB1	dSMB2	dSMB2	dSOM1	dSOM1	dSOM2	dSOM2	dSOM3	dSOM3
+	kg C/ha/cm	%	kg C/ha/cm/y	%	%	%	%	%	%	%	kg C/ha/cm/y	y^-1	kg C/ha/cm/y	y^-1	kg C/ha/cm/y	y^-1	kg C/ha/cm/y	y^-1	kg C/ha/cm/y	y^-1
+0	2245.28	2.5	270.506	12.0478	1.88909	1.88596	1.29058	28.5585	66.3758	0	0	0	0	0	7.89434	0.0123115	0	0	-0	nan
+1	2245.28	2.5	270.506	12.0478	1.47483	1.88956	1.29059	28.9667	66.3783	0	0	0	0	0	7.80604	0.0120022	0	0	-0	nan
+2	2245.28	2.5	270.506	12.0478	1.01737	1.89354	1.29061	29.4174	66.3811	0	0	0	0	0	7.70853	0.0116707	0	0	-0	nan
+3	2011.65	2.3	22.0837	1.09779	0.658674	0.201159	0.117691	5.92726	6.06839	87.0268	0	0	0	0	0	0	0	0	-0	-0
+4	2011.65	2.3	11.6023	0.576755	0.346053	0.105685	0.0618324	3.11405	3.1882	93.1842	0	0	0	0	0	0	0	0	-0	-0
+5	2011.65	2.3	5.80114	0.288378	0.173027	0.0528424	0.0309162	1.55703	1.5941	96.5921	0	0	0	0	0	0	0	0	-0	-0
+6	278.238	0.3	3.0478	1.09539	0.657235	0.23198	0.117434	6.83539	6.99814	85.1598	0	0	0	0	0	0	0	0	-0	-0
+7	278.238	0.3	1.60125	0.575495	0.345297	0.121877	0.0616973	3.59117	3.67667	92.2033	0	0	0	0	0	0	0	0	-0	-0
+8	278.238	0.3	0.800623	0.287747	0.172648	0.0609385	0.0308486	1.79558	1.83834	96.1016	0	0	0	0	0	0	0	0	-0	-0
+9	206.624	0.2	0.42063	0.203573	0.122144	0.0397457	0.0218245	1.17113	1.19901	97.4461	0	0	0	0	0	0	0	0	-0	-0
+10	206.624	0.2	0.22099	0.106953	0.0641716	0.0208815	0.0114661	0.615285	0.629934	98.6583	0	0	0	0	0	0	0	0	-0	-0
+11	206.624	0.2	0.110495	0.0534763	0.0320858	0.0104408	0.00573305	0.307642	0.314967	99.3291	0	0	0	0	0	0	0	0	-0	-0
+12	210.146	0.2	0.0580516	0.0276244	0.0165747	0.00554712	0.00296154	0.163449	0.16734	99.6441	0	0	0	0	0	0	0	0	-0	-0
+13	210.146	0.2	0.0304991	0.0145133	0.00870797	0.00291434	0.00155593	0.0858723	0.0879169	99.813	0	0	0	0	0	0	0	0	-0	-0
+14	210.146	0.2	0.0152495	0.00725664	0.00435398	0.00145717	0.000777965	0.0429362	0.0439585	99.9065	0	0	0	0	0	0	0	0	-0	-0
+*** Total soil summary
+Expected humus change: 77.7936 [kg C/ha/y], 1.15955e-007 [y^-1].
+Expected background mineralization: -7.07215 [kg N/ha/y].
+*** Top soil summary
+	SOM1	SOM2	SOM3	SMB1	SMB2	AOM1	AOM2	total
+kg C/ha	6531.51	14903.9	0	424.503	289.775	242.429	60.6074	22452.8
+kg N/ha	535.319	1221.56	0	63.3586	43.2499	2.69366	4.88226	1871.06
+
+Depth	10	cm
+T	7.3	dg C
+h	-100	cm
+clay	7.7	%
+Specified input	3000	kg C/ha/y
+Specified background mineralization	not specified	kg N/ha/y
+Zone input	2705.06	kg C/ha/y
+Zone background mineralization	0	kg C/ha/y
+Zone humus change	0	kg C/ha/y
+Time	Thu Nov 08 09:25:54 2018
+
+Program started Thu Nov 08 09:25:51 2018, 3 seconds ago.
+* Running
+** 1994-03-01T00:00:00
+Begin simulation
+Start logging
+** 1994-04-21T08:00:00
+Fertilizing 24.4245 ton my_cattle_slurry ww/ha; utilized 100 kg N/ha; water 2.19088 mm
+Using small timestep: 6m
+** 1994-04-21T09:00:00
+Back to normal size timesteps
+** 1994-04-22T08:00:00
+Sowing SB
+*** Foulum; FAO
+**** sow
+***** SB
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 1994-05-04T00:00:00
+*** crop: SB tick
+Emerging
+** 1994-05-12T15:00:00
+*** crop: SB tick
+Luxury nitrogen uptake initiated
+** 1994-06-26T00:00:00
+*** crop: SB tick
+Flowering
+** 1994-08-10T08:00:00
+Harvesting SB, removing 3.17387 + 3.18253 Mg DM/ha
+** 1995-06-02T08:00:00
+Attempting to harvest Ryegrass which has not emerged on the field (warning)
+Attempting to harvest Wclover which has not emerged on the field (warning)
+** 1996-04-26T08:00:00
+Fertilizing 34.1943 ton my_cattle_slurry ww/ha; utilized 140 kg N/ha; water 3.06723 mm
+Using small timestep: 6m
+** 1996-04-26T09:00:00
+Back to normal size timesteps
+** 1996-06-06T08:00:00
+Attempting to harvest Ryegrass which has not emerged on the field (warning)
+Attempting to harvest Wclover which has not emerged on the field (warning)
+** 1997-04-14T08:00:00
+Fertilizing 14.6547 ton my_cattle_slurry ww/ha; utilized 60 kg N/ha; water 1.31453 mm
+Using small timestep: 6m
+** 1997-04-14T09:00:00
+Back to normal size timesteps
+** 1997-04-22T08:00:00
+Sowing Spring Barley
+*** Foulum; FAO
+**** sow
+***** Spring Barley
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Pea
+*** Foulum; FAO
+**** sow
+***** Pea
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 1997-05-08T00:00:00
+*** crop: Spring Barley tick
+Emerging
+*** crop: Pea tick
+Emerging
+** 1997-05-17T07:00:00
+*** crop: Pea tick
+Luxury nitrogen uptake initiated
+** 1997-05-18T05:00:00
+*** crop: Spring Barley tick
+Luxury nitrogen uptake initiated
+** 1997-07-07T00:00:00
+*** crop: Pea tick
+Flowering
+** 1997-07-31T08:00:00
+*** Foulum; FAO
+**** crop: Spring Barley harvest
+No CAI after harvest (warning)
+Cutting Spring Barley, removing 0 + 0.60807 Mg DM/ha
+The crop survived harvest.
+If this was intended, you should use the 'cut' action instead to avoid this message (warning)
+Harvesting Pea, removing 3.13802 + 5.64226 Mg DM/ha
+*** chemical: NO3 tick_top
+old_surface_storage = 7.21108e-005, surface_in = -0.00126694, surface_transform = 0, surface_runoff_rate = 0, surface_decompose_rate = 0, dt = 1, surface_storage = -0.00119483, surface_absolute_loss_rate = 0
+*** chemical: NH4 tick_top
+old_surface_storage = 0.00162155, surface_in = -0.00200347, surface_transform = 0, surface_runoff_rate = 0, surface_decompose_rate = 0, dt = 1, surface_storage = -0.000381918, surface_absolute_loss_rate = 0
+** 1998-04-17T08:00:00
+Fertilizing 36.6367 ton my_cattle_slurry ww/ha; utilized 150 kg N/ha; water 3.28632 mm
+Using small timestep: 6m
+** 1998-04-17T09:00:00
+Back to normal size timesteps
+** 1998-04-23T08:00:00
+Sowing Spring Wheat
+*** Foulum; FAO
+**** sow
+***** Spring Wheat
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 1998-05-05T00:00:00
+*** crop: Spring Wheat tick
+Emerging
+** 1998-05-10T12:00:00
+*** crop: Spring Wheat tick
+Luxury nitrogen uptake initiated
+** 1998-06-19T00:00:00
+*** crop: Spring Wheat tick
+Flowering
+** 1998-08-04T00:00:00
+*** crop: Spring Wheat tick
+Ripe
+** 1998-09-03T08:00:00
+Harvesting Spring Wheat, removing 2.31754 + 4.20802 Mg DM/ha
+** 1999-04-08T08:00:00
+Fertilizing 61.0612 ton my_cattle_slurry ww/ha; utilized 250 kg N/ha; water 5.47719 mm
+Using small timestep: 6m
+** 1999-04-08T09:00:00
+Back to normal size timesteps
+** 1999-04-27T08:00:00
+Sowing Fodder Beet
+*** Foulum; FAO
+**** sow
+***** Fodder Beet
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 1999-05-26T00:00:00
+*** crop: Fodder Beet tick
+Emerging
+** 1999-05-30T06:00:00
+*** crop: Fodder Beet tick
+Luxury nitrogen uptake initiated
+** 1999-10-27T08:00:00
+Harvesting Fodder Beet, removing 12.6401 + 4.14965 Mg DM/ha
+** 2000-04-03T08:00:00
+Fertilizing 24.4245 ton my_cattle_slurry ww/ha; utilized 100 kg N/ha; water 2.19088 mm
+Using small timestep: 6m
+** 2000-04-03T09:00:00
+Back to normal size timesteps
+** 2000-05-06T08:00:00
+Sowing SB
+*** Foulum; FAO
+**** sow
+***** SB
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 2000-05-16T00:00:00
+*** crop: SB tick
+Emerging
+** 2000-05-24T09:00:00
+*** crop: SB tick
+Luxury nitrogen uptake initiated
+** 2000-07-04T00:00:00
+*** crop: SB tick
+Flowering
+** 2000-08-22T08:00:00
+Harvesting SB, removing 4.8212 + 2.64 Mg DM/ha
+** 2001-06-08T08:00:00
+Attempting to harvest Ryegrass which has not emerged on the field (warning)
+Attempting to harvest Wclover which has not emerged on the field (warning)
+** 2002-04-03T08:00:00
+Fertilizing 24.4245 ton my_cattle_slurry ww/ha; utilized 100 kg N/ha; water 2.19088 mm
+Using small timestep: 6m
+** 2002-04-03T09:00:00
+Back to normal size timesteps
+** 2002-05-29T08:00:00
+Attempting to harvest Ryegrass which has not emerged on the field (warning)
+Attempting to harvest Wclover which has not emerged on the field (warning)
+** 2003-04-07T08:00:00
+Fertilizing 24.4245 ton my_cattle_slurry ww/ha; utilized 100 kg N/ha; water 2.19088 mm
+Using small timestep: 6m
+** 2003-04-07T09:00:00
+Back to normal size timesteps
+** 2003-04-14T08:00:00
+Sowing SB
+*** Foulum; FAO
+**** sow
+***** SB
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 2003-04-22T08:00:00
+Sowing Ryegrass
+*** Foulum; FAO
+**** sow
+***** Ryegrass
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Ryegrass
+*** Foulum; FAO
+**** sow
+***** Ryegrass
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+There is already an Ryegrass on the field.
+If you want two Ryegrass you should rename one of them (error)
+** 2003-04-27T00:00:00
+*** crop: SB tick
+Emerging
+** 2003-04-28T00:00:00
+*** crop: Ryegrass tick
+Emerging
+*** crop: Ryegrass tick
+Emerging
+** 2003-05-05T03:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2003-05-07T16:00:00
+*** crop: SB tick
+Luxury nitrogen uptake initiated
+** 2003-06-18T00:00:00
+*** crop: SB tick
+Flowering
+** 2003-07-19T01:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2003-08-11T00:00:00
+*** crop: SB tick
+Ripe
+** 2003-08-11T08:00:00
+Harvesting SB, removing 5.25246 + 2.7498 Mg DM/ha
+** 2003-11-21T12:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2004-03-29T08:00:00
+Fertilizing 61.0612 ton my_cattle_slurry ww/ha; utilized 250 kg N/ha; water 5.47719 mm
+Using small timestep: 6m
+** 2004-03-29T09:00:00
+Back to normal size timesteps
+** 2004-04-01T08:00:00
+Sowing Spring Wheat
+*** Foulum; FAO
+**** sow
+***** Spring Wheat
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 2004-04-07T08:00:00
+Fertilizing 24.4245 ton my_cattle_slurry ww/ha; utilized 100 kg N/ha; water 2.19088 mm
+*** action: plowing doIt
+**** Foulum; FAO
+***** crop: Spring Wheat harvest
+No root density (warning)
+Using small timestep: 6m
+** 2004-04-07T09:00:00
+Back to normal size timesteps
+** 2004-04-14T08:00:00
+Sowing SB
+*** Foulum; FAO
+**** sow
+***** SB
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 2004-04-27T00:00:00
+*** crop: SB tick
+Emerging
+** 2004-04-29T08:00:00
+Sowing Ryegrass
+*** Foulum; FAO
+**** sow
+***** Ryegrass
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 2004-05-05T00:00:00
+*** crop: Ryegrass tick
+Emerging
+** 2004-05-06T18:00:00
+*** crop: SB tick
+Luxury nitrogen uptake initiated
+** 2004-05-13T00:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2004-06-18T00:00:00
+*** crop: SB tick
+Flowering
+** 2004-08-19T00:00:00
+*** crop: SB tick
+Ripe
+** 2004-09-06T08:00:00
+Attempting to harvest Spring Wheat which has not emerged on the field (warning)
+** 2004-10-20T07:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -6.27291e-009 @ -1.25, C = -1.98504e-008, A = 0, M_new = -6.27291e-009, M_old = 1.63191e-008, dt 1, S = -2.48053e-008, S_extra = -2.5e-008, C_avg_ = 5.15157e-008, C_secondary_5.15157e-008, C_primary_ = 5.15157e-008, M_secondary_ = 0, M_primary_ = 1.63191e-008, M_total_ = 1.63191e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.5e-008, S_primary_ = 1.94664e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.5e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.94664e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.316779, Theta_new 0.31601, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00218385, v2 0
+0: q = 0.000474145, J = 0
+-2.5: q = -0.00145012, J = 5.53332e-009
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -8.48827e-009 @ -1.25, C = -2.68608e-008, A = 0, M_new = -8.48827e-009, M_old = 1.63191e-008, dt 1, S = -2.48053e-008, S_extra = -2.5e-008, C_avg_ = 5.15157e-008, C_secondary_5.15157e-008, C_primary_ = 5.15157e-008, M_secondary_ = 0, M_primary_ = 1.63191e-008, M_total_ = 1.63191e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.5e-008, S_primary_ = 1.94664e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.5e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.94664e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.316779, Theta_new 0.31601, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00218385, v2 0
+0: q = 0.000474145, J = 0
+-2.5: q = -0.00145012, J = -5.06595e-012
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -8.48624e-009 @ -1.25, C = -2.68544e-008, A = 0, M_new = -8.48624e-009, M_old = 1.63191e-008, dt 1, S = -2.48053e-008, S_extra = -2.5e-008, C_avg_ = 5.15157e-008, C_secondary_5.15157e-008, C_primary_ = 5.15157e-008, M_secondary_ = 0, M_primary_ = 1.63191e-008, M_total_ = 1.63191e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.5e-008, S_primary_ = 1.94664e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.5e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.94664e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.316779, Theta_new 0.31601, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00218385, v2 0
+0: q = 0.000474145, J = 0
+-2.5: q = -0.00145012, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -6.27291e-009 @ -1.25, C = -1.98504e-008, A = 0, M_new = -6.27291e-009, M_old = 1.63191e-008, dt 1, S = -2.48053e-008, S_extra = -2.5e-008, C_avg_ = 5.15157e-008, C_secondary_5.15157e-008, C_primary_ = 5.15157e-008, M_secondary_ = 0, M_primary_ = 1.63191e-008, M_total_ = 1.63191e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.5e-008, S_primary_ = 1.94664e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.5e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.94664e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.316779, Theta_new 0.31601, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00218385, v2 0
+0: q = 0.000474145, J = 0
+-2.5: q = -0.00145012, J = 5.53332e-009
+** 2004-10-20T15:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[1] = -3.45982e-009 @ -3.75, C = -1.10714e-008, A = 0, M_new = -3.45982e-009, M_old = 1.29957e-008, dt 1, S = -2.06844e-008, S_extra = -2.04855e-008, C_avg_ = 4.15323e-008, C_secondary_4.15323e-008, C_primary_ = 4.15323e-008, M_secondary_ = 0, M_primary_ = 1.29957e-008, M_total_ = 1.29957e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.04855e-008, S_primary_ = -1.98874e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.04855e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -1.98874e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.312906, Theta_new 0.3125, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00412943, v2 0
+-2.5: q = -0.000404926, J = 1.01134e-010
+-5: q = -0.00142004, J = 1.06733e-008
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[1] = -7.6887e-009 @ -3.75, C = -2.46038e-008, A = 0, M_new = -7.6887e-009, M_old = 1.29957e-008, dt 1, S = -2.06844e-008, S_extra = -2.04855e-008, C_avg_ = 4.15323e-008, C_secondary_4.15323e-008, C_primary_ = 4.15323e-008, M_secondary_ = 0, M_primary_ = 1.29957e-008, M_total_ = 1.29957e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.04855e-008, S_primary_ = -1.98874e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.04855e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -1.98874e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.312906, Theta_new 0.3125, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00412943, v2 0
+-2.5: q = -0.000404926, J = -5.02625e-013
+-5: q = -0.00142004, J = -5.43938e-013
+Solute problem: Negative concentration
+****** solute[2]: none
+M[1] = -7.68868e-009 @ -3.75, C = -2.46038e-008, A = 0, M_new = -7.68868e-009, M_old = 1.29957e-008, dt 1, S = -2.06844e-008, S_extra = -2.04855e-008, C_avg_ = 4.15323e-008, C_secondary_4.15323e-008, C_primary_ = 4.15323e-008, M_secondary_ = 0, M_primary_ = 1.29957e-008, M_total_ = 1.29957e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.04855e-008, S_primary_ = -1.98874e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.04855e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -1.98874e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.312906, Theta_new 0.3125, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00412943, v2 0
+-2.5: q = -0.000404926, J = 0
+-5: q = -0.00142004, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[1] = -3.45982e-009 @ -3.75, C = -1.10714e-008, A = 0, M_new = -3.45982e-009, M_old = 1.29957e-008, dt 1, S = -2.06844e-008, S_extra = -2.04855e-008, C_avg_ = 4.15323e-008, C_secondary_4.15323e-008, C_primary_ = 4.15323e-008, M_secondary_ = 0, M_primary_ = 1.29957e-008, M_total_ = 1.29957e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.04855e-008, S_primary_ = -1.98874e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.04855e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -1.98874e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.312906, Theta_new 0.3125, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00412943, v2 0
+-2.5: q = -0.000404926, J = 1.01134e-010
+-5: q = -0.00142004, J = 1.06733e-008
+** 2004-10-21T01:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -4.49612e-010 @ -1.25, C = -1.45194e-009, A = 0, M_new = -4.49612e-010, M_old = 2.12813e-009, dt 1, S = -3.29947e-009, S_extra = -3.82754e-009, C_avg_ = 6.87888e-009, C_secondary_6.87888e-009, C_primary_ = 6.87888e-009, M_secondary_ = 0, M_primary_ = 2.12813e-009, M_total_ = 2.12813e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -3.82754e-009, S_primary_ = 5.28074e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -3.82754e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 5.28074e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.309371, Theta_new 0.309662, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00936995, v2 0
+0: q = -0.00241575, J = -1.78676e-009
+-2.5: q = -0.00168762, J = 1.75679e-011
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -4.57775e-010 @ -1.25, C = -1.4783e-009, A = 0, M_new = -4.57775e-010, M_old = 2.12813e-009, dt 1, S = -3.29947e-009, S_extra = -3.82754e-009, C_avg_ = 6.87888e-009, C_secondary_6.87888e-009, C_primary_ = 6.87888e-009, M_secondary_ = 0, M_primary_ = 2.12813e-009, M_total_ = 2.12813e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -3.82754e-009, S_primary_ = 5.28074e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -3.82754e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 5.28074e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.309371, Theta_new 0.309662, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00936995, v2 0
+0: q = -0.00241575, J = -1.78676e-009
+-2.5: q = -0.00168762, J = -2.84053e-012
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -4.56639e-010 @ -1.25, C = -1.47463e-009, A = 0, M_new = -4.56639e-010, M_old = 2.12813e-009, dt 1, S = -3.29947e-009, S_extra = -3.82754e-009, C_avg_ = 6.87888e-009, C_secondary_6.87888e-009, C_primary_ = 6.87888e-009, M_secondary_ = 0, M_primary_ = 2.12813e-009, M_total_ = 2.12813e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -3.82754e-009, S_primary_ = 5.28074e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -3.82754e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 5.28074e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.309371, Theta_new 0.309662, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00936995, v2 0
+0: q = -0.00241575, J = -1.78676e-009
+-2.5: q = -0.00168762, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -4.49612e-010 @ -1.25, C = -1.45194e-009, A = 0, M_new = -4.49612e-010, M_old = 2.12813e-009, dt 1, S = -3.29947e-009, S_extra = -3.82754e-009, C_avg_ = 6.87888e-009, C_secondary_6.87888e-009, C_primary_ = 6.87888e-009, M_secondary_ = 0, M_primary_ = 2.12813e-009, M_total_ = 2.12813e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -3.82754e-009, S_primary_ = 5.28074e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -3.82754e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 5.28074e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.309371, Theta_new 0.309662, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00936995, v2 0
+0: q = -0.00241575, J = -1.78676e-009
+-2.5: q = -0.00168762, J = 1.75679e-011
+** 2004-10-24T23:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -2.05599e-010 @ -1.25, C = -5.8571e-010, A = 0, M_new = -2.05599e-010, M_old = 9.35545e-009, dt 1, S = -1.74618e-008, S_extra = -1.87615e-008, C_avg_ = 2.66562e-008, C_secondary_2.66562e-008, C_primary_ = 2.66562e-008, M_secondary_ = 0, M_primary_ = 9.35545e-009, M_total_ = 9.35545e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -1.87615e-008, S_primary_ = 1.29978e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.87615e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.29978e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.350967, Theta_new 0.351026, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.111098, v2 0
+0: q = -0.0276491, J = -2.08241e-008
+-2.5: q = -0.0275028, J = -1.07239e-009
+Solute problem: Negative concentration
+****** solute[1]: convection
+Succeeded
+** 2004-10-25T11:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -4.97716e-011 @ -1.25, C = -1.44602e-010, A = 0, M_new = -4.97716e-011, M_old = 5.16216e-009, dt 1, S = -8.67226e-009, S_extra = -1.01096e-008, C_avg_ = 1.49775e-008, C_secondary_1.49775e-008, C_primary_ = 1.49775e-008, M_secondary_ = 0, M_primary_ = 5.16216e-009, M_total_ = 5.16216e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -1.01096e-008, S_primary_ = 1.43732e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.01096e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.43732e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.344661, Theta_new 0.344197, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0441223, v2 0
+0: q = -0.0101575, J = -8.9196e-009
+-2.5: q = -0.0113198, J = -2.68776e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+Succeeded
+** 2004-10-27T00:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -1.43443e-009 @ -1.25, C = -4.18421e-009, A = 0, M_new = -1.43443e-009, M_old = 2.48147e-009, dt 1, S = -3.90607e-009, S_extra = -4.8043e-009, C_avg_ = 7.18523e-009, C_secondary_7.18523e-009, C_primary_ = 7.18523e-009, M_secondary_ = 0, M_primary_ = 2.48147e-009, M_total_ = 2.48147e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -4.8043e-009, S_primary_ = 8.98233e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -4.8043e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 8.98233e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.345358, Theta_new 0.34282, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.016277, v2 0
+0: q = -0.000773251, J = 0
+-2.5: q = -0.00711818, J = -2.45861e-011
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -1.42501e-009 @ -1.25, C = -4.15674e-009, A = 0, M_new = -1.42501e-009, M_old = 2.48147e-009, dt 1, S = -3.90607e-009, S_extra = -4.8043e-009, C_avg_ = 7.18523e-009, C_secondary_7.18523e-009, C_primary_ = 7.18523e-009, M_secondary_ = 0, M_primary_ = 2.48147e-009, M_total_ = 2.48147e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -4.8043e-009, S_primary_ = 8.98233e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -4.8043e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 8.98233e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.345358, Theta_new 0.34282, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.016277, v2 0
+0: q = -0.000773251, J = 0
+-2.5: q = -0.00711818, J = -1.04177e-012
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -1.4246e-009 @ -1.25, C = -4.15553e-009, A = 0, M_new = -1.4246e-009, M_old = 2.48147e-009, dt 1, S = -3.90607e-009, S_extra = -4.8043e-009, C_avg_ = 7.18523e-009, C_secondary_7.18523e-009, C_primary_ = 7.18523e-009, M_secondary_ = 0, M_primary_ = 2.48147e-009, M_total_ = 2.48147e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -4.8043e-009, S_primary_ = 8.98233e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -4.8043e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 8.98233e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.345358, Theta_new 0.34282, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.016277, v2 0
+0: q = -0.000773251, J = 0
+-2.5: q = -0.00711818, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -1.43443e-009 @ -1.25, C = -4.18421e-009, A = 0, M_new = -1.43443e-009, M_old = 2.48147e-009, dt 1, S = -3.90607e-009, S_extra = -4.8043e-009, C_avg_ = 7.18523e-009, C_secondary_7.18523e-009, C_primary_ = 7.18523e-009, M_secondary_ = 0, M_primary_ = 2.48147e-009, M_total_ = 2.48147e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -4.8043e-009, S_primary_ = 8.98233e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -4.8043e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 8.98233e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.345358, Theta_new 0.34282, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.016277, v2 0
+0: q = -0.000773251, J = 0
+-2.5: q = -0.00711818, J = -2.45861e-011
+** 2004-10-31T00:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -4.96691e-009 @ -1.25, C = -1.37082e-008, A = 0, M_new = -4.96691e-009, M_old = 1.12941e-008, dt 1, S = -2.12548e-008, S_extra = -2.24698e-008, C_avg_ = 3.0702e-008, C_secondary_3.0702e-008, C_primary_ = 3.0702e-008, M_secondary_ = 0, M_primary_ = 1.12941e-008, M_total_ = 1.12941e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.24698e-008, S_primary_ = 1.21504e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.24698e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.21504e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.367863, Theta_new 0.362332, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.103952, v2 0
+0: q = -0.0197199, J = -1.32987e-008
+-2.5: q = -0.0335465, J = -8.14236e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -4.69059e-009 @ -1.25, C = -1.29456e-008, A = 0, M_new = -4.69059e-009, M_old = 1.12941e-008, dt 1, S = -2.12548e-008, S_extra = -2.24698e-008, C_avg_ = 3.0702e-008, C_secondary_3.0702e-008, C_primary_ = 3.0702e-008, M_secondary_ = 0, M_primary_ = 1.12941e-008, M_total_ = 1.12941e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.24698e-008, S_primary_ = 1.21504e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.24698e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.21504e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.367863, Theta_new 0.362332, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.103952, v2 0
+0: q = -0.0197199, J = -1.32987e-008
+-2.5: q = -0.0335465, J = -1.23436e-010
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -4.64121e-009 @ -1.25, C = -1.28093e-008, A = 0, M_new = -4.64121e-009, M_old = 1.12941e-008, dt 1, S = -2.12548e-008, S_extra = -2.24698e-008, C_avg_ = 3.0702e-008, C_secondary_3.0702e-008, C_primary_ = 3.0702e-008, M_secondary_ = 0, M_primary_ = 1.12941e-008, M_total_ = 1.12941e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.24698e-008, S_primary_ = 1.21504e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.24698e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.21504e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.367863, Theta_new 0.362332, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.103952, v2 0
+0: q = -0.0197199, J = -1.32987e-008
+-2.5: q = -0.0335465, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -4.96691e-009 @ -1.25, C = -1.37082e-008, A = 0, M_new = -4.96691e-009, M_old = 1.12941e-008, dt 1, S = -2.12548e-008, S_extra = -2.24698e-008, C_avg_ = 3.0702e-008, C_secondary_3.0702e-008, C_primary_ = 3.0702e-008, M_secondary_ = 0, M_primary_ = 1.12941e-008, M_total_ = 1.12941e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.24698e-008, S_primary_ = 1.21504e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.24698e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.21504e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.367863, Theta_new 0.362332, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.103952, v2 0
+0: q = -0.0197199, J = -1.32987e-008
+-2.5: q = -0.0335465, J = -8.14236e-010
+M[1] = -1.96676e-010 @ -3.75, C = -5.41862e-010, A = 0, M_new = -1.96676e-010, M_old = 1.30794e-009, dt 1, S = -1.78929e-009, S_extra = -2.23934e-009, C_avg_ = 3.56553e-009, C_secondary_3.56553e-009, C_primary_ = 3.56553e-009, M_secondary_ = 0, M_primary_ = 1.30794e-009, M_total_ = 1.30794e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -2.23934e-009, S_primary_ = 4.50054e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.23934e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 4.50054e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.366829, Theta_new 0.362964, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.149531, v2 0
+-2.5: q = -0.0335465, J = -8.14236e-010
+-5: q = -0.043209, J = -1.02562e-010
+** 2004-11-01T00:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -2.12507e-009 @ -1.25, C = -6.06587e-009, A = 0, M_new = -2.12507e-009, M_old = 3.62125e-009, dt 1, S = -5.72942e-009, S_extra = -6.83245e-009, C_avg_ = 1.02491e-008, C_secondary_1.02491e-008, C_primary_ = 1.02491e-008, M_secondary_ = 0, M_primary_ = 3.62125e-009, M_total_ = 3.62125e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -6.83245e-009, S_primary_ = 1.10303e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -6.83245e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.10303e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.353325, Theta_new 0.350332, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0133187, v2 0
+0: q = 0.000442403, J = 0
+-2.5: q = -0.00704106, J = -4.22537e-011
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -2.10856e-009 @ -1.25, C = -6.01875e-009, A = 0, M_new = -2.10856e-009, M_old = 3.62125e-009, dt 1, S = -5.72942e-009, S_extra = -6.83245e-009, C_avg_ = 1.02491e-008, C_secondary_1.02491e-008, C_primary_ = 1.02491e-008, M_secondary_ = 0, M_primary_ = 3.62125e-009, M_total_ = 3.62125e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -6.83245e-009, S_primary_ = 1.10303e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -6.83245e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.10303e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.353325, Theta_new 0.350332, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0133187, v2 0
+0: q = 0.000442403, J = 0
+-2.5: q = -0.00704106, J = -9.80652e-013
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -2.10817e-009 @ -1.25, C = -6.01763e-009, A = 0, M_new = -2.10817e-009, M_old = 3.62125e-009, dt 1, S = -5.72942e-009, S_extra = -6.83245e-009, C_avg_ = 1.02491e-008, C_secondary_1.02491e-008, C_primary_ = 1.02491e-008, M_secondary_ = 0, M_primary_ = 3.62125e-009, M_total_ = 3.62125e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -6.83245e-009, S_primary_ = 1.10303e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -6.83245e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.10303e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.353325, Theta_new 0.350332, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0133187, v2 0
+0: q = 0.000442403, J = 0
+-2.5: q = -0.00704106, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -2.12507e-009 @ -1.25, C = -6.06587e-009, A = 0, M_new = -2.12507e-009, M_old = 3.62125e-009, dt 1, S = -5.72942e-009, S_extra = -6.83245e-009, C_avg_ = 1.02491e-008, C_secondary_1.02491e-008, C_primary_ = 1.02491e-008, M_secondary_ = 0, M_primary_ = 3.62125e-009, M_total_ = 3.62125e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -6.83245e-009, S_primary_ = 1.10303e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -6.83245e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.10303e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.353325, Theta_new 0.350332, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0133187, v2 0
+0: q = 0.000442403, J = 0
+-2.5: q = -0.00704106, J = -4.22537e-011
+** 2004-11-05T01:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -7.33801e-009 @ -1.25, C = -2.18512e-008, A = 0, M_new = -7.33801e-009, M_old = 1.10156e-008, dt 1, S = -1.88591e-008, S_extra = -1.87537e-008, C_avg_ = 3.28145e-008, C_secondary_3.28145e-008, C_primary_ = 3.28145e-008, M_secondary_ = 0, M_primary_ = 1.10156e-008, M_total_ = 1.10156e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.87537e-008, S_primary_ = -1.05411e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.87537e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -1.05411e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.335691, Theta_new 0.335817, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00549504, v2 0
+0: q = -0.00146146, J = -1.31513e-009
+-2.5: q = -0.00114823, J = -5.11748e-011
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -7.31681e-009 @ -1.25, C = -2.17881e-008, A = 0, M_new = -7.31681e-009, M_old = 1.10156e-008, dt 1, S = -1.88591e-008, S_extra = -1.87537e-008, C_avg_ = 3.28145e-008, C_secondary_3.28145e-008, C_primary_ = 3.28145e-008, M_secondary_ = 0, M_primary_ = 1.10156e-008, M_total_ = 1.10156e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.87537e-008, S_primary_ = -1.05411e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.87537e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -1.05411e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.335691, Theta_new 0.335817, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00549504, v2 0
+0: q = -0.00146146, J = -1.31513e-009
+-2.5: q = -0.00114823, J = 1.8203e-012
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -7.31754e-009 @ -1.25, C = -2.17903e-008, A = 0, M_new = -7.31754e-009, M_old = 1.10156e-008, dt 1, S = -1.88591e-008, S_extra = -1.87537e-008, C_avg_ = 3.28145e-008, C_secondary_3.28145e-008, C_primary_ = 3.28145e-008, M_secondary_ = 0, M_primary_ = 1.10156e-008, M_total_ = 1.10156e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.87537e-008, S_primary_ = -1.05411e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.87537e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -1.05411e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.335691, Theta_new 0.335817, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00549504, v2 0
+0: q = -0.00146146, J = -1.31513e-009
+-2.5: q = -0.00114823, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -7.33801e-009 @ -1.25, C = -2.18512e-008, A = 0, M_new = -7.33801e-009, M_old = 1.10156e-008, dt 1, S = -1.88591e-008, S_extra = -1.87537e-008, C_avg_ = 3.28145e-008, C_secondary_3.28145e-008, C_primary_ = 3.28145e-008, M_secondary_ = 0, M_primary_ = 1.10156e-008, M_total_ = 1.10156e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.87537e-008, S_primary_ = -1.05411e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.87537e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -1.05411e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.335691, Theta_new 0.335817, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00549504, v2 0
+0: q = -0.00146146, J = -1.31513e-009
+-2.5: q = -0.00114823, J = -5.11748e-011
+** 2004-11-05T14:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -8.27175e-010 @ -1.25, C = -2.46378e-009, A = 0, M_new = -8.27175e-010, M_old = 2.22189e-009, dt 1, S = -3.56853e-009, S_extra = -3.78852e-009, C_avg_ = 6.61797e-009, C_secondary_6.61797e-009, C_primary_ = 6.61797e-009, M_secondary_ = 0, M_primary_ = 2.22189e-009, M_total_ = 2.22189e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -3.78852e-009, S_primary_ = 2.19995e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -3.78852e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.19995e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.335736, Theta_new 0.335734, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00498495, v2 0
+0: q = -0.00118116, J = -1.31513e-009
+-2.5: q = -0.00118569, J = -1.64795e-011
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -8.21039e-010 @ -1.25, C = -2.4455e-009, A = 0, M_new = -8.21039e-010, M_old = 2.22189e-009, dt 1, S = -3.56853e-009, S_extra = -3.78852e-009, C_avg_ = 6.61797e-009, C_secondary_6.61797e-009, C_primary_ = 6.61797e-009, M_secondary_ = 0, M_primary_ = 2.22189e-009, M_total_ = 2.22189e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -3.78852e-009, S_primary_ = 2.19995e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -3.78852e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.19995e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.335736, Theta_new 0.335734, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00498495, v2 0
+0: q = -0.00118116, J = -1.31513e-009
+-2.5: q = -0.00118569, J = -1.13906e-012
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -8.20583e-010 @ -1.25, C = -2.44414e-009, A = 0, M_new = -8.20583e-010, M_old = 2.22189e-009, dt 1, S = -3.56853e-009, S_extra = -3.78852e-009, C_avg_ = 6.61797e-009, C_secondary_6.61797e-009, C_primary_ = 6.61797e-009, M_secondary_ = 0, M_primary_ = 2.22189e-009, M_total_ = 2.22189e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -3.78852e-009, S_primary_ = 2.19995e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -3.78852e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.19995e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.335736, Theta_new 0.335734, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00498495, v2 0
+0: q = -0.00118116, J = -1.31513e-009
+-2.5: q = -0.00118569, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -8.27175e-010 @ -1.25, C = -2.46378e-009, A = 0, M_new = -8.27175e-010, M_old = 2.22189e-009, dt 1, S = -3.56853e-009, S_extra = -3.78852e-009, C_avg_ = 6.61797e-009, C_secondary_6.61797e-009, C_primary_ = 6.61797e-009, M_secondary_ = 0, M_primary_ = 2.22189e-009, M_total_ = 2.22189e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -3.78852e-009, S_primary_ = 2.19995e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -3.78852e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.19995e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.335736, Theta_new 0.335734, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00498495, v2 0
+0: q = -0.00118116, J = -1.31513e-009
+-2.5: q = -0.00118569, J = -1.64795e-011
+** 2004-11-06T00:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -4.90535e-009 @ -1.25, C = -1.45017e-008, A = 0, M_new = -4.90535e-009, M_old = 6.96834e-009, dt 1, S = -1.1854e-008, S_extra = -1.19344e-008, C_avg_ = 2.05133e-008, C_secondary_2.05133e-008, C_primary_ = 2.05133e-008, M_secondary_ = 0, M_primary_ = 6.96834e-009, M_total_ = 6.96834e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -1.19344e-008, S_primary_ = 8.03979e-011, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.19344e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 8.03979e-011, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.339699, Theta_new 0.33826, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0103098, v2 0
+0: q = -0.000666572, J = 0
+-2.5: q = -0.00426536, J = -4.91856e-011
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -4.88323e-009 @ -1.25, C = -1.44363e-008, A = 0, M_new = -4.88323e-009, M_old = 6.96834e-009, dt 1, S = -1.1854e-008, S_extra = -1.19344e-008, C_avg_ = 2.05133e-008, C_secondary_2.05133e-008, C_primary_ = 2.05133e-008, M_secondary_ = 0, M_primary_ = 6.96834e-009, M_total_ = 6.96834e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -1.19344e-008, S_primary_ = 8.03979e-011, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.19344e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 8.03979e-011, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.339699, Theta_new 0.33826, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0103098, v2 0
+0: q = -0.000666572, J = 0
+-2.5: q = -0.00426536, J = 6.10182e-012
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -4.88567e-009 @ -1.25, C = -1.44436e-008, A = 0, M_new = -4.88567e-009, M_old = 6.96834e-009, dt 1, S = -1.1854e-008, S_extra = -1.19344e-008, C_avg_ = 2.05133e-008, C_secondary_2.05133e-008, C_primary_ = 2.05133e-008, M_secondary_ = 0, M_primary_ = 6.96834e-009, M_total_ = 6.96834e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -1.19344e-008, S_primary_ = 8.03979e-011, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.19344e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 8.03979e-011, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.339699, Theta_new 0.33826, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0103098, v2 0
+0: q = -0.000666572, J = 0
+-2.5: q = -0.00426536, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -4.90535e-009 @ -1.25, C = -1.45017e-008, A = 0, M_new = -4.90535e-009, M_old = 6.96834e-009, dt 1, S = -1.1854e-008, S_extra = -1.19344e-008, C_avg_ = 2.05133e-008, C_secondary_2.05133e-008, C_primary_ = 2.05133e-008, M_secondary_ = 0, M_primary_ = 6.96834e-009, M_total_ = 6.96834e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -1.19344e-008, S_primary_ = 8.03979e-011, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.19344e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 8.03979e-011, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.339699, Theta_new 0.33826, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0103098, v2 0
+0: q = -0.000666572, J = 0
+-2.5: q = -0.00426536, J = -4.91856e-011
+** 2004-11-10T01:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -8.27302e-009 @ -1.25, C = -2.50719e-008, A = 0, M_new = -8.27302e-009, M_old = 1.50152e-008, dt 1, S = -2.42998e-008, S_extra = -2.39243e-008, C_avg_ = 4.56079e-008, C_secondary_4.56079e-008, C_primary_ = 4.56079e-008, M_secondary_ = 0, M_primary_ = 1.50152e-008, M_total_ = 1.50152e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.39243e-008, S_primary_ = -3.75509e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.39243e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -3.75509e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.329223, Theta_new 0.329972, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0118974, v2 0
+0: q = -0.00371278, J = -2.65557e-009
+-2.5: q = -0.00183916, J = -1.26551e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -8.22336e-009 @ -1.25, C = -2.49214e-008, A = 0, M_new = -8.22336e-009, M_old = 1.50152e-008, dt 1, S = -2.42998e-008, S_extra = -2.39243e-008, C_avg_ = 4.56079e-008, C_secondary_4.56079e-008, C_primary_ = 4.56079e-008, M_secondary_ = 0, M_primary_ = 1.50152e-008, M_total_ = 1.50152e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.39243e-008, S_primary_ = -3.75509e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.39243e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -3.75509e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.329223, Theta_new 0.329972, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0118974, v2 0
+0: q = -0.00371278, J = -2.65557e-009
+-2.5: q = -0.00183916, J = -2.41333e-012
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -8.2224e-009 @ -1.25, C = -2.49184e-008, A = 0, M_new = -8.2224e-009, M_old = 1.50152e-008, dt 1, S = -2.42998e-008, S_extra = -2.39243e-008, C_avg_ = 4.56079e-008, C_secondary_4.56079e-008, C_primary_ = 4.56079e-008, M_secondary_ = 0, M_primary_ = 1.50152e-008, M_total_ = 1.50152e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.39243e-008, S_primary_ = -3.75509e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.39243e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -3.75509e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.329223, Theta_new 0.329972, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0118974, v2 0
+0: q = -0.00371278, J = -2.65557e-009
+-2.5: q = -0.00183916, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -8.27302e-009 @ -1.25, C = -2.50719e-008, A = 0, M_new = -8.27302e-009, M_old = 1.50152e-008, dt 1, S = -2.42998e-008, S_extra = -2.39243e-008, C_avg_ = 4.56079e-008, C_secondary_4.56079e-008, C_primary_ = 4.56079e-008, M_secondary_ = 0, M_primary_ = 1.50152e-008, M_total_ = 1.50152e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.39243e-008, S_primary_ = -3.75509e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.39243e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -3.75509e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.329223, Theta_new 0.329972, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0118974, v2 0
+0: q = -0.00371278, J = -2.65557e-009
+-2.5: q = -0.00183916, J = -1.26551e-010
+** 2004-11-11T00:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -8.43085e-010 @ -1.25, C = -2.42179e-009, A = 0, M_new = -8.43085e-010, M_old = 8.45431e-009, dt 1, S = -1.36275e-008, S_extra = -1.43114e-008, C_avg_ = 2.40919e-008, C_secondary_2.40919e-008, C_primary_ = 2.40919e-008, M_secondary_ = 0, M_primary_ = 8.45431e-009, M_total_ = 8.45431e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -1.43114e-008, S_primary_ = 6.83941e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.43114e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 6.83941e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.350919, Theta_new 0.348125, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0525047, v2 0
+0: q = -0.00943117, J = -1.14018e-008
+-2.5: q = -0.0164181, J = -5.76654e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -6.61338e-010 @ -1.25, C = -1.89972e-009, A = 0, M_new = -6.61338e-010, M_old = 8.45431e-009, dt 1, S = -1.36275e-008, S_extra = -1.43114e-008, C_avg_ = 2.40919e-008, C_secondary_2.40919e-008, C_primary_ = 2.40919e-008, M_secondary_ = 0, M_primary_ = 8.45431e-009, M_total_ = 8.45431e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -1.43114e-008, S_primary_ = 6.83941e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.43114e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 6.83941e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.350919, Theta_new 0.348125, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0525047, v2 0
+0: q = -0.00943117, J = -1.14018e-008
+-2.5: q = -0.0164181, J = -1.22287e-010
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -6.12423e-010 @ -1.25, C = -1.75921e-009, A = 0, M_new = -6.12423e-010, M_old = 8.45431e-009, dt 1, S = -1.36275e-008, S_extra = -1.43114e-008, C_avg_ = 2.40919e-008, C_secondary_2.40919e-008, C_primary_ = 2.40919e-008, M_secondary_ = 0, M_primary_ = 8.45431e-009, M_total_ = 8.45431e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -1.43114e-008, S_primary_ = 6.83941e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.43114e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 6.83941e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.350919, Theta_new 0.348125, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0525047, v2 0
+0: q = -0.00943117, J = -1.14018e-008
+-2.5: q = -0.0164181, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -8.43085e-010 @ -1.25, C = -2.42179e-009, A = 0, M_new = -8.43085e-010, M_old = 8.45431e-009, dt 1, S = -1.36275e-008, S_extra = -1.43114e-008, C_avg_ = 2.40919e-008, C_secondary_2.40919e-008, C_primary_ = 2.40919e-008, M_secondary_ = 0, M_primary_ = 8.45431e-009, M_total_ = 8.45431e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -1.43114e-008, S_primary_ = 6.83941e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.43114e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 6.83941e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.350919, Theta_new 0.348125, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0525047, v2 0
+0: q = -0.00943117, J = -1.14018e-008
+-2.5: q = -0.0164181, J = -5.76654e-010
+** 2004-11-12T00:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -4.25718e-010 @ -1.25, C = -1.24744e-009, A = 0, M_new = -4.25718e-010, M_old = 2.99691e-009, dt 1, S = -4.07219e-009, S_extra = -4.8884e-009, C_avg_ = 8.74396e-009, C_secondary_8.74396e-009, C_primary_ = 8.74396e-009, M_secondary_ = 0, M_primary_ = 2.99691e-009, M_total_ = 2.99691e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -4.8884e-009, S_primary_ = 8.16214e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -4.8884e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 8.16214e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.34274, Theta_new 0.341272, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0121613, v2 0
+0: q = -0.00109976, J = -1.69625e-009
+-2.5: q = -0.00476966, J = -7.23398e-011
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -4.02e-010 @ -1.25, C = -1.17795e-009, A = 0, M_new = -4.02e-010, M_old = 2.99691e-009, dt 1, S = -4.07219e-009, S_extra = -4.8884e-009, C_avg_ = 8.74396e-009, C_secondary_8.74396e-009, C_primary_ = 8.74396e-009, M_secondary_ = 0, M_primary_ = 2.99691e-009, M_total_ = 2.99691e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -4.8884e-009, S_primary_ = 8.16214e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -4.8884e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 8.16214e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.34274, Theta_new 0.341272, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0121613, v2 0
+0: q = -0.00109976, J = -1.69625e-009
+-2.5: q = -0.00476966, J = -1.30463e-011
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -3.96782e-010 @ -1.25, C = -1.16265e-009, A = 0, M_new = -3.96782e-010, M_old = 2.99691e-009, dt 1, S = -4.07219e-009, S_extra = -4.8884e-009, C_avg_ = 8.74396e-009, C_secondary_8.74396e-009, C_primary_ = 8.74396e-009, M_secondary_ = 0, M_primary_ = 2.99691e-009, M_total_ = 2.99691e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -4.8884e-009, S_primary_ = 8.16214e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -4.8884e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 8.16214e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.34274, Theta_new 0.341272, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0121613, v2 0
+0: q = -0.00109976, J = -1.69625e-009
+-2.5: q = -0.00476966, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -4.25718e-010 @ -1.25, C = -1.24744e-009, A = 0, M_new = -4.25718e-010, M_old = 2.99691e-009, dt 1, S = -4.07219e-009, S_extra = -4.8884e-009, C_avg_ = 8.74396e-009, C_secondary_8.74396e-009, C_primary_ = 8.74396e-009, M_secondary_ = 0, M_primary_ = 2.99691e-009, M_total_ = 2.99691e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -4.8884e-009, S_primary_ = 8.16214e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -4.8884e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 8.16214e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.34274, Theta_new 0.341272, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0121613, v2 0
+0: q = -0.00109976, J = -1.69625e-009
+-2.5: q = -0.00476966, J = -7.23398e-011
+** 2004-11-12T15:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -2.16214e-010 @ -1.25, C = -6.41494e-010, A = 0, M_new = -2.16214e-010, M_old = 3.32651e-009, dt 1, S = -4.44753e-009, S_extra = -5.28633e-009, C_avg_ = 9.86781e-009, C_secondary_9.86781e-009, C_primary_ = 9.86781e-009, M_secondary_ = 0, M_primary_ = 3.32651e-009, M_total_ = 3.32651e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -5.28633e-009, S_primary_ = 8.38799e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -5.28633e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 8.38799e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.337108, Theta_new 0.337048, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00669447, v2 0
+0: q = -0.00152073, J = -2.31131e-009
+-2.5: q = -0.00167024, J = -4.93139e-011
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -1.98819e-010 @ -1.25, C = -5.89883e-010, A = 0, M_new = -1.98819e-010, M_old = 3.32651e-009, dt 1, S = -4.44753e-009, S_extra = -5.28633e-009, C_avg_ = 9.86781e-009, C_secondary_9.86781e-009, C_primary_ = 9.86781e-009, M_secondary_ = 0, M_primary_ = 3.32651e-009, M_total_ = 3.32651e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -5.28633e-009, S_primary_ = 8.38799e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -5.28633e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 8.38799e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.337108, Theta_new 0.337048, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00669447, v2 0
+0: q = -0.00152073, J = -2.31131e-009
+-2.5: q = -0.00167024, J = -5.8251e-012
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -1.96489e-010 @ -1.25, C = -5.8297e-010, A = 0, M_new = -1.96489e-010, M_old = 3.32651e-009, dt 1, S = -4.44753e-009, S_extra = -5.28633e-009, C_avg_ = 9.86781e-009, C_secondary_9.86781e-009, C_primary_ = 9.86781e-009, M_secondary_ = 0, M_primary_ = 3.32651e-009, M_total_ = 3.32651e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -5.28633e-009, S_primary_ = 8.38799e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -5.28633e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 8.38799e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.337108, Theta_new 0.337048, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00669447, v2 0
+0: q = -0.00152073, J = -2.31131e-009
+-2.5: q = -0.00167024, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -2.16214e-010 @ -1.25, C = -6.41494e-010, A = 0, M_new = -2.16214e-010, M_old = 3.32651e-009, dt 1, S = -4.44753e-009, S_extra = -5.28633e-009, C_avg_ = 9.86781e-009, C_secondary_9.86781e-009, C_primary_ = 9.86781e-009, M_secondary_ = 0, M_primary_ = 3.32651e-009, M_total_ = 3.32651e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -5.28633e-009, S_primary_ = 8.38799e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -5.28633e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 8.38799e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.337108, Theta_new 0.337048, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00669447, v2 0
+0: q = -0.00152073, J = -2.31131e-009
+-2.5: q = -0.00167024, J = -4.93139e-011
+** 2004-11-14T00:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -3.58873e-009 @ -1.25, C = -1.01689e-008, A = 0, M_new = -3.58873e-009, M_old = 5.83482e-009, dt 1, S = -9.37782e-009, S_extra = -9.61016e-009, C_avg_ = 1.63031e-008, C_secondary_1.63031e-008, C_primary_ = 1.63031e-008, M_secondary_ = 0, M_primary_ = 5.83482e-009, M_total_ = 5.83482e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -9.61016e-009, S_primary_ = 2.32342e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -9.61016e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.32342e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.357895, Theta_new 0.352913, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.022675, v2 0
+0: q = 0.0005688, J = 0
+-2.5: q = -0.0118858, J = -1.14335e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -3.55043e-009 @ -1.25, C = -1.00603e-008, A = 0, M_new = -3.55043e-009, M_old = 5.83482e-009, dt 1, S = -9.37782e-009, S_extra = -9.61016e-009, C_avg_ = 1.63031e-008, C_secondary_1.63031e-008, C_primary_ = 1.63031e-008, M_secondary_ = 0, M_primary_ = 5.83482e-009, M_total_ = 5.83482e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -9.61016e-009, S_primary_ = 2.32342e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -9.61016e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.32342e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.357895, Theta_new 0.352913, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.022675, v2 0
+0: q = 0.0005688, J = 0
+-2.5: q = -0.0118858, J = -1.85681e-011
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -3.543e-009 @ -1.25, C = -1.00393e-008, A = 0, M_new = -3.543e-009, M_old = 5.83482e-009, dt 1, S = -9.37782e-009, S_extra = -9.61016e-009, C_avg_ = 1.63031e-008, C_secondary_1.63031e-008, C_primary_ = 1.63031e-008, M_secondary_ = 0, M_primary_ = 5.83482e-009, M_total_ = 5.83482e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -9.61016e-009, S_primary_ = 2.32342e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -9.61016e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.32342e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.357895, Theta_new 0.352913, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.022675, v2 0
+0: q = 0.0005688, J = 0
+-2.5: q = -0.0118858, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -3.58873e-009 @ -1.25, C = -1.01689e-008, A = 0, M_new = -3.58873e-009, M_old = 5.83482e-009, dt 1, S = -9.37782e-009, S_extra = -9.61016e-009, C_avg_ = 1.63031e-008, C_secondary_1.63031e-008, C_primary_ = 1.63031e-008, M_secondary_ = 0, M_primary_ = 5.83482e-009, M_total_ = 5.83482e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -9.61016e-009, S_primary_ = 2.32342e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -9.61016e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.32342e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.357895, Theta_new 0.352913, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.022675, v2 0
+0: q = 0.0005688, J = 0
+-2.5: q = -0.0118858, J = -1.14335e-010
+M[1] = -6.54103e-011 @ -3.75, C = -1.84758e-010, A = 0, M_new = -6.54103e-011, M_old = 5.19367e-010, dt 1, S = -6.22928e-010, S_extra = -7.40096e-010, C_avg_ = 1.45442e-009, C_secondary_1.45442e-009, C_primary_ = 1.45442e-009, M_secondary_ = 0, M_primary_ = 5.19367e-010, M_total_ = 5.19367e-010, M_error = 0, M_tertiary = 0, S_secondary_ = -7.40096e-010, S_primary_ = 1.17168e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -7.40096e-010, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.17168e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.357096, Theta_new 0.354033, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0627729, v2 0
+-2.5: q = -0.0118858, J = -1.14335e-010
+-5: q = -0.0195432, J = -1.8957e-011
+** 2004-11-18T01:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -4.63314e-009 @ -1.25, C = -1.39145e-008, A = 0, M_new = -4.63314e-009, M_old = 1.23842e-008, dt 1, S = -1.78952e-008, S_extra = -1.76303e-008, C_avg_ = 3.72826e-008, C_secondary_3.72826e-008, C_primary_ = 3.72826e-008, M_secondary_ = 0, M_primary_ = 1.23842e-008, M_total_ = 1.23842e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.76303e-008, S_primary_ = -2.64935e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.76303e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -2.64935e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.332172, Theta_new 0.332972, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00849831, v2 0
+0: q = -0.00300194, J = -2.31248e-009
+-2.5: q = -0.00099986, J = -1.1788e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -4.58857e-009 @ -1.25, C = -1.37806e-008, A = 0, M_new = -4.58857e-009, M_old = 1.23842e-008, dt 1, S = -1.78952e-008, S_extra = -1.76303e-008, C_avg_ = 3.72826e-008, C_secondary_3.72826e-008, C_primary_ = 3.72826e-008, M_secondary_ = 0, M_primary_ = 1.23842e-008, M_total_ = 1.23842e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.76303e-008, S_primary_ = -2.64935e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.76303e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -2.64935e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.332172, Theta_new 0.332972, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00849831, v2 0
+0: q = -0.00300194, J = -2.31248e-009
+-2.5: q = -0.00099986, J = -6.46862e-012
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -4.58598e-009 @ -1.25, C = -1.37729e-008, A = 0, M_new = -4.58598e-009, M_old = 1.23842e-008, dt 1, S = -1.78952e-008, S_extra = -1.76303e-008, C_avg_ = 3.72826e-008, C_secondary_3.72826e-008, C_primary_ = 3.72826e-008, M_secondary_ = 0, M_primary_ = 1.23842e-008, M_total_ = 1.23842e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.76303e-008, S_primary_ = -2.64935e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.76303e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -2.64935e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.332172, Theta_new 0.332972, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00849831, v2 0
+0: q = -0.00300194, J = -2.31248e-009
+-2.5: q = -0.00099986, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -4.63314e-009 @ -1.25, C = -1.39145e-008, A = 0, M_new = -4.63314e-009, M_old = 1.23842e-008, dt 1, S = -1.78952e-008, S_extra = -1.76303e-008, C_avg_ = 3.72826e-008, C_secondary_3.72826e-008, C_primary_ = 3.72826e-008, M_secondary_ = 0, M_primary_ = 1.23842e-008, M_total_ = 1.23842e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.76303e-008, S_primary_ = -2.64935e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.76303e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -2.64935e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.332172, Theta_new 0.332972, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00849831, v2 0
+0: q = -0.00300194, J = -2.31248e-009
+-2.5: q = -0.00099986, J = -1.1788e-010
+** 2004-11-19T00:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -3.24412e-009 @ -1.25, C = -9.42929e-009, A = 0, M_new = -3.24412e-009, M_old = 6.39539e-009, dt 1, S = -9.58946e-009, S_extra = -9.51591e-009, C_avg_ = 1.84186e-008, C_secondary_1.84186e-008, C_primary_ = 1.84186e-008, M_secondary_ = 0, M_primary_ = 6.39539e-009, M_total_ = 6.39539e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -9.51591e-009, S_primary_ = -7.35442e-011, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -9.51591e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -7.35442e-011, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.347225, Theta_new 0.344047, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0145976, v2 0
+0: q = 0.000421365, J = 0
+-2.5: q = -0.00752389, J = -1.25135e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -3.20217e-009 @ -1.25, C = -9.30738e-009, A = 0, M_new = -3.20217e-009, M_old = 6.39539e-009, dt 1, S = -9.58946e-009, S_extra = -9.51591e-009, C_avg_ = 1.84186e-008, C_secondary_1.84186e-008, C_primary_ = 1.84186e-008, M_secondary_ = 0, M_primary_ = 6.39539e-009, M_total_ = 6.39539e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -9.51591e-009, S_primary_ = -7.35442e-011, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -9.51591e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -7.35442e-011, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.347225, Theta_new 0.344047, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0145976, v2 0
+0: q = 0.000421365, J = 0
+-2.5: q = -0.00752389, J = -2.02791e-011
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -3.19406e-009 @ -1.25, C = -9.28381e-009, A = 0, M_new = -3.19406e-009, M_old = 6.39539e-009, dt 1, S = -9.58946e-009, S_extra = -9.51591e-009, C_avg_ = 1.84186e-008, C_secondary_1.84186e-008, C_primary_ = 1.84186e-008, M_secondary_ = 0, M_primary_ = 6.39539e-009, M_total_ = 6.39539e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -9.51591e-009, S_primary_ = -7.35442e-011, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -9.51591e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -7.35442e-011, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.347225, Theta_new 0.344047, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0145976, v2 0
+0: q = 0.000421365, J = 0
+-2.5: q = -0.00752389, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -3.24412e-009 @ -1.25, C = -9.42929e-009, A = 0, M_new = -3.24412e-009, M_old = 6.39539e-009, dt 1, S = -9.58946e-009, S_extra = -9.51591e-009, C_avg_ = 1.84186e-008, C_secondary_1.84186e-008, C_primary_ = 1.84186e-008, M_secondary_ = 0, M_primary_ = 6.39539e-009, M_total_ = 6.39539e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -9.51591e-009, S_primary_ = -7.35442e-011, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -9.51591e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -7.35442e-011, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.347225, Theta_new 0.344047, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0145976, v2 0
+0: q = 0.000421365, J = 0
+-2.5: q = -0.00752389, J = -1.25135e-010
+M[1] = -2.39979e-011 @ -3.75, C = -6.9568e-011, A = 0, M_new = -2.39979e-011, M_old = 3.72398e-010, dt 1, S = -4.42149e-010, S_extra = -4.80628e-010, C_avg_ = 1.07438e-009, C_secondary_1.07438e-009, C_primary_ = 1.07438e-009, M_secondary_ = 0, M_primary_ = 3.72398e-010, M_total_ = 3.72398e-010, M_error = 0, M_tertiary = 0, S_secondary_ = -4.80628e-010, S_primary_ = 3.8479e-011, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -4.80628e-010, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 3.8479e-011, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.346616, Theta_new 0.344956, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0393514, v2 0
+-2.5: q = -0.00752389, J = -1.25135e-010
+-5: q = -0.0116734, J = -1.07516e-011
+** 2004-11-19T05:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[1] = -3.23189e-013 @ -3.75, C = -9.49287e-013, A = 0, M_new = -3.23189e-013, M_old = 2.44013e-012, dt 1, S = -3.06727e-012, S_extra = -3.06727e-012, C_avg_ = 7.15589e-012, C_secondary_7.15589e-012, C_primary_ = 7.15589e-012, M_secondary_ = 0, M_primary_ = 2.44013e-012, M_total_ = 2.44013e-012, M_error = 0, M_tertiary = 0, S_secondary_ = -3.06727e-012, S_primary_ = 0, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -3.06727e-012, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 0, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.340996, Theta_new 0.340454, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00675878, v2 0
+-2.5: q = -0.000949473, J = 2.92364e-014
+-5: q = -0.00230471, J = 7.89113e-013
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[1] = -6.28865e-013 @ -3.75, C = -1.84714e-012, A = 0, M_new = -6.28865e-013, M_old = 2.44013e-012, dt 1, S = -3.06727e-012, S_extra = -3.06727e-012, C_avg_ = 7.15589e-012, C_secondary_7.15589e-012, C_primary_ = 7.15589e-012, M_secondary_ = 0, M_primary_ = 2.44013e-012, M_total_ = 2.44013e-012, M_error = 0, M_tertiary = 0, S_secondary_ = -3.06727e-012, S_primary_ = 0, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -3.06727e-012, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 0, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.340996, Theta_new 0.340454, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00675878, v2 0
+-2.5: q = -0.000949473, J = 0
+-5: q = -0.00230471, J = -4.3147e-015
+Solute problem: Negative concentration
+****** solute[2]: none
+M[1] = -6.27139e-013 @ -3.75, C = -1.84207e-012, A = 0, M_new = -6.27139e-013, M_old = 2.44013e-012, dt 1, S = -3.06727e-012, S_extra = -3.06727e-012, C_avg_ = 7.15589e-012, C_secondary_7.15589e-012, C_primary_ = 7.15589e-012, M_secondary_ = 0, M_primary_ = 2.44013e-012, M_total_ = 2.44013e-012, M_error = 0, M_tertiary = 0, S_secondary_ = -3.06727e-012, S_primary_ = 0, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -3.06727e-012, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 0, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.340996, Theta_new 0.340454, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00675878, v2 0
+-2.5: q = -0.000949473, J = 0
+-5: q = -0.00230471, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[1] = -3.23189e-013 @ -3.75, C = -9.49287e-013, A = 0, M_new = -3.23189e-013, M_old = 2.44013e-012, dt 1, S = -3.06727e-012, S_extra = -3.06727e-012, C_avg_ = 7.15589e-012, C_secondary_7.15589e-012, C_primary_ = 7.15589e-012, M_secondary_ = 0, M_primary_ = 2.44013e-012, M_total_ = 2.44013e-012, M_error = 0, M_tertiary = 0, S_secondary_ = -3.06727e-012, S_primary_ = 0, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -3.06727e-012, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 0, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.340996, Theta_new 0.340454, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00675878, v2 0
+-2.5: q = -0.000949473, J = 2.92364e-014
+-5: q = -0.00230471, J = 7.89113e-013
+** 2004-11-22T01:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -5.07418e-010 @ -1.25, C = -1.52944e-009, A = 0, M_new = -5.07418e-010, M_old = 5.64895e-009, dt 1, S = -7.44566e-009, S_extra = -7.44566e-009, C_avg_ = 1.70819e-008, C_secondary_1.70819e-008, C_primary_ = 1.70819e-008, M_secondary_ = 0, M_primary_ = 5.64895e-009, M_total_ = 5.64895e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -7.44566e-009, S_primary_ = 0, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -7.44566e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 0, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.330698, Theta_new 0.331768, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0140291, v2 0
+0: q = -0.00462916, J = -3.32384e-009
+-2.5: q = -0.00195315, J = -1.00611e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -4.71807e-010 @ -1.25, C = -1.4221e-009, A = 0, M_new = -4.71807e-010, M_old = 5.64895e-009, dt 1, S = -7.44566e-009, S_extra = -7.44566e-009, C_avg_ = 1.70819e-008, C_secondary_1.70819e-008, C_primary_ = 1.70819e-008, M_secondary_ = 0, M_primary_ = 5.64895e-009, M_total_ = 5.64895e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -7.44566e-009, S_primary_ = 0, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -7.44566e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 0, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.330698, Theta_new 0.331768, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0140291, v2 0
+0: q = -0.00462916, J = -3.32384e-009
+-2.5: q = -0.00195315, J = -1.1583e-011
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -4.67174e-010 @ -1.25, C = -1.40813e-009, A = 0, M_new = -4.67174e-010, M_old = 5.64895e-009, dt 1, S = -7.44566e-009, S_extra = -7.44566e-009, C_avg_ = 1.70819e-008, C_secondary_1.70819e-008, C_primary_ = 1.70819e-008, M_secondary_ = 0, M_primary_ = 5.64895e-009, M_total_ = 5.64895e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -7.44566e-009, S_primary_ = 0, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -7.44566e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 0, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.330698, Theta_new 0.331768, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0140291, v2 0
+0: q = -0.00462916, J = -3.32384e-009
+-2.5: q = -0.00195315, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -5.07418e-010 @ -1.25, C = -1.52944e-009, A = 0, M_new = -5.07418e-010, M_old = 5.64895e-009, dt 1, S = -7.44566e-009, S_extra = -7.44566e-009, C_avg_ = 1.70819e-008, C_secondary_1.70819e-008, C_primary_ = 1.70819e-008, M_secondary_ = 0, M_primary_ = 5.64895e-009, M_total_ = 5.64895e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -7.44566e-009, S_primary_ = 0, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -7.44566e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 0, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.330698, Theta_new 0.331768, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0140291, v2 0
+0: q = -0.00462916, J = -3.32384e-009
+-2.5: q = -0.00195315, J = -1.00611e-010
+** 2004-11-24T00:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -1.1173e-009 @ -1.25, C = -3.24259e-009, A = 0, M_new = -1.1173e-009, M_old = 3.01905e-009, dt 1, S = -4.11283e-009, S_extra = -4.11283e-009, C_avg_ = 8.70689e-009, C_secondary_8.70689e-009, C_primary_ = 8.70689e-009, M_secondary_ = 0, M_primary_ = 3.01905e-009, M_total_ = 3.01905e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -4.11283e-009, S_primary_ = 0, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -4.11283e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 0, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.346742, Theta_new 0.344569, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00905732, v2 0
+0: q = 0.000509813, J = 0
+-2.5: q = -0.00492339, J = -5.87891e-011
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -1.09751e-009 @ -1.25, C = -3.18517e-009, A = 0, M_new = -1.09751e-009, M_old = 3.01905e-009, dt 1, S = -4.11283e-009, S_extra = -4.11283e-009, C_avg_ = 8.70689e-009, C_secondary_8.70689e-009, C_primary_ = 8.70689e-009, M_secondary_ = 0, M_primary_ = 3.01905e-009, M_total_ = 3.01905e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -4.11283e-009, S_primary_ = 0, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -4.11283e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 0, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.346742, Theta_new 0.344569, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00905732, v2 0
+0: q = 0.000509813, J = 0
+-2.5: q = -0.00492339, J = -9.31903e-012
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -1.09378e-009 @ -1.25, C = -3.17435e-009, A = 0, M_new = -1.09378e-009, M_old = 3.01905e-009, dt 1, S = -4.11283e-009, S_extra = -4.11283e-009, C_avg_ = 8.70689e-009, C_secondary_8.70689e-009, C_primary_ = 8.70689e-009, M_secondary_ = 0, M_primary_ = 3.01905e-009, M_total_ = 3.01905e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -4.11283e-009, S_primary_ = 0, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -4.11283e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 0, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.346742, Theta_new 0.344569, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00905732, v2 0
+0: q = 0.000509813, J = 0
+-2.5: q = -0.00492339, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -1.1173e-009 @ -1.25, C = -3.24259e-009, A = 0, M_new = -1.1173e-009, M_old = 3.01905e-009, dt 1, S = -4.11283e-009, S_extra = -4.11283e-009, C_avg_ = 8.70689e-009, C_secondary_8.70689e-009, C_primary_ = 8.70689e-009, M_secondary_ = 0, M_primary_ = 3.01905e-009, M_total_ = 3.01905e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -4.11283e-009, S_primary_ = 0, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -4.11283e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 0, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.346742, Theta_new 0.344569, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00905732, v2 0
+0: q = 0.000509813, J = 0
+-2.5: q = -0.00492339, J = -5.87891e-011
+M[1] = -3.42841e-012 @ -3.75, C = -9.91321e-012, A = 0, M_new = -3.42841e-012, M_old = 1.20618e-010, dt 1, S = -1.46169e-010, S_extra = -1.43245e-010, C_avg_ = 3.47561e-010, C_secondary_3.47561e-010, C_primary_ = 3.47561e-010, M_secondary_ = 0, M_primary_ = 1.20618e-010, M_total_ = 1.20618e-010, M_error = 0, M_tertiary = 0, S_secondary_ = -1.43245e-010, S_primary_ = -2.92363e-012, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.43245e-010, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -2.92363e-012, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.34704, Theta_new 0.345843, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.026255, v2 0
+-2.5: q = -0.00492339, J = -5.87891e-011
+-5: q = -0.0079178, J = -3.48333e-012
+** 2004-11-27T01:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -2.00198e-009 @ -1.25, C = -5.97306e-009, A = 0, M_new = -2.00198e-009, M_old = 1.40391e-008, dt 1, S = -1.72507e-008, S_extra = -1.70196e-008, C_avg_ = 4.19545e-008, C_secondary_4.19545e-008, C_primary_ = 4.19545e-008, M_secondary_ = 0, M_primary_ = 1.40391e-008, M_total_ = 1.40391e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.70196e-008, S_primary_ = -2.31134e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.70196e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -2.31134e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.334626, Theta_new 0.335168, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0160312, v2 0
+0: q = -0.00447711, J = -3.3121e-009
+-2.5: q = -0.00312165, J = -2.87914e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -1.90418e-009 @ -1.25, C = -5.68128e-009, A = 0, M_new = -1.90418e-009, M_old = 1.40391e-008, dt 1, S = -1.72507e-008, S_extra = -1.70196e-008, C_avg_ = 4.19545e-008, C_secondary_4.19545e-008, C_primary_ = 4.19545e-008, M_secondary_ = 0, M_primary_ = 1.40391e-008, M_total_ = 1.40391e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.70196e-008, S_primary_ = -2.31134e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.70196e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -2.31134e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.334626, Theta_new 0.335168, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0160312, v2 0
+0: q = -0.00447711, J = -3.3121e-009
+-2.5: q = -0.00312165, J = -4.3424e-011
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -1.88682e-009 @ -1.25, C = -5.62946e-009, A = 0, M_new = -1.88682e-009, M_old = 1.40391e-008, dt 1, S = -1.72507e-008, S_extra = -1.70196e-008, C_avg_ = 4.19545e-008, C_secondary_4.19545e-008, C_primary_ = 4.19545e-008, M_secondary_ = 0, M_primary_ = 1.40391e-008, M_total_ = 1.40391e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.70196e-008, S_primary_ = -2.31134e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.70196e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -2.31134e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.334626, Theta_new 0.335168, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0160312, v2 0
+0: q = -0.00447711, J = -3.3121e-009
+-2.5: q = -0.00312165, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -2.00198e-009 @ -1.25, C = -5.97306e-009, A = 0, M_new = -2.00198e-009, M_old = 1.40391e-008, dt 1, S = -1.72507e-008, S_extra = -1.70196e-008, C_avg_ = 4.19545e-008, C_secondary_4.19545e-008, C_primary_ = 4.19545e-008, M_secondary_ = 0, M_primary_ = 1.40391e-008, M_total_ = 1.40391e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.70196e-008, S_primary_ = -2.31134e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.70196e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -2.31134e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.334626, Theta_new 0.335168, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0160312, v2 0
+0: q = -0.00447711, J = -3.3121e-009
+-2.5: q = -0.00312165, J = -2.87914e-010
+** 2004-11-28T00:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -1.35663e-009 @ -1.25, C = -3.90565e-009, A = 0, M_new = -1.35663e-009, M_old = 6.28893e-009, dt 1, S = -7.55653e-009, S_extra = -7.97632e-009, C_avg_ = 1.79306e-008, C_secondary_1.79306e-008, C_primary_ = 1.79306e-008, M_secondary_ = 0, M_primary_ = 6.28893e-009, M_total_ = 6.28893e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -7.97632e-009, S_primary_ = 4.19784e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -7.97632e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 4.19784e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.350737, Theta_new 0.34735, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0209088, v2 0
+0: q = -0.000900993, J = 0
+-2.5: q = -0.00936994, J = -2.22568e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -1.28776e-009 @ -1.25, C = -3.70738e-009, A = 0, M_new = -1.28776e-009, M_old = 6.28893e-009, dt 1, S = -7.55653e-009, S_extra = -7.97632e-009, C_avg_ = 1.79306e-008, C_secondary_1.79306e-008, C_primary_ = 1.79306e-008, M_secondary_ = 0, M_primary_ = 6.28893e-009, M_total_ = 6.28893e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -7.97632e-009, S_primary_ = 4.19784e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -7.97632e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 4.19784e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.350737, Theta_new 0.34735, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0209088, v2 0
+0: q = -0.000900993, J = 0
+-2.5: q = -0.00936994, J = -5.03936e-011
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -1.2676e-009 @ -1.25, C = -3.64934e-009, A = 0, M_new = -1.2676e-009, M_old = 6.28893e-009, dt 1, S = -7.55653e-009, S_extra = -7.97632e-009, C_avg_ = 1.79306e-008, C_secondary_1.79306e-008, C_primary_ = 1.79306e-008, M_secondary_ = 0, M_primary_ = 6.28893e-009, M_total_ = 6.28893e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -7.97632e-009, S_primary_ = 4.19784e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -7.97632e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 4.19784e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.350737, Theta_new 0.34735, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0209088, v2 0
+0: q = -0.000900993, J = 0
+-2.5: q = -0.00936994, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -1.35663e-009 @ -1.25, C = -3.90565e-009, A = 0, M_new = -1.35663e-009, M_old = 6.28893e-009, dt 1, S = -7.55653e-009, S_extra = -7.97632e-009, C_avg_ = 1.79306e-008, C_secondary_1.79306e-008, C_primary_ = 1.79306e-008, M_secondary_ = 0, M_primary_ = 6.28893e-009, M_total_ = 6.28893e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -7.97632e-009, S_primary_ = 4.19784e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -7.97632e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 4.19784e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.350737, Theta_new 0.34735, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0209088, v2 0
+0: q = -0.000900993, J = 0
+-2.5: q = -0.00936994, J = -2.22568e-010
+** 2004-11-30T00:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -9.06079e-010 @ -1.25, C = -2.60741e-009, A = 0, M_new = -9.06079e-010, M_old = 4.98028e-009, dt 1, S = -5.82406e-009, S_extra = -6.06505e-009, C_avg_ = 1.42059e-008, C_secondary_1.42059e-008, C_primary_ = 1.42059e-008, M_secondary_ = 0, M_primary_ = 4.98028e-009, M_total_ = 4.98028e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -6.06505e-009, S_primary_ = 2.40995e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -6.06505e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.40995e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.350578, Theta_new 0.347502, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0139955, v2 0
+0: q = 0.000405424, J = 0
+-2.5: q = -0.00728342, J = -1.55764e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -8.57065e-010 @ -1.25, C = -2.46636e-009, A = 0, M_new = -8.57065e-010, M_old = 4.98028e-009, dt 1, S = -5.82406e-009, S_extra = -6.06505e-009, C_avg_ = 1.42059e-008, C_secondary_1.42059e-008, C_primary_ = 1.42059e-008, M_secondary_ = 0, M_primary_ = 4.98028e-009, M_total_ = 4.98028e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -6.06505e-009, S_primary_ = 2.40995e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -6.06505e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.40995e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.350578, Theta_new 0.347502, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0139955, v2 0
+0: q = 0.000405424, J = 0
+-2.5: q = -0.00728342, J = -3.32292e-011
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -8.43774e-010 @ -1.25, C = -2.42811e-009, A = 0, M_new = -8.43774e-010, M_old = 4.98028e-009, dt 1, S = -5.82406e-009, S_extra = -6.06505e-009, C_avg_ = 1.42059e-008, C_secondary_1.42059e-008, C_primary_ = 1.42059e-008, M_secondary_ = 0, M_primary_ = 4.98028e-009, M_total_ = 4.98028e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -6.06505e-009, S_primary_ = 2.40995e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -6.06505e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.40995e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.350578, Theta_new 0.347502, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0139955, v2 0
+0: q = 0.000405424, J = 0
+-2.5: q = -0.00728342, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -9.06079e-010 @ -1.25, C = -2.60741e-009, A = 0, M_new = -9.06079e-010, M_old = 4.98028e-009, dt 1, S = -5.82406e-009, S_extra = -6.06505e-009, C_avg_ = 1.42059e-008, C_secondary_1.42059e-008, C_primary_ = 1.42059e-008, M_secondary_ = 0, M_primary_ = 4.98028e-009, M_total_ = 4.98028e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -6.06505e-009, S_primary_ = 2.40995e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -6.06505e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.40995e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.350578, Theta_new 0.347502, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0139955, v2 0
+0: q = 0.000405424, J = 0
+-2.5: q = -0.00728342, J = -1.55764e-010
+** 2004-12-04T01:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -1.19935e-009 @ -1.25, C = -3.58802e-009, A = 0, M_new = -1.19935e-009, M_old = 2.07333e-008, dt 1, S = -2.25427e-008, S_extra = -2.21122e-008, C_avg_ = 6.20775e-008, C_secondary_6.20775e-008, C_primary_ = 6.20775e-008, M_secondary_ = 0, M_primary_ = 2.07333e-008, M_total_ = 2.07333e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.21122e-008, S_primary_ = -4.30552e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.21122e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -4.30552e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.33399, Theta_new 0.334265, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00666125, v2 0
+0: q = -0.00191878, J = -1.84392e-009
+-2.5: q = -0.00123014, J = -3.18649e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -1.08389e-009 @ -1.25, C = -3.24259e-009, A = 0, M_new = -1.08389e-009, M_old = 2.07333e-008, dt 1, S = -2.25427e-008, S_extra = -2.21122e-008, C_avg_ = 6.20775e-008, C_secondary_6.20775e-008, C_primary_ = 6.20775e-008, M_secondary_ = 0, M_primary_ = 2.07333e-008, M_total_ = 2.07333e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.21122e-008, S_primary_ = -4.30552e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.21122e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -4.30552e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.33399, Theta_new 0.334265, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00666125, v2 0
+0: q = -0.00191878, J = -1.84392e-009
+-2.5: q = -0.00123014, J = -2.99848e-011
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -1.07189e-009 @ -1.25, C = -3.20671e-009, A = 0, M_new = -1.07189e-009, M_old = 2.07333e-008, dt 1, S = -2.25427e-008, S_extra = -2.21122e-008, C_avg_ = 6.20775e-008, C_secondary_6.20775e-008, C_primary_ = 6.20775e-008, M_secondary_ = 0, M_primary_ = 2.07333e-008, M_total_ = 2.07333e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.21122e-008, S_primary_ = -4.30552e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.21122e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -4.30552e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.33399, Theta_new 0.334265, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00666125, v2 0
+0: q = -0.00191878, J = -1.84392e-009
+-2.5: q = -0.00123014, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -1.19935e-009 @ -1.25, C = -3.58802e-009, A = 0, M_new = -1.19935e-009, M_old = 2.07333e-008, dt 1, S = -2.25427e-008, S_extra = -2.21122e-008, C_avg_ = 6.20775e-008, C_secondary_6.20775e-008, C_primary_ = 6.20775e-008, M_secondary_ = 0, M_primary_ = 2.07333e-008, M_total_ = 2.07333e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.21122e-008, S_primary_ = -4.30552e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.21122e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = -4.30552e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.33399, Theta_new 0.334265, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00666125, v2 0
+0: q = -0.00191878, J = -1.84392e-009
+-2.5: q = -0.00123014, J = -3.18649e-010
+** 2004-12-05T00:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -3.63666e-010 @ -1.25, C = -1.0764e-009, A = 0, M_new = -3.63666e-010, M_old = 6.56671e-009, dt 1, S = -6.87116e-009, S_extra = -7.10815e-009, C_avg_ = 1.93496e-008, C_secondary_1.93496e-008, C_primary_ = 1.93496e-008, M_secondary_ = 0, M_primary_ = 6.56671e-009, M_total_ = 6.56671e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -7.10815e-009, S_primary_ = 2.3699e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -7.10815e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.3699e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.339372, Theta_new 0.337854, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00671079, v2 0
+0: q = 0.000294393, J = 0
+-2.5: q = -0.00350079, J = -1.48029e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -3.15311e-010 @ -1.25, C = -9.33275e-010, A = 0, M_new = -3.15311e-010, M_old = 6.56671e-009, dt 1, S = -6.87116e-009, S_extra = -7.10815e-009, C_avg_ = 1.93496e-008, C_secondary_1.93496e-008, C_primary_ = 1.93496e-008, M_secondary_ = 0, M_primary_ = 6.56671e-009, M_total_ = 6.56671e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -7.10815e-009, S_primary_ = 2.3699e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -7.10815e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.3699e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.339372, Theta_new 0.337854, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00671079, v2 0
+0: q = 0.000294393, J = 0
+-2.5: q = -0.00350079, J = -2.71422e-011
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -3.04454e-010 @ -1.25, C = -9.01141e-010, A = 0, M_new = -3.04454e-010, M_old = 6.56671e-009, dt 1, S = -6.87116e-009, S_extra = -7.10815e-009, C_avg_ = 1.93496e-008, C_secondary_1.93496e-008, C_primary_ = 1.93496e-008, M_secondary_ = 0, M_primary_ = 6.56671e-009, M_total_ = 6.56671e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -7.10815e-009, S_primary_ = 2.3699e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -7.10815e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.3699e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.339372, Theta_new 0.337854, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00671079, v2 0
+0: q = 0.000294393, J = 0
+-2.5: q = -0.00350079, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -3.63666e-010 @ -1.25, C = -1.0764e-009, A = 0, M_new = -3.63666e-010, M_old = 6.56671e-009, dt 1, S = -6.87116e-009, S_extra = -7.10815e-009, C_avg_ = 1.93496e-008, C_secondary_1.93496e-008, C_primary_ = 1.93496e-008, M_secondary_ = 0, M_primary_ = 6.56671e-009, M_total_ = 6.56671e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -7.10815e-009, S_primary_ = 2.3699e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -7.10815e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.3699e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.339372, Theta_new 0.337854, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00671079, v2 0
+0: q = 0.000294393, J = 0
+-2.5: q = -0.00350079, J = -1.48029e-010
+** 2005-04-10T08:00:00
+Sowing Aert
+*** Foulum; FAO
+**** sow
+***** Aert
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Ryegrass
+*** Foulum; FAO
+**** sow
+***** Ryegrass
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing SB
+*** Foulum; FAO
+**** sow
+***** SB
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Ryegrass
+*** Foulum; FAO
+**** sow
+***** Ryegrass
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+There is already an Ryegrass on the field.
+If you want two Ryegrass you should rename one of them (error)
+** 2005-04-18T00:00:00
+*** crop: Ryegrass tick
+Emerging
+*** crop: Ryegrass tick
+Emerging
+** 2005-04-26T19:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2005-04-27T00:00:00
+*** crop: Aert tick
+Emerging
+*** crop: SB tick
+Emerging
+** 2005-05-07T17:00:00
+*** crop: Aert tick
+Luxury nitrogen uptake initiated
+** 2005-05-07T21:00:00
+*** crop: SB tick
+Luxury nitrogen uptake initiated
+** 2005-06-20T00:00:00
+*** crop: SB tick
+Flowering
+** 2005-07-02T00:00:00
+*** crop: Aert tick
+Flowering
+** 2005-08-11T00:00:00
+*** crop: Aert tick
+Ripe
+** 2005-08-19T00:00:00
+*** crop: SB tick
+Ripe
+** 2005-09-06T08:00:00
+Harvesting Aert, removing 4.06323 + 3.87685 Mg DM/ha
+** 2006-04-27T08:00:00
+Sowing SB
+*** Foulum; FAO
+**** sow
+***** SB
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Ryegrass
+*** Foulum; FAO
+**** sow
+***** Ryegrass
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Wclover
+*** Foulum; FAO
+**** sow
+***** Wclover
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 2006-05-05T00:00:00
+*** crop: Ryegrass tick
+Emerging
+*** crop: Wclover tick
+Emerging
+** 2006-05-09T00:00:00
+*** crop: SB tick
+Emerging
+** 2006-05-10T06:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2006-05-10T13:00:00
+*** crop: Wclover tick
+Luxury nitrogen uptake initiated
+** 2006-05-16T07:00:00
+*** crop: SB tick
+Luxury nitrogen uptake initiated
+** 2006-06-14T05:00:00
+*** crop: SB tick
+Crop affected by nitrogen stress
+** 2006-06-19T08:00:00
+Irrigating 32 mm/h for 1 hour total 32 mm
+Irrigation done
+** 2006-06-25T00:00:00
+*** crop: SB tick
+Flowering
+** 2006-06-28T05:00:00
+*** crop: SB tick
+Luxury nitrogen uptake initiated
+** 2006-06-28T14:00:00
+*** crop: SB tick
+Crop affected by nitrogen stress
+** 2006-06-29T01:00:00
+*** crop: SB tick
+Luxury nitrogen uptake initiated
+** 2006-06-29T07:00:00
+*** crop: SB tick
+Crop affected by nitrogen stress
+** 2006-07-08T08:00:00
+Irrigating 40 mm/h for 1 hour total 40 mm
+Irrigation done
+** 2006-07-25T21:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2006-08-11T08:00:00
+Harvesting SB, removing 3.83517 + 2.77865 Mg DM/ha
+** 2006-10-23T23:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2007-03-22T08:00:00
+Fertilizing 25.719 ton my_cattle_slurry ww/ha; utilized 105.3 kg N/ha; water 2.30699 mm
+Using small timestep: 6m
+** 2007-03-22T09:00:00
+Back to normal size timesteps
+** 2007-05-05T18:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2007-05-21T03:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[1] = -1.5741e-009 @ -3.75, C = -8.18161e-009, A = 0, M_new = -1.5741e-009, M_old = 3.30658e-008, dt 1, S = -3.47271e-008, S_extra = -3.5e-008, C_avg_ = 1.71833e-007, C_secondary_1.71833e-007, C_primary_ = 1.71833e-007, M_secondary_ = 0, M_primary_ = 3.30658e-008, M_total_ = 3.30658e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -3.5e-008, S_primary_ = 2.72873e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -3.5e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.72873e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.19243, Theta_new 0.192395, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.000642747, v2 0
+-2.5: q = 0.000131192, J = -1.0563e-010
+-5: q = 4.36916e-005, J = 1.12353e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[1] = -1.66267e-009 @ -3.75, C = -8.64195e-009, A = 0, M_new = -1.66267e-009, M_old = 3.30658e-008, dt 1, S = -3.47271e-008, S_extra = -3.5e-008, C_avg_ = 1.71833e-007, C_secondary_1.71833e-007, C_primary_ = 1.71833e-007, M_secondary_ = 0, M_primary_ = 3.30658e-008, M_total_ = 3.30658e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -3.5e-008, S_primary_ = 2.72873e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -3.5e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.72873e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.19243, Theta_new 0.192395, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.000642747, v2 0
+-2.5: q = 0.000131192, J = 8.99328e-012
+-5: q = 4.36916e-005, J = 5.55639e-012
+Solute problem: Negative concentration
+****** solute[2]: none
+M[1] = -1.6613e-009 @ -3.75, C = -8.6348e-009, A = 0, M_new = -1.6613e-009, M_old = 3.30658e-008, dt 1, S = -3.47271e-008, S_extra = -3.5e-008, C_avg_ = 1.71833e-007, C_secondary_1.71833e-007, C_primary_ = 1.71833e-007, M_secondary_ = 0, M_primary_ = 3.30658e-008, M_total_ = 3.30658e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -3.5e-008, S_primary_ = 2.72873e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -3.5e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.72873e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.19243, Theta_new 0.192395, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.000642747, v2 0
+-2.5: q = 0.000131192, J = 0
+-5: q = 4.36916e-005, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[1] = -1.5741e-009 @ -3.75, C = -8.18161e-009, A = 0, M_new = -1.5741e-009, M_old = 3.30658e-008, dt 1, S = -3.47271e-008, S_extra = -3.5e-008, C_avg_ = 1.71833e-007, C_secondary_1.71833e-007, C_primary_ = 1.71833e-007, M_secondary_ = 0, M_primary_ = 3.30658e-008, M_total_ = 3.30658e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -3.5e-008, S_primary_ = 2.72873e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -3.5e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 2.72873e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.19243, Theta_new 0.192395, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.000642747, v2 0
+-2.5: q = 0.000131192, J = -1.0563e-010
+-5: q = 4.36916e-005, J = 1.12353e-010
+** 2007-05-21T04:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -2.26847e-009 @ -1.25, C = -1.21817e-008, A = 0, M_new = -2.26847e-009, M_old = 5.33419e-009, dt 1, S = -7.59426e-009, S_extra = -7.73169e-009, C_avg_ = 2.87046e-008, C_secondary_2.87046e-008, C_primary_ = 2.87046e-008, M_secondary_ = 0, M_primary_ = 5.33419e-009, M_total_ = 5.33419e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -7.73169e-009, S_primary_ = 1.37436e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -7.73169e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.37436e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.185831, Theta_new 0.186219, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00274955, v2 0
+0: q = -0.00084777, J = 0
+-2.5: q = 0.000123666, J = -2.10091e-011
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -2.26003e-009 @ -1.25, C = -1.21364e-008, A = 0, M_new = -2.26003e-009, M_old = 5.33419e-009, dt 1, S = -7.59426e-009, S_extra = -7.73169e-009, C_avg_ = 2.87046e-008, C_secondary_2.87046e-008, C_primary_ = 2.87046e-008, M_secondary_ = 0, M_primary_ = 5.33419e-009, M_total_ = 5.33419e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -7.73169e-009, S_primary_ = 1.37436e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -7.73169e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.37436e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.185831, Theta_new 0.186219, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00274955, v2 0
+0: q = -0.00084777, J = 0
+-2.5: q = 0.000123666, J = 1.0122e-013
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -2.26007e-009 @ -1.25, C = -1.21366e-008, A = 0, M_new = -2.26007e-009, M_old = 5.33419e-009, dt 1, S = -7.59426e-009, S_extra = -7.73169e-009, C_avg_ = 2.87046e-008, C_secondary_2.87046e-008, C_primary_ = 2.87046e-008, M_secondary_ = 0, M_primary_ = 5.33419e-009, M_total_ = 5.33419e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -7.73169e-009, S_primary_ = 1.37436e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -7.73169e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.37436e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.185831, Theta_new 0.186219, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00274955, v2 0
+0: q = -0.00084777, J = 0
+-2.5: q = 0.000123666, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -2.26847e-009 @ -1.25, C = -1.21817e-008, A = 0, M_new = -2.26847e-009, M_old = 5.33419e-009, dt 1, S = -7.59426e-009, S_extra = -7.73169e-009, C_avg_ = 2.87046e-008, C_secondary_2.87046e-008, C_primary_ = 2.87046e-008, M_secondary_ = 0, M_primary_ = 5.33419e-009, M_total_ = 5.33419e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -7.73169e-009, S_primary_ = 1.37436e-010, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -7.73169e-009, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 1.37436e-010, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.185831, Theta_new 0.186219, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.00274955, v2 0
+0: q = -0.00084777, J = 0
+-2.5: q = 0.000123666, J = -2.10091e-011
+** 2007-05-24T00:00:00
+*** crop: Ryegrass tick
+Flowering
+** 2007-05-24T08:00:00
+*** Foulum; FAO
+**** crop: Ryegrass harvest
+No CAI after harvest (warning)
+Cutting Ryegrass, removing 0.00140641 + 4.55794 Mg DM/ha
+The crop survived harvest.
+If this was intended, you should use the 'cut' action instead to avoid this message (warning)
+*** Foulum; FAO
+**** crop: Wclover harvest
+No CAI after harvest (warning)
+Cutting Wclover, removing 0 + 0.499393 Mg DM/ha
+The crop survived harvest.
+If this was intended, you should use the 'cut' action instead to avoid this message (warning)
+*** crop: Ryegrass tick
+Nitrogen content of crop below minimum (warning)
+** 2007-05-29T08:00:00
+Fertilizing 26.6336 ton my_cattle_slurry ww/ha; utilized 109.045 kg N/ha; water 2.38903 mm
+Using small timestep: 6m
+** 2007-05-29T09:00:00
+Back to normal size timesteps
+** 2007-05-30T01:00:00
+*** chemical: NO3 tick_top
+old_surface_storage = 0, surface_in = -0.0188378, surface_transform = 0, surface_runoff_rate = 0, surface_decompose_rate = 0, dt = 1, surface_storage = -0.0188378, surface_absolute_loss_rate = 0
+*** chemical: NH4 tick_top
+old_surface_storage = 0.00560465, surface_in = -0.0309609, surface_transform = 0, surface_runoff_rate = 0, surface_decompose_rate = 0, dt = 1, surface_storage = -0.0253562, surface_absolute_loss_rate = 0
+** 2007-05-30T08:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2007-05-31T05:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2007-07-03T08:00:00
+*** Foulum; FAO
+**** crop: Ryegrass harvest
+No CAI after harvest (warning)
+Cutting Ryegrass, removing 0 + 0.0206823 Mg DM/ha
+The crop survived harvest.
+If this was intended, you should use the 'cut' action instead to avoid this message (warning)
+*** Foulum; FAO
+**** crop: Wclover harvest
+No CAI after harvest (warning)
+Cutting Wclover, removing 0 + 0.00034371 Mg DM/ha
+The crop survived harvest.
+If this was intended, you should use the 'cut' action instead to avoid this message (warning)
+** 2007-08-14T08:00:00
+*** Foulum; FAO
+**** crop: Ryegrass harvest
+No CAI after harvest (warning)
+Cutting Ryegrass, with no yield :-(
+The crop survived harvest.
+If this was intended, you should use the 'cut' action instead to avoid this message (warning)
+*** Foulum; FAO
+**** crop: Wclover harvest
+No CAI after harvest (warning)
+Cutting Wclover, with no yield :-(
+The crop survived harvest.
+If this was intended, you should use the 'cut' action instead to avoid this message (warning)
+** 2007-10-16T08:00:00
+*** Foulum; FAO
+**** crop: Ryegrass harvest
+No CAI after harvest (warning)
+Cutting Ryegrass, with no yield :-(
+The crop survived harvest.
+If this was intended, you should use the 'cut' action instead to avoid this message (warning)
+*** Foulum; FAO
+**** crop: Wclover harvest
+No CAI after harvest (warning)
+Cutting Wclover, with no yield :-(
+The crop survived harvest.
+If this was intended, you should use the 'cut' action instead to avoid this message (warning)
+** 2008-01-25T08:00:00
+*** bioclimate: default tick
+**** bioclimate: default WaterDistribution
+../photo_GL.C:155: assertion 'approximate (accCAI, canopy.CAI)' failed in assimilate (error)

@@ -1,0 +1,548 @@
+Has 'Software\Daisy 5.64 (w64)' registry entry.
+Using 'C:\Program Files\Daisy 5.64' as daisy home.
+Reseting current directory to 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4'
+Daisy crop/soil simulation version 5.64. (May 22 2018)
+Copyright 1996 - 2016 Per Abrahamsen, Søren Hansen and KU.
+Changing directory to 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4' success
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Opening absolute file name 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4\setup.dai'
+* Parsing file: 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4\setup.dai'
+Path set to:
+0: './common'
+1: './../common'
+2: '.'
+3: 'C:\Program Files\Daisy 5.64/lib'
+4: 'C:\Program Files\Daisy 5.64/sample'
+done
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'ryegrass.dai'
+Trying './common\ryegrass.dai'
+Trying './../common\ryegrass.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4\ryegrass.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\ryegrass.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'wclover.dai'
+Trying './common\wclover.dai'
+Trying './../common\wclover.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4\wclover.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\wclover.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'dk-maize.dai'
+Trying './common\dk-maize.dai'
+Trying './../common\dk-maize.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4\dk-maize.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\dk-maize.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'dk-wrape.dai'
+Trying './common\dk-wrape.dai'
+Trying './../common\dk-wrape.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4\dk-wrape.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\dk-wrape.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'pea.dai'
+Trying './common\pea.dai'
+Trying './../common\pea.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4\pea.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\pea.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'wwheat.dai'
+Trying './common\wwheat.dai'
+Trying './../common\wwheat.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4\wwheat.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\wwheat.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'fodderbeet.dai'
+Trying './common\fodderbeet.dai'
+Trying './../common\fodderbeet.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4\fodderbeet.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\fodderbeet.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'swheat.dai'
+Trying './common\swheat.dai'
+Trying './../common\swheat.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4\swheat.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\swheat.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'dk-pea.dai'
+Trying './common\dk-pea.dai'
+Trying './../common\dk-pea.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4\dk-pea.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\dk-pea.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'tillage.dai'
+Trying './common\tillage.dai'
+Trying './../common\tillage.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4\tillage.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\tillage.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'fertilizer.dai'
+Trying './common\fertilizer.dai'
+Trying './../common\fertilizer.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4\fertilizer.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\fertilizer.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'Org_fert.dai'
+Trying './common\Org_fert.dai'
+Trying './../common\Org_fert.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'Springbarley_MES_23_2.dai'
+Trying './common\Springbarley_MES_23_2.dai'
+Trying './../common\Springbarley_MES_23_2.dai' success!
+** Parsing file: 'Springbarley_MES_23_2.dai'
+*** input
+**** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'sbarley.dai'
+Trying './common\sbarley.dai'
+Trying './../common\sbarley.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4\sbarley.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\sbarley.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'Foulum_soil_vg.dai'
+Trying './common\Foulum_soil_vg.dai'
+Trying './../common\Foulum_soil_vg.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'OutputLog_2.dai'
+Trying './common\OutputLog_2.dai'
+Trying './../common\OutputLog_2.dai' success!
+** Parsing file: 'OutputLog_2.dai'
+*** input
+**** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'log.dai'
+Trying './common\log.dai'
+Trying './../common\log.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4\log.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\log.dai' success!
+*** Parsing file: 'log.dai'
+**** input
+***** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'log-std.dai'
+Trying './common\log-std.dai'
+Trying './../common\log-std.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4\log-std.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\log-std.dai' success!
+Command line: C:\Program Files\Daisy 5.64\bin\daisy.exe H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4\setup.dai
+Storing 'daisy.log' in 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4'
+* weather: default weather_initialize
+** source_initialize
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_1_4':
+Looking for file 'Daily_foulum_1984-2017.dwf'
+Trying './common\Daily_foulum_1984-2017.dwf'
+Trying './../common\Daily_foulum_1984-2017.dwf' success!
+* column: Foulum; FAO initialize
+** Soil
+*** Horizons
+**** horizon: Foulum 0-10 initialize_base
+(CEC 12.3856 [cmolc/kg]) ; Estimated from clay and humus.
+(quartz 0.638149 []) ; Estimated from texture.
+h	h	Theta	K
+cm	pF		cm/h
+0		0.391	1.60417
+-1	0	0.39051	0.663137
+-10	1	0.382698	0.205528
+-100	2	0.312691	0.00415536
+-1000	3	0.187682	2.75571e-006
+-15848.9	4.2	0.093274	1.77303e-010
+**** horizon: Foulum 10-30 initialize_base
+(CEC 11.7971 [cmolc/kg]) ; Estimated from clay and humus.
+(quartz 0.637616 []) ; Estimated from texture.
+h	h	Theta	K
+cm	pF		cm/h
+0		0.414	4.33333
+-1	0	0.413069	1.8016
+-10	1	0.397654	0.473556
+-100	2	0.290613	0.00938941
+-1000	3	0.156561	2.38003e-005
+-15848.9	4.2	0.0704604	1.30047e-008
+**** horizon: Foulum 30-50 initialize_base
+(CEC 8.94337 [cmolc/kg]) ; Estimated from clay and humus.
+(quartz 0.609576 []) ; Estimated from texture.
+h	h	Theta	K
+cm	pF		cm/h
+0		0.391	19.7917
+-1	0	0.386456	4.4347
+-10	1	0.335311	0.302168
+-100	2	0.21391	0.00126012
+-1000	3	0.131935	2.50576e-006
+-15848.9	4.2	0.0834798	1.34958e-009
+**** horizon: Foulum 50-70 initialize_base
+(CEC 6.99994 [cmolc/kg]) ; Estimated from clay and humus.
+(quartz 0.626751 []) ; Estimated from texture.
+h	h	Theta	K
+cm	pF		cm/h
+0		0.331	2.75
+-1	0	0.327034	0.261744
+-10	1	0.293551	0.0170145
+-100	2	0.213858	0.000124232
+-1000	3	0.145267	4.92294e-007
+-15848.9	4.2	0.0906118	6.03998e-010
+**** horizon: Foulum 70-90 initialize_base
+(CEC 7.58411 [cmolc/kg]) ; Estimated from clay and humus.
+(quartz 0.621119 []) ; Estimated from texture.
+h	h	Theta	K
+cm	pF		cm/h
+0		0.304	2.54167
+-1	0	0.303348	0.629617
+-10	1	0.294902	0.149176
+-100	2	0.241324	0.00398847
+-1000	3	0.162127	1.82928e-005
+-15848.9	4.2	0.0961987	2.00676e-008
+*** Geometry
+(zplus -2.5 -5 -10 -16 -23 -30 -36 -43 -50 -56 -63 -70 -76 -83 -90); 15 cells.
+** bioclimate: default initialize
+Difrad choosen: DPF
+** tertiary: old initialize
+Adding macropores to -90 cm
+** movement: vertical initialize_derived
+Bottom heat delay = -0.315391
+** OrganicStandard
+lay	humus	humus	input	input	AOM	SMB1	SMB2	SOM1	SOM2	SOM3	dSMB1	dSMB1	dSMB2	dSMB2	dSOM1	dSOM1	dSOM2	dSOM2	dSOM3	dSOM3
+	kg C/ha/cm	%	kg C/ha/cm/y	%	%	%	%	%	%	%	kg C/ha/cm/y	y^-1	kg C/ha/cm/y	y^-1	kg C/ha/cm/y	y^-1	kg C/ha/cm/y	y^-1	kg C/ha/cm/y	y^-1
+0	2245.28	2.5	270.506	12.0478	1.88909	1.88596	1.29058	28.5585	66.3758	0	0	0	0	0	7.89434	0.0123115	0	0	-0	nan
+1	2245.28	2.5	270.506	12.0478	1.47483	1.88956	1.29059	28.9667	66.3783	0	0	0	0	0	7.80604	0.0120022	0	0	-0	nan
+2	2245.28	2.5	270.506	12.0478	1.01737	1.89354	1.29061	29.4174	66.3811	0	0	0	0	0	7.70853	0.0116707	0	0	-0	nan
+3	2011.65	2.3	22.0837	1.09779	0.658674	0.201159	0.117691	5.92726	6.06839	87.0268	0	0	0	0	0	0	0	0	-0	-0
+4	2011.65	2.3	11.6023	0.576755	0.346053	0.105685	0.0618324	3.11405	3.1882	93.1842	0	0	0	0	0	0	0	0	-0	-0
+5	2011.65	2.3	5.80114	0.288378	0.173027	0.0528424	0.0309162	1.55703	1.5941	96.5921	0	0	0	0	0	0	0	0	-0	-0
+6	278.238	0.3	3.0478	1.09539	0.657235	0.23198	0.117434	6.83539	6.99814	85.1598	0	0	0	0	0	0	0	0	-0	-0
+7	278.238	0.3	1.60125	0.575495	0.345297	0.121877	0.0616973	3.59117	3.67667	92.2033	0	0	0	0	0	0	0	0	-0	-0
+8	278.238	0.3	0.800623	0.287747	0.172648	0.0609385	0.0308486	1.79558	1.83834	96.1016	0	0	0	0	0	0	0	0	-0	-0
+9	206.624	0.2	0.42063	0.203573	0.122144	0.0397457	0.0218245	1.17113	1.19901	97.4461	0	0	0	0	0	0	0	0	-0	-0
+10	206.624	0.2	0.22099	0.106953	0.0641716	0.0208815	0.0114661	0.615285	0.629934	98.6583	0	0	0	0	0	0	0	0	-0	-0
+11	206.624	0.2	0.110495	0.0534763	0.0320858	0.0104408	0.00573305	0.307642	0.314967	99.3291	0	0	0	0	0	0	0	0	-0	-0
+12	210.146	0.2	0.0580516	0.0276244	0.0165747	0.00554712	0.00296154	0.163449	0.16734	99.6441	0	0	0	0	0	0	0	0	-0	-0
+13	210.146	0.2	0.0304991	0.0145133	0.00870797	0.00291434	0.00155593	0.0858723	0.0879169	99.813	0	0	0	0	0	0	0	0	-0	-0
+14	210.146	0.2	0.0152495	0.00725664	0.00435398	0.00145717	0.000777965	0.0429362	0.0439585	99.9065	0	0	0	0	0	0	0	0	-0	-0
+*** Total soil summary
+Expected humus change: 77.7936 [kg C/ha/y], 1.15955e-007 [y^-1].
+Expected background mineralization: -7.07215 [kg N/ha/y].
+*** Top soil summary
+	SOM1	SOM2	SOM3	SMB1	SMB2	AOM1	AOM2	total
+kg C/ha	6531.51	14903.9	0	424.503	289.775	242.429	60.6074	22452.8
+kg N/ha	535.319	1221.56	0	63.3586	43.2499	2.69366	4.88226	1871.06
+
+Depth	10	cm
+T	7.3	dg C
+h	-100	cm
+clay	7.7	%
+Specified input	3000	kg C/ha/y
+Specified background mineralization	not specified	kg N/ha/y
+Zone input	2705.06	kg C/ha/y
+Zone background mineralization	0	kg C/ha/y
+Zone humus change	0	kg C/ha/y
+Time	Thu Nov 08 09:53:13 2018
+
+Program started Thu Nov 08 09:53:11 2018, 2 seconds ago.
+* Running
+** 1994-03-01T00:00:00
+Begin simulation
+Start logging
+** 1994-04-01T08:00:00
+Sowing Ryegrass
+*** Foulum; FAO
+**** sow
+***** Ryegrass
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Wclover
+*** Foulum; FAO
+**** sow
+***** Wclover
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 1994-04-13T00:00:00
+*** crop: Ryegrass tick
+Emerging
+*** crop: Wclover tick
+Emerging
+** 1994-04-23T20:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 1994-04-28T17:00:00
+*** crop: Wclover tick
+Luxury nitrogen uptake initiated
+** 1994-06-02T08:00:00
+*** Foulum; FAO
+**** crop: Ryegrass harvest
+No CAI after harvest (warning)
+Cutting Ryegrass, removing 0 + 0.163877 Mg DM/ha
+*** Foulum; FAO
+**** crop: Wclover harvest
+No CAI after harvest (warning)
+Cutting Wclover, removing 0 + 0.04043 Mg DM/ha
+** 1994-06-03T01:00:00
+*** chemical: NO3 tick_top
+old_surface_storage = 0, surface_in = -0.00111445, surface_transform = 0, surface_runoff_rate = 0, surface_decompose_rate = 0, dt = 1, surface_storage = -0.00111445, surface_absolute_loss_rate = 0
+** 1994-07-10T10:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 1994-12-06T08:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 1995-04-20T08:00:00
+Fertilizing 34.1943 ton my_cattle_slurry ww/ha; utilized 140 kg N/ha; water 3.06723 mm
+Using small timestep: 6m
+** 1995-04-20T09:00:00
+Back to normal size timesteps
+** 1995-06-02T08:00:00
+*** Foulum; FAO
+**** crop: Ryegrass harvest
+No CAI after harvest (warning)
+Cutting Ryegrass, removing 0 + 3.08879 Mg DM/ha
+*** Foulum; FAO
+**** crop: Wclover harvest
+No CAI after harvest (warning)
+Cutting Wclover, removing 0 + 0.256219 Mg DM/ha
+*** chemical: NO3 tick_top
+old_surface_storage = 5.42101e-020, surface_in = -0.00819172, surface_transform = 0, surface_runoff_rate = 0, surface_decompose_rate = 0, dt = 1, surface_storage = -0.00819172, surface_absolute_loss_rate = 0
+*** chemical: NH4 tick_top
+old_surface_storage = 0.00323432, surface_in = -0.0130043, surface_transform = 0, surface_runoff_rate = 0, surface_decompose_rate = 0, dt = 1, surface_storage = -0.00976996, surface_absolute_loss_rate = 0
+** 1995-08-06T00:00:00
+*** crop: Ryegrass tick
+Flowering
+** 1995-10-17T00:00:00
+*** crop: Ryegrass tick
+Ripe
+** 1996-04-23T08:00:00
+Fertilizing 14.6547 ton my_cattle_slurry ww/ha; utilized 60 kg N/ha; water 1.31453 mm
+Using small timestep: 6m
+** 1996-04-23T09:00:00
+Back to normal size timesteps
+** 1996-04-25T08:00:00
+Sowing SB
+*** Foulum; FAO
+**** sow
+***** SB
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Pea
+*** Foulum; FAO
+**** sow
+***** Pea
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 1996-05-12T00:00:00
+*** crop: SB tick
+Emerging
+*** crop: Pea tick
+Emerging
+** 1996-05-25T15:00:00
+*** crop: Pea tick
+Luxury nitrogen uptake initiated
+** 1996-05-28T12:00:00
+*** crop: SB tick
+Luxury nitrogen uptake initiated
+** 1996-07-18T00:00:00
+*** crop: Pea tick
+Flowering
+** 1996-08-05T08:00:00
+*** Foulum; FAO
+**** crop: SB harvest
+No CAI after harvest (warning)
+Cutting SB, removing 0 + 0.327187 Mg DM/ha
+The crop survived harvest.
+If this was intended, you should use the 'cut' action instead to avoid this message (warning)
+Harvesting Pea, removing 0.693962 + 3.91471 Mg DM/ha
+** 1996-08-08T01:00:00
+*** chemical: NO3 tick_top
+old_surface_storage = 0, surface_in = -0.000620696, surface_transform = 0, surface_runoff_rate = 0, surface_decompose_rate = 0, dt = 1, surface_storage = -0.000620696, surface_absolute_loss_rate = 0
+** 1996-09-27T08:00:00
+Sowing Winter Wheat
+*** Foulum; FAO
+**** sow
+***** Winter Wheat
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 1996-10-08T00:00:00
+*** crop: Winter Wheat tick
+Emerging
+** 1996-10-30T15:00:00
+*** crop: Winter Wheat tick
+Luxury nitrogen uptake initiated
+** 1997-04-30T08:00:00
+Fertilizing 20.7608 ton my_cattle_slurry ww/ha; utilized 85 kg N/ha; water 1.86225 mm
+Using small timestep: 6m
+** 1997-04-30T09:00:00
+Back to normal size timesteps
+** 1997-05-13T08:00:00
+Fertilizing 20.7608 ton my_cattle_slurry ww/ha; utilized 85 kg N/ha; water 1.86225 mm
+Using small timestep: 6m
+** 1997-05-13T09:00:00
+Back to normal size timesteps
+** 1997-06-10T00:00:00
+*** crop: Winter Wheat tick
+Flowering
+** 1997-07-14T11:00:00
+*** crop: Winter Wheat tick
+Crop affected by nitrogen stress
+** 1997-07-25T01:00:00
+*** crop: Winter Wheat tick
+Luxury nitrogen uptake initiated
+** 1997-07-25T19:00:00
+*** crop: Winter Wheat tick
+Crop affected by nitrogen stress
+** 1997-07-26T01:00:00
+*** crop: Winter Wheat tick
+Luxury nitrogen uptake initiated
+** 1997-07-26T10:00:00
+*** crop: Winter Wheat tick
+Crop affected by nitrogen stress
+** 1997-08-06T00:00:00
+*** crop: Winter Wheat tick
+Ripe
+** 1997-08-20T08:00:00
+Harvesting Winter Wheat, removing 7.49267 + 9.71929 Mg DM/ha
+** 1998-04-21T08:00:00
+Fertilizing 61.0612 ton my_cattle_slurry ww/ha; utilized 250 kg N/ha; water 5.47719 mm
+Using small timestep: 6m
+** 1998-04-21T09:00:00
+Back to normal size timesteps
+** 1998-04-24T08:00:00
+Sowing Fodder Beet
+*** Foulum; FAO
+**** sow
+***** Fodder Beet
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 1998-05-20T00:00:00
+*** crop: Fodder Beet tick
+Emerging
+** 1998-05-25T16:00:00
+*** crop: Fodder Beet tick
+Luxury nitrogen uptake initiated
+** 1998-11-03T08:00:00
+Harvesting Fodder Beet, removing 10.6601 + 3.84825 Mg DM/ha
+** 1999-04-07T08:00:00
+Fertilizing 24.4245 ton my_cattle_slurry ww/ha; utilized 100 kg N/ha; water 2.19088 mm
+Using small timestep: 6m
+** 1999-04-07T09:00:00
+Back to normal size timesteps
+** 1999-04-09T08:00:00
+Sowing SB
+*** Foulum; FAO
+**** sow
+***** SB
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Ryegrass
+*** Foulum; FAO
+**** sow
+***** Ryegrass
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Wclover
+*** Foulum; FAO
+**** sow
+***** Wclover
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 1999-04-20T00:00:00
+*** crop: Ryegrass tick
+Emerging
+*** crop: Wclover tick
+Emerging
+** 1999-04-27T13:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 1999-04-28T00:00:00
+*** crop: SB tick
+Emerging
+** 1999-05-01T10:00:00
+*** crop: Wclover tick
+Luxury nitrogen uptake initiated
+** 1999-05-07T00:00:00
+*** crop: SB tick
+Luxury nitrogen uptake initiated
+** 1999-06-21T00:00:00
+*** crop: SB tick
+Flowering
+** 1999-07-07T14:00:00
+*** crop: SB tick
+Crop affected by nitrogen stress
+** 1999-07-26T16:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 1999-08-19T00:00:00
+*** crop: SB tick
+Ripe
+** 1999-08-23T08:00:00
+Harvesting SB, removing 5.03783 + 3.41712 Mg DM/ha
+** 1999-11-17T01:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2000-05-07T15:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2000-05-22T08:00:00
+*** Foulum; FAO
+**** crop: Ryegrass harvest
+No CAI after harvest (warning)
+Cutting Ryegrass, removing 5.15159e-005 + 0.453493 Mg DM/ha
+*** Foulum; FAO
+**** crop: Wclover harvest
+No CAI after harvest (warning)
+Cutting Wclover, removing 0 + 1.47298 Mg DM/ha
+*** crop: Ryegrass tick
+Nitrogen content of crop below minimum (warning)
+** 2000-05-24T03:00:00
+*** chemical: NO3 tick_top
+old_surface_storage = 0, surface_in = -0.00201604, surface_transform = 0, surface_runoff_rate = 0, surface_decompose_rate = 0, dt = 1, surface_storage = -0.00201604, surface_absolute_loss_rate = 0
+** 2000-05-28T13:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2000-05-30T20:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2000-08-06T00:00:00
+*** crop: Wclover tick
+Flowering
+** 2001-04-06T08:00:00
+Fertilizing 34.1943 ton my_cattle_slurry ww/ha; utilized 140 kg N/ha; water 3.06723 mm
+Using small timestep: 6m
+** 2001-04-06T09:00:00
+Back to normal size timesteps
+** 2001-06-08T08:00:00
+*** Foulum; FAO
+**** crop: Ryegrass harvest
+No CAI after harvest (warning)
+Cutting Ryegrass, removing 0 + 0.000209489 Mg DM/ha
+*** Foulum; FAO
+**** crop: Wclover harvest
+No CAI after harvest (warning)
+Cutting Wclover, removing 2.12819 + 2.07838 Mg DM/ha
+** 2001-06-16T03:00:00
+*** bioclimate: default tick
+**** bioclimate: default WaterDistribution
+../photo_GL.C:155: assertion 'approximate (accCAI, canopy.CAI)' failed in assimilate (error)

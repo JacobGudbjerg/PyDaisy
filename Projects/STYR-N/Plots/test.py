@@ -7,14 +7,18 @@ Created on Thu Nov  8 15:01:28 2018
 
 
 import os
+import shutil
 
-for filename in os.listdir('h:\Documents\PyDaisy\Projects\STYR-N\RunDaisy\..\'):
-    if filename("DailyP-harvest.dlf"): 
-        # print(os.path.join(directory, filename))
-        continue
-    else:
-        continue
-
+movedir= r'h:\Documents\PyDaisy\Projects\STYR-N\RunDaisy\..\'
+basedir= r'h:\Documents\PyDaisy\Projects\STYR-N\RunDaisy\Harvest'
+for root, dirs, files in os.walk(movdir):
+    for filename in files:
+        # I use absolute path, case you want to move several dirs.
+        old_name = os.path.join( os.path.abspath(root), filename )
+        # Separate base from extension
+        base, extension = os.path.splitext(filename)
+        # Initial new name
+        new_name = os.path.join(basedir, base, filename)
 
 sys.path.append(r'h:\Documents\PyDaisy\Projects\STYR-N')
 

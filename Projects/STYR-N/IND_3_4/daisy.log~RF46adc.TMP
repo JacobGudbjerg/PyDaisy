@@ -1,0 +1,419 @@
+Has 'Software\Daisy 5.64 (w64)' registry entry.
+Using 'C:\Program Files\Daisy 5.64' as daisy home.
+Reseting current directory to 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4'
+Daisy crop/soil simulation version 5.64. (May 22 2018)
+Copyright 1996 - 2016 Per Abrahamsen, Søren Hansen and KU.
+Changing directory to 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4' success
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4':
+Opening absolute file name 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai'
+* Parsing file: 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai'
+Path set to:
+0: './common'
+1: './../common'
+2: '.'
+3: 'C:\Program Files\Daisy 5.64/lib'
+4: 'C:\Program Files\Daisy 5.64/sample'
+done
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4':
+Looking for file 'ryegrass.dai'
+Trying './common\ryegrass.dai'
+Trying './../common\ryegrass.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\ryegrass.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\ryegrass.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4':
+Looking for file 'wclover.dai'
+Trying './common\wclover.dai'
+Trying './../common\wclover.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\wclover.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\wclover.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4':
+Looking for file 'dk-maize.dai'
+Trying './common\dk-maize.dai'
+Trying './../common\dk-maize.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\dk-maize.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\dk-maize.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4':
+Looking for file 'dk-wrape.dai'
+Trying './common\dk-wrape.dai'
+Trying './../common\dk-wrape.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\dk-wrape.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\dk-wrape.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4':
+Looking for file 'pea.dai'
+Trying './common\pea.dai'
+Trying './../common\pea.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\pea.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\pea.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4':
+Looking for file 'wwheat.dai'
+Trying './common\wwheat.dai'
+Trying './../common\wwheat.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\wwheat.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\wwheat.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4':
+Looking for file 'fodderbeet.dai'
+Trying './common\fodderbeet.dai'
+Trying './../common\fodderbeet.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\fodderbeet.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\fodderbeet.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4':
+Looking for file 'swheat.dai'
+Trying './common\swheat.dai'
+Trying './../common\swheat.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\swheat.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\swheat.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4':
+Looking for file 'dk-pea.dai'
+Trying './common\dk-pea.dai'
+Trying './../common\dk-pea.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\dk-pea.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\dk-pea.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4':
+Looking for file 'tillage.dai'
+Trying './common\tillage.dai'
+Trying './../common\tillage.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\tillage.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\tillage.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4':
+Looking for file 'fertilizer.dai'
+Trying './common\fertilizer.dai'
+Trying './../common\fertilizer.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\fertilizer.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\fertilizer.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4':
+Looking for file 'Org_fert.dai'
+Trying './common\Org_fert.dai'
+Trying './../common\Org_fert.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4':
+Looking for file 'Springbarley_MES_23_2.dai'
+Trying './common\Springbarley_MES_23_2.dai'
+Trying './../common\Springbarley_MES_23_2.dai' success!
+** Parsing file: 'Springbarley_MES_23_2.dai'
+*** input
+**** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4':
+Looking for file 'sbarley.dai'
+Trying './common\sbarley.dai'
+Trying './../common\sbarley.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\sbarley.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\sbarley.dai' success!
+** Defining action 'S1_1994-2010'
+*** In 'do' model #63
+**** Deriving from 'fertilize'
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:114:29: Bad number 'fetch'
+--- details:
+* fetch
+'nan' is not a number (error)
+--- (error)
+***** equivalent_weight
+Negative value not permitted (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:114:29: equivalent_weight: bad value (error)
+***** Checking value of 'equivalent_weight'
+****** equivalent_weight
+Negative value not permitted (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:114:29: Invalid value (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:114:30: Expected ')' (error)
+*** In 'do' model #64
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:115:12: Unknown 'action' model 'from' (error)
+*** In 'do' model #64
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:116:10: Unknown 'action' model 'to' (error)
+*** Checking value of 'do'
+**** do[62]: fertilize
+***** equivalent_weight
+Negative value not permitted (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:116:20: Invalid value (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:117:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:118:14: Expected '(' (error)
+** In 'harvest' submodel #2
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:119:6: Expected '(' (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:119:23: Unknown attribute 'Wclover', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:120:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:121:15: Unknown attribute 'fertilize', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:126:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:126:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:127:9: Unknown attribute 'sow', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:128:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:128:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:129:9: sow specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:129:9: Unknown attribute 'sow', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:130:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:130:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:131:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:132:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:132:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:133:15: fertilize specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:133:15: Unknown attribute 'fertilize', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:138:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:138:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:139:13: Unknown attribute 'plowing', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:140:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:140:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:141:9: sow specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:141:9: Unknown attribute 'sow', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:142:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:142:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:143:9: sow specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:143:9: Unknown attribute 'sow', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:144:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:144:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:145:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:145:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:146:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:146:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:147:13: plowing specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:147:13: Unknown attribute 'plowing', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:148:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:148:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:149:9: sow specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:149:9: Unknown attribute 'sow', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:150:9: sow specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:150:9: Unknown attribute 'sow', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:151:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:151:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:152:23: Unknown attribute 'irrigate_overhead', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:153:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:153:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:154:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:154:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:155:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:155:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:156:23: irrigate_overhead specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:156:23: Unknown attribute 'irrigate_overhead', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:157:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:157:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:158:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:158:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:159:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:159:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:160:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:160:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:161:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:161:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:162:13: plowing specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:162:13: Unknown attribute 'plowing', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:163:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:163:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:164:9: sow specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:164:9: Unknown attribute 'sow', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:165:9: sow specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:165:9: Unknown attribute 'sow', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:166:9: sow specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:166:9: Unknown attribute 'sow', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:167:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:167:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:168:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:168:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:169:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:169:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:170:15: fertilize specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:170:15: Unknown attribute 'fertilize', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:175:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:175:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:176:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:176:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:177:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:177:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:178:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:178:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:179:15: fertilize specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:179:15: Unknown attribute 'fertilize', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:184:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:184:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:185:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:185:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:186:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:186:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:187:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:187:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:188:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:188:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:189:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:189:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:190:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:190:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:191:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:191:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:192:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:192:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:193:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:193:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:194:15: fertilize specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:194:15: Unknown attribute 'fertilize', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:199:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:199:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:200:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:200:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:201:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:201:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:202:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:202:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:203:15: fertilize specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:203:15: Unknown attribute 'fertilize', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:208:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:208:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:209:23: irrigate_overhead specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:209:23: Unknown attribute 'irrigate_overhead', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:210:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:210:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:211:23: irrigate_overhead specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:211:23: Unknown attribute 'irrigate_overhead', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:212:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:212:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:213:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:213:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:214:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:214:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:215:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:215:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:216:23: irrigate_overhead specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:216:23: Unknown attribute 'irrigate_overhead', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:217:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:217:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:218:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:218:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:219:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:219:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:220:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:220:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:221:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:221:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:222:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:222:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:223:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:223:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:224:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:224:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:225:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:225:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:226:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:226:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:227:23: irrigate_overhead specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:227:23: Unknown attribute 'irrigate_overhead', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:228:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:228:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:229:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:229:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:230:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:230:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:231:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:231:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:232:23: irrigate_overhead specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:232:23: Unknown attribute 'irrigate_overhead', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:233:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:233:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:234:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:234:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:235:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:235:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:236:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:236:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:237:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:237:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:238:13: harvest specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:238:13: Unknown attribute 'harvest', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:239:16: wait_mm_dd specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:239:16: Unknown attribute 'wait_mm_dd', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:240:15: fertilize specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:240:15: Unknown attribute 'fertilize', did you miss a ')'? (error)
+** In 'harvest' submodel #3
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:245:4: Expected '(' (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:245:21: Unknown attribute 'A_F_R', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:246:9: Unknown attribute 'input', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:247:9: input specified twice, last takes precedence (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:247:9: Unknown attribute 'input', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:248:11: Unknown attribute 'defunit', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:252:11: Unknown attribute 'weather', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:253:15: Unknown attribute 'description', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:254:14: Unknown attribute 'log_prefix', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:255:11: Unknown attribute 'manager', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:258:13: Unknown attribute 'defcolumn', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:262:8: Unknown attribute 'time', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:263:8: Unknown attribute 'stop', did you miss a ')'? (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:263:21: Expected ')' (error)
+** Checking value of 'harvest'
+*** harvest [0]
+crop is missing (error)
+column is missing (error)
+water_stress_days is missing (error)
+nitrogen_stress_days is missing (error)
+stem_DM is missing (error)
+stem_N is missing (error)
+stem_C is missing (error)
+dead_DM is missing (error)
+dead_N is missing (error)
+dead_C is missing (error)
+leaf_DM is missing (error)
+leaf_N is missing (error)
+leaf_C is missing (error)
+sorg_DM is missing (error)
+sorg_N is missing (error)
+sorg_C is missing (error)
+water_productivity is missing (error)
+harvest_index is missing (error)
+*** harvest [1]
+crop is missing (error)
+column is missing (error)
+water_stress_days is missing (error)
+nitrogen_stress_days is missing (error)
+stem_DM is missing (error)
+stem_N is missing (error)
+stem_C is missing (error)
+dead_DM is missing (error)
+dead_N is missing (error)
+dead_C is missing (error)
+leaf_DM is missing (error)
+leaf_N is missing (error)
+leaf_C is missing (error)
+sorg_DM is missing (error)
+sorg_N is missing (error)
+sorg_C is missing (error)
+water_productivity is missing (error)
+harvest_index is missing (error)
+*** harvest [2]
+crop is missing (error)
+water_stress_days is missing (error)
+nitrogen_stress_days is missing (error)
+stem_DM is missing (error)
+stem_N is missing (error)
+stem_C is missing (error)
+dead_DM is missing (error)
+dead_N is missing (error)
+dead_C is missing (error)
+leaf_DM is missing (error)
+leaf_N is missing (error)
+leaf_C is missing (error)
+sorg_DM is missing (error)
+sorg_N is missing (error)
+sorg_C is missing (error)
+water_productivity is missing (error)
+harvest_index is missing (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:263:22: Invalid value (error)
+H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai:263:22: Expected ')' (error)
+Command line: C:\Program Files\Daisy 5.64\bin\daisy.exe H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4\setup.dai
+Storing 'daisy.log' in 'H:\Documents\PyDaisy\Projects\STYR-N\IND_3_4'
