@@ -28,6 +28,16 @@
       (stub 7 [cm]))
     (cut "Wclover"
       (stub 7 [cm]))
+    (wait_mm_dd 8 1)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (cut "Wclover"
+      (stub 7 [cm]))
+    (wait_mm_dd 10 15)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (cut "Wclover"
+      (stub 7 [cm]))
     (wait_mm_dd 4 20)
     (fertilize
       ("my_cattle_slurry")
@@ -35,6 +45,16 @@
       (from -5 [cm])
       (to -15 [cm]))
     (wait_mm_dd 6 2)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (cut "Wclover"
+      (stub 7 [cm]))
+    (wait_mm_dd 8 1)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (cut "Wclover"
+      (stub 7 [cm]))
+    (wait_mm_dd 10 15)
     (cut "Ryegrass"
       (stub 7 [cm]))
     (cut "Wclover"
@@ -107,6 +127,16 @@
       (stub 7 [cm]))
     (cut "Wclover"
       (stub 7 [cm]))
+    (wait_mm_dd 8 1)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (cut "Wclover"
+      (stub 7 [cm]))
+    (wait_mm_dd 10 15)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (cut "Wclover"
+      (stub 7 [cm]))
     (wait_mm_dd 4 6)
     (fertilize
       ("my_cattle_slurry")
@@ -114,6 +144,16 @@
       (from -5 [cm])
       (to -15 [cm]))
     (wait_mm_dd 6 8)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (cut "Wclover"
+      (stub 7 [cm]))
+    (wait_mm_dd 8 1)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (cut "Wclover"
+      (stub 7 [cm]))
+    (wait_mm_dd 10 15)
     (cut "Ryegrass"
       (stub 7 [cm]))
     (cut "Wclover"
@@ -162,7 +202,7 @@
       (from -5 [cm])
       (to -15 [cm]))
     (wait_mm_dd 7 8)
-    (sow "Rug")
+    (sow "Vinterraps")
     (wait_mm_dd 10 20)
     (harvest "Silomajs"
       (stub 7 [cm]))
@@ -253,6 +293,15 @@
     (wait_mm_dd 4 21)
     (sow "SB")
     (sow "Ryegrass")
+    (wait_mm_dd 6 17)
+    (harvest "SB"
+      (stub 7 [cm]))
+    (wait_mm_dd 8 20)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (wait_mm_dd 10 15)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
     (wait_mm_dd 3 31)
     (plowing)
     (wait_mm_dd 4 17)

@@ -21,7 +21,7 @@ if __name__ =='__main__':
     
         template = DaisyModel(r'Foulum94-10.dai')
         i=0
-        unique_name = str(df['block'][i]) +'_' + str(df['field'][i])+'_' + str(df['treatment'][i])
+        unique_name = sheet[0]
         newfile= copy.deepcopy(template)    
         block = newfile.Input['defaction'][1]
             

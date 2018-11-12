@@ -20,233 +20,216 @@
     (cut "Wclover" 
       (stub 5 [cm])) )
   (defaction "S1-3_1994-2010" activity
-    (wait_mm_dd 4 1)
-    (sow "Ryegrass")
-    (sow "Wclover")
-    (wait_mm_dd 6 2)
-    (cut "Ryegrass"
-      (stub 7 [cm]))
-    (cut "Wclover"
-      (stub 7 [cm]))
     (wait_mm_dd 4 20)
-    (fertilize
-      ("my_cattle_slurry")
-      (equivalent_weight 140.0 [kg N/ha])
-      (from -5 [cm])
-      (to -15 [cm]))
-    (wait_mm_dd 6 2)
-    (cut "Ryegrass"
-      (stub 7 [cm]))
-    (cut "Wclover"
-      (stub 7 [cm]))
-    (wait_mm_dd 4 23)
-    (fertilize
-      ("my_cattle_slurry")
-      (equivalent_weight 60.0 [kg N/ha])
-      (from -5 [cm])
-      (to -15 [cm]))
-    (wait_mm_dd 4 23)
-    (plowing)
-    (wait_mm_dd 4 25)
-    (sow "SB")
-    (sow "Pea")
-    (wait_mm_dd 8 5)
-    (harvest "SB"
-      (stub 7 [cm]))
-    (harvest "Pea"
-      (stub 7 [cm]))
-    (wait_mm_dd 9 26)
-    (plowing)
-    (wait_mm_dd 9 27)
-    (sow "Winter Wheat")
-    (wait_mm_dd 4 30)
-    (fertilize
-      ("my_cattle_slurry")
-      (equivalent_weight 85.0 [kg N/ha])
-      (from -5 [cm])
-      (to -15 [cm]))
-    (wait_mm_dd 5 13)
-    (fertilize
-      ("my_cattle_slurry")
-      (equivalent_weight 85.0 [kg N/ha])
-      (from -5 [cm])
-      (to -15 [cm]))
-    (wait_mm_dd 8 20)
-    (harvest "Winter Wheat"
-      (stub 7 [cm]))
-    (wait_mm_dd 4 21)
     (fertilize
       ("my_cattle_slurry")
       (equivalent_weight 250.0 [kg N/ha])
       (from -5 [cm])
       (to -15 [cm]))
-    (wait_mm_dd 4 21)
+    (wait_mm_dd 4 20)
     (plowing)
     (wait_mm_dd 4 24)
     (sow "Fodder Beet")
-    (wait_mm_dd 11 3)
+    (wait_mm_dd 10 25)
     (harvest "Fodder Beet"
       (stub 7 [cm]))
-    (wait_mm_dd 4 7)
+    (wait_mm_dd 4 26)
     (fertilize
       ("my_cattle_slurry")
       (equivalent_weight 100.0 [kg N/ha])
       (from -5 [cm])
       (to -15 [cm]))
-    (wait_mm_dd 4 7)
+    (wait_mm_dd 4 26)
     (plowing)
-    (wait_mm_dd 4 9)
+    (wait_mm_dd 4 28)
     (sow "SB")
     (sow "Ryegrass")
     (sow "Wclover")
-    (wait_mm_dd 8 23)
+    (wait_mm_dd 8 16)
     (harvest "SB"
       (stub 7 [cm]))
-    (wait_mm_dd 5 22)
-    (cut "Ryegrass"
-      (stub 7 [cm]))
-    (cut "Wclover"
-      (stub 7 [cm]))
-    (wait_mm_dd 4 6)
-    (fertilize
-      ("my_cattle_slurry")
-      (equivalent_weight 140.0 [kg N/ha])
-      (from -5 [cm])
-      (to -15 [cm]))
-    (wait_mm_dd 6 8)
-    (cut "Ryegrass"
-      (stub 7 [cm]))
-    (cut "Wclover"
-      (stub 7 [cm]))
-    (wait_mm_dd 4 3)
-    (fertilize
-      ("my_cattle_slurry")
-      (equivalent_weight 100.0 [kg N/ha])
-      (from -5 [cm])
-      (to -15 [cm]))
-    (wait_mm_dd 4 3)
-    (plowing)
-    (wait_mm_dd 4 8)
-    (sow "SB")
-    (sow "Pea")
-    (wait_mm_dd 5 8)
-    (sow "Ryegrass")
-    (wait_mm_dd 7 23)
-    (harvest "SB"
-      (stub 7 [cm]))
-    (harvest "Pea"
-      (stub 7 [cm]))
-    (wait_mm_dd 4 7)
-    (fertilize
-      ("my_cattle_slurry")
-      (equivalent_weight 100.0 [kg N/ha])
-      (from -5 [cm])
-      (to -15 [cm]))
-    (wait_mm_dd 4 7)
-    (plowing)
-    (wait_mm_dd 4 9)
-    (sow "Spring Wheat")
-    (wait_mm_dd 5 5)
-    (sow "Ryegrass")
-    (wait_mm_dd 8 13)
-    (harvest "Spring Wheat"
-      (stub 7 [cm]))
-    (wait_mm_dd 3 25)
-    (plowing)
-    (wait_mm_dd 4 30)
-    (sow "Silomajs")
-    (wait_mm_dd 5 14)
-    (fertilize
-      ("my_cattle_slurry")
-      (equivalent_weight 200.0 [kg N/ha])
-      (from -5 [cm])
-      (to -15 [cm]))
-    (wait_mm_dd 7 8)
-    (sow "Vinterraps")
-    (wait_mm_dd 10 20)
-    (harvest "Silomajs"
-      (stub 7 [cm]))
-    (wait_mm_dd 4 7)
-    (fertilize
-      ("my_cattle_slurry")
-      (equivalent_weight 100.0 [kg N/ha])
-      (from -5 [cm])
-      (to -15 [cm]))
-    (wait_mm_dd 4 7)
-    (plowing)
-    (wait_mm_dd 4 9)
-    (sow "SB")
-    (wait_mm_dd 5 5)
-    (sow "Ryegrass")
-    (sow "Wclover")
-    (wait_mm_dd 8 13)
-    (harvest "SB"
-      (stub 7 [cm]))
-    (wait_mm_dd 4 19)
-    (fertilize
-      ("my_cattle_slurry")
-      (equivalent_weight 111.0 [kg N/ha])
-      (from -5 [cm])
-      (to -15 [cm]))
     (wait_mm_dd 6 6)
     (cut "Ryegrass"
       (stub 7 [cm]))
     (cut "Wclover"
       (stub 7 [cm]))
-    (wait_mm_dd 6 9)
+    (wait_mm_dd 8 1)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (cut "Wclover"
+      (stub 7 [cm]))
+    (wait_mm_dd 10 15)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (cut "Wclover"
+      (stub 7 [cm]))
+    (wait_mm_dd 4 14)
     (fertilize
       ("my_cattle_slurry")
-      (equivalent_weight 107.0 [kg N/ha])
+      (equivalent_weight 140.0 [kg N/ha])
       (from -5 [cm])
       (to -15 [cm]))
-    (wait_mm_dd 7 7)
-    (irrigate_overhead 42.0 [mm/h])
-    (wait_mm_dd 7 12)
+    (wait_mm_dd 6 11)
     (cut "Ryegrass"
       (stub 7 [cm]))
     (cut "Wclover"
       (stub 7 [cm]))
-    (wait_mm_dd 8 23)
+    (wait_mm_dd 8 1)
     (cut "Ryegrass"
       (stub 7 [cm]))
     (cut "Wclover"
       (stub 7 [cm]))
-    (wait_mm_dd 10 11)
+    (wait_mm_dd 10 15)
     (cut "Ryegrass"
       (stub 7 [cm]))
     (cut "Wclover"
       (stub 7 [cm]))
-    (wait_mm_dd 3 23)
+    (wait_mm_dd 4 14)
     (fertilize
       ("my_cattle_slurry")
-      (equivalent_weight 105.0 [kg N/ha])
+      (equivalent_weight 60.0 [kg N/ha])
       (from -5 [cm])
       (to -15 [cm]))
-    (wait_mm_dd 5 24)
-    (cut "Ryegrass"
+    (wait_mm_dd 4 14)
+    (plowing)
+    (wait_mm_dd 4 20)
+    (sow "SB")
+    (sow "Pea")
+    (wait_mm_dd 7 28)
+    (harvest "SB"
       (stub 7 [cm]))
-    (cut "Wclover"
+    (harvest "Pea"
+      (stub 7 [cm]))
+    (wait_mm_dd 3 29)
+    (fertilize
+      ("my_cattle_slurry")
+      (equivalent_weight 150.0 [kg N/ha])
+      (from -5 [cm])
+      (to -15 [cm]))
+    (wait_mm_dd 3 29)
+    (plowing)
+    (wait_mm_dd 4 9)
+    (sow "Spring Wheat")
+    (sow "Ryegrass")
+    (wait_mm_dd 9 1)
+    (harvest "Spring Wheat"
+      (stub 7 [cm]))
+    (wait_mm_dd 4 4)
+    (fertilize
+      ("my_cattle_slurry")
+      (equivalent_weight 250.0 [kg N/ha])
+      (from -5 [cm])
+      (to -15 [cm]))
+    (wait_mm_dd 4 4)
+    (plowing)
+    (wait_mm_dd 4 18)
+    (sow "Fodder Beet")
+    (wait_mm_dd 10 26)
+    (harvest "Fodder Beet"
+      (stub 7 [cm]))
+    (wait_mm_dd 4 6)
+    (fertilize
+      ("my_cattle_slurry")
+      (equivalent_weight 100.0 [kg N/ha])
+      (from -5 [cm])
+      (to -15 [cm]))
+    (wait_mm_dd 4 6)
+    (plowing)
+    (wait_mm_dd 4 10)
+    (sow "SB")
+    (sow "Ryegrass")
+    (sow "Wclover")
+    (wait_mm_dd 8 22)
+    (harvest "SB"
       (stub 7 [cm]))
     (wait_mm_dd 5 29)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (cut "Wclover"
+      (stub 7 [cm]))
+    (wait_mm_dd 8 1)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (cut "Wclover"
+      (stub 7 [cm]))
+    (wait_mm_dd 10 15)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (cut "Wclover"
+      (stub 7 [cm]))
+    (wait_mm_dd 4 16)
     (fertilize
       ("my_cattle_slurry")
-      (equivalent_weight 109.0 [kg N/ha])
+      (equivalent_weight 100.0 [kg N/ha])
       (from -5 [cm])
       (to -15 [cm]))
-    (wait_mm_dd 7 3)
+    (wait_mm_dd 6 2)
     (cut "Ryegrass"
       (stub 7 [cm]))
     (cut "Wclover"
       (stub 7 [cm]))
-    (wait_mm_dd 8 7)
+    (wait_mm_dd 8 1)
     (cut "Ryegrass"
       (stub 7 [cm]))
     (cut "Wclover"
       (stub 7 [cm]))
-    (wait_mm_dd 10 16)
+    (wait_mm_dd 10 15)
     (cut "Ryegrass"
       (stub 7 [cm]))
     (cut "Wclover"
+      (stub 7 [cm]))
+    (wait_mm_dd 3 29)
+    (plowing)
+    (wait_mm_dd 3 29)
+    (fertilize
+      ("my_cattle_slurry")
+      (equivalent_weight 100.0 [kg N/ha])
+      (from -5 [cm])
+      (to -15 [cm]))
+    (wait_mm_dd 4 1)
+    (plowing)
+    (wait_mm_dd 4 2)
+    (sow "SB")
+    (wait_mm_dd 4 15)
+    (sow "Ryegrass")
+    (wait_mm_dd 9 3)
+    (harvest "SB"
+      (stub 7 [cm]))
+    (wait_mm_dd 4 25)
+    (fertilize
+      ("my_cattle_slurry")
+      (equivalent_weight 100.0 [kg N/ha])
+      (from -5 [cm])
+      (to -15 [cm]))
+    (wait_mm_dd 4 25)
+    (plowing)
+    (wait_mm_dd 5 1)
+    (sow "Spring Wheat")
+    (sow "Ryegrass")
+    (wait_mm_dd 8 22)
+    (harvest "Spring Wheat"
+      (stub 7 [cm]))
+    (wait_mm_dd 4 19)
+    (plowing)
+    (wait_mm_dd 4 25)
+    (sow "Aert")
+    (wait_mm_dd 6 14)
+    (irrigate_overhead 33.0 [mm/h])
+    (wait_mm_dd 7 8)
+    (irrigate_overhead 40.0 [mm/h])
+    (wait_mm_dd 9 7)
+    (harvest "Aert"
+      (stub 7 [cm]))
+    (wait_mm_dd 9 13)
+    (sow "Rug")
+    (wait_mm_dd 3 28)
+    (plowing)
+    (wait_mm_dd 4 3)
+    (sow "SB")
+    (sow "Ryegrass")
+    (sow "Wclover")
+    (wait_mm_dd 8 2)
+    (harvest "SB"
       (stub 7 [cm]))
     (wait_mm_dd 4 8)
     (fertilize
@@ -297,10 +280,10 @@
       (equivalent_weight 91.0 [kg N/ha])
       (from -5 [cm])
       (to -15 [cm]))
-    (wait_mm_dd 6 4)
-    (irrigate_overhead 40.0 [mm/h])
-    (wait_mm_dd 6 24)
-    (irrigate_overhead 50.0 [mm/h])
+    (wait_mm_dd 6 3)
+    (irrigate_overhead 45.0 [mm/h])
+    (wait_mm_dd 6 26)
+    (irrigate_overhead 42.0 [mm/h])
     (wait_mm_dd 7 6)
     (cut "Ryegrass"
       (stub 7 [cm]))
@@ -318,15 +301,36 @@
       (stub 7 [cm]))
     (cut "Wclover"
       (stub 7 [cm]))
+    (wait_mm_dd 3 25)
+    (fertilize
+      ("my_cattle_slurry")
+      (equivalent_weight 111.0 [kg N/ha])
+      (from -5 [cm])
+      (to -15 [cm]))
     (wait_mm_dd 4 15)
     (plowing)
     (wait_mm_dd 4 22)
     (sow "SB")
     (sow "Ryegrass")
+    (wait_mm_dd 6 14)
+    (fertilize
+      ("my_cattle_slurry")
+      (equivalent_weight 106.0 [kg N/ha])
+      (from -5 [cm])
+      (to -15 [cm]))
+    (wait_mm_dd 6 30)
+    (harvest "SB"
+      (stub 7 [cm]))
     (wait_mm_dd 7 2)
     (irrigate_overhead 40.0 [mm/h])
-    (wait_mm_dd 7 30)
-    (irrigate_overhead 40.0 [mm/h]))
+    (wait_mm_dd 7 28)
+    (irrigate_overhead 45.0 [mm/h])
+    (wait_mm_dd 8 23)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (wait_mm_dd 10 26)
+    (cut "Ryegrass"
+      (stub 7 [cm])))
   (defaction "A_F_R" activity "S1-3_1994-2010")
   (input file "Foulum_soil_vg.dai")
   (input file "OutputLog_2.dai")
