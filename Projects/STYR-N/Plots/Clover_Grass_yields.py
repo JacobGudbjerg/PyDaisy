@@ -31,15 +31,22 @@ for root, dirs, filenames in items:
         df2= pd.DataFrame([rg, wc]).T
         df2.columns =['Ryegrass', 'Wclover']
         df2.index = df2.index.strftime("%Y")
+    fig, ax = plt.subplots(nrows=3, ncols=2)
+    for row in ax:
+       for col in row:
+          #df2.plot.bar(stacked = True, figsize= (5,3))
+           col.plot()
+           df2.plot.bar(stacked = True)
+           plt.show()
 
-        fig, ax = plt.subplots(nrows=3, ncols=2)
-        for row in ax:
-            for col in row:
-                col.plot(df2)
-        plt.show()
 
-        # plt.plot.bar( 
+#xl = pd.read_excel(r'..\Meas_yields.xlsx', 'data')
+#DMG =xl.groupby(['treatment','block','field'])    
 
-
-#        df2.plot.bar(stacked = True,figsize= (30,5))
+#plt.plot(DMG.get_group((4,1,'IND'))['harvest'], DMG.get_group((4,1,'IND'))['grassDM'],'x')
+        
+    #        for row in ax:
+     #       for col in row:
+      #          df2.plot.bar(stacked = True, figsize= (5,3))
+                #col.plot(df2)
     
