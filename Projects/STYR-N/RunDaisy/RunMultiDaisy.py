@@ -18,7 +18,6 @@ if __name__ =='__main__':
     xl = pd.read_excel(r'Treat4_S1_S3.xlsx', None)
     for sheet in xl.items():
         df=sheet[1]
-    
         template = DaisyModel(r'Foulum94-10.dai')
         i=0
         unique_name = sheet[0]
