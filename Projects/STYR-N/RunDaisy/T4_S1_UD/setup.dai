@@ -20,9 +20,15 @@
     (cut "Wclover" 
       (stub 5 [cm])) )
   (defaction "S1-3_1994-2010" activity
-    (wait_mm_dd 4 1)
+    (wait_mm_dd 4 20)
     (sow "Ryegrass")
     (sow "Wclover")
+    (wait_mm_dd 4 20)
+    (fertilize
+      ("my_cattle_slurry")
+      (equivalent_weight 100.0 [kg N/ha])
+      (from -5 [cm])
+      (to -15 [cm]))
     (wait_mm_dd 6 2)
     (cut "Ryegrass"
       (stub 7 [cm]))

@@ -8,14 +8,13 @@ Created on Mon Nov 12 09:31:39 2018
 import sys
 import pandas as pd
 import os
-import copy
 sys.path.append(r'../../../pydaisy')
 
 from Daisy import DaisyDlf, DaisyModel
 import matplotlib.pyplot as plt
 import numpy as np 
 import datetime as datetime
-sys.path.append(r'h:\Documents\PyDaisy')
+sys.path.append(r'..\..\..\.')
 
 from pydaisy.Daisy import *
 
@@ -25,10 +24,10 @@ xl.set_index('date', inplace=True)
 xl['id'] = 'T'+xl['treatment'].map(str)+'_S'+xl['block'].map(str)+'_'+xl['field']
 
 # Plot tørstofsudbytte for kløver, græs og samlet i søjlediagram
-MotherFolder='h:\Documents\PyDaisy\Projects\STYR-N\RunDaisy'
+MotherFolder='..\RunDaisy'
 items = os.walk(MotherFolder)
 
-
+index=1
 #fig, axes = plt.subplots(nrows=2, ncols=3)
 for root, dirs, filenames in items:
     for d in dirs:
@@ -40,17 +39,22 @@ for root, dirs, filenames in items:
         DMG =DMharv.groupby('crop')
         rg = DMG.get_group('Ryegrass').sum(axis=1)
         wc = DMG.get_group('Wclover').sum(axis=1)
+        
+        #Laver et subplot, som derefter bliver det aktive som de næste plt virker på
+        plt.subplot(3,2,index)
+        index+=1
         df2= pd.DataFrame([rg, wc]).T
         df2.columns =['Ryegrass', 'Wclover']
-        df2.index = df2.index.strftime("%Y")
-        df2.plot.bar(stacked = True)
+#        df2.index = df2.index.strftime("%Y")
+        plt.scatter(df2.index, df2['Ryegrass'],s=20, marker='x', c='b', label='ryegrass_sim')
+        plt.scatter(df2.index, df2['Wclover'],s=20, marker='x', c='r', label='clover_sim')
         plt.title(d)
         plt.ylabel('t DM/ha')
 # plot målt DM udbytte ved x  grassDM, cloverDM, grassN, cloverN
-    for i in range(0,len(xl)):
-        if xl['id'][i]=='d':    #skal sættes ind ovenpå søjlen der passer med id=d
-            plt.scatter(xl.index[i], xl['grassDM'][i], s=20, c='b', label='ryegrass')
-            plt.scatter(xl.index[i], xl['cloverDM'][i]+xl['grassDM'][i], s=20, c='r', label='clover')
+        for i in range(0,len(xl)):
+            if xl['id'][i]==d:    #skal sættes ind ovenpå søjlen der passer med id=d
+                plt.scatter(xl.index[i], xl['grassDM'][i], s=20, c='b', label='ryegrass')
+                plt.scatter(xl.index[i], xl['cloverDM'][i], s=20, c='r', label='clover')
 
                
             #plt.plot(xl.grassDM, color='b') # plot kun ryegrass
