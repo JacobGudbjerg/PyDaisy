@@ -55,8 +55,8 @@ for root, dirs, filenames in items:
             if xl['id'][i]==d:    #skal sættes ind ovenpå søjlen der passer med id=d
                 plt.scatter(xl.index[i], xl['grassDM'][i], s=20, c='b', label='ryegrass')
                 plt.scatter(xl.index[i], xl['cloverDM'][i], s=20, c='r', label='clover')
-
-               
+        plt.tight_layout()
+       
             #plt.plot(xl.grassDM, color='b') # plot kun ryegrass
             #plt.plot(xl.date, xl.grass+xl.cloverDM, color=o) # plotter total DM
    #         
