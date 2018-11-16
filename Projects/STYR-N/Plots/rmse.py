@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Nov 15 14:34:37 2018
+Created on Fri Nov 16 11:35:42 2018
 
 @author: tqc268
 """
+""
 import sys
 import pandas as pd
 import os
@@ -14,24 +15,20 @@ import matplotlib.pyplot as plt
 import numpy as np 
 import datetime as datetime
 sys.path.append(r'..\..\..\.')
-
 from pydaisy.Daisy import *
+
+def rmse(pred, obs):
+    return np.sqrt(((pred - obs) ** 2).mean())
 
 # læser målt data og giver id som matcher d
 xl = pd.read_excel(r'..\Meas_yields.xlsx', 'data')
 xl.set_index('date', inplace=True)
 xl['id'] = 'T'+xl['treatment'].map(str)+'_S'+xl['block'].map(str)+'_'+xl['field']
-
-#converts tuple into dataframes - HER GÅR DET galt...
-#pf3=pd.DataFrame(meas, columns=['grassN'])
-
-# Plot tørstofsudbytte for kløver, græs og samlet i søjlediagram
+# Collects the simulation results
 MotherFolder='..\RunDaisy'
 items = os.walk(MotherFolder)
-
-index=1
-fig = plt.figure(figsize=(18, 18))
-# fig, axes = plt.subplots(nrows=2, ncols=3)
+#index=1
+#fig = plt.figure(figsize=(18, 18))
 for root, dirs, filenames in items:
     for d in dirs:
         print(d)
@@ -43,22 +40,27 @@ for root, dirs, filenames in items:
         rg = DMG.get_group('Ryegrass').sum(axis=1)
         wc = DMG.get_group('Wclover').sum(axis=1)
 # Laver et subplot, som derefter bliver det aktive som de næste plt virker på
-        plt.subplot(3,2,index)
-        index+=1
+#        plt.subplot(3,2,index)
+#        index+=1
         df22= pd.DataFrame([rg, wc]).T
         df22.columns =['Ryegrass', 'Wclover']
-        df2 =df22.loc['2006-1-1':'2011-1-1',:]                 
+        df2 =copy.deepcopy(df22.loc['2006-1-1':'2011-1-1',:])
+        df22['date']=df22.index[0]   
+        s=pd.concat([measdf, df22], axis=1, ignore_index=True)
 # Vil gerne plott målt mod simuleret output - først et plot for hver id - og så alle samlet.
         #Udvælger en ny dataframe med data hvor ID = d. Det samme som tidligere blec gjort i loop
         s1=xl.loc[xl['id']==d]
         #Group og tag gennemsnit
-        meas =s1.groupby(s1.index)['grassDM'].mean()
-        measdf=pd.DataFrame(meas)
+        meas_rg =s1.groupby(s1.index)['grassDM'].mean()
+        measdf=pd.DataFrame(meas_rg)
+        text_file = open("meas_rg.txt", "w")
+        text_file.write(stuff)
+        text_file.close()
+        
+        #measdf['date']=measdf.index
 # Samler en dataframe med målt og simulert
+        dat=pd.merge(measdf, df2, on=measdf.index, how='left')
         i = measdf.index.intersection(df2.index)
-        mm= measdf.loc[i, ['grassDM']].add(df2.loc[i, ['Ryegrass']]).div(2)
-        plt.scatter(mm['grassDM'], mm['Ryegrass'])
-        plt.title(d, position = (0.9, 0.9), fontweight="bold")
-        plt.ylabel('simulated')
-        plt.xlabel('measured', inner)
-    plt.tight_layout()d
+        dat_rg= measdf.loc[i, ['grassDM']].add(df2.loc[i, ['Ryegrass']]).div(1)
+        dat_rg.columns=['obs', 'pred']
+        rmse_val = rmse(np.array(dat['obs']), np.array(dat['pred']))
