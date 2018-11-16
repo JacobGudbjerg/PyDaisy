@@ -27,8 +27,9 @@ meas= (xl.groupby(['id', xl.index])['grassDM'].mean(),
        xl.groupby(['id', xl.index])['cloverDM'].mean(),
        xl.groupby(['id', xl.index])['grassN'].mean(),
        xl.groupby(['id', xl.index])['cloverDM'].mean())
+
 #converts tuple into dataframes - HER GÅR DET galt...
-pf3=pd.DataFrame(meas, columns=['grassN'])
+#pf3=pd.DataFrame(meas, columns=['grassN'])
 
 # Plot tørstofsudbytte for kløver, græs og samlet i søjlediagram
 MotherFolder='..\RunDaisy'
@@ -54,11 +55,12 @@ for root, dirs, filenames in items:
         df22.columns =['Ryegrass', 'Wclover']
         df2 =df22.loc['2006-1-1':'2011-1-1',:]                 
       # Vil gerne plott målt mod simuleret output - først et plot for hver id - og så alle samlet.
-        for i in range(0,len(xl)):
-            if xl['id'][i]==d & xl.index[]:    
-                plt.scatter(xl['grassDM'][i], df2['Ryegrass'] s=10, c='b', label='ryegrass')
-                plt.scatter(df2.index, df2['Ryegrass'],s=10, marker='x', c='b', label='ryegrass_sim')
-       
+        #Udvælger en ny dataframe med data hvor ID = d. Det samme som tidligere blec gjort i loop
+        s1=xl.loc[xl['id']==d]
+        #Group og tag gennemsnit
+        meas =s1.groupby(s1.index)['grassDM'].mean()
+        plt.scatter(meas.index, meas)
+ 
         plt.title(d, position = (0.9, 0.9), fontweight="bold")
         plt.ylabel('t DM/ha')
         plt.scatter
