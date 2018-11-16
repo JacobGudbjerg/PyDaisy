@@ -22,12 +22,6 @@ xl = pd.read_excel(r'..\Meas_yields.xlsx', 'data')
 xl.set_index('date', inplace=True)
 xl['id'] = 'T'+xl['treatment'].map(str)+'_S'+xl['block'].map(str)+'_'+xl['field']
 
-# beregne gennemsnit af de to replikater for hver dato og id
-meas= (xl.groupby(['id', xl.index])['grassDM'].mean(), 
-       xl.groupby(['id', xl.index])['cloverDM'].mean(),
-       xl.groupby(['id', xl.index])['grassN'].mean(),
-       xl.groupby(['id', xl.index])['cloverDM'].mean())
-
 #converts tuple into dataframes - HER GÅR DET galt...
 #pf3=pd.DataFrame(meas, columns=['grassN'])
 
@@ -54,14 +48,17 @@ for root, dirs, filenames in items:
         df22= pd.DataFrame([rg, wc]).T
         df22.columns =['Ryegrass', 'Wclover']
         df2 =df22.loc['2006-1-1':'2011-1-1',:]                 
-      # Vil gerne plott målt mod simuleret output - først et plot for hver id - og så alle samlet.
+# Vil gerne plott målt mod simuleret output - først et plot for hver id - og så alle samlet.
         #Udvælger en ny dataframe med data hvor ID = d. Det samme som tidligere blec gjort i loop
         s1=xl.loc[xl['id']==d]
         #Group og tag gennemsnit
         meas =s1.groupby(s1.index)['grassDM'].mean()
-        plt.scatter(meas.index, meas)
- 
+        measdf=pd.DataFrame(meas)
+# Samler en dataframe med målt og simulert
+        i = measdf.index.intersection(df2.index)
+        mm= measdf.loc[i, ['grassDM']].add(df2.loc[i, ['Ryegrass']]).div(2)
+        plt.scatter(mm['grassDM'], mm['Ryegrass'])
         plt.title(d, position = (0.9, 0.9), fontweight="bold")
-        plt.ylabel('t DM/ha')
-        plt.scatter
+        plt.ylabel('simulated')
+        plt.xlabel('measured')
 plt.tight_layout()
