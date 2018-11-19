@@ -42,15 +42,20 @@ for root, dirs, filenames in items:
         DMharv= df[['crop', 'leaf_DM', 'stem_DM','sorg_DM']]
         DMG =DMharv.groupby('crop')
         rg = DMG.get_group('Ryegrass').sum(axis=1)
-# laver et subplot, som derefter bliver det aktive som de næste plt virker på
+        wc = DMG.get_group('Wclover').sum(axis=1)
+# Laver et subplot, som derefter bliver det aktive som de næste plt virker på
         ax=plt.subplot(3,2,index)
         index+=1
-        df22= pd.DataFrame([rg]).T
-        df22.columns =['Ryegrass']
+        df22= pd.DataFrame([rg, wc]).T
+        df22.columns =['Ryegrass', 'Wclover']
         df2 =df22.loc['2006-1-1':'2011-1-1',:]                 
+# Vil gerne plott målt mod simuleret output - først et plot for hver id - og så alle samlet.
+#Udvælger en ny dataframe med data hvor ID = d. Det samme som tidligere blev gjort i loop
+#Group og tag gennemsnit
         s1=xl.loc[xl['id']==d]
-        meas =s1.groupby(s1.index)['grassDM'].mean()
-# Samler en dataframe med målt og simulert
+        meas =(s1.groupby(s1.index)['grassDM'].mean(),s1.groupby(s1.index)['cloverDM'].mean(),
+               s1.groupby(s1.index)['grassN'].mean(),s1.groupby(s1.index)['cloverN'].mean())
+        # Samler en dataframe med målt og simulert
         ms=df2.join(meas[0]) 
         plt.scatter(ms['grassDM'], ms['Ryegrass'], marker='x', c='black', s=15)
         plt.title(d+'-Ryegrass', position = (0.6, 0.9), fontweight="bold", fontsize=8)
@@ -62,35 +67,5 @@ for root, dirs, filenames in items:
         eva= ('RMSE ='+(rs))
         plt.text(0.1,5.5, eva)
         plt.tight_layout()
-index=1
-fig = plt.figure(figsize=(8, 8))
-# fig, axes = plt.subplots(nrows=2, ncols=3)
-for root, dirs, filenames in items:
-    for d in dirs:
-        print(d)
-        harvest=DaisyDlf(os.path.join(root, d, "DailyP-harvest.dlf"))
-        df=harvest.Data
-# summere og plot af udbytte i tørstof DM       
-        DMharv= df[['crop', 'leaf_DM', 'stem_DM','sorg_DM']]
-        DMG =DMharv.groupby('crop')
-        rg = DMG.get_group('Ryegrass').sum(axis=1)
-        wc = DMG.get_group('Wclover').sum(axis=1)
-# Laver et subplot, som derefter bliver det aktive som de næste plt virker på
-        ax=plt.subplot(3,2,index)
-        index+=1
-        df22= pd.DataFrame([rg, wc]).T
-        df22.columns =['Ryegrass', 'Wclover']
-        df2 =df22.loc['2006-1-1':'2011-1-1',:]                 
-        meas =s1.groupby(s1.index)['cloverDM'].mean()
-        # Samler en dataframe med målt og simulert
-        ms=df2.join(meas[0]) 
-        plt.scatter(ms['cloverDM'], ms['Wclover'], marker='x', c='black', s=15)
-        plt.title(d+'-Clover', position = (0.5, 0.9), fontweight="bold", fontsize=8)
-        ax.set(ylabel=('simulated (t DM/ha)'), xlabel= 'measured')
-        ax.set(xlim=(0,6), ylim=(0,6))
-        ax.plot([0, 1], [0, 1], transform=ax.transAxes, c='black', linestyle ='--')
-        rmse_val = rmse(ms['cloverDM'],ms['Wclover'])
-        rs=str(round(rmse_val, 2))
-        eva= ('RMSE ='+(rs))
-        plt.text(0.1,5.5, eva)
-        plt.tight_layout()
+fig.savefig("Ryegrass_DM.pdf", bbox_inches='tight')       
+        
