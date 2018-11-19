@@ -5,6 +5,10 @@ Created on Thu Nov 15 15:03:37 2018
 @author: tqc268
 """
 
+from scipy.interpolate import*
+ 
+
+
 # læser målt data og giver id som matcher d
 xl = pd.read_excel(r'..\Meas_yields.xlsx', 'data')
 xl.set_index('date', inplace=True)

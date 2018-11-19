@@ -62,7 +62,7 @@ for root, dirs, filenames in items:
         plt.scatter(ms['total-N'], ms['sim-totalN'], marker='x', c='black', s=15)
         plt.title(d+'-Total-Nyield', position = (0.6, 0.9), fontweight="bold", fontsize=8)
         ax.set(ylabel=('simulated (kg N/ha)'), xlabel= 'measured')
-        ax.set(xlim=(0,200), ylim=(0,200))
+        ax.set(xlim=(0,150), ylim=(0,150))
         ax.plot([0, 1], [0, 1], transform=ax.transAxes, c='black', linestyle ='--')
         rmse_val = rmse(ms['total-N'],ms['sim-totalN'])
         rs=str(round(rmse_val, 2))
