@@ -56,7 +56,7 @@ for root, dirs, filenames in items:
         text_file = open("meas_rg.txt", "w")
         text_file.write(stuff)
         text_file.close()
-        
+        np.savetxt('results.csv', (col1_array, col2_array, col3_array), delimiter=',')
         #measdf['date']=measdf.index
 # Samler en dataframe med målt og simulert
         dat=pd.merge(measdf, df2, on=measdf.index, how='left')
