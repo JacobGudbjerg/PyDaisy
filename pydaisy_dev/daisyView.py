@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 import matplotlib.pyplot as plt
-from Daisy import DaisyDlf, DaisyModel
+from pydaisy.Daisy import DaisyDlf, DaisyModel
 from scipy.interpolate import griddata
 import tkinter as tk
 import tkinter.ttk as ttk
@@ -33,8 +33,8 @@ class heatmap(object):
 
 
 class dai_view(object):
-    def __init__(self, filename):
-        root = tk.Tk()
+    def __init__(self, filename, master):
+        root = tk.Tk(master)
         self.tree = ttk.Treeview(root)
 
 

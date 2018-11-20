@@ -21,6 +21,26 @@ if platform.system()=='Linux':
 def daisy_installed():
     return os.path.isfile(daisyexecutable)
 
+def try_cast_number(value):
+    """
+    Tries to convert to an int, then float and otherwise just returns the value
+    """
+    try:
+        return int(value)
+    except ValueError:
+        return try_cast_float(value)
+
+def try_cast_float(value):
+    """
+    Tries to convert to a float. Otherwise just returns the value
+    """
+    try:
+        return float(value)
+    except ValueError:
+        return value
+
+
+
 class DaisyDlf(object):
     """
     Reads a Daisy .dlf- or .dwf-file.
@@ -113,7 +133,7 @@ class DaisyDlf(object):
                             elif DateTimeIndex == 5:
                                 TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
                         #Now data        
-                        raw.append(map(self.__converter , splitted[DateTimeIndex:]))
+                        raw.append(map(try_cast_float , splitted[DateTimeIndex:]))
                 except:
                     pass
 
@@ -235,11 +255,6 @@ class DaisyDlf(object):
             #Now write the weather data
             self.Data.to_csv(f, header=False, sep='\t', date_format=date_format, float_format='%.2f', encoding='utf-8', quoting=csv.QUOTE_NONE, escapechar=" ")
 
-    def __converter(self, value):
-        try:
-            return float(value)
-        except:
-            return value
 
                 
 class DaisyEntry(object):
@@ -312,18 +327,7 @@ class DaisyEntry(object):
         """
         Returns the i'th value as integer, float or string. Default index value is 0
         """
-        return self.__tryCast(self.Words[index])
-
-    def __tryCast(self, ToReturn):
-        try:
-            ToReturn = int(ToReturn)
-        except ValueError:
-            try:
-                ToReturn = float(ToReturn)
-            except ValueError:
-                pass
-        finally:              
-            return ToReturn
+        return try_cast_number(self.Words[index])
 
 
     def getvalues(self):

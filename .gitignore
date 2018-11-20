@@ -142,3 +142,10 @@ Projects/STYR-N/RunDaisy/IND_3_4/setup.dai
 Projects/STYR-N/RunDaisy/UD_1_4/setup.dai
 Projects/STYR-N/RunDaisy/UD_2_4/setup.dai
 Projects/STYR-N/RunDaisy/UD_3_4/setup.dai
+TestData/Ex1/crop_prod.dlf
+TestData/Ex1/Daily_FNB.dlf
+TestData/Ex1/Daily_FWB.dlf
+TestData/Ex1/harvest.dlf
+TestData/Ex1/soil_NO3.dlf
+TestData/Ex1/soil_water_content.dlf
+TestData/Ex1/soil_water_pF.dlf

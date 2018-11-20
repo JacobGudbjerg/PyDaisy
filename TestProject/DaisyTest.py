@@ -7,6 +7,13 @@ from pydaisy.Daisy import *
 
 
 class Test_DaisyTest(unittest.TestCase):
+
+    def test_try_cast_float(self):
+        self.assertEqual(4.8, try_cast_float('4.8'))
+        self.assertEqual(4, try_cast_number('4'))
+
+
+
     def test_daisyModel(self):
         """
         Test on reading the Exercise01.dai file distributed with Daisy
@@ -84,8 +91,7 @@ class Test_DaisyTest(unittest.TestCase):
 
 
 
-        
-
+       
 
     @unittest.skip("Only works on Jacobs PLEN PC")
     def test_netpath(self):
