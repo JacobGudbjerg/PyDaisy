@@ -43,9 +43,10 @@ for root, dirs, filenames in items:
         #Laver et subplot, som derefter bliver det aktive som de næste plt virker på
         plt.subplot(3,2,index)
         index+=1
-        df2= pd.DataFrame([rg, wc]).T
-        df2.columns =['Ryegrass', 'Wclover']
-#        df2.index = df2.index.strftime("%Y")
+        df22= pd.DataFrame([rg, wc]).T
+        df22.columns =['Ryegrass', 'Wclover']
+        df2 = df22.loc['2006-1-1':'2011-1-1',:]   
+  #       df2.index = df2.index.strftime("%Y")
         plt.scatter(df2.index, df2['Ryegrass'],s=20, marker='x', c='b', label='ryegrass_sim')
         plt.scatter(df2.index, df2['Wclover'],s=20, marker='x', c='r', label='clover_sim')
         plt.title(d)
