@@ -27,7 +27,7 @@ xl['id'] = 'T'+xl['treatment'].map(str)+'_S'+xl['block'].map(str)+'_'+xl['field'
 def rmse(pred, obs):
     return np.sqrt(((pred - obs) ** 2).mean())
 # Plot tørstofsudbytte for kløver, græs og samlet i søjlediagram
-MotherFolder='..\RunDaisy'
+MotherFolder='..\RunDaisy4'
 items = os.walk(MotherFolder)
 
 index=1

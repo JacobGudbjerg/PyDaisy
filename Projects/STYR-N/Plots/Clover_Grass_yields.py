@@ -24,7 +24,7 @@ xl.set_index('date', inplace=True)
 xl['id'] = 'T'+xl['treatment'].map(str)+'_S'+xl['block'].map(str)+'_'+xl['field']
 
 # Plot tørstofsudbytte for kløver, græs og samlet i søjlediagram
-MotherFolder='..\RunDaisy'
+MotherFolder='..\RunDaisy4'
 items = os.walk(MotherFolder)
 
 index=1

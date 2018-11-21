@@ -47,7 +47,8 @@ for root, dirs, filenames in items:
         index+=1
         df22= pd.DataFrame([rg, wc]).T
         df22.columns =['Ryegrass', 'Wclover']
-        df2 =df22.loc['2006-1-1':'2011-1-1',:]                 
+        df22['sim-totalN']=df22['Ryegrass']+df22['Wclover']
+        df2 = df22.loc['2006-1-1':'2011-1-1',:]                 
 # Vil gerne plott målt mod simuleret output - først et plot for hver id - og så alle samlet.
 #Udvælger en ny dataframe med data hvor ID = d. Det samme som tidligere blev gjort i loop
 #Group og tag gennemsnit
@@ -55,15 +56,17 @@ for root, dirs, filenames in items:
         meas =(s1.groupby(s1.index)['grassDM'].mean(),s1.groupby(s1.index)['cloverDM'].mean(),
                s1.groupby(s1.index)['grassN'].mean(),s1.groupby(s1.index)['cloverN'].mean())
         # Samler en dataframe med målt og simulert
-        ms=df2.join(meas[3]) 
-        plt.scatter(ms['cloverN'], ms['Wclover'], marker='x', c='black', s=15)
-        plt.title(d+'-Clover', position = (0.6, 0.9), fontweight="bold", fontsize=8)
+        ms=df2.join(meas[2]) 
+        ms=ms.join(meas[3])
+        ms['total-N']=ms['cloverN']+ms['grassN']
+        plt.scatter(ms['total-N'], ms['sim-totalN'], marker='x', c='black', s=15)
+        plt.title(d+'-Total-Nyield', position = (0.6, 0.9), fontweight="bold", fontsize=8)
         ax.set(ylabel=('simulated (kg N/ha)'), xlabel= 'measured')
-        ax.set(xlim=(0,120), ylim=(0,120))
+        ax.set(xlim=(0,150), ylim=(0,150))
         ax.plot([0, 1], [0, 1], transform=ax.transAxes, c='black', linestyle ='--')
-        rmse_val = rmse(ms['cloverN'],ms['Wclover'])
+        rmse_val = rmse(ms['total-N'],ms['sim-totalN'])
         rs=str(round(rmse_val, 2))
         eva= ('RMSE ='+(rs))
         plt.text(1,110, eva)
         plt.tight_layout()
-fig.savefig("Clover_N.pdf", bbox_inches='tight')
+fig.savefig("Clovergrass_N.pdf", bbox_inches='tight')
