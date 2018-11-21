@@ -14,7 +14,6 @@ import numpy as np
 import datetime as datetime
 sys.path.append(r'..\..\..\.')
 
-from pydaisy.Daisy import *
 
 # læser målt data og giver id som matcher d
 xl = pd.read_excel(r'..\Meas_yields.xlsx', 'data')
@@ -79,14 +78,17 @@ def opti(crop_name, m_cropname, output='DM', makeplots=False):
     return(rmse_val)
     
 def func(pars):
-    
-    cropdai=DaisyModel('..\common\SB-ryegrass.dai')
-    cropdai.Input['defcrop']['LeafPhot']['Fm'].setvalue(pars[0])
-    cropdai.save()
-    
-    run_sub_folders(r'.','setup.dai')
-    r=opti('Wclover','cloverDM')
-    r+=opti('Ryegrass','grassDM')
-    r+=0.01*opti('Ryegrass','grassN','N')
-    r+=0.01*opti('Wclover','cloverN','N')
-    return r
+        cropdai=DaisyModel('..\common\SB-ryegrass.dai')
+        cropdai.Input['defcrop']['LeafPhot']['Fm'].setvalue(pars[0])
+        cropdai.save()
+        
+        run_sub_folders(r'.','setup.dai')
+        print('Simulations done')
+        r=opti('Wclover','cloverDM')
+        r+=opti('Ryegrass','grassDM')
+        r+=0.01*opti('Ryegrass','grassN','N')
+        r+=0.01*opti('Wclover','cloverN','N')
+        return r
+
+if __name__ =='__main__':
+    func([4.0])    
