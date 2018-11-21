@@ -19,7 +19,7 @@ from pydaisy.Daisy import *
 
 def rmse(pred, obs):
     return np.sqrt(((pred - obs) ** 2).mean())
-
+def 
 # læser målt data og giver id som matcher d
 xl = pd.read_excel(r'..\Meas_yields.xlsx', 'data')
 xl.set_index('date', inplace=True)
