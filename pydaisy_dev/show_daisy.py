@@ -29,8 +29,4 @@ class MyFrame(Frame):
 
 
 if __name__ == "__main__":
-    import dfgui
-    from Daisy import *
-    df = DaisyDlf(r'C:\GitHub\RainProof\Flak_SB\MultiDaisy\0\daily_Hussar OD SB.dlf')
-    dfgui.show(df.Data)
-#    MyFrame().mainloop()
+    MyFrame().mainloop()
