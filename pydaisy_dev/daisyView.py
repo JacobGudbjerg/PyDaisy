@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import sys
+sys.path.append(r'../')
 import numpy as np
 import matplotlib.pyplot as plt
 from pydaisy.Daisy import DaisyDlf, DaisyModel
@@ -10,7 +12,7 @@ import os
 
 class heatmap(object):
     """
-    A class that draw a heat map from a daisy dlf file if it has x- and y-coordinates 
+    A class that draws a heat map from a daisy dlf file if it has x- and y-coordinates 
     """
     def __init__(self, daisy_dlf, grid_nx=101j, grid_ny=101j):
         self.daisy_dlf=daisy_dlf

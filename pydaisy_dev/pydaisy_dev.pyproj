@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{193c6281-7966-42df-96d5-1606e6c92d8f}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>daisyView.py</StartupFile>
+    <StartupFile>show_daisy.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
