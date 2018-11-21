@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "TestProject", "TestProject\TestProject.pyproj", "{4AEACA0E-D460-44D4-A243-7EA3A1FEFD2C}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "pydaisy_dev", "pydaisy_dev\pydaisy_dev.pyproj", "{193C6281-7966-42DF-96D5-1606E6C92D8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,8 @@ Global
 		{AE803F61-2275-45BF-9A17-9E2B4BD02F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AEACA0E-D460-44D4-A243-7EA3A1FEFD2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4AEACA0E-D460-44D4-A243-7EA3A1FEFD2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{193C6281-7966-42DF-96D5-1606E6C92D8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{193C6281-7966-42DF-96D5-1606E6C92D8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,7 +5,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{ae803f61-2275-45bf-9a17-9e2b4bd02f50}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>show_daisy.py</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -21,10 +22,6 @@
   <ItemGroup>
     <Compile Include="Daisy.py" />
     <Compile Include="DaisyTools.py" />
-    <Compile Include="daisyView.py" />
-    <Compile Include="show_daisy.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="__init__.py" />
   </ItemGroup>
   <ItemGroup>
