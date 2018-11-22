@@ -26,7 +26,7 @@ xl['id'] = 'T'+xl['treatment'].map(str)+'_S'+xl['block'].map(str)+'_'+xl['field'
 def rmse(pred, obs):
     return np.sqrt(((pred - obs) ** 2).mean())
 # Plot tørstofsudbytte for kløver, græs og samlet i søjlediagram
-MotherFolder='..\RunDaisy5'
+MotherFolder='..\RunDaisy6'
 items = os.walk(MotherFolder)
 
 index=1
@@ -40,14 +40,14 @@ for root, dirs, filenames in items:
 # summere og plot af udbytte i tørstof DM       
         DMharv= df[['crop', 'leaf_DM', 'stem_DM','sorg_DM']]
         DMG =DMharv.groupby('crop')
-        rg = DMG.get_group('Graes').sum(axis=1)
+        rg = DMG.get_group('Ryegrass').sum(axis=1)
         wc = DMG.get_group('Wclover').sum(axis=1)
 # Laver et subplot, som derefter bliver det aktive som de næste plt virker på
         ax=plt.subplot(3,2,index)
         index+=1
         df22= pd.DataFrame([rg, wc]).T
-        df22.columns =['Graes', 'Wclover']
-        df22['sim-totalDM']=df22['Graes']+df22['Wclover']
+        df22.columns =['Ryegrass', 'Wclover']
+        df22['sim-totalDM']=df22['Ryegrass']+df22['Wclover']
         df2 = df22.loc['2006-1-1':'2011-1-1',:]                 
         s1=xl.loc[xl['id']==d]
         meas =(s1.groupby(s1.index)['grassDM'].mean(),s1.groupby(s1.index)['cloverDM'].mean(),

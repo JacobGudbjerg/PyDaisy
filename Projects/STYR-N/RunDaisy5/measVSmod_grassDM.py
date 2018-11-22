@@ -8,6 +8,7 @@ import sys
 import pandas as pd
 import os
 sys.path.append(r'../../../pydaisy')
+
 from Daisy import DaisyDlf, DaisyModel
 import matplotlib.pyplot as plt
 import numpy as np 
@@ -47,23 +48,24 @@ for root, dirs, filenames in items:
         index+=1
         df22= pd.DataFrame([rg, wc]).T
         df22.columns =['Graes', 'Wclover']
-        df22['sim-totalDM']=df22['Graes']+df22['Wclover']
-        df2 = df22.loc['2006-1-1':'2011-1-1',:]                 
+        df2 =df22.loc['2006-1-1':'2011-1-1',:]                 
+# Vil gerne plott målt mod simuleret output - først et plot for hver id - og så alle samlet.
+#Udvælger en ny dataframe med data hvor ID = d. Det samme som tidligere blev gjort i loop
+#Group og tag gennemsnit
         s1=xl.loc[xl['id']==d]
         meas =(s1.groupby(s1.index)['grassDM'].mean(),s1.groupby(s1.index)['cloverDM'].mean(),
                s1.groupby(s1.index)['grassN'].mean(),s1.groupby(s1.index)['cloverN'].mean())
         # Samler en dataframe med målt og simulert
         ms=df2.join(meas[0]) 
-        ms=ms.join(meas[1])
-        ms['total-DM']=ms['cloverDM']+ms['grassDM']
-        plt.scatter(ms['total-DM'], ms['sim-totalDM'], marker='x', c='black', s=15)
-        plt.title(d+'-Total-DM yield', position = (0.6, 0.9), fontweight="bold", fontsize=8)
+        plt.scatter(ms['grassDM'], ms['Graes'], marker='x', c='black', s=15)
+        plt.title(d+'-Graes', position = (0.6, 0.9), fontweight="bold", fontsize=8)
         ax.set(ylabel=('simulated (t DM/ha)'), xlabel= 'measured')
-        ax.set(xlim=(0,8), ylim=(0,8))
+        ax.set(xlim=(0,6), ylim=(0,6))
         ax.plot([0, 1], [0, 1], transform=ax.transAxes, c='black', linestyle ='--')
-        rmse_val = rmse(ms['total-DM'],ms['sim-totalDM'])
+        rmse_val = rmse(ms['grassDM'],ms['Graes'])
         rs=str(round(rmse_val, 2))
         eva= ('RMSE ='+(rs))
-        plt.text(0.2,7.5, eva)
+        plt.text(0.1,5.5, eva)
         plt.tight_layout()
-fig.savefig("Clovergrass_DM.pdf", bbox_inches='tight')
+fig.savefig("Graes_DM.pdf", bbox_inches='tight')       
+        
