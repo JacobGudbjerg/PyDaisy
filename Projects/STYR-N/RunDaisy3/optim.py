@@ -19,7 +19,7 @@ sys.path.append(r'..\..\..\.')
 xl = pd.read_excel(r'..\Meas_yields.xlsx', 'data')
 xl.set_index('date', inplace=True)
 xl['id'] = 'T'+xl['treatment'].map(str)+'_S'+xl['block'].map(str)+'_'+xl['field']
-
+print(xl)
 #converts tuple into dataframes - HER GÅR DET galt...
 #pf3=pd.DataFrame(meas, columns=['grassN'])
 def rmse(pred, obs):
@@ -86,8 +86,8 @@ def func(pars):
         print('Simulations done')
         r=opti('Wclover','cloverDM')
         r+=opti('Ryegrass','grassDM')
-        r+=0.01*opti('Ryegrass','grassN','N')
-        r+=0.01*opti('Wclover','cloverN','N')
+        r+=0.035*opti('Ryegrass','grassN','N')
+        r+=0.035*opti('Wclover','cloverN','N')
         return r
 
 if __name__ =='__main__':

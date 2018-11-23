@@ -55,7 +55,7 @@ for root, dirs, filenames in items:
         #ax.xaxis.set_major_formatter()
         plt.show()
         plt.tight_layout()
-fig.savefig("KG_DM_stackedbar3.pdf", bbox_inches='tight')      
+fig.savefig("KG_DM_stackedbarRootFM2.pdf", bbox_inches='tight')      
         #plt.scatter(df2.index, df2['Ryegrass'],s=20, marker='x', c='b', label='ryegrass_sim')
         #plt.scatter(df2.index, df2['Wclover'],s=20, marker='x', c='r', label='clover_sim')
         #plt.title(d)

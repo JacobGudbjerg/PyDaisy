@@ -104,7 +104,7 @@
 	   (Root ("CROP-SLOW" (initial_fraction 0.50) (C_per_N 80.0))
                  "CROP-FAST")
 	   (DSmax 2.00)
-	    (cut_delay (1500 1) (2000 5) (7000 60))
+	    (cut_delay (1500 1) (2000 20) (7000 45))    
 		)
 )
 

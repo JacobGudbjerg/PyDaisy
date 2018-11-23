@@ -66,4 +66,4 @@ for root, dirs, filenames in items:
         eva= ('RMSE ='+(rs))
         plt.text(0.2,7.5, eva)
         plt.tight_layout()
-fig.savefig("Clovergrass_DM.pdf", bbox_inches='tight')
+fig.savefig("Clovergrass_DM_rootFM.pdf", bbox_inches='tight')
