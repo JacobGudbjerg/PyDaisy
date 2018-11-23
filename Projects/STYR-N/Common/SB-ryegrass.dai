@@ -41,7 +41,11 @@
       (TaSum -50.0) )
     (LeafPhot original 
       (Qeff 0.0650)
+<<<<<<< HEAD
       (Fm 4.0)
+=======
+      (Fm 2.99)
+>>>>>>> dea092c1ccb32f949f7ceef69127bf8e7ebee6bc
       (TempEff 
         (-20 0.0001)
         (01 0.01)

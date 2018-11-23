@@ -12,6 +12,7 @@ from Daisy import DaisyDlf, DaisyModel, run_sub_folders
 import matplotlib.pyplot as plt
 import numpy as np 
 import datetime as datetime
+from scipy.optimize import minimize
 sys.path.append(r'..\..\..\.')
 
 
@@ -28,13 +29,13 @@ def rmse(pred, obs):
 
 def opti(crop_name, m_cropname, output='DM', makeplots=False):
     
-    MotherFolder='..\RunDaisy2'
+    MotherFolder='..\RunDaisy3'
     items = os.walk(MotherFolder)
     
     rmse_val=0
     
     index=1
-    fig = plt.figure(figsize=(8, 8))
+   # fig = plt.figure(figsize=(8, 8))
     # fig, axes = plt.subplots(nrows=2, ncols=3)
     for root, dirs, filenames in items:
         for d in dirs:
@@ -91,4 +92,6 @@ def func(pars):
         return r
 
 if __name__ =='__main__':
-    func([4.0])    
+    x0 =[4]
+    res = minimize(func, x0)
+
