@@ -14,22 +14,30 @@ import numpy as np
 import datetime as datetime
 from scipy.optimize import minimize
 sys.path.append(r'..\..\..\.')
-
+import csv
 
 # læser målt data og giver id som matcher d
 xl = pd.read_excel(r'..\Meas_yields.xlsx', 'data')
 xl.set_index('date', inplace=True)
 xl['id'] = 'T'+xl['treatment'].map(str)+'_S'+xl['block'].map(str)+'_'+xl['field']
 
-#converts tuple into dataframes - HER GÅR DET galt...
-#pf3=pd.DataFrame(meas, columns=['grassN'])
+
 def rmse(pred, obs):
     return np.sqrt(((pred - obs) ** 2).mean())
 # Plot tørstofsudbytte for kløver, græs og samlet i søjlediagram
-
+def extract(crop_name, filnavn, output):
+    print(filnavn)        
+    harvest=DaisyDlf(filnavn)
+    df=harvest.Data
+    # summere og plot af udbytte i tørstof DM       
+    harv= df[['crop', 'leaf_'+output, 'stem_'+output,'sorg_'+output]]
+    DMG =harv.groupby('crop')
+    rg = DMG.get_group(crop_name).sum(axis=1)
+    return(rg)
+       
 def opti(crop_name, m_cropname, output='DM', makeplots=False):
     
-    MotherFolder='..\RunDaisy3'
+    MotherFolder='..\RunDaisy6'
     items = os.walk(MotherFolder)
     
     rmse_val=0
@@ -40,12 +48,10 @@ def opti(crop_name, m_cropname, output='DM', makeplots=False):
     for root, dirs, filenames in items:
         for d in dirs:
             print(d)
-            harvest=DaisyDlf(os.path.join(root, d, "DailyP-harvest.dlf"))
-            df=harvest.Data
-    # summere og plot af udbytte i tørstof DM       
-            DMharv= df[['crop', 'leaf_'+output, 'stem_'+output,'sorg_'+output]]
-            DMG =DMharv.groupby('crop')
-            rg = DMG.get_group(crop_name).sum(axis=1)
+           
+            rg=extract(crop_name, os.path.join(root, d, "DailyP-harvest.dlf"), output)
+            sim=rg.append(rg)
+            #csv.writer(rg)
           # Laver et subplot, som derefter bliver det aktive som de næste plt virker på
             ax=plt.subplot(3,2,index)
             index+=1
@@ -56,13 +62,14 @@ def opti(crop_name, m_cropname, output='DM', makeplots=False):
     #Udvælger en ny dataframe med data hvor ID = d. Det samme som tidligere blev gjort i loop
     #Group og tag gennemsnit
             s1=xl.loc[xl['id']==d]
-            meas =(s1.groupby(s1.index)['grassDM'].mean(),s1.groupby(s1.index)['cloverDM'].mean(),
-                   s1.groupby(s1.index)['grassN'].mean(),s1.groupby(s1.index)['cloverN'].mean())
+            meas =(s1.groupby(s1.index)['DMtot_kg'].mean(),s1.groupby(s1.index)['pct_clo'].mean(),
+                   s1.groupby(s1.index)['Ntot_kg'].mean(),s1.groupby(s1.index)['pct N'].mean())
             # Samler en dataframe med målt og simulert
             ms=df2.join(meas[0]) 
             ms=ms.join(meas[1]) 
             ms=ms.join(meas[2]) 
             ms=ms.join(meas[3])
+            
             rmse_val += rmse(ms[m_cropname],ms[crop_name])
             rs=str(round(rmse_val, 2))
             eva= ('RMSE ='+(rs))
@@ -79,14 +86,16 @@ def opti(crop_name, m_cropname, output='DM', makeplots=False):
     return(rmse_val)
     
 def func(pars):
+    
+
         cropdai=DaisyModel('..\common\SB-ryegrass.dai')
         cropdai.Input['defcrop']['LeafPhot']['Fm'].setvalue(pars[0])
-        cropdai.Input['defAOM']['C_per_N'].setvalue(pars[0])
+        cropdai.Input['defAOM']['C_per_N'].setvalue(pars[1])
         cropdai.save()
                
         cropdai=DaisyModel('..\common\SB-wclover.dai')
-        cropdai.Input['defcrop']['LeafPhot']['Fm'].setvalue(pars[0])
-        cropdai.Input['defAOM']['C_per_N'].setvalue(pars[0])
+        cropdai.Input['defcrop']['LeafPhot']['Fm'].setvalue(pars[2])
+        cropdai.Input['defAOM']['C_per_N'].setvalue(pars[3])
         cropdai.save()
         
         

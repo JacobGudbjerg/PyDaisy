@@ -1,7 +1,7 @@
 		 
   (defAOM Ryegrass-SLOW CROP-SLOW "Slow AOM pool modified for ryegrass." 
     (initial_fraction 0.50)
-    (C_per_N 90.0) )
+    (C_per_N 4.0) )
   (defcrop "Ryegrass" default 
     (description "ryegrass v.27 Henning Høgh Jensen")
     (Devel default 
@@ -41,11 +41,7 @@
       (TaSum -50.0) )
     (LeafPhot original 
       (Qeff 0.0650)
-<<<<<<< HEAD
-      (Fm 4.0)
-=======
-      (Fm 2.99)
->>>>>>> dea092c1ccb32f949f7ceef69127bf8e7ebee6bc
+      (Fm 3.9)
       (TempEff 
         (-20 0.0001)
         (01 0.01)
