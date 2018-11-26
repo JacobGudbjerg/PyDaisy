@@ -107,5 +107,5 @@ def func(pars):
 
 if __name__ =='__main__':
     x0 =[2,100,3,50]
-    res = minimize(func, x0)
+    res = minimize(func, x0, method='L-BFGS-B',options={'disp':True, 'maxiter':1})
 
