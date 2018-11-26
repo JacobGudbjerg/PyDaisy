@@ -108,5 +108,5 @@ def progress_print(res):
 
 if __name__ =='__main__':
     x0 =[2,100,3,50]
-    res = minimize(func, x0, method='L-BFGS-B', callback=progress_print,  options={'disp':True, 'maxiter':12})
+    res = minimize(func, x0, method='L-BFGS-B', callback=progress_print,  options={'disp':True, 'maxiter':120})
 
