@@ -60,8 +60,8 @@ def opti(crop_name, m_cropname, output='DM', makeplots=False):
     #Udvælger en ny dataframe med data hvor ID = d. Det samme som tidligere blev gjort i loop
     #Group og tag gennemsnit
             s1=xl.loc[xl['id']==d]
-            meas =(s1.groupby(s1.index)['DMtot_kg'].mean(),s1.groupby(s1.index)['pct_clo'].mean(),
-                   s1.groupby(s1.index)['Ntot_kg'].mean(),s1.groupby(s1.index)['pct N'].mean())
+            meas =(s1.groupby(s1.index)['grassDM'].mean(),s1.groupby(s1.index)['cloverDM'].mean(),
+                   s1.groupby(s1.index)['grassN'].mean(),s1.groupby(s1.index)['cloverN'].mean())
             # Samler en dataframe med målt og simulert
             ms=df2.join(meas[0]) 
             ms=ms.join(meas[1]) 
