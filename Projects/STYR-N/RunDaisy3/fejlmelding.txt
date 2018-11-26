@@ -1,0 +1,43 @@
+
+runfile('H:/Documents/PyDaisy/Projects/STYR-N/RunDaisy3/optim2.py', wdir='H:/Documents/PyDaisy/Projects/STYR-N/RunDaisy3')
+Running 6 directories on 6 parallel processes
+Simulations done
+Traceback (most recent call last):
+
+  File "<ipython-input-1-8ed6f2a4f239>", line 1, in <module>
+    runfile('H:/Documents/PyDaisy/Projects/STYR-N/RunDaisy3/optim2.py', wdir='H:/Documents/PyDaisy/Projects/STYR-N/RunDaisy3')
+
+  File "C:\Users\tqc268\AppData\Local\Continuum\anaconda3\lib\site-packages\spyder_kernels\customize\spydercustomize.py", line 668, in runfile
+    execfile(filename, namespace)
+
+  File "C:\Users\tqc268\AppData\Local\Continuum\anaconda3\lib\site-packages\spyder_kernels\customize\spydercustomize.py", line 108, in execfile
+    exec(compile(f.read(), filename, 'exec'), namespace)
+
+  File "H:/Documents/PyDaisy/Projects/STYR-N/RunDaisy3/optim2.py", line 111, in <module>
+    res = minimize(func, x0, method='L-BFGS-B', callback=progress_print,  options={'disp':True, 'maxiter':120})
+
+  File "C:\Users\tqc268\AppData\Local\Continuum\anaconda3\lib\site-packages\scipy\optimize\_minimize.py", line 603, in minimize
+    callback=callback, **options)
+
+  File "C:\Users\tqc268\AppData\Local\Continuum\anaconda3\lib\site-packages\scipy\optimize\lbfgsb.py", line 335, in _minimize_lbfgsb
+    f, g = func_and_grad(x)
+
+  File "C:\Users\tqc268\AppData\Local\Continuum\anaconda3\lib\site-packages\scipy\optimize\lbfgsb.py", line 280, in func_and_grad
+    f = fun(x, *args)
+
+  File "C:\Users\tqc268\AppData\Local\Continuum\anaconda3\lib\site-packages\scipy\optimize\optimize.py", line 293, in function_wrapper
+    return function(*(wrapper_args + args))
+
+  File "H:/Documents/PyDaisy/Projects/STYR-N/RunDaisy3/optim2.py", line 100, in func
+    r=opti('Wclover','cloverDM')
+
+  File "H:/Documents/PyDaisy/Projects/STYR-N/RunDaisy3/optim2.py", line 50, in opti
+    rg=extract(crop_name, os.path.join(root, d, "DailyP-harvest.dlf"), output)
+
+  File "H:/Documents/PyDaisy/Projects/STYR-N/RunDaisy3/optim2.py", line 30, in extract
+    harvest=DaisyDlf(filnavn)
+
+  File "../../../pydaisy\Daisy.py", line 64, in __init__
+    with open(self.DlfFileName) as f:
+
+FileNotFoundError: [Errno 2] No such file or directory: '..\\RunDaisy3\\__pycache__\\DailyP-harvest.dlf'

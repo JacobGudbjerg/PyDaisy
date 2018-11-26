@@ -1,7 +1,7 @@
  
   (defAOM Wclover-SLOW CROP-SLOW "Slow AOM pool modified for Wclover." 
     (initial_fraction 0.50)
-    (C_per_N 50.00000001) )
+    (C_per_N 50.0) )
   (defcrop Wclover default 
     (description "v.30 Developed by Henning Høgh Jensen")
     (min_light_fraction 0.01)
