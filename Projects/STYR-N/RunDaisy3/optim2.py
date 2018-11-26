@@ -27,7 +27,6 @@ def rmse(pred, obs):
     return np.sqrt(((pred - obs) ** 2).mean())
 # Plot tørstofsudbytte for kløver, græs og samlet i søjlediagram
 def extract(crop_name, filnavn, output):
-    print(filnavn)        
     harvest=DaisyDlf(filnavn)
     df=harvest.Data
     # summere og plot af udbytte i tørstof DM       
@@ -47,12 +46,8 @@ def opti(crop_name, m_cropname, output='DM', makeplots=False):
     # fig, axes = plt.subplots(nrows=2, ncols=3)
     for root, dirs, filenames in items:
         for d in dirs:
-            print(d)
            
             rg=extract(crop_name, os.path.join(root, d, "DailyP-harvest.dlf"), output)
-          # Laver et subplot, som derefter bliver det aktive som de næste plt virker på
-            ax=plt.subplot(3,2,index)
-            index+=1
             df22= pd.DataFrame([rg]).T
             df22.columns =[crop_name]
             df2 =df22.loc['2006-1-1':'2011-1-1',:]                 
@@ -72,6 +67,9 @@ def opti(crop_name, m_cropname, output='DM', makeplots=False):
             rs=str(round(rmse_val, 2))
             eva= ('RMSE ='+(rs))
             if makeplots:
+                # Laver et subplot, som derefter bliver det aktive som de næste plt virker på
+                ax=plt.subplot(3,2,index)
+                index+=1
                 plt.scatter(ms[m_cropname], ms[crop_name], marker='x', c='black', s=15)
                 plt.title(d+'-Clover', position = (0.6, 0.9), fontweight="bold", fontsize=8)
                 ax.set(ylabel=('simulated (t DM/ha)'), xlabel= 'measured')
@@ -105,7 +103,10 @@ def func(pars):
         r+=0.035*opti('Wclover','cloverN','N')
         return r
 
+def progress_print(res):
+    print (res)
+
 if __name__ =='__main__':
     x0 =[2,100,3,50]
-    res = minimize(func, x0, method='L-BFGS-B',options={'disp':True, 'maxiter':1})
+    res = minimize(func, x0, method='L-BFGS-B', callback=progress_print,  options={'disp':True, 'maxiter':12})
 
