@@ -1,5 +1,5 @@
  
-  (path "./common" "./../../common" &old)
+  (path "./.." "./common" "./../../common" &old)
   (input file "dk-maize.dai")
   (input file "dk-rye.dai")
   (input file "dk-wrape.dai")

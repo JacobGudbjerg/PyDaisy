@@ -1,0 +1,1369 @@
+Has 'Software\Daisy 5.64 (w64)' registry entry.
+Using 'C:\Program Files\Daisy 5.64' as daisy home.
+Reseting current directory to 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3'
+Daisy crop/soil simulation version 5.64. (May 22 2018)
+Copyright 1996 - 2016 Per Abrahamsen, Søren Hansen and KU.
+Changing directory to 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND' success
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Opening absolute file name 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND\setup.dai'
+* Parsing file: 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND\setup.dai'
+Path set to:
+0: './common'
+1: './../../common'
+2: '.'
+3: 'C:\Program Files\Daisy 5.64/lib'
+4: 'C:\Program Files\Daisy 5.64/sample'
+done
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'dk-maize.dai'
+Trying './common\dk-maize.dai'
+Trying './../../common\dk-maize.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND\dk-maize.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\dk-maize.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'dk-rye.dai'
+Trying './common\dk-rye.dai'
+Trying './../../common\dk-rye.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND\dk-rye.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\dk-rye.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'dk-wrape.dai'
+Trying './common\dk-wrape.dai'
+Trying './../../common\dk-wrape.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND\dk-wrape.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\dk-wrape.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'pea.dai'
+Trying './common\pea.dai'
+Trying './../../common\pea.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND\pea.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\pea.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'wwheat.dai'
+Trying './common\wwheat.dai'
+Trying './../../common\wwheat.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND\wwheat.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\wwheat.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'fodderbeet.dai'
+Trying './common\fodderbeet.dai'
+Trying './../../common\fodderbeet.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND\fodderbeet.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\fodderbeet.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'swheat.dai'
+Trying './common\swheat.dai'
+Trying './../../common\swheat.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND\swheat.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\swheat.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'dk-pea.dai'
+Trying './common\dk-pea.dai'
+Trying './../../common\dk-pea.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND\dk-pea.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\dk-pea.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'tillage.dai'
+Trying './common\tillage.dai'
+Trying './../../common\tillage.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND\tillage.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\tillage.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'fertilizer.dai'
+Trying './common\fertilizer.dai'
+Trying './../../common\fertilizer.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND\fertilizer.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\fertilizer.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'Org_fert.dai'
+Trying './common\Org_fert.dai'
+Trying './../../common\Org_fert.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'Springbarley_MES_23_2.dai'
+Trying './common\Springbarley_MES_23_2.dai'
+Trying './../../common\Springbarley_MES_23_2.dai' success!
+** Parsing file: 'Springbarley_MES_23_2.dai'
+*** input
+**** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'sbarley.dai'
+Trying './common\sbarley.dai'
+Trying './../../common\sbarley.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND\sbarley.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\sbarley.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'SB-ryegrass.dai'
+Trying './common\SB-ryegrass.dai'
+Trying './../../common\SB-ryegrass.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'SB-wclover.dai'
+Trying './common\SB-wclover.dai'
+Trying './../../common\SB-wclover.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'Foulum_soil_vg.dai'
+Trying './common\Foulum_soil_vg.dai'
+Trying './../../common\Foulum_soil_vg.dai' success!
+** input
+*** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'OutputLog_2.dai'
+Trying './common\OutputLog_2.dai'
+Trying './../../common\OutputLog_2.dai' success!
+** Parsing file: 'OutputLog_2.dai'
+*** input
+**** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'log.dai'
+Trying './common\log.dai'
+Trying './../../common\log.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND\log.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\log.dai' success!
+*** Parsing file: 'log.dai'
+**** input
+***** file
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'log-std.dai'
+Trying './common\log-std.dai'
+Trying './../../common\log-std.dai'
+Trying 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND\log-std.dai' (cwd)
+Trying 'C:\Program Files\Daisy 5.64/lib\log-std.dai' success!
+Command line: C:\Program Files\Daisy 5.64\bin\Daisy.exe H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND\setup.dai
+Storing 'daisy.log' in 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND'
+* weather: default weather_initialize
+** source_initialize
+In directory 'H:\Documents\PyDaisy\Projects\STYR-N\RunDaisy3\T4_S3_IND':
+Looking for file 'Daily_foulum_1984-2017.dwf'
+Trying './common\Daily_foulum_1984-2017.dwf'
+Trying './../../common\Daily_foulum_1984-2017.dwf' success!
+* column: Foulum; FAO initialize
+** Soil
+*** Horizons
+**** horizon: Foulum 0-10 initialize_base
+(CEC 12.3856 [cmolc/kg]) ; Estimated from clay and humus.
+(quartz 0.638149 []) ; Estimated from texture.
+h	h	Theta	K
+cm	pF		cm/h
+0		0.391	1.60417
+-1	0	0.39051	0.663137
+-10	1	0.382698	0.205528
+-100	2	0.312691	0.00415536
+-1000	3	0.187682	2.75571e-006
+-15848.9	4.2	0.093274	1.77303e-010
+**** horizon: Foulum 10-30 initialize_base
+(CEC 11.7971 [cmolc/kg]) ; Estimated from clay and humus.
+(quartz 0.637616 []) ; Estimated from texture.
+h	h	Theta	K
+cm	pF		cm/h
+0		0.414	4.33333
+-1	0	0.413069	1.8016
+-10	1	0.397654	0.473556
+-100	2	0.290613	0.00938941
+-1000	3	0.156561	2.38003e-005
+-15848.9	4.2	0.0704604	1.30047e-008
+**** horizon: Foulum 30-50 initialize_base
+(CEC 8.94337 [cmolc/kg]) ; Estimated from clay and humus.
+(quartz 0.609576 []) ; Estimated from texture.
+h	h	Theta	K
+cm	pF		cm/h
+0		0.391	19.7917
+-1	0	0.386456	4.4347
+-10	1	0.335311	0.302168
+-100	2	0.21391	0.00126012
+-1000	3	0.131935	2.50576e-006
+-15848.9	4.2	0.0834798	1.34958e-009
+**** horizon: Foulum 50-70 initialize_base
+(CEC 6.99994 [cmolc/kg]) ; Estimated from clay and humus.
+(quartz 0.626751 []) ; Estimated from texture.
+h	h	Theta	K
+cm	pF		cm/h
+0		0.331	2.75
+-1	0	0.327034	0.261744
+-10	1	0.293551	0.0170145
+-100	2	0.213858	0.000124232
+-1000	3	0.145267	4.92294e-007
+-15848.9	4.2	0.0906118	6.03998e-010
+**** horizon: Foulum 70-90 initialize_base
+(CEC 7.58411 [cmolc/kg]) ; Estimated from clay and humus.
+(quartz 0.621119 []) ; Estimated from texture.
+h	h	Theta	K
+cm	pF		cm/h
+0		0.304	2.54167
+-1	0	0.303348	0.629617
+-10	1	0.294902	0.149176
+-100	2	0.241324	0.00398847
+-1000	3	0.162127	1.82928e-005
+-15848.9	4.2	0.0961987	2.00676e-008
+*** Geometry
+(zplus -2.5 -5 -10 -16 -23 -30 -36 -43 -50 -56 -63 -70 -76 -83 -90); 15 cells.
+** bioclimate: default initialize
+Difrad choosen: DPF
+** tertiary: old initialize
+Adding macropores to -90 cm
+** movement: vertical initialize_derived
+Bottom heat delay = -0.315391
+** OrganicStandard
+lay	humus	humus	input	input	AOM	SMB1	SMB2	SOM1	SOM2	SOM3	dSMB1	dSMB1	dSMB2	dSMB2	dSOM1	dSOM1	dSOM2	dSOM2	dSOM3	dSOM3
+	kg C/ha/cm	%	kg C/ha/cm/y	%	%	%	%	%	%	%	kg C/ha/cm/y	y^-1	kg C/ha/cm/y	y^-1	kg C/ha/cm/y	y^-1	kg C/ha/cm/y	y^-1	kg C/ha/cm/y	y^-1
+0	2245.28	2.5	270.506	12.0478	1.88909	1.88596	1.29058	28.5585	66.3758	0	0	0	0	0	7.89434	0.0123115	0	0	-0	nan
+1	2245.28	2.5	270.506	12.0478	1.47483	1.88956	1.29059	28.9667	66.3783	0	0	0	0	0	7.80604	0.0120022	0	0	-0	nan
+2	2245.28	2.5	270.506	12.0478	1.01737	1.89354	1.29061	29.4174	66.3811	0	0	0	0	0	7.70853	0.0116707	0	0	-0	nan
+3	2011.65	2.3	22.0837	1.09779	0.658674	0.201159	0.117691	5.92726	6.06839	87.0268	0	0	0	0	0	0	0	0	-0	-0
+4	2011.65	2.3	11.6023	0.576755	0.346053	0.105685	0.0618324	3.11405	3.1882	93.1842	0	0	0	0	0	0	0	0	-0	-0
+5	2011.65	2.3	5.80114	0.288378	0.173027	0.0528424	0.0309162	1.55703	1.5941	96.5921	0	0	0	0	0	0	0	0	-0	-0
+6	278.238	0.3	3.0478	1.09539	0.657235	0.23198	0.117434	6.83539	6.99814	85.1598	0	0	0	0	0	0	0	0	-0	-0
+7	278.238	0.3	1.60125	0.575495	0.345297	0.121877	0.0616973	3.59117	3.67667	92.2033	0	0	0	0	0	0	0	0	-0	-0
+8	278.238	0.3	0.800623	0.287747	0.172648	0.0609385	0.0308486	1.79558	1.83834	96.1016	0	0	0	0	0	0	0	0	-0	-0
+9	206.624	0.2	0.42063	0.203573	0.122144	0.0397457	0.0218245	1.17113	1.19901	97.4461	0	0	0	0	0	0	0	0	-0	-0
+10	206.624	0.2	0.22099	0.106953	0.0641716	0.0208815	0.0114661	0.615285	0.629934	98.6583	0	0	0	0	0	0	0	0	-0	-0
+11	206.624	0.2	0.110495	0.0534763	0.0320858	0.0104408	0.00573305	0.307642	0.314967	99.3291	0	0	0	0	0	0	0	0	-0	-0
+12	210.146	0.2	0.0580516	0.0276244	0.0165747	0.00554712	0.00296154	0.163449	0.16734	99.6441	0	0	0	0	0	0	0	0	-0	-0
+13	210.146	0.2	0.0304991	0.0145133	0.00870797	0.00291434	0.00155593	0.0858723	0.0879169	99.813	0	0	0	0	0	0	0	0	-0	-0
+14	210.146	0.2	0.0152495	0.00725664	0.00435398	0.00145717	0.000777965	0.0429362	0.0439585	99.9065	0	0	0	0	0	0	0	0	-0	-0
+*** Total soil summary
+Expected humus change: 77.7936 [kg C/ha/y], 1.15955e-007 [y^-1].
+Expected background mineralization: -7.07215 [kg N/ha/y].
+*** Top soil summary
+	SOM1	SOM2	SOM3	SMB1	SMB2	AOM1	AOM2	total
+kg C/ha	6531.51	14903.9	0	424.503	289.775	242.429	60.6074	22452.8
+kg N/ha	535.319	1221.56	0	63.3586	43.2499	2.69366	4.88226	1871.06
+
+Depth	10	cm
+T	7.3	dg C
+h	-100	cm
+clay	7.7	%
+Specified input	3000	kg C/ha/y
+Specified background mineralization	not specified	kg N/ha/y
+Zone input	2705.06	kg C/ha/y
+Zone background mineralization	0	kg C/ha/y
+Zone humus change	0	kg C/ha/y
+Time	Fri Nov 23 13:15:33 2018
+
+Program started Fri Nov 23 13:15:28 2018, 5 seconds ago.
+* Running
+** 1994-03-01T00:00:00
+Begin simulation
+Start logging
+** 1994-04-20T08:00:00
+Fertilizing 61.0612 ton my_cattle_slurry ww/ha; utilized 250 kg N/ha; water 5.47719 mm
+Using small timestep: 6m
+** 1994-04-20T09:00:00
+Back to normal size timesteps
+** 1994-04-24T08:00:00
+Sowing Fodder Beet
+*** Foulum; FAO
+**** sow
+***** Fodder Beet
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 1994-05-20T00:00:00
+*** crop: Fodder Beet tick
+Emerging
+** 1994-05-25T05:00:00
+*** crop: Fodder Beet tick
+Luxury nitrogen uptake initiated
+** 1994-10-25T08:00:00
+Harvesting Fodder Beet, removing 10.0283 Mg DM/ha
+** 1995-04-26T08:00:00
+Fertilizing 24.4245 ton my_cattle_slurry ww/ha; utilized 100 kg N/ha; water 2.19088 mm
+Using small timestep: 6m
+** 1995-04-26T09:00:00
+Back to normal size timesteps
+** 1995-04-28T08:00:00
+Sowing SB
+*** Foulum; FAO
+**** sow
+***** SB
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Ryegrass
+*** Foulum; FAO
+**** sow
+***** Ryegrass
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Wclover
+*** Foulum; FAO
+**** sow
+***** Wclover
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 1995-05-06T00:00:00
+*** crop: Ryegrass tick
+Emerging
+*** crop: Wclover tick
+Emerging
+** 1995-05-11T00:00:00
+*** crop: SB tick
+Emerging
+** 1995-05-13T16:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 1995-05-22T17:00:00
+*** crop: SB tick
+Luxury nitrogen uptake initiated
+** 1995-05-24T14:00:00
+*** crop: Wclover tick
+Luxury nitrogen uptake initiated
+** 1995-06-30T00:00:00
+*** crop: SB tick
+Flowering
+** 1995-07-13T00:00:00
+*** crop: SB tick
+Crop affected by nitrogen stress
+** 1995-07-13T01:00:00
+*** crop: SB tick
+Luxury nitrogen uptake initiated
+** 1995-07-13T03:00:00
+*** crop: SB tick
+Crop affected by nitrogen stress
+** 1995-08-16T01:00:00
+*** crop: SB tick
+Luxury nitrogen uptake initiated
+** 1995-08-16T08:00:00
+Harvesting SB, removing 3.73292 + 2.55739 Mg DM/ha
+** 1995-09-08T21:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 1995-11-27T19:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 1996-04-22T06:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 1996-06-06T08:00:00
+Cutting Ryegrass, removing 0 + 0.314306 Mg DM/ha
+Cutting Wclover, with no yield :-(
+*** crop: Ryegrass tick
+Nitrogen content of crop below minimum (warning)
+** 1996-06-25T07:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 1996-07-20T01:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 1996-08-01T08:00:00
+Cutting Ryegrass, removing 0 + 0.065711 Mg DM/ha
+Cutting Wclover, removing 0 + 0.315003 Mg DM/ha
+** 1996-09-12T00:00:00
+*** crop: Ryegrass tick
+Flowering
+** 1996-10-15T08:00:00
+Cutting Ryegrass, removing 0.0029091 + 0.154948 Mg DM/ha
+Cutting Wclover, removing 0 + 1.68366 Mg DM/ha
+** 1997-04-14T08:00:00
+Fertilizing 34.1943 ton my_cattle_slurry ww/ha; utilized 140 kg N/ha; water 3.06723 mm
+Using small timestep: 6m
+** 1997-04-14T09:00:00
+Back to normal size timesteps
+** 1997-06-06T00:00:00
+*** crop: Ryegrass tick
+Flowering
+** 1997-06-11T08:00:00
+Cutting Ryegrass, removing 0.0168068 + 2.66978 Mg DM/ha
+Cutting Wclover, removing 0 + 1.91389 Mg DM/ha
+** 1997-06-15T04:00:00
+*** chemical: NO3 tick_top
+old_surface_storage = 0, surface_in = -0.000324412, surface_transform = 0, surface_runoff_rate = 0, surface_decompose_rate = 0, dt = 1, surface_storage = -0.000324412, surface_absolute_loss_rate = 0
+** 1997-07-10T22:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 1997-07-27T00:00:00
+*** crop: Ryegrass tick
+Flowering
+** 1997-08-01T08:00:00
+Cutting Ryegrass, removing 0.00659654 + 2.42299 Mg DM/ha
+Cutting Wclover, removing 0 + 1.55518 Mg DM/ha
+*** crop: Ryegrass tick
+Nitrogen content of crop below minimum (warning)
+*** chemical: NO3 tick_top
+old_surface_storage = 1.84733e-005, surface_in = -0.00102505, surface_transform = 0, surface_runoff_rate = 0, surface_decompose_rate = 0, dt = 1, surface_storage = -0.00100658, surface_absolute_loss_rate = 0
+** 1997-08-05T22:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 1997-08-13T04:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 1997-08-24T20:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 1997-08-25T01:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 1997-08-25T10:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 1997-10-05T00:00:00
+*** crop: Ryegrass tick
+Flowering
+** 1997-10-11T05:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 1997-10-15T08:00:00
+Cutting Ryegrass, removing 0.00397765 + 1.02731 Mg DM/ha
+Cutting Wclover, removing 0 + 1.72927 Mg DM/ha
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 1997-10-24T16:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 1998-04-14T08:00:00
+Fertilizing 14.6547 ton my_cattle_slurry ww/ha; utilized 60 kg N/ha; water 1.31453 mm
+Using small timestep: 6m
+** 1998-04-14T09:00:00
+Back to normal size timesteps
+** 1998-04-20T08:00:00
+Sowing SB
+*** Foulum; FAO
+**** sow
+***** SB
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Pea
+*** Foulum; FAO
+**** sow
+***** Pea
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 1998-05-03T00:00:00
+*** crop: SB tick
+Emerging
+*** crop: Pea tick
+Emerging
+** 1998-05-12T09:00:00
+*** crop: Pea tick
+Luxury nitrogen uptake initiated
+** 1998-05-12T19:00:00
+*** crop: SB tick
+Luxury nitrogen uptake initiated
+** 1998-07-04T00:00:00
+*** crop: Pea tick
+Flowering
+** 1998-07-28T08:00:00
+Cutting SB, removing 0 + 0.513059 Mg DM/ha
+The crop survived harvest.
+If this was intended, you should use the 'cut' action instead to avoid this message (warning)
+Harvesting Pea, removing 3.90829 + 5.26505 Mg DM/ha
+** 1998-07-30T00:00:00
+*** chemical: NO3 tick_top
+old_surface_storage = 0.00106959, surface_in = -0.00416923, surface_transform = 0, surface_runoff_rate = 0, surface_decompose_rate = 0, dt = 1, surface_storage = -0.00309964, surface_absolute_loss_rate = 0
+*** chemical: NH4 tick_top
+old_surface_storage = 0.00467281, surface_in = -0.00675423, surface_transform = 0, surface_runoff_rate = 0, surface_decompose_rate = 0, dt = 1, surface_storage = -0.00208142, surface_absolute_loss_rate = 0
+** 1999-03-13T00:00:00
+*** crop: SB tick
+Flowering
+** 1999-03-29T08:00:00
+Fertilizing 36.6367 ton my_cattle_slurry ww/ha; utilized 150 kg N/ha; water 3.28632 mm
+Using small timestep: 6m
+** 1999-03-29T09:00:00
+Back to normal size timesteps
+** 1999-04-09T08:00:00
+Sowing Spring Wheat
+*** Foulum; FAO
+**** sow
+***** Spring Wheat
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Ryegrass
+*** Foulum; FAO
+**** sow
+***** Ryegrass
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 1999-04-20T00:00:00
+*** crop: Ryegrass tick
+Emerging
+** 1999-04-27T14:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 1999-04-28T00:00:00
+*** crop: Spring Wheat tick
+Emerging
+** 1999-05-03T17:00:00
+*** crop: Spring Wheat tick
+Luxury nitrogen uptake initiated
+** 1999-05-31T20:00:00
+*** crop: Spring Wheat tick
+Crop affected by nitrogen stress
+** 1999-06-11T13:00:00
+*** crop: Spring Wheat tick
+Luxury nitrogen uptake initiated
+** 1999-06-18T00:00:00
+*** crop: Spring Wheat tick
+Flowering
+** 1999-07-13T21:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 1999-08-01T00:00:00
+*** crop: Spring Wheat tick
+Ripe
+** 1999-09-01T08:00:00
+Harvesting Spring Wheat, removing 3.46467 + 4.98372 Mg DM/ha
+** 1999-12-04T14:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2000-04-04T08:00:00
+Fertilizing 61.0612 ton my_cattle_slurry ww/ha; utilized 250 kg N/ha; water 5.47719 mm
+Using small timestep: 6m
+** 2000-04-04T09:00:00
+Back to normal size timesteps
+** 2000-04-18T08:00:00
+Sowing Fodder Beet
+*** Foulum; FAO
+**** sow
+***** Fodder Beet
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 2000-05-12T00:00:00
+*** crop: Fodder Beet tick
+Emerging
+** 2000-05-16T03:00:00
+*** crop: Fodder Beet tick
+Luxury nitrogen uptake initiated
+** 2000-10-26T08:00:00
+Harvesting Fodder Beet, removing 12.1233 Mg DM/ha
+** 2001-04-06T08:00:00
+Fertilizing 24.4245 ton my_cattle_slurry ww/ha; utilized 100 kg N/ha; water 2.19088 mm
+Using small timestep: 6m
+** 2001-04-06T09:00:00
+Back to normal size timesteps
+** 2001-04-10T08:00:00
+Sowing SB
+*** Foulum; FAO
+**** sow
+***** SB
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Ryegrass
+*** Foulum; FAO
+**** sow
+***** Ryegrass
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Wclover
+*** Foulum; FAO
+**** sow
+***** Wclover
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 2001-04-26T00:00:00
+*** crop: Ryegrass tick
+Emerging
+*** crop: Wclover tick
+Emerging
+** 2001-05-03T00:00:00
+*** crop: SB tick
+Emerging
+** 2001-05-03T14:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2001-05-09T06:00:00
+*** crop: Wclover tick
+Luxury nitrogen uptake initiated
+** 2001-05-11T14:00:00
+*** crop: SB tick
+Luxury nitrogen uptake initiated
+** 2001-06-26T00:00:00
+*** crop: SB tick
+Flowering
+** 2001-07-06T06:00:00
+*** crop: SB tick
+Crop affected by nitrogen stress
+** 2001-08-07T16:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2001-08-21T00:00:00
+*** crop: SB tick
+Ripe
+** 2001-08-22T08:00:00
+Harvesting SB, removing 4.79867 + 3.02338 Mg DM/ha
+** 2001-11-24T09:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2002-04-04T17:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2002-04-28T01:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -6.98346e-010 @ -1.25, C = -2.22923e-009, A = 0, M_new = -6.98346e-010, M_old = 7.51628e-009, dt 1, S = -8.07762e-009, S_extra = -1.17146e-008, C_avg_ = 2.35716e-008, C_secondary_2.35716e-008, C_primary_ = 2.35716e-008, M_secondary_ = 0, M_primary_ = 7.51628e-009, M_total_ = 7.51628e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -1.17146e-008, S_primary_ = 3.63693e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.17146e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 3.63693e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.31887, Theta_new 0.313268, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0290636, v2 0
+0: q = 0.000565201, J = 0
+-2.5: q = -0.0134412, J = -3.42512e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -6.09657e-010 @ -1.25, C = -1.94612e-009, A = 0, M_new = -6.09657e-010, M_old = 7.51628e-009, dt 1, S = -8.07762e-009, S_extra = -1.17146e-008, C_avg_ = 2.35716e-008, C_secondary_2.35716e-008, C_primary_ = 2.35716e-008, M_secondary_ = 0, M_primary_ = 7.51628e-009, M_total_ = 7.51628e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -1.17146e-008, S_primary_ = 3.63693e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.17146e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 3.63693e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.31887, Theta_new 0.313268, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0290636, v2 0
+0: q = 0.000565201, J = 0
+-2.5: q = -0.0134412, J = -1.20789e-010
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -5.61342e-010 @ -1.25, C = -1.79189e-009, A = 0, M_new = -5.61342e-010, M_old = 7.51628e-009, dt 1, S = -8.07762e-009, S_extra = -1.17146e-008, C_avg_ = 2.35716e-008, C_secondary_2.35716e-008, C_primary_ = 2.35716e-008, M_secondary_ = 0, M_primary_ = 7.51628e-009, M_total_ = 7.51628e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -1.17146e-008, S_primary_ = 3.63693e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.17146e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 3.63693e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.31887, Theta_new 0.313268, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0290636, v2 0
+0: q = 0.000565201, J = 0
+-2.5: q = -0.0134412, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -6.98346e-010 @ -1.25, C = -2.22923e-009, A = 0, M_new = -6.98346e-010, M_old = 7.51628e-009, dt 1, S = -8.07762e-009, S_extra = -1.17146e-008, C_avg_ = 2.35716e-008, C_secondary_2.35716e-008, C_primary_ = 2.35716e-008, M_secondary_ = 0, M_primary_ = 7.51628e-009, M_total_ = 7.51628e-009, M_error = 0, M_tertiary = 0, S_secondary_ = -1.17146e-008, S_primary_ = 3.63693e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.17146e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 3.63693e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.31887, Theta_new 0.313268, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0290636, v2 0
+0: q = 0.000565201, J = 0
+-2.5: q = -0.0134412, J = -3.42512e-010
+** 2002-05-26T00:00:00
+*** crop: Ryegrass tick
+Flowering
+** 2002-05-29T08:00:00
+Cutting Ryegrass, removing 0.00077913 + 0.661131 Mg DM/ha
+Cutting Wclover, removing 0 + 0.400581 Mg DM/ha
+*** crop: Ryegrass tick
+Nitrogen content of crop below minimum (warning)
+** 2002-06-13T03:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2002-07-02T18:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2002-07-17T00:00:00
+*** crop: Wclover tick
+Flowering
+** 2002-08-01T08:00:00
+Cutting Ryegrass, removing 0 + 0.108304 Mg DM/ha
+Cutting Wclover, removing 0.117082 + 4.92298 Mg DM/ha
+** 2002-09-05T00:00:00
+*** crop: Ryegrass tick
+Flowering
+** 2002-10-15T08:00:00
+Cutting Ryegrass, removing 0.0384318 + 1.89423 Mg DM/ha
+Cutting Wclover, removing 0 + 1.55244 Mg DM/ha
+** 2003-04-16T08:00:00
+Fertilizing 24.4245 ton my_cattle_slurry ww/ha; utilized 100 kg N/ha; water 2.19088 mm
+Using small timestep: 6m
+** 2003-04-16T09:00:00
+Back to normal size timesteps
+** 2003-05-30T00:00:00
+*** crop: Ryegrass tick
+Flowering
+** 2003-06-02T08:00:00
+Cutting Ryegrass, removing 0.00737965 + 2.15962 Mg DM/ha
+Cutting Wclover, removing 0 + 2.75337 Mg DM/ha
+** 2003-06-27T06:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2003-07-18T00:00:00
+*** crop: Ryegrass tick
+Flowering
+** 2003-08-01T08:00:00
+Cutting Ryegrass, removing 0.0187917 + 1.95901 Mg DM/ha
+Cutting Wclover, removing 0 + 2.89552 Mg DM/ha
+*** crop: Ryegrass tick
+Nitrogen content of crop below minimum (warning)
+** 2003-08-06T04:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2003-08-12T20:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2003-08-26T23:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2003-08-27T01:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2003-08-27T02:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2003-10-03T00:00:00
+*** crop: Ryegrass tick
+Flowering
+** 2003-10-15T08:00:00
+Cutting Ryegrass, removing 0.00356135 + 0.794651 Mg DM/ha
+Cutting Wclover, removing 0 + 1.56814 Mg DM/ha
+** 2003-11-02T08:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2004-03-29T08:00:00
+Fertilizing 24.4245 ton my_cattle_slurry ww/ha; utilized 100 kg N/ha; water 2.19088 mm
+Using small timestep: 6m
+** 2004-03-29T09:00:00
+Back to normal size timesteps
+** 2004-04-02T08:00:00
+Sowing SB
+*** Foulum; FAO
+**** sow
+***** SB
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 2004-04-15T08:00:00
+Sowing Ryegrass
+*** Foulum; FAO
+**** sow
+***** Ryegrass
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 2004-04-21T00:00:00
+*** crop: SB tick
+Emerging
+*** crop: Ryegrass tick
+Emerging
+** 2004-04-29T01:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2004-05-02T13:00:00
+*** crop: SB tick
+Luxury nitrogen uptake initiated
+** 2004-06-14T00:00:00
+*** crop: SB tick
+Flowering
+** 2004-06-16T19:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2004-06-22T14:00:00
+*** crop: SB tick
+Crop affected by nitrogen stress
+** 2004-06-30T17:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2004-07-18T05:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2004-08-16T00:00:00
+*** crop: SB tick
+Ripe
+** 2004-09-03T08:00:00
+Harvesting SB, removing 3.78875 + 2.69967 Mg DM/ha
+** 2004-11-24T01:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2005-04-11T22:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2005-04-25T08:00:00
+Fertilizing 24.4245 ton my_cattle_slurry ww/ha; utilized 100 kg N/ha; water 2.19088 mm
+Using small timestep: 6m
+** 2005-04-25T09:00:00
+Back to normal size timesteps
+** 2005-05-01T08:00:00
+Sowing Silomajs
+*** Foulum; FAO
+**** sow
+***** Silomajs
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Ryegrass
+*** Foulum; FAO
+**** sow
+***** Ryegrass
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 2005-05-07T00:00:00
+*** crop: Ryegrass tick
+Emerging
+** 2005-05-14T09:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2005-06-01T00:00:00
+*** crop: Silomajs tick
+Emerging
+** 2005-06-13T14:00:00
+*** crop: Silomajs tick
+Luxury nitrogen uptake initiated
+** 2005-06-25T22:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2005-07-13T16:00:00
+*** crop: Silomajs tick
+Crop affected by nitrogen stress
+** 2005-07-22T00:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -1.87038e-009 @ -1.25, C = -5.7875e-009, A = 0, M_new = -1.87038e-009, M_old = 1.25746e-008, dt 1, S = -1.41606e-008, S_extra = -1.98969e-008, C_avg_ = 3.77422e-008, C_secondary_3.77422e-008, C_primary_ = 3.77422e-008, M_secondary_ = 0, M_primary_ = 1.25746e-008, M_total_ = 1.25746e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.98969e-008, S_primary_ = 5.73627e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.98969e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 5.73627e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.33317, Theta_new 0.323176, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0539536, v2 0
+0: q = 0.000163003, J = 0
+-2.5: q = -0.024822, J = -7.10883e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -1.71583e-009 @ -1.25, C = -5.30927e-009, A = 0, M_new = -1.71583e-009, M_old = 1.25746e-008, dt 1, S = -1.41606e-008, S_extra = -1.98969e-008, C_avg_ = 3.77422e-008, C_secondary_3.77422e-008, C_primary_ = 3.77422e-008, M_secondary_ = 0, M_primary_ = 1.25746e-008, M_total_ = 1.25746e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.98969e-008, S_primary_ = 5.73627e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.98969e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 5.73627e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.33317, Theta_new 0.323176, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0539536, v2 0
+0: q = 0.000163003, J = 0
+-2.5: q = -0.024822, J = -3.24499e-010
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -1.58603e-009 @ -1.25, C = -4.90763e-009, A = 0, M_new = -1.58603e-009, M_old = 1.25746e-008, dt 1, S = -1.41606e-008, S_extra = -1.98969e-008, C_avg_ = 3.77422e-008, C_secondary_3.77422e-008, C_primary_ = 3.77422e-008, M_secondary_ = 0, M_primary_ = 1.25746e-008, M_total_ = 1.25746e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.98969e-008, S_primary_ = 5.73627e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.98969e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 5.73627e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.33317, Theta_new 0.323176, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0539536, v2 0
+0: q = 0.000163003, J = 0
+-2.5: q = -0.024822, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -1.87038e-009 @ -1.25, C = -5.7875e-009, A = 0, M_new = -1.87038e-009, M_old = 1.25746e-008, dt 1, S = -1.41606e-008, S_extra = -1.98969e-008, C_avg_ = 3.77422e-008, C_secondary_3.77422e-008, C_primary_ = 3.77422e-008, M_secondary_ = 0, M_primary_ = 1.25746e-008, M_total_ = 1.25746e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.98969e-008, S_primary_ = 5.73627e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.98969e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 5.73627e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.33317, Theta_new 0.323176, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0539536, v2 0
+0: q = 0.000163003, J = 0
+-2.5: q = -0.024822, J = -7.10883e-010
+** 2005-07-24T00:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -2.01241e-009 @ -1.25, C = -6.3832e-009, A = 0, M_new = -2.01241e-009, M_old = 1.08726e-008, dt 1, S = -1.27054e-008, S_extra = -1.68208e-008, C_avg_ = 3.37393e-008, C_secondary_3.37393e-008, C_primary_ = 3.37393e-008, M_secondary_ = 0, M_primary_ = 1.08726e-008, M_total_ = 1.08726e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.68208e-008, S_primary_ = 4.11536e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.68208e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 4.11536e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.322253, Theta_new 0.315266, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0367261, v2 0
+0: q = 0.000546806, J = 0
+-2.5: q = -0.0169212, J = -4.48892e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -1.90569e-009 @ -1.25, C = -6.04469e-009, A = 0, M_new = -1.90569e-009, M_old = 1.08726e-008, dt 1, S = -1.27054e-008, S_extra = -1.68208e-008, C_avg_ = 3.37393e-008, C_secondary_3.37393e-008, C_primary_ = 3.37393e-008, M_secondary_ = 0, M_primary_ = 1.08726e-008, M_total_ = 1.08726e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.68208e-008, S_primary_ = 4.11536e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.68208e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 4.11536e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.322253, Theta_new 0.315266, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0367261, v2 0
+0: q = 0.000546806, J = 0
+-2.5: q = -0.0169212, J = -1.82091e-010
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -1.83285e-009 @ -1.25, C = -5.81366e-009, A = 0, M_new = -1.83285e-009, M_old = 1.08726e-008, dt 1, S = -1.27054e-008, S_extra = -1.68208e-008, C_avg_ = 3.37393e-008, C_secondary_3.37393e-008, C_primary_ = 3.37393e-008, M_secondary_ = 0, M_primary_ = 1.08726e-008, M_total_ = 1.08726e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.68208e-008, S_primary_ = 4.11536e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.68208e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 4.11536e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.322253, Theta_new 0.315266, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0367261, v2 0
+0: q = 0.000546806, J = 0
+-2.5: q = -0.0169212, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -2.01241e-009 @ -1.25, C = -6.3832e-009, A = 0, M_new = -2.01241e-009, M_old = 1.08726e-008, dt 1, S = -1.27054e-008, S_extra = -1.68208e-008, C_avg_ = 3.37393e-008, C_secondary_3.37393e-008, C_primary_ = 3.37393e-008, M_secondary_ = 0, M_primary_ = 1.08726e-008, M_total_ = 1.08726e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.68208e-008, S_primary_ = 4.11536e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.68208e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 4.11536e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.322253, Theta_new 0.315266, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0367261, v2 0
+0: q = 0.000546806, J = 0
+-2.5: q = -0.0169212, J = -4.48892e-010
+** 2005-08-07T00:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -1.42236e-009 @ -1.25, C = -4.53112e-009, A = 0, M_new = -1.42236e-009, M_old = 1.07729e-008, dt 1, S = -1.19674e-008, S_extra = -1.70152e-008, C_avg_ = 3.35072e-008, C_secondary_3.35072e-008, C_primary_ = 3.35072e-008, M_secondary_ = 0, M_primary_ = 1.07729e-008, M_total_ = 1.07729e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.70152e-008, S_primary_ = 5.0478e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.70152e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 5.0478e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.32151, Theta_new 0.313908, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0416028, v2 0
+0: q = 0.000268245, J = 0
+-2.5: q = -0.0187371, J = -5.69588e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -1.28415e-009 @ -1.25, C = -4.09084e-009, A = 0, M_new = -1.28415e-009, M_old = 1.07729e-008, dt 1, S = -1.19674e-008, S_extra = -1.70152e-008, C_avg_ = 3.35072e-008, C_secondary_3.35072e-008, C_primary_ = 3.35072e-008, M_secondary_ = 0, M_primary_ = 1.07729e-008, M_total_ = 1.07729e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.70152e-008, S_primary_ = 5.0478e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.70152e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 5.0478e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.32151, Theta_new 0.313908, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0416028, v2 0
+0: q = 0.000268245, J = 0
+-2.5: q = -0.0187371, J = -2.24063e-010
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -1.19452e-009 @ -1.25, C = -3.80532e-009, A = 0, M_new = -1.19452e-009, M_old = 1.07729e-008, dt 1, S = -1.19674e-008, S_extra = -1.70152e-008, C_avg_ = 3.35072e-008, C_secondary_3.35072e-008, C_primary_ = 3.35072e-008, M_secondary_ = 0, M_primary_ = 1.07729e-008, M_total_ = 1.07729e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.70152e-008, S_primary_ = 5.0478e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.70152e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 5.0478e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.32151, Theta_new 0.313908, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0416028, v2 0
+0: q = 0.000268245, J = 0
+-2.5: q = -0.0187371, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -1.42236e-009 @ -1.25, C = -4.53112e-009, A = 0, M_new = -1.42236e-009, M_old = 1.07729e-008, dt 1, S = -1.19674e-008, S_extra = -1.70152e-008, C_avg_ = 3.35072e-008, C_secondary_3.35072e-008, C_primary_ = 3.35072e-008, M_secondary_ = 0, M_primary_ = 1.07729e-008, M_total_ = 1.07729e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -1.70152e-008, S_primary_ = 5.0478e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -1.70152e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 5.0478e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.32151, Theta_new 0.313908, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.0416028, v2 0
+0: q = 0.000268245, J = 0
+-2.5: q = -0.0187371, J = -5.69588e-010
+** 2005-08-10T00:00:00
+*** chemistry: multi tick_soil
+**** Chemistry: N: tick soil
+***** Chemical: NO3: transport
+****** solute[0]: Hansen
+M[0] = -3.02501e-009 @ -1.25, C = -9.96414e-009, A = 0, M_new = -3.02501e-009, M_old = 1.31973e-008, dt 1, S = -1.59909e-008, S_extra = -2.04319e-008, C_avg_ = 4.24527e-008, C_secondary_4.24527e-008, C_primary_ = 4.24527e-008, M_secondary_ = 0, M_primary_ = 1.31973e-008, M_total_ = 1.31973e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.04319e-008, S_primary_ = 4.44095e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.04319e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 4.44095e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.31087, Theta_new 0.30359, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.039884, v2 0
+0: q = 0.000538328, J = 0
+-2.5: q = -0.0176622, J = -5.7848e-010
+Solute problem: Negative concentration
+****** solute[1]: convection
+M[0] = -2.88052e-009 @ -1.25, C = -9.4882e-009, A = 0, M_new = -2.88052e-009, M_old = 1.31973e-008, dt 1, S = -1.59909e-008, S_extra = -2.04319e-008, C_avg_ = 4.24527e-008, C_secondary_4.24527e-008, C_primary_ = 4.24527e-008, M_secondary_ = 0, M_primary_ = 1.31973e-008, M_total_ = 1.31973e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.04319e-008, S_primary_ = 4.44095e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.04319e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 4.44095e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.31087, Theta_new 0.30359, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.039884, v2 0
+0: q = 0.000538328, J = 0
+-2.5: q = -0.0176622, J = -2.17254e-010
+Solute problem: Negative concentration
+****** solute[2]: none
+M[0] = -2.79362e-009 @ -1.25, C = -9.20196e-009, A = 0, M_new = -2.79362e-009, M_old = 1.31973e-008, dt 1, S = -1.59909e-008, S_extra = -2.04319e-008, C_avg_ = 4.24527e-008, C_secondary_4.24527e-008, C_primary_ = 4.24527e-008, M_secondary_ = 0, M_primary_ = 1.31973e-008, M_total_ = 1.31973e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.04319e-008, S_primary_ = 4.44095e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.04319e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 4.44095e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.31087, Theta_new 0.30359, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.039884, v2 0
+0: q = 0.000538328, J = 0
+-2.5: q = -0.0176622, J = 0
+Solute problem: Negative concentration
+****** solute[0]: Hansen
+M[0] = -3.02501e-009 @ -1.25, C = -9.96414e-009, A = 0, M_new = -3.02501e-009, M_old = 1.31973e-008, dt 1, S = -1.59909e-008, S_extra = -2.04319e-008, C_avg_ = 4.24527e-008, C_secondary_4.24527e-008, C_primary_ = 4.24527e-008, M_secondary_ = 0, M_primary_ = 1.31973e-008, M_total_ = 1.31973e-008, M_error = 0, M_tertiary = 0, S_secondary_ = -2.04319e-008, S_primary_ = 4.44095e-009, S_exchange = 0, S_indirect_drain = 0, S_soil_drain = -0, S_p_drain = 0, S_B2M = 0, S_M2B = -0, S_external = 0, S_permanent = 0, S_root = -2.04319e-008, S_decompose = 0, S_decompose_primary = 0, S_decompose_secondary = 0, S_transform = 4.44095e-009, tillage = 0, lag = 0, sink_dt = 0, sink_cell = -1, Theta_old 0.31087, Theta_new 0.30359, root 0, drain 0, B2M 0, M2B 0, forward_total 0, forward_sink 0, sum 0, v1 0.039884, v2 0
+0: q = 0.000538328, J = 0
+-2.5: q = -0.0176622, J = -5.7848e-010
+** 2005-08-22T08:00:00
+Harvesting Silomajs, removing 0 + 1.69267 Mg DM/ha
+** 2005-11-18T06:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2006-04-27T08:00:00
+Sowing SB
+*** Foulum; FAO
+**** sow
+***** SB
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Ryegrass
+*** Foulum; FAO
+**** sow
+***** Ryegrass
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 2006-05-05T00:00:00
+*** crop: Ryegrass tick
+Emerging
+** 2006-05-09T00:00:00
+*** crop: SB tick
+Emerging
+** 2006-05-10T07:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2006-05-12T14:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2006-05-15T10:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2006-05-16T10:00:00
+*** crop: SB tick
+Luxury nitrogen uptake initiated
+** 2006-05-23T20:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2006-05-28T10:00:00
+*** crop: SB tick
+Crop affected by nitrogen stress
+** 2006-06-14T08:00:00
+Irrigating 33 mm/h for 1 hour total 33 mm
+Irrigation done
+** 2006-06-25T00:00:00
+*** crop: SB tick
+Flowering
+** 2006-06-28T08:00:00
+Harvesting SB, removing 0.0987137 + 1.37474 Mg DM/ha
+** 2006-07-08T08:00:00
+Irrigating 40 mm/h for 1 hour total 40 mm
+Irrigation done
+** 2006-08-24T08:00:00
+Cutting Ryegrass, removing 0 + 0.0432425 Mg DM/ha
+** 2006-10-12T08:00:00
+Cutting Ryegrass, removing 0 + 0.0500792 Mg DM/ha
+** 2006-11-24T08:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2007-03-27T21:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2007-04-03T08:00:00
+Sowing SB
+*** Foulum; FAO
+**** sow
+***** SB
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Ryegrass
+*** Foulum; FAO
+**** sow
+***** Ryegrass
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+Sowing Wclover
+*** Foulum; FAO
+**** sow
+***** Wclover
+Water stress calculated from energy balance
+Nitrogen stress handled by crop nitrogen module
+** 2007-04-13T00:00:00
+*** crop: Ryegrass tick
+Emerging
+*** crop: Wclover tick
+Emerging
+** 2007-04-18T00:00:00
+*** crop: SB tick
+Emerging
+** 2007-04-19T06:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2007-04-23T00:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2007-04-24T10:00:00
+*** crop: Wclover tick
+Luxury nitrogen uptake initiated
+** 2007-04-28T04:00:00
+*** crop: SB tick
+Luxury nitrogen uptake initiated
+** 2007-05-01T22:00:00
+*** crop: SB tick
+Crop affected by nitrogen stress
+** 2007-06-10T00:00:00
+*** crop: SB tick
+Flowering
+** 2007-08-02T08:00:00
+Harvesting SB, removing 0.677204 + 0.480742 Mg DM/ha
+** 2007-11-19T19:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2008-04-08T08:00:00
+Fertilizing 24.4245 ton my_cattle_slurry ww/ha; utilized 100 kg N/ha; water 2.19088 mm
+Using small timestep: 6m
+** 2008-04-08T09:00:00
+Back to normal size timesteps
+** 2008-05-20T07:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2008-05-26T08:00:00
+Cutting Ryegrass, removing 0.00116903 + 3.93671 Mg DM/ha
+Cutting Wclover, with no yield :-(
+*** crop: Ryegrass tick
+Nitrogen content of crop below minimum (warning)
+** 2008-06-04T08:00:00
+Fertilizing 25.4015 ton my_cattle_slurry ww/ha; utilized 104 kg N/ha; water 2.27851 mm
+Using small timestep: 6m
+** 2008-06-04T09:00:00
+Back to normal size timesteps
+** 2008-06-04T19:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2008-06-06T21:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2008-07-08T08:00:00
+Cutting Ryegrass, removing 0 + 0.997116 Mg DM/ha
+Cutting Wclover, removing 0 + 3.36397 Mg DM/ha
+** 2008-08-12T00:00:00
+*** crop: Ryegrass tick
+Flowering
+** 2008-08-21T08:00:00
+Cutting Ryegrass, removing 0.0328524 + 2.89692 Mg DM/ha
+Cutting Wclover, removing 0 + 0.59582 Mg DM/ha
+** 2008-10-14T08:00:00
+Cutting Ryegrass, removing 0 + 0.475228 Mg DM/ha
+Cutting Wclover, removing 0 + 1.65204 Mg DM/ha
+** 2009-03-26T08:00:00
+Fertilizing 25.1572 ton my_cattle_slurry ww/ha; utilized 103 kg N/ha; water 2.2566 mm
+Using small timestep: 6m
+** 2009-03-26T09:00:00
+Back to normal size timesteps
+** 2009-05-23T00:00:00
+*** crop: Ryegrass tick
+Flowering
+** 2009-05-26T08:00:00
+Cutting Ryegrass, removing 0.00919042 + 2.78957 Mg DM/ha
+Cutting Wclover, removing 0 + 2.35742 Mg DM/ha
+** 2009-05-29T08:00:00
+Fertilizing 22.2263 ton my_cattle_slurry ww/ha; utilized 91 kg N/ha; water 1.9937 mm
+Using small timestep: 6m
+** 2009-05-29T09:00:00
+Back to normal size timesteps
+** 2009-06-03T08:00:00
+Irrigating 45 mm/h for 1 hour total 45 mm
+Irrigation done
+** 2009-06-26T08:00:00
+Irrigating 42 mm/h for 1 hour total 42 mm
+Irrigation done
+** 2009-07-06T08:00:00
+Cutting Ryegrass, removing 0 + 3.32952 Mg DM/ha
+Cutting Wclover, removing 0 + 0.948531 Mg DM/ha
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2009-07-08T08:00:00
+Irrigating 40 mm/h for 1 hour total 40 mm
+Irrigation done
+** 2009-07-09T20:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2009-08-03T14:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2009-08-19T08:00:00
+Cutting Ryegrass, removing 0 + 1.8549 Mg DM/ha
+Cutting Wclover, removing 0 + 1.61252 Mg DM/ha
+** 2009-08-27T19:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2009-09-09T15:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2009-10-20T08:00:00
+Cutting Ryegrass, removing 0 + 1.04155 Mg DM/ha
+Cutting Wclover, removing 0 + 0.583612 Mg DM/ha
+** 2009-10-28T10:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2010-04-30T06:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2010-06-06T00:00:00
+*** crop: Ryegrass tick
+Flowering
+** 2010-06-08T08:00:00
+Cutting Ryegrass, removing 0.00121922 + 0.93866 Mg DM/ha
+Cutting Wclover, removing 0 + 2.22556 Mg DM/ha
+*** crop: Ryegrass tick
+Nitrogen content of crop below minimum (warning)
+** 2010-06-11T04:00:00
+*** crop: Ryegrass tick
+Crop affected by nitrogen stress
+** 2010-07-02T08:00:00
+Irrigating 40 mm/h for 1 hour total 40 mm
+Irrigation done
+** 2010-07-14T08:00:00
+Cutting Ryegrass, removing 7.65735e-005 + 0.481761 Mg DM/ha
+Cutting Wclover, removing 0 + 0.793078 Mg DM/ha
+** 2010-07-28T08:00:00
+Irrigating 45 mm/h for 1 hour total 45 mm
+Irrigation done
+** 2010-08-20T00:00:00
+*** crop: Ryegrass tick
+Flowering
+** 2010-08-26T08:00:00
+Cutting Ryegrass, removing 0.0025008 + 0.601401 Mg DM/ha
+Cutting Wclover, removing 0 + 2.44367 Mg DM/ha
+** 2010-10-12T08:00:00
+Cutting Ryegrass, removing 0 + 0.383805 Mg DM/ha
+Cutting Wclover, removing 0 + 0.371222 Mg DM/ha
+** 2010-10-25T00:00:00
+*** crop: Ryegrass tick
+Luxury nitrogen uptake initiated
+** 2010-10-31T23:00:00
+End simulation
+* Summary
+** log: Field nitrogen summarize
+LOGFILE: Annual-FN.dlf
+VOLUME: box none
+TIME: 1994-03-01T00:00:00 to 2010-11-01T00:00:00
+*** summary: Field nitrogen balance summarize
+Nitrogen balance for the complete system.
+
+         Min-Surface-Fertilizer =   69.920 [kg N/ha]
+            Min-Soil-Fertilizer = 1328.480 [kg N/ha]
+                 Org-Fertilizer =  932.267 [kg N/ha]
+                     Deposition =  241.833 [kg N/ha]
+                        Fixated = 1431.005 [kg N/ha]
+                           Seed =   40.000 [kg N/ha]
+                                  --------
+                    Total input = 4043.505 [kg N/ha]
+
+              N2O-Nitrification =   68.825 [kg N/ha]
+                Denitrification =  347.478 [kg N/ha]
+                Matrix-Leaching =  177.625 [kg N/ha]
+               Biopore-Leaching =    0.000 [kg N/ha]
+                     Soil-Drain =    0.000 [kg N/ha]
+                  Biopore-Drain =    0.000 [kg N/ha]
+                   Surface-Loss =   74.537 [kg N/ha]
+                        Harvest = 2477.832 [kg N/ha]
+                                  --------
+                   Total output = 3146.298 [kg N/ha]
+
+           Min-Surface increase =    0.080 [kg N/ha]
+              Min-Soil increase =   -6.975 [kg N/ha]
+          Min-Biopores increase =    0.000 [kg N/ha]
+           Org-Surface increase =    0.003 [kg N/ha]
+              Org-Soil increase =  836.232 [kg N/ha]
+                  Crop increase =   67.931 [kg N/ha]
+                                  --------
+      Total increase in content =  897.272 [kg N/ha]
+
+                                  --------
+Balance (= In - Out - Increase) =   -0.065 [kg N/ha]
+                                  ========
+*** summary: Field mineral nitrogen balance summarize
+Mineral balance for the complete system.
+
+         Min-Surface-Fertilizer =   69.920 [kg N/ha]
+            Min-Soil-Fertilizer = 1328.480 [kg N/ha]
+                     Deposition =  241.833 [kg N/ha]
+                 Mineralization = 2793.915 [kg N/ha]
+                                  --------
+                    Total input = 4434.148 [kg N/ha]
+
+                 Immobilization =    1.464 [kg N/ha]
+                Matrix-Leaching =  177.625 [kg N/ha]
+               Biopore-Leaching =    0.000 [kg N/ha]
+                     Soil-Drain =    0.000 [kg N/ha]
+                  Biopore-Drain =    0.000 [kg N/ha]
+                   Surface-Loss =   74.537 [kg N/ha]
+                    Crop-Uptake = 3771.177 [kg N/ha]
+              N2O-Nitrification =   68.825 [kg N/ha]
+                Denitrification =  347.478 [kg N/ha]
+                                  --------
+                   Total output = 4441.107 [kg N/ha]
+
+           Min-Surface increase =    0.080 [kg N/ha]
+              Min-Soil increase =   -6.975 [kg N/ha]
+          Min-Biopores increase =    0.000 [kg N/ha]
+                                  --------
+      Total increase in content =   -6.894 [kg N/ha]
+
+                                  --------
+Balance (= In - Out - Increase) =   -0.065 [kg N/ha]
+                                  ========
+*** summary: Field organic nitrogen balance summarize
+Organic nitrogen balance for the complete system.
+
+              Residuals-Surface = 1325.867 [kg N/ha]
+                 Residuals-Soil = 1370.556 [kg N/ha]
+                 Org-Fertilizer =  932.267 [kg N/ha]
+                 Immobilization =    1.464 [kg N/ha]
+                                  --------
+                    Total input = 3630.153 [kg N/ha]
+
+                 Mineralization = 2793.915 [kg N/ha]
+                                  --------
+                   Total output = 2793.915 [kg N/ha]
+
+           Org-Surface increase =    0.003 [kg N/ha]
+              Org-Soil increase =  836.232 [kg N/ha]
+                                  --------
+      Total increase in content =  836.235 [kg N/ha]
+
+                                  --------
+Balance (= In - Out - Increase) =    0.004 [kg N/ha]
+                                  ========
+*** summary: Field crop nitrogen balance summarize
+Crop nitrogen balance for the complete system.
+
+                           Seed =   40.000 [kg N/ha]
+                        Fixated = 1431.005 [kg N/ha]
+                    Crop-Uptake = 3771.177 [kg N/ha]
+                                  --------
+                    Total input = 5242.182 [kg N/ha]
+
+                        Harvest = 2477.832 [kg N/ha]
+              Residuals-Surface = 1325.867 [kg N/ha]
+                 Residuals-Soil = 1370.556 [kg N/ha]
+                                  --------
+                   Total output = 5174.255 [kg N/ha]
+
+                  Crop increase =   67.931 [kg N/ha]
+                                  --------
+      Total increase in content =   67.931 [kg N/ha]
+
+                                  --------
+Balance (= In - Out - Increase) =   -0.004 [kg N/ha]
+                                  ========
+** log: Field nitrogen summarize
+LOGFILE: Daily-FN.dlf
+VOLUME: box none
+TIME: 1994-03-01T00:00:00 to 2010-11-01T00:00:00
+*** summary: Field nitrogen balance summarize
+Nitrogen balance for the complete system.
+
+         Min-Surface-Fertilizer =   69.920 [kg N/ha]
+            Min-Soil-Fertilizer = 1328.480 [kg N/ha]
+                 Org-Fertilizer =  932.267 [kg N/ha]
+                     Deposition =  244.826 [kg N/ha]
+                        Fixated = 1436.062 [kg N/ha]
+                           Seed =   40.000 [kg N/ha]
+                                  --------
+                    Total input = 4051.555 [kg N/ha]
+
+              N2O-Nitrification =   69.333 [kg N/ha]
+                Denitrification =  348.345 [kg N/ha]
+                Matrix-Leaching =  177.625 [kg N/ha]
+               Biopore-Leaching =    0.000 [kg N/ha]
+                     Soil-Drain =    0.000 [kg N/ha]
+                  Biopore-Drain =    0.000 [kg N/ha]
+                   Surface-Loss =   74.556 [kg N/ha]
+                        Harvest = 2493.492 [kg N/ha]
+                                  --------
+                   Total output = 3163.350 [kg N/ha]
+
+           Min-Surface increase =    0.048 [kg N/ha]
+              Min-Soil increase =   -7.581 [kg N/ha]
+          Min-Biopores increase =    0.000 [kg N/ha]
+           Org-Surface increase =    0.003 [kg N/ha]
+              Org-Soil increase =  834.018 [kg N/ha]
+                  Crop increase =   61.781 [kg N/ha]
+                                  --------
+      Total increase in content =  888.270 [kg N/ha]
+
+                                  --------
+Balance (= In - Out - Increase) =   -0.065 [kg N/ha]
+                                  ========
+*** summary: Field mineral nitrogen balance summarize
+Mineral balance for the complete system.
+
+         Min-Surface-Fertilizer =   69.920 [kg N/ha]
+            Min-Soil-Fertilizer = 1328.480 [kg N/ha]
+                     Deposition =  244.826 [kg N/ha]
+                 Mineralization = 2821.569 [kg N/ha]
+                                  --------
+                    Total input = 4464.795 [kg N/ha]
+
+                 Immobilization =    1.464 [kg N/ha]
+                Matrix-Leaching =  177.625 [kg N/ha]
+               Biopore-Leaching =    0.000 [kg N/ha]
+                     Soil-Drain =    0.000 [kg N/ha]
+                  Biopore-Drain =    0.000 [kg N/ha]
+                   Surface-Loss =   74.556 [kg N/ha]
+                    Crop-Uptake = 3801.071 [kg N/ha]
+              N2O-Nitrification =   69.333 [kg N/ha]
+                Denitrification =  348.345 [kg N/ha]
+                                  --------
+                   Total output = 4472.393 [kg N/ha]
+
+           Min-Surface increase =    0.048 [kg N/ha]
+              Min-Soil increase =   -7.581 [kg N/ha]
+          Min-Biopores increase =    0.000 [kg N/ha]
+                                  --------
+      Total increase in content =   -7.533 [kg N/ha]
+
+                                  --------
+Balance (= In - Out - Increase) =   -0.065 [kg N/ha]
+                                  ========
+*** summary: Field organic nitrogen balance summarize
+Organic nitrogen balance for the complete system.
+
+              Residuals-Surface = 1333.002 [kg N/ha]
+                 Residuals-Soil = 1388.862 [kg N/ha]
+                 Org-Fertilizer =  932.267 [kg N/ha]
+                 Immobilization =    1.464 [kg N/ha]
+                                  --------
+                    Total input = 3655.595 [kg N/ha]
+
+                 Mineralization = 2821.569 [kg N/ha]
+                                  --------
+                   Total output = 2821.569 [kg N/ha]
+
+           Org-Surface increase =    0.003 [kg N/ha]
+              Org-Soil increase =  834.018 [kg N/ha]
+                                  --------
+      Total increase in content =  834.022 [kg N/ha]
+
+                                  --------
+Balance (= In - Out - Increase) =    0.004 [kg N/ha]
+                                  ========
+*** summary: Field crop nitrogen balance summarize
+Crop nitrogen balance for the complete system.
+
+                           Seed =   40.000 [kg N/ha]
+                        Fixated = 1436.062 [kg N/ha]
+                    Crop-Uptake = 3801.071 [kg N/ha]
+                                  --------
+                    Total input = 5277.133 [kg N/ha]
+
+                        Harvest = 2493.492 [kg N/ha]
+              Residuals-Surface = 1333.002 [kg N/ha]
+                 Residuals-Soil = 1388.862 [kg N/ha]
+                                  --------
+                   Total output = 5215.356 [kg N/ha]
+
+                  Crop increase =   61.781 [kg N/ha]
+                                  --------
+      Total increase in content =   61.781 [kg N/ha]
+
+                                  --------
+Balance (= In - Out - Increase) =   -0.004 [kg N/ha]
+                                  ========
+* column: Foulum; FAO summarize
+** movement: vertical summarize
+*** matrix_solute[0]: vertical
+Matrix solute transport model 0 failed 5 times out of 292305, or 0.00171054% (warning)
+*** matrix_solute[1]: vertical
+Matrix solute transport model 1 failed 5 times out of 5, or 100% (warning)
+*** matrix_solute[2]: vertical
+Matrix solute transport model 2 failed 5 times out of 5, or 100% (warning)
+See 'daisy.log' for details.
+Program finished after 2 minutes and 45 seconds.
