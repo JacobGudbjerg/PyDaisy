@@ -561,5 +561,6 @@ def run_sub_folders(MotherFolder, DaisyFileName, MaxBatchSize=5000, NumberOfProc
 
 def ensure_dir(file_path):
     directory = os.path.dirname(file_path)
-    if not os.path.exists(directory):
-        os.makedirs(directory)
+    if directory != '':
+        if not os.path.exists(directory):
+            os.makedirs(directory)
