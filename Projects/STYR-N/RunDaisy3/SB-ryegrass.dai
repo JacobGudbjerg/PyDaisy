@@ -41,7 +41,7 @@
       (TaSum -50.0) )
     (LeafPhot original 
       (Qeff 0.0650)
-      (Fm 3.6750000000000003)
+      (Fm 3.9)
       (TempEff 
         (-20 0.0001)
         (01 0.01)

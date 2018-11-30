@@ -12,9 +12,9 @@ from Daisy import DaisyDlf, DaisyModel, run_sub_folders
 import matplotlib.pyplot as plt
 import numpy as np 
 import datetime as datetime
-from scipy.optimize import minimize
 sys.path.append(r'..\..\..\.')
 
+from pydaisy.Daisy import *
 
 # læser målt data og giver id som matcher d
 xl = pd.read_excel(r'..\Meas_yields.xlsx', 'data')
@@ -26,28 +26,29 @@ xl['id'] = 'T'+xl['treatment'].map(str)+'_S'+xl['block'].map(str)+'_'+xl['field'
 def rmse(pred, obs):
     return np.sqrt(((pred - obs) ** 2).mean())
 # Plot tørstofsudbytte for kløver, græs og samlet i søjlediagram
-def extract(crop_name, filnavn, output):
-    harvest=DaisyDlf(filnavn)
-    df=harvest.Data
-    # summere og plot af udbytte i tørstof DM       
-    harv= df[['crop', 'leaf_'+output, 'stem_'+output,'sorg_'+output]]
-    DMG =harv.groupby('crop')
-    rg = DMG.get_group(crop_name).sum(axis=1)
-    return(rg)
-        
+
 def opti(crop_name, m_cropname, output='DM', makeplots=False):
     
-    MotherFolder='..\RunDaisy3'
+    MotherFolder='..\RunDaisy2'
     items = os.walk(MotherFolder)
     
     rmse_val=0
+    
     index=1
-   # fig = plt.figure(figsize=(8, 8))
+    fig = plt.figure(figsize=(8, 8))
     # fig, axes = plt.subplots(nrows=2, ncols=3)
     for root, dirs, filenames in items:
         for d in dirs:
-           
-            rg=extract(crop_name, os.path.join(root, d, "DailyP-harvest.dlf"), output)
+            print(d)
+            harvest=DaisyDlf(os.path.join(root, d, "DailyP-harvest.dlf"))
+            df=harvest.Data
+    # summere og plot af udbytte i tørstof DM       
+            DMharv= df[['crop', 'leaf_'+output, 'stem_'+output,'sorg_'+output]]
+            DMG =DMharv.groupby('crop')
+            rg = DMG.get_group(crop_name).sum(axis=1)
+          # Laver et subplot, som derefter bliver det aktive som de næste plt virker på
+            ax=plt.subplot(3,2,index)
+            index+=1
             df22= pd.DataFrame([rg]).T
             df22.columns =[crop_name]
             df2 =df22.loc['2006-1-1':'2011-1-1',:]                 
@@ -62,16 +63,12 @@ def opti(crop_name, m_cropname, output='DM', makeplots=False):
             ms=ms.join(meas[1]) 
             ms=ms.join(meas[2]) 
             ms=ms.join(meas[3])
-            
             rmse_val += rmse(ms[m_cropname],ms[crop_name])
             rs=str(round(rmse_val, 2))
             eva= ('RMSE ='+(rs))
             if makeplots:
-                # Laver et subplot, som derefter bliver det aktive som de næste plt virker på
-                ax=plt.subplot(3,2,index)
-                index+=1
                 plt.scatter(ms[m_cropname], ms[crop_name], marker='x', c='black', s=15)
-                plt.title(d+'-Clover', position = (0.6, 0.9), fontweight="bold", fontsize=8)
+                plt.title(d+'crop_name', position = (0.6, 0.9), fontweight="bold", fontsize=8)
                 ax.set(ylabel=('simulated (t DM/ha)'), xlabel= 'measured')
                 #ax.set(xlim=(0,4), ylim=(0,4))
                 ax.plot([0, 1], [0, 1], transform=ax.transAxes, c='black', linestyle ='--')
@@ -83,33 +80,13 @@ def opti(crop_name, m_cropname, output='DM', makeplots=False):
     
 def func(pars):
     
-
-        cropdai=DaisyModel('./SB-ryegrass.dai')
-        cropdai.Input['defcrop']['LeafPhot']['Fm'].setvalue(pars[0])
-        cropdai.Input['defAOM']['C_per_N'].setvalue(pars[1])
-        cropdai.save()
-               
-        cropdai=DaisyModel('./SB-wclover.dai')
-        cropdai.Input['defcrop']['LeafPhot']['Fm'].setvalue(pars[2])
-        cropdai.Input['defAOM']['C_per_N'].setvalue(pars[3])
-        cropdai.save()
-        
-        
-        run_sub_folders(r'.','setup.dai')
-        print('Simulations done')
-        r=opti('Wclover','cloverDM')
-        r+=opti('Ryegrass','grassDM')
-        r+=0.035*opti('Ryegrass','grassN','N')
-        r+=0.035*opti('Wclover','cloverN','N')
-        f = open("myfile.txt", "a")
-        f.write(str(pars) + " " + str(r) +'/n')
-        f.close()
-        return r
-
-def progress_print(x):
-    print (x)
-
-if __name__ =='__main__':
-    x0 =[3.9,90,1.8,50]
-    res = minimize(func, x0, method='Nelder-Mead', callback=progress_print,  options={'disp':True, 'maxiter':120})
-
+    cropdai=DaisyModel('..\common\SB-ryegrass.dai')
+    cropdai.Input['defcrop']['LeafPhot']['Fm'].setvalue(pars[0])
+    cropdai.save()
+    
+    run_sub_folders(r'.','setup.dai')
+    r=opti('Wclover','cloverDM')
+    r+=opti('Ryegrass','grassDM')
+    r+=0.01*opti('Ryegrass','grassN','N')
+    r+=0.01*opti('Wclover','cloverN','N')
+    return r
