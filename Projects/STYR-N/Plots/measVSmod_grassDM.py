@@ -27,7 +27,7 @@ xl['id'] = 'T'+xl['treatment'].map(str)+'_S'+xl['block'].map(str)+'_'+xl['field'
 def rmse(pred, obs):
     return np.sqrt(((pred - obs) ** 2).mean())
 # Plot tørstofsudbytte for kløver, græs og samlet i søjlediagram
-MotherFolder='..\RunDaisy3'
+MotherFolder='..\RunDaisy8'
 items = os.walk(MotherFolder)
 
 index=1
@@ -67,5 +67,5 @@ for root, dirs, filenames in items:
         eva= ('RMSE ='+(rs))
         plt.text(0.1,5.5, eva)
         plt.tight_layout()
-fig.savefig("Ryegrass_DM.pdf", bbox_inches='tight')       
+fig.savefig("Ryegrass_DM2.pdf", bbox_inches='tight')       
         

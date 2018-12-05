@@ -102,7 +102,7 @@ def func(pars):
         r+=0.035*opti('Ryegrass','grassN','N')
         r+=0.035*opti('Wclover','cloverN','N')
         f = open("myfile.txt", "a")
-        f.write(str(pars) + " " + str(r))
+        f.write(str(pars) + " " + str(r) +"\n")
         f.close()
         return r
 
@@ -110,6 +110,6 @@ def progress_print(x):
     print (x)
 
 if __name__ =='__main__':
-    x0 =[3.5,90,3,50]
+    x0 =[3.9, 90, 1.8,50]
     res = minimize(func, x0, method='Nelder-Mead', callback=progress_print,  options={'disp':True, 'maxiter':120})
 
