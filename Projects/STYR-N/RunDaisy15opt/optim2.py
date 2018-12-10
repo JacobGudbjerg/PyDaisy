@@ -68,7 +68,7 @@ def func(pars):
 
         cropdai=DaisyModel('./hhj.v2-wclover.dai')
         cropdai.Input['defcrop']['Prod']['LfDR'][1].setvalue(pars[0])
-        #cropdai.Input['defcrop']['CrpN']['fixate_factor'].setvalue(pars[0])
+        cropdai.Input['defcrop']['Prod']['RtDR'][2].setvalue(pars[1])
         cropdai.save()
                
 #        cropdai=DaisyModel('./hhj.v2-wclover.dai')
@@ -92,6 +92,6 @@ def progress_print(x):
     print (x)
 
 if __name__ =='__main__':
-    x0 =[0.1 ] #, 0.15, 0.2]
+    x0 =[0.004, 0.01 ] #, 0.15, 0.2]
     res = minimize(func, x0, method='Nelder-Mead', callback=progress_print,  options={'disp':True, 'maxiter':100})
 

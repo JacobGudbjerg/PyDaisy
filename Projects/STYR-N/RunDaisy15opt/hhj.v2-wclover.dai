@@ -159,7 +159,7 @@
     (CrpN 
       (DS_fixate 0.10)
       (DS_cut_fixate 0.15)
-      (fixate_factor 0.1)
+      (fixate_factor 0.02)
       (PtRootCnc 
         (0.00 0.025)
         (1.00 0.025)
