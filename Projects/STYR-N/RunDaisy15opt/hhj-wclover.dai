@@ -76,13 +76,13 @@
 	(ShldResC 0.30)			 ; fraction of stem DM shielded
         (ReMobilDS 1.00)		 ; Remobilization, Initial DS
 	(ReMobilRt 0.1)			 ; Remobilization, release rate
-	(LfDR (0.00 0.00) (0.80 0.004) (1.00 0.010) (1.4 0.1) (2.00 0.25))
-	(RtDR (0.00 0.00) (0.50 0.00) (0.70 0.010) (2.00 0.15))
-        (Large_RtDR 0.030)
+	(LfDR (0.00 0.00) (0.80 0.05) (1.00 0.10) (1.4 0.15) (2.00 0.25))
+	(RtDR (0.00 0.00) (0.50 0.01) (0.70 0.05) (1 0.1) (1.5 0.15)  (2.00 0.25))
+        (Large_RtDR 0.150)
         (RtDR_T_factor (0.0 0.0) (5.0 1.0) ) )	; this stop root death at 0.0 dg C and reach full at 5 dg C
         					; partly after Gill & Jackson (2000) New Phytol 147:13-31
          	
- (CrpN 	(DS_fixate 0.10) (DS_cut_fixate 0.15) (fixate_factor 0.02) ; fixate from 0.45
+ (CrpN 	(DS_fixate 0.10) (DS_cut_fixate 0.15) (fixate_factor 0.2) ; fixate from 0.45
 	(PtRootCnc (0.00 0.025) (1.00 0.025) (2.00 0.025))
 	(CrRootCnc (0.00 0.015) (1.00 0.013) (2.00 0.011))
 	(NfRootCnc (0.00 0.008) (2.00 0.008))

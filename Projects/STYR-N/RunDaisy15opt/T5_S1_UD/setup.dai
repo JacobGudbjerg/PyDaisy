@@ -13,13 +13,9 @@
   (input file "Org_fert.dai")
   (input file "Springbarley_MES_23_2.dai")
   (input file "hhj-ryegrass.dai")
-  (input file "hhj.v2-wclover.dai")
-  (defaction cut_grass activity
-    (cut "Ryegrass" 
-      (stub 5 [cm]))
-    (cut "Wclover" 
-      (stub 5 [cm])) )
-  (defaction "S1-3_1994-2010" activity
+  (input file "hhj-wclover.dai")
+  (defaction "S1-3_1994-2010" activity)
+  (defaction "A_F_R" activity "S1-3_1994-2010"
     (wait_mm_dd 4 1)
     (sow "Ryegrass")
     (sow "Wclover")
@@ -270,7 +266,6 @@
       (stub 7 [cm]))
     (harvest "Pea"
       (stub 7 [cm])))
-  (defaction "A_F_R" activity "S1-3_1994-2010")
   (input file "Foulum_soil_vg.dai")
   (input file "OutputLog_2.dai")
   (defunit [kWh/d/m^2] SIfactor 
