@@ -1,7 +1,7 @@
 (defAOM Wclover-SLOW CROP-SLOW
   "Slow AOM pool modified for Wclover."
-  (initial_fraction 0.75) ;0.5
-  (C_per_N 26.0)) ; 50
+  (initial_fraction 0.50)
+  (C_per_N 50.0))
 
 (defcrop Wclover default (description "v.30 Developed by Henning Høgh Jensen")
 ;; this crop has been develeped to be grown in mixtures with grass. It is proper validated on clayey loams but not on sandy soils
@@ -22,7 +22,7 @@
 	  (TaLim  5.0)
 	  (TaSum  -50.0))
   (LeafPhot original (Qeff 0.0600)	; change from 0.065 
-	    (Fm   4)	  ;1.8 from 3.00
+	    (Fm   1.80)	  ; from 3.00
 	    (TempEff (-20 0.0001) (6.5 0.100) (8.0 0.30) (12 0.8) (16 1.00)
 		     (20 1.00) (33 1.00)(37 0.03) (50 0.0))) ;°C
   (Seed LAI (DSLAI05 0.3)
@@ -58,8 +58,8 @@
 	(MxNH4Up 1e-011)  ; clover has much lower affinity for NH4 than ryegrass (Høgh-Jensen & Schjoerring, 1997)
 	(MxNO3Up 1e-08)) 
 
-  (Partit (RSR  (0.00 0.50) (1.00 0.25) (2.00 0.25))
-	  (Root (0.00 0.5) (0.75 0.5) (0.91 0.05) (2.00 0.050))
+  (Partit (RSR  (0.00 0.50) (1.00 0.30) (2.00 0.20))
+	  (Root (0.00 0.95) (0.33 0.95) (0.53 0.85) (1.00 0.75) (2.00 0.50))
 	  (Leaf (0.00 0.65) (0.33 0.55)	(0.43 0.50) (0.63 0.40) (0.95 0.25) (1.2 0.20)(1.45 0.12) (2.00 0.0))
 	  (Stem (0.00 0.35) (0.33 0.45) (0.43 0.50) (0.63 0.60) (0.95 0.75) (1.2 0.70)(1.45 0.60) (2.00 0.0)))
 
@@ -110,7 +110,7 @@
 	   (Root  "Wclover-SLOW" "CROP-FAST")
 	    (DSmax 2.0)
 	    (DSnew 0.27) 
-	    (cut_delay (1000 1) (2000 2) (7000 5)) ; kg dm/ha gives delay in days
+	    (cut_delay (500 10) (1000 35) (2000 45) (7000 75)) ; kg dm/ha gives delay in days
 
 		)
 

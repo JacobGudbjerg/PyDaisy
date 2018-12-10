@@ -8,6 +8,7 @@ import sys
 import pandas as pd
 import os
 sys.path.append(r'../../../pydaisy')
+
 from Daisy import DaisyDlf, DaisyModel
 import matplotlib.pyplot as plt
 import numpy as np 
@@ -21,15 +22,17 @@ xl = pd.read_excel(r'..\Meas_yields.xlsx', 'data')
 xl.set_index('date', inplace=True)
 xl['id'] = 'T'+xl['treatment'].map(str)+'_S'+xl['block'].map(str)+'_'+xl['field']
 
+#converts tuple into dataframes - HER GÅR DET galt...
+#pf3=pd.DataFrame(meas, columns=['grassN'])
 def rmse(pred, obs):
     return np.sqrt(((pred - obs) ** 2).mean())
-
+# Plot tørstofsudbytte for kløver, græs og samlet i søjlediagram
 MotherFolder='..\RunDaisy13'
 items = os.walk(MotherFolder)
 
 index=1
 fig = plt.figure(figsize=(15, 10))
-
+# fig, axes = plt.subplots(nrows=2, ncols=3)
 for root, dirs, filenames in items:
     for d in dirs:
         print(d)
@@ -45,20 +48,24 @@ for root, dirs, filenames in items:
         index+=1
         df22= pd.DataFrame([rg, wc]).T
         df22.columns =['Ryegrass', 'Wclover']
-        df22['sim-pct_clov']=df22['Wclover']/(df22['Ryegrass']+df22['Wclover'])*100
-        df2 = df22.loc['2006-1-1':'2011-1-1',:]                 
+        df2 =df22.loc['2006-1-1':'2011-1-1',:]                 
+# Vil gerne plott målt mod simuleret output - først et plot for hver id - og så alle samlet.
+#Udvælger en ny dataframe med data hvor ID = d. Det samme som tidligere blev gjort i loop
+#Group og tag gennemsnit
         s1=xl.loc[xl['id']==d]
-        meas =s1.groupby(s1.index)['pct_clo'].mean()
+        meas =(s1.groupby(s1.index)['grassDM'].mean(),s1.groupby(s1.index)['cloverDM'].mean(),
+               s1.groupby(s1.index)['grassN'].mean(),s1.groupby(s1.index)['cloverN'].mean())
         # Samler en dataframe med målt og simulert
-        ms=df2.join(meas) 
-        plt.scatter(ms['pct_clo'], ms['sim-pct_clov'], marker='x', c='black', s=15)
-        plt.title(d+'-Clover_pct', position = (0.1, 0.9), fontweight="bold", fontsize=8)
-        ax.set(ylabel=('simulated (procent)'), xlabel= 'measured')
-        ax.set(xlim=(0,100), ylim=(0,100))
+        ms=df2.join(meas[0]) 
+        plt.scatter(ms['grassDM'], ms['Ryegrass'], marker='x', c='black', s=15)
+        plt.title(d+'-Ryegrass', position = (0.8, 0.9), fontweight="bold", fontsize=8)
+        ax.set(ylabel=('simulated (t DM/ha)'), xlabel= 'measured')
+        ax.set(xlim=(0,6), ylim=(0,6))
         ax.plot([0, 1], [0, 1], transform=ax.transAxes, c='black', linestyle ='--')
-        #rmse_val = rmse(ms['pct_clo'],ms['pct_clover'])
-        #rs=str(round(rmse_val, 2))
-        #eva= ('RMSE ='+(rs))
-        #plt.text(1,4, eva)
+        rmse_val = rmse(ms['grassDM'],ms['Ryegrass'])
+        rs=str(round(rmse_val, 2))
+        eva= ('RMSE ='+(rs))
+        plt.text(0.1,5.5, eva)
         plt.tight_layout()
-fig.savefig("Cloverprocent_hhjRSR.pdf", bbox_inches='tight')
+fig.savefig("Ryegrass_DM_hhj.pdf", bbox_inches='tight')       
+        

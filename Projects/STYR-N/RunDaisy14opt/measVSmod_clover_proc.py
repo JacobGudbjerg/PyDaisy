@@ -24,7 +24,7 @@ xl['id'] = 'T'+xl['treatment'].map(str)+'_S'+xl['block'].map(str)+'_'+xl['field'
 def rmse(pred, obs):
     return np.sqrt(((pred - obs) ** 2).mean())
 
-MotherFolder='..\RunDaisy13'
+MotherFolder='..\RunDaisy14opt'
 items = os.walk(MotherFolder)
 
 index=1
