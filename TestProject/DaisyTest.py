@@ -28,11 +28,11 @@ class Test_DaisyTest(unittest.TestCase):
         notthere = d.Input['NotThere']
         self.assertIsNone(notthere)
 
-#        status = d.run()
-#        self.assertEqual(0, status.returncode)
+        status = d.run()
+        self.assertEqual(0, status.returncode)
         modelwitherror = DaisyModel(r'./../TestData/Exercise01_witherror.dai')
-#        status = modelwitherror.run()
-#        self.assertEqual(1, status.returncode)
+        status = modelwitherror.run()
+        self.assertEqual(1, status.returncode)
 
         samedir = DaisyModel('Exercise01.dai')
         samedir.save()

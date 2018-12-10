@@ -70,7 +70,7 @@
       (where "Daily_FNB.dlf") )
     ("Soil Water Content" 
       (when daily))
-    ("Soil Water Potential (pF)"
+    ("Soil Water Potential (pF)" 
       (when daily))
     ("Soil NO3 Concentration" 
       (when daily)) ) 
