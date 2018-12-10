@@ -34,6 +34,11 @@ class Test_DaisyTest(unittest.TestCase):
         status = modelwitherror.run()
         self.assertEqual(1, status.returncode)
 
+        samedir = DaisyModel('Exercise01.dai')
+        samedir.save()
+
+
+
 
 
     #Taastrup weather file
