@@ -1,0 +1,74 @@
+ 
+  (path "./common" "./../../common" &old)
+  (input file "ryegrass.dai")
+  (input file "wclover.dai")
+  (input file "dk-maize.dai")
+  (input file "dk-rye.dai")
+  (input file "dk-wrape.dai")
+  (input file "pea.dai")
+  (input file "wwheat.dai")
+  (input file "fodderbeet.dai")
+  (input file "swheat.dai")
+  (input file "dk-pea.dai")
+  (input file "tillage.dai")
+  (input file "fertilizer.dai")
+  (input file "Org_fert.dai")
+  (input file "Springbarley_MES_23_2.dai")
+  (defaction cut_grass activity
+    (cut "Ryegrass" 
+      (stub 5 [cm]))
+    (cut "Wclover" 
+      (stub 5 [cm])) )
+  (defaction "year1" activity
+    (wait_mm_dd 4 20)
+    (sow "Ryegrass")
+    (sow "Wclover")
+    (wait_mm_dd 4 20)
+    (fertilize
+      ("my_cattle_slurry")
+      (equivalent_weight 100.0 [kg N/ha])
+      (from -5 [cm])
+      (to -15 [cm]))
+    
+    (wait_mm_dd 6 2)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (cut "Wclover"
+      (stub 7 [cm]))
+    (fertilize
+      ("my_cattle_slurry")
+      (equivalent_weight 100.0 [kg N/ha])
+      (from -5 [cm])
+      (to -15 [cm]))
+    
+    (wait_mm_dd 8 1)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (cut "Wclover"
+      (stub 7 [cm]))
+    (wait_mm_dd 10 15)
+    (cut "Ryegrass"
+      (stub 7 [cm]))
+    (cut "Wclover"
+      (stub 7 [cm]))
+    (wait_mm_dd 4 20)
+ 
+ (defaction "A_F_R" activity "S1-3_1994-2010")
+  (input file "Foulum_soil_vg.dai")
+  (input file "OutputLog_2.dai")
+  (defunit [kWh/d/m^2] SIfactor 
+    (mass 1)
+    (time -3)
+    (factor 41.67))
+  (weather default "Daily_foulum_1984-2017.dwf")
+  (description "Foulum; Weather: Daily values")
+  (log_prefix "DailyP-")
+  (manager activity 
+    (repeat 
+      ("A_F_R")))
+  (defcolumn "Foulum; FAO" "Foulum column"
+    (Bioclimate default 
+      (pet FAO_PM)))
+  (column "Foulum; FAO")
+  (time 1994 03 01)
+  (stop 2014 11 01) 

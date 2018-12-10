@@ -1,0 +1,47 @@
+;; Including external library-files
+
+(path "./.." "./common" "./../../common" &old)
+(input file "dk-maize.dai") (input file "dk-rye.dai") (input file "dk-wrape.dai")
+(input file "pea.dai") (input file "wwheat.dai") (input file "fodderbeet.dai") (input file "swheat.dai")(input file "dk-pea.dai")
+
+(input file "tillage.dai") (input file "fertilizer.dai")
+(input file "Org_fert.dai")   
+(input file "Springbarley_MES_23_2.dai")   
+(input file "hhj-ryegrass.dai")
+(input file "hhj.v2-wclover.dai")
+
+(defaction cut_grass activity
+(cut "Ryegrass"	(stub 5 [cm]))
+(cut "Wclover" 	(stub 5 [cm])) )
+     
+(defaction "S1-3_1994-2010" activity)
+  
+ ;; Arable Farm Rotation
+(defaction "A_F_R" activity
+  "S1-3_1994-2010")
+  
+(input file "Foulum_soil_vg.dai")   
+(input file "OutputLog_2.dai")   
+
+;---------------------------------------------------------------------------------
+;; Weather data & Description that will occur in all output files
+(defunit [kWh/d/m^2] SIfactor (mass 1)(time -3)(factor 41.67))
+(weather default "Daily_foulum_1984-2017.dwf")
+(description "Foulum; Weather: Daily values")
+;When you have run the simulation be sure to rename the daisy.log 
+;so you can keep the runtime information
+(log_prefix "DailyP-")
+
+;---------------------------------------------------------------------------------
+(manager activity  (repeat ("A_F_R"))) 
+
+(defcolumn "Foulum; FAO" "Foulum column"
+(Bioclimate default (pet FAO_PM)))
+;;  Selecting column
+(column "Foulum; FAO")
+
+
+;; Beginning and end of simulation.
+(time 1994 03 01)
+(stop 2010 11 01)
+; (activate_output (after 2006 02 01))

@@ -1,0 +1,60 @@
+;; Including external library-files
+(path "./.." "./common" "./../../common" &old)
+  (input file "ryegrass.dai")  (input file "wclover.dai")
+  (input file "tillage.dai")
+  (input file "fertilizer.dai")
+  (input file "Org_fert.dai")
+  (input file "Springbarley_MES_23_2.dai")
+
+(defaction "startyear" activity
+    (wait_mm_dd 4 15)    (sow "Ryegrass")    (sow "Wclover") (sow "SB")
+    (wait_mm_dd 4 15)    (fertilize      ("my_cattle_slurry")      (equivalent_weight 100.0 [kg N/ha])      (from -5 [cm])      (to -15 [cm]))
+    (wait_mm_dd 7 1)    (fertilize      ("my_cattle_slurry")      (equivalent_weight 100.0 [kg N/ha])      (from -5 [cm])      (to -15 [cm]))
+    (wait_mm_dd 8 25)    (harvest "SB" (stub 7 [cm])) (cut "Ryegrass"      (stub 7 [cm]))    (cut "Wclover"      (stub 7 [cm]))
+    (wait_mm_dd 9 30)    (cut "Ryegrass"      (stub 7 [cm]))    (cut "Wclover"      (stub 7 [cm])) )
+ 
+ (defaction "year2-20" activity 
+   (wait_mm_dd 4 20)    (fertilize      ("my_cattle_slurry")      (equivalent_weight 100.0 [kg N/ha])      (from -5 [cm])      (to -15 [cm]))
+    (wait_mm_dd 6 2)   (cut "Ryegrass"      (stub 7 [cm]))    (cut "Wclover"      (stub 7 [cm]))
+    (wait_mm_dd 6 15)    (fertilize      ("my_cattle_slurry")      (equivalent_weight 100.0 [kg N/ha])      (from -5 [cm])      (to -15 [cm]))
+    (wait_mm_dd 7 10)    (cut "Ryegrass"      (stub 7 [cm]))    (cut "Wclover"      (stub 7 [cm]))
+    (wait_mm_dd 8 5)    (cut "Ryegrass"     (stub 7 [cm]))    (cut "Wclover"      (stub 7 [cm]))
+    (wait_mm_dd 9 30)    (cut "Ryegrass"      (stub 7 [cm]))    (cut "Wclover"      (stub 7 [cm])) )
+ 
+ (defaction  "grainyear" activity
+ (wait_mm_dd 4 10) (plowing)
+ (wait_mm_dd 4 15) (fertilize ("my_cattle_slurry")    (equivalent_weight 100.0 [kg N/ha])      (from -5 [cm])      (to -15 [cm]))
+ (wait_mm_dd 4 16) (sow "SB")(sow "Ryegrass")    (sow "Wclover") 
+ (wait_mm_dd 7 1)  (fertilize      ("my_cattle_slurry")      (equivalent_weight 100.0 [kg N/ha])      (from -5 [cm])      (to -15 [cm]))
+ (wait_mm_dd 8 25) (harvest "SB" (stub 7 [cm]))) 
+ ;(wait_mm_dd 9 30) (cut "Ryegrass"      (stub 7 [cm]))    (cut "Wclover"      (stub 7 [cm])) )
+ 
+  
+;; Arable Farm Rotation
+(defaction "A_F_R" activity
+ "grainyear" "grainyear" "grainyear" "grainyear" "grainyear" "grainyear" "grainyear" "grainyear" "grainyear" "grainyear"
+ "grainyear" "grainyear" "grainyear" "grainyear" "grainyear" "grainyear" "grainyear" "grainyear" "grainyear" "grainyear")
+ 
+ 
+ ; "startyear"  "year2-20"  "year2-20" "year2-20" "grainyear" "year2-20" "year2-20" "year2-20" 
+ ; "grainyear" "year2-20" "year2-20" "year2-20" "grainyear" "year2-20" "year2-20" "year2-20" "grainyear" "year2-20" "year2-20" "year2-20")
+
+  (input file "Foulum_soil_vg.dai")
+  (input file "OutputLog_2.dai")
+  (defunit [kWh/d/m^2] SIfactor 
+    (mass 1)
+    (time -3)
+    (factor 41.67))
+  (weather default "Daily_foulum_1984-2017.dwf")
+  (description "Foulum; Weather: Daily values")
+  (log_prefix "DailyP-")
+  (manager activity 
+    (repeat 
+      ("A_F_R")))
+  (defcolumn "Foulum; FAO" "Foulum column"
+    (Bioclimate default 
+      (pet FAO_PM)))
+
+  (column "Foulum; FAO")
+  (time 1994 03 01)
+  (stop 2014 11 01) 

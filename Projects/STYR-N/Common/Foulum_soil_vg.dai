@@ -45,4 +45,6 @@
                   (-70 [cm] "Foulum 50-70")
                   (-90 [cm] "Foulum 70-90")))
    (Groundwater deep)
-  (OrganicMatter original (init (input 3000 [kg C/ha/y])))	)
+  (OrganicMatter original (init 
+  			(input 12000 [kg C/ha/y])
+  			(root 6000 [kg C/ha/y]))	) )
