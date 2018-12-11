@@ -1,0 +1,65 @@
+;; Including external library-files
+(input file "tillage.dai")
+(input file "crop.dai")
+;(input file "ryegrass.dai")
+;(input file "wclover.dai")
+;(input file "pea.dai")
+(input file "fertilizer.dai")
+(input file "../Common/Org_fert.dai")   
+(input file "../Common/Springbarley_MES_23_2.dai")   
+
+;(defaction cut_clovergrass activity
+;(cut "Ryegrass"	(stub 7 [cm]))
+;(cut "Wclover" 	(stub 7 [cm])) )
+
+;(defaction cut_grass_fertilize activity
+;(cut_clovergrass)
+;(wait_days 1)
+;(fertilize ("my_cattle_slurry") (equivalent_weight 100 [kg N/ha])(from -5 [cm]) (to -15 [cm])) )
+     
+;; First yr clover-grass undersown in 1993 - but in Daisy 1994
+(defaction "KG_1994" activity
+  (wait_mm_dd 04 05)(seed_bed_preparation) (sow "Ryegrass") (sow "Wclover")
+  (wait_mm_dd 02 06) (cut "Ryegrass" (stub 7 [cm])) 
+  (wait_mm_dd 02 06) (cut "Wclover" (stub 7 [cm]))	)
+(defaction "KG_1995" activity
+ (wait_mm_dd 04 20) 	(fertilize ("my_cattle_slurry") (equivalent_weight 140 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+ (wait_mm_dd 02 06) (cut "Ryegrass" (stub 7 [cm])) 
+ (wait_mm_dd 02 06) (cut "Wclover" (stub 7 [cm]))	)  
+(defaction "Barl-pea_1996" activity
+ (wait_mm_dd 04 23) (plowing)
+ (wait_mm_dd 04 23) (fertilize ("my_cattle_slurry") (equivalent_weight 60 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+ (wait_mm_dd 04 25) (seed_bed_preparation) (sow "SB") (sow "Pea")
+ (wait_mm_dd 08 05) (harvest "Pea") (harvest "SB")
+ (wait_mm_dd 09 26) (plowing) (wait_mm_dd_09 27) (seed_bed_preparation) (sow "Winter Wheat")  )
+(defraction "wwheat_1997" activity
+ (wait_mm_dd 04 30) (fertilize ("my_cattle_slurry") (equivalent_weight 170 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+ (wait_mm_dd 08 20) (harvest "Winter Wheat" (stub 7 [cm])	)
+(defaction "Turnip_1998" activity
+  (wait_mm_dd 04 21) (plowing)
+  (wait_mm_dd 04 21) (fertilize ("my_cattle_slurry") (equivalent_weight 250 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+  (wait_mm_dd 04 24) (seed_bed_preparation) (sow "SB") (sow "Pea")
+  (wait_mm_dd 08 05) (harvest "Pea") (harvest "SB")
+ 
+ 
+
+;; Kløvergræs år 2.
+(defaction "Clovergrass" activity
+ 	(wait_mm_dd 04 29) 	(fertilize ("my_cattle_slurry") (equivalent_weight 100 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+ 	(wait_mm_dd 6 20) (cut "Ryegrass" (stub 7 [cm]))
+ 	(wait_mm_dd 6 20) (cut "Wclover" (stub 7 [cm]))
+ 	(wait_days 1) 		(fertilize ("my_cattle_slurry") (equivalent_weight 100 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+ 	(wait_mm_dd 7 20) (cut "Ryegrass" (stub 7 [cm]))
+	(wait_mm_dd 7 20) (cut "Wclover" (stub 7 [cm])) 	
+	
+	(wait_mm_dd 8 20) (cut "Ryegrass" (stub 7 [cm]))
+	(wait_mm_dd 8 20) (cut "Wclover" (stub 7 [cm]))
+	
+	(wait_mm_dd 10 20) (cut "Ryegrass" (stub 7 [cm]))
+	(wait_mm_dd 10 20) (cut "Wclover" (stub 7 [cm]))	)
+
+
+ ;; Arable Farm Rotation
+(defaction "A_F_R" activity
+  "sbarley_CG" "Clovergrass" "Clovergrass" "Clovergrass" "Clovergrass")
+

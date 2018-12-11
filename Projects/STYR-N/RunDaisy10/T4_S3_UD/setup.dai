@@ -186,8 +186,6 @@
       (equivalent_weight 100.0 [kg N/ha])
       (from -5 [cm])
       (to -15 [cm]))
-    (wait_mm_dd 4 1)
-    (plowing)
     (wait_mm_dd 4 2)
     (sow "SB")
     (wait_mm_dd 4 15)
@@ -324,13 +322,7 @@
     (wait_mm_dd 7 2)
     (irrigate_overhead 40.0 [mm/h])
     (wait_mm_dd 7 28)
-    (irrigate_overhead 45.0 [mm/h])
-    (wait_mm_dd 8 23)
-    (cut "Ryegrass"
-      (stub 7 [cm]))
-    (wait_mm_dd 10 26)
-    (cut "Ryegrass"
-      (stub 7 [cm])))
+    (irrigate_overhead 45.0 [mm/h]))
   (defaction "A_F_R" activity "S1-3_1994-2010")
   (input file "Foulum_soil_vg.dai")
   (input file "OutputLog_2.dai")

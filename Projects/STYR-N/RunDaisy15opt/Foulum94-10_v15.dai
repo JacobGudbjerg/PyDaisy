@@ -8,12 +8,8 @@
 (input file "Org_fert.dai")   
 (input file "Springbarley_MES_23_2.dai")   
 (input file "hhj-ryegrass.dai")
-(input file "hhj.v2-wclover.dai")
+(input file "hhj-wclover.dai")
 
-(defaction cut_grass activity
-(cut "Ryegrass"	(stub 5 [cm]))
-(cut "Wclover" 	(stub 5 [cm])) )
-     
 (defaction "S1-3_1994-2010" activity)
   
  ;; Arable Farm Rotation
