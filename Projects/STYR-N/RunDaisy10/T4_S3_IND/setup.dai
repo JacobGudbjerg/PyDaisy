@@ -219,12 +219,6 @@
       (stub 7 [cm]))
     (wait_mm_dd 7 8)
     (irrigate_overhead 40.0 [mm/h])
-    (wait_mm_dd 8 24)
-    (cut "Ryegrass"
-      (stub 7 [cm]))
-    (wait_mm_dd 10 12)
-    (cut "Ryegrass"
-      (stub 7 [cm]))
     (wait_mm_dd 3 28)
     (plowing)
     (wait_mm_dd 4 3)

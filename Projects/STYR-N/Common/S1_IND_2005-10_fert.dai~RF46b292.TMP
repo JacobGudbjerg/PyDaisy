@@ -1,0 +1,61 @@
+;; Including external library-files
+(input file "ryegrass.dai")(input file "wclover.dai")
+(input file "pea.dai") (input file "wwheat.dai") (input file "fodderbeet.dai")
+
+(input file "tillage.dai") (input file "fertilizer.dai")
+(input file "../Common/Org_fert.dai")   
+(input file "../Common/Springbarley_MES_23_2.dai")   
+
+(defaction cut_grass activity
+(cut "Ryegrass"	(stub 5 [cm]))
+(cut "Wclover" 	(stub 5 [cm])) )
+     
+(defaction "SB_CG_2005" activity
+  (wait_mm_dd 04 15)(plowing) ; estimeret dato
+  (wait_mm_dd 04 20) (seed_bed_preparation) (sow "SB") (sow "Ryegrass") (sow "Wclover")
+  (wait (or (crop_ds_after "SB" 2.0) (mm_dd 9 1)))(harvest "SB" (sorg 0.99) (stem 0.7) (stub 10 [cm]))
+  (cut "Ryegrass" (stub 10 [cm])) 
+  (cut "Wclover" (stub 10 [cm]))
+  (wait_mm_dd 10 31) (activity (cut_grass)) )
+(defaction "CG1_2006" activity
+ (wait_mm_dd 05 07) 	(fertilize ("my_cattle_slurry") (equivalent_weight 100 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+  (wait_mm_dd 06 06) (cut "Ryegrass" (stub 5 [cm])) (cut "Wclover" (stub 5 [cm]))
+ (wait_mm_dd 06 11) 	(fertilize ("my_cattle_slurry") (equivalent_weight 100 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+  (wait_mm_dd 07 12) (cut "Ryegrass" (stub 5 [cm])) (cut "Wclover" (stub 5 [cm]))
+  (wait_mm_dd 08 23) (cut "Ryegrass" (stub 5 [cm])) (cut "Wclover" (stub 5 [cm]))
+  (wait_mm_dd 10 11) (cut "Ryegrass" (stub 5 [cm])) (cut "Wclover" (stub 5 [cm]))
+  )
+(defaction "CG2_2007" activity
+ (wait_mm_dd 04 24) 	(fertilize ("my_cattle_slurry") (equivalent_weight 100 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+  (wait_mm_dd 5 24) (cut "Ryegrass" (stub 5 [cm])) (cut "Wclover" (stub 5 [cm]))
+ (wait_mm_dd 05 29) 	(fertilize ("my_cattle_slurry") (equivalent_weight 100 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+  (wait_mm_dd 07 03) (cut "Ryegrass" (stub 5 [cm])) (cut "Wclover" (stub 5 [cm]))
+  (wait_mm_dd 08 07) (cut "Ryegrass" (stub 5 [cm])) (cut "Wclover" (stub 5 [cm]))
+  (wait_mm_dd 10 16) (cut "Ryegrass" (stub 5 [cm])) (cut "Wclover" (stub 5 [cm]))
+  )
+  (defaction "CG3_2008" activity
+   (wait_mm_dd 04 27) 	(fertilize ("my_cattle_slurry") (equivalent_weight 100 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+    (wait_mm_dd 05 27) (cut "Ryegrass" (stub 5 [cm])) (cut "Wclover" (stub 5 [cm]))
+   (wait_mm_dd 06 1) 	(fertilize ("my_cattle_slurry") (equivalent_weight 100 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+    (wait_mm_dd 07 08) (cut "Ryegrass" (stub 5 [cm])) (cut "Wclover" (stub 5 [cm]))
+    (wait_mm_dd 08 19) (cut "Ryegrass" (stub 5 [cm])) (cut "Wclover" (stub 5 [cm]))
+    (wait_mm_dd 10 14) (cut "Ryegrass" (stub 5 [cm])) (cut "Wclover" (stub 5 [cm]))
+  )
+  (defaction "CG4_2009" activity
+   (wait_mm_dd 04 19) 	(fertilize ("my_cattle_slurry") (equivalent_weight 100 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+    (wait_mm_dd 05 19) (cut "Ryegrass" (stub 5 [cm])) (cut "Wclover" (stub 5 [cm]))
+   (wait_mm_dd 05 25) 	(fertilize ("my_cattle_slurry") (equivalent_weight 100 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+    (wait_mm_dd 07 06) (cut "Ryegrass" (stub 5 [cm])) (cut "Wclover" (stub 5 [cm]))
+    (wait_mm_dd 08 14) (cut "Ryegrass" (stub 5 [cm])) (cut "Wclover" (stub 5 [cm]))
+    (wait_mm_dd 10 21) (cut "Ryegrass" (stub 5 [cm])) (cut "Wclover" (stub 5 [cm]))
+  )
+  (defaction "SB_rg_2010" activity
+    (wait_mm_dd 04 15)(plowing) ; estimeret dato
+    (wait_mm_dd 04 22) (seed_bed_preparation) (sow "SB") (sow "Ryegrass") (sow "Wclover")
+    (wait (or (crop_ds_after "SB" 2.0) (mm_dd 9 1)))(harvest "SB" (sorg 0.99) (stem 0.7) (stub 10 [cm]))
+    (cut "Ryegrass" (stub 10 [cm])) 
+    (cut "Wclover" (stub 10 [cm]))
+  (wait_mm_dd 10 31) (activity (cut_grass)) )
+  ;; Arable Farm Rotation
+(defaction "A_F_R" activity
+  "SB_CG_2005" "CG1_2006" "CG2_2007" "CG3_2008" "CG4_2009" "SB_rg_2010")

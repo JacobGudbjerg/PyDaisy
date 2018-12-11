@@ -1,7 +1,7 @@
  
   (defAOM Wclover-SLOW CROP-SLOW "Slow AOM pool modified for Wclover." 
     (initial_fraction 0.50)
-    (C_per_N 52.0) )
+    (C_per_N 50.0) )
   (defcrop Wclover default 
     (description "v.30 Developed by Henning Høgh Jensen")
     (min_light_fraction 0.01)
@@ -44,7 +44,7 @@
       (TaSum -50.0) )
     (LeafPhot original 
       (Qeff 0.0600)
-      (Fm 1.3)
+      (Fm 1.884050322613426)
       (TempEff 
         (-20 0.0001)
         (6.5 0.100)
@@ -128,7 +128,7 @@
         (1.2 0.70)
         (1.45 0.60)
         (2.00 0.0) ) )
-    (Prod
+    (Prod 
       (NCrop 0.04)
       (E_Root 0.69)
       (E_Leaf 0.68)
@@ -143,17 +143,16 @@
       (ReMobilRt 0.1)
       (LfDR 
         (0.00 0.00)
-        (0.80 0.05)
-        (1.00 0.1)
-        (1.4 0.15)
-        (2.00 0.25) )
+        (0.80 0.08)
+        (1.00 0.10679003454757902)
+        (1.5 0.1736521300106687)
+        (2.00 0.3) )
       (RtDR 
         (0.00 0.00)
         (0.50 0.008)
-        (0.70 0.010)
-        (1.00 0.10)
-        (1.50 0.15)
-        (2.00 0.25) )
+        (1.00 0.11651305695270037)
+        (1.50 0.15639378524615105)
+        (2.00 0.3) )
       (Large_RtDR 0.150)
       (RtDR_T_factor 
         (0.0 0.0)
@@ -161,7 +160,7 @@
     (CrpN 
       (DS_fixate 0.10)
       (DS_cut_fixate 0.15)
-      (fixate_factor 0.02)
+      (fixate_factor 0.2)
       (PtRootCnc 
         (0.00 0.025)
         (1.00 0.025)

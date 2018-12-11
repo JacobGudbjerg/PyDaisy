@@ -1,0 +1,70 @@
+;; Including external library-files
+(input file "tillage.dai")
+;(input file "crop.dai")
+(input file "ryegrass.dai")(input file "wclover.dai")
+(input file "pea.dai") (input file "wwheat.dai") (input file "fodderbeet.dai")
+
+(input file "fertilizer.dai")
+(input file "../Common/Org_fert.dai")   
+(input file "../Common/Springbarley_MES_23_2.dai")   
+
+(defaction cut_grass activity
+(cut "Ryegrass"	(stub 5 [cm]))
+(cut "Wclover" 	(stub 5 [cm])) )
+
+;(defaction cut_grass_fertilize activity
+;(cut_clovergrass)
+;(wait_days 1)
+;(fertilize ("my_cattle_slurry") (equivalent_weight 100 [kg N/ha])(from -5 [cm]) (to -15 [cm])) )
+     
+;; First yr clover-grass undersown in 1993 - but in Daisy 1994
+(defaction "SB_CG_1993" activity
+  (wait_mm_dd 04 15)(plowing) ; estimeret dato
+  (wait_mm_dd 04 20) (seed_bed_preparation) (sow "SB") (sow "Ryegrass") (sow "Wclover")
+  (wait (or (crop_ds_after "SB" 2.0) (mm_dd 9 1)))(harvest "SB" (sorg 0.99) (stem 0.7) (stub 10 [cm]))
+  (cut "Ryegrass" (stub 10 [cm])) 
+  (cut "Wclover" (stub 10 [cm]))
+  (wait_mm_dd 10 31) (activity (cut_grass)) )
+(defaction "CG1_1994" activity
+  (wait_mm_dd 06 02) (cut "Ryegrass" (stub 5 [cm])) 
+  (wait_mm_dd 06 02) (cut "Wclover" (stub 5 [cm]))	)
+(defaction "CG2_1995" activity
+ (wait_mm_dd 04 20) 	(fertilize ("my_cattle_slurry") (equivalent_weight 140 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+ (wait_mm_dd 06 02) (cut "Ryegrass" (stub 5 [cm])) 
+ (wait_mm_dd 06 02) (cut "Wclover" (stub 5 [cm]))	)  
+(defaction "Barl-pea_1996" activity
+ (wait_mm_dd 04 23) (plowing)
+ (wait_mm_dd 04 23) (fertilize ("my_cattle_slurry") (equivalent_weight 60 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+ (wait_mm_dd 04 25) (seed_bed_preparation) (sow "SB") (sow "Pea")
+ (wait_mm_dd 08 05) (harvest "Pea" (sorg 0.99) (stem 0.99) (stub 10 [cm])) (harvest "SB" (sorg 0.99) (stem 0.7) (stub 10 [cm]) 	)
+ (wait_mm_dd 09 26) (plowing) 
+ (wait_mm_dd 09 27) (seed_bed_preparation) (sow "Winter Wheat")	)	
+(defaction "wwheat_1997" activity
+ (wait_mm_dd 04 30) (fertilize ("my_cattle_slurry") (equivalent_weight 100 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+ (wait_mm_dd 05 15) (fertilize ("my_cattle_slurry") (equivalent_weight 70 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+ (wait_mm_dd 08 20) (harvest "Winter Wheat" (sorg 0.99) (stem 0.99)(stub 10 [cm]))	)
+(defaction "Turnip_1998" activity
+  (wait_mm_dd 04 21) (plowing)
+  (wait_mm_dd 04 21) (fertilize ("my_cattle_slurry") (equivalent_weight 250 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+  (wait_mm_dd 04 24) (seed_bed_preparation) (sow "Fodder Beet") 
+  (wait_mm_dd 11 03) (harvest "Fodder Beet" (sorg 0.99) (leaf 0.99)) ) 
+(defaction "SB_CG_1999" activity
+  (wait_mm_dd 04 07)(plowing)
+  (wait_mm_dd 04 07) (fertilize ("my_cattle_slurry") (equivalent_weight 250 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+  (wait_mm_dd 04 09) (seed_bed_preparation) (sow "SB") (sow "Ryegrass") (sow "Wclover")
+  (wait_mm_dd 08 23) (harvest "SB" (sorg 0.99) (stem 0.7) (stub 10 [cm]))
+  (cut "Ryegrass" (stub 10 [cm])) 
+  (cut "Wclover" (stub 10 [cm]))
+  (wait_mm_dd 10 31) (activity (cut_grass)) )
+(defaction "CG1_2000" activity
+  (wait_mm_dd 05 22) (harvest "Ryegrass" (sorg 1) (stem 1)(leaf 1)(stub 5 [cm])) (harvest "Wclover" (sorg 1) (stem 1) (leaf 1) (stub 5 [cm])) 
+  (wait_mm_dd 10 31) (activity (cut_grass)) ) 
+(defaction "CG2_2001" activity
+ (wait_mm_dd 04 06) 	(fertilize ("my_cattle_slurry") (equivalent_weight 140 [kg N/ha])(from -5 [cm]) (to -15 [cm])) 
+(wait_mm_dd 06 08) (harvest "Ryegrass" (sorg 1) (stem 1)(leaf 1)(stub 5 [cm]))(harvest "Wclover" (sorg 1) (stem 1) (leaf 1) (stub 5 [cm])) 
+  (wait_mm_dd 10 31) (activity (cut_grass)) )    
+
+ ;; Arable Farm Rotation
+(defaction "A_F_R" activity
+  "SB_CG_1993" "CG1_1994" "CG2_1995" "Barl-pea_1996" "wwheat_1997" "Turnip_1998" "SB_CG_1999" "CG1_2000" "CG2_2001")
+

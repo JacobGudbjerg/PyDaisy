@@ -302,12 +302,6 @@
     (wait_mm_dd 6 17)
     (harvest "SB"
       (stub 7 [cm]))
-    (wait_mm_dd 8 20)
-    (cut "Ryegrass"
-      (stub 7 [cm]))
-    (wait_mm_dd 10 15)
-    (cut "Ryegrass"
-      (stub 7 [cm]))
     (wait_mm_dd 3 31)
     (plowing)
     (wait_mm_dd 4 17)
@@ -338,7 +332,7 @@
     (plowing)
     (wait_mm_dd 4 22)
     (sow "SB")
-    (sow "Ryegrass")
+    (sow "Pea")
     (wait_mm_dd 7 2)
     (irrigate_overhead 40.0 [mm/h])
     (wait_mm_dd 8 17)

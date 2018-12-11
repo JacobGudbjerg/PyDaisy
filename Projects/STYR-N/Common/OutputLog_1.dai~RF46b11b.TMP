@@ -1,0 +1,32 @@
+(input file "log.dai")           ; definition of output logs
+
+(output
+;;      Annual output
+;;
+;;      Organic matter  
+        ("Organic Matter"       (when (and (month 9) (mday 1) (hour 0))) (where "Annual-OM.dlf"))  
+ ;;     Water balance  
+;        ("Field water"           (when (and (month 4) (mday 1) (hour 0))) (where "Annual-FWater.dlf"))  
+;        ("Surface Water Balance" (when (and (month 4) (mday 1) (hour 0))) (where "Annual-SWater.dlf"))  
+;;      Nitrogen balance  
+        ("Field nitrogen"        (when (and (month 9) (mday 1) (hour 0))) (where "Annual-FN.dlf")) 
+;;    
+	harvest
+;
+(Crop (crop "Ryegrass"))
+(Crop (crop "Wclover"))
+(Crop (crop "SB"))
+
+;;      Daily output
+
+; Crop production variables
+	    ("Crop"                 (when daily) (where "Daily-CropProduction.dlf"))
+; Nitrogen balance  
+        ("Field nitrogen"       (when daily) (where "Daily-FN.dlf"))  
+
+;       Organic matter
+        ("Organic Matter"                 (when daily) (where "Daily-OM.dlf"))
+;;      
+;
+;;      
+)

@@ -1,7 +1,7 @@
 (defAOM Wclover-SLOW CROP-SLOW
   "Slow AOM pool modified for Wclover."
   (initial_fraction 0.50)
-  (C_per_N 50.0))
+  (C_per_N 48.0))
 
 (defcrop Wclover default (description "v.30 Developed by Henning Høgh Jensen")
 ;; this crop has been develeped to be grown in mixtures with grass. It is proper validated on clayey loams but not on sandy soils
@@ -22,7 +22,7 @@
 	  (TaLim  5.0)
 	  (TaSum  -50.0))
   (LeafPhot original (Qeff 0.0600)	; change from 0.065 
-	    (Fm   2)	;1.8  ; from 3.00
+	    (Fm   4)	;1.8  ; from 3.00
 	    (TempEff (-20 0.0001) (6.5 0.100) (8.0 0.30) (12 0.8) (16 1.00)
 		     (20 1.00) (33 1.00)(37 0.03) (50 0.0))) ;°C
   (Seed LAI (DSLAI05 0.3)
@@ -77,7 +77,7 @@
         (ReMobilDS 1.00)		 ; Remobilization, Initial DS
 	(ReMobilRt 0.1)			 ; Remobilization, release rate
 	(LfDR (0.00 0.00) (0.80 0.05) (1.00 0.10) (1.4 0.15) (2.00 0.25))
-	(RtDR (0.00 0.00) (0.50 0.01) (0.70 0.05) (1 0.1) (1.5 0.15)  (2.00 0.25))
+	(RtDR (0.00 0.00) (0.50 0.02) (1 0.15) (1.5 0.2)  (2.00 0.25))
         (Large_RtDR 0.150)
         (RtDR_T_factor (0.0 0.0) (5.0 1.0) ) )	; this stop root death at 0.0 dg C and reach full at 5 dg C
         					; partly after Gill & Jackson (2000) New Phytol 147:13-31
@@ -110,7 +110,7 @@
 	   (Root  "Wclover-SLOW" "CROP-FAST")
 	    (DSmax 2.0)
 	    (DSnew 0.27) 
-	(cut_delay (500 10) (1000 35) (2000 45) (7000 75)) ; kg dm/ha gives delay in days
+	(cut_delay (500 5) (1000 10) (2000 15) (7000 40)) ; kg dm/ha gives delay in days
 		)
 
  )
