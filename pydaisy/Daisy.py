@@ -39,6 +39,16 @@ def try_cast_float(value):
     except ValueError:
         return value
 
+def is_number(value):
+    """
+    returns true if value can be cast to a float otherwise false
+    """
+    try:
+        float(value)
+        return True
+    except ValueError:
+        return False
+
 
 
 class DaisyDlf(object):
@@ -289,7 +299,7 @@ class DaisyEntry(object):
                 if(nextchar == '"'):
                     InCitation= not InCitation                               
                 if (not keywordread):
-                    if (nextchar!=' '):
+                    if (nextchar!=' ' and nextchar != '\t'):
                         self.Keyword += nextchar
                     else:
                          keywordread = True
@@ -304,6 +314,8 @@ class DaisyEntry(object):
                     if ((nextchar== ' ' or nextchar== '\t') and not InCitation):
                         if ( CurrentWord[len(CurrentWord) - 1]):
                             CurrentWord.append('')
+                    elif(nextchar== '[' and is_number( CurrentWord[len(CurrentWord) - 1])):
+                            CurrentWord.append('[')
                     else:
                         CurrentWord[len(CurrentWord) - 1] += nextchar
 
@@ -561,5 +573,6 @@ def run_sub_folders(MotherFolder, DaisyFileName, MaxBatchSize=5000, NumberOfProc
 
 def ensure_dir(file_path):
     directory = os.path.dirname(file_path)
-    if not os.path.exists(directory):
-        os.makedirs(directory)
+    if directory!='':
+        if not os.path.exists(directory):
+            os.makedirs(directory)

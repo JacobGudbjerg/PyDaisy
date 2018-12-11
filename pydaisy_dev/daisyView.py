@@ -35,13 +35,11 @@ class heatmap(object):
 
 
 class dai_view(object):
-    def __init__(self, filename, master):
-        root = tk.Tk(master)
+    def __init__(self, filename, root):
         self.tree = ttk.Treeview(root)
-
+        self.tree.grid(row=2)
 
         dm = DaisyModel(filename)
-        root.title = dm.DaisyInputfile
 
         self.tree["columns"]=('Par1', 'Par2')
         self.tree.column("Par1", width=100 )
@@ -49,12 +47,11 @@ class dai_view(object):
         self.tree.heading("Par1", text="Par1")
         self.tree.heading("Par2", text="Par2")
         self.recursiveadd("", dm.Input)
-        self.tree.pack()
-        self.tree.bind('<ButtonRelease-1>', self.selectItem)
-        root.mainloop()
+#        self.tree.pack()
+#        self.tree.bind('<ButtonRelease-1>', self.selectItem)
 
-        Button(master, text='Quit', command=master.quit).grid(row=3, column=0, sticky=W, pady=4)
-        Button(master, text='Show', command=show_entry_fields).grid(row=3, column=1, sticky=W, pady=4)
+#        Button(master, text='Quit', command=master.quit).grid(row=3, column=0, sticky=W, pady=4)
+#        Button(master, text='Show', command=show_entry_fields).grid(row=3, column=1, sticky=W, pady=4)
 
 
     def selectItem(self, a):

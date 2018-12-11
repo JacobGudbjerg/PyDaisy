@@ -21,9 +21,15 @@ class Test_DaisyTest(unittest.TestCase):
         d= DaisyModel(r'./../TestData/Exercise01.dai')
         self.assertEqual(17, len(d.Input.Children))
         self.assertEqual(1993, d.starttime.time.year)
+
+        self.assertEqual(3, len(d.Input['defhorizon']))
+
         d.save_as(r'./../TestData/Exercise01_saved.dai')
         d_saved = DaisyModel(r'./../TestData\Exercise01_saved.dai')
         self.assertEqual(d.endtime, d_saved.endtime)
+
+
+        
 
         notthere = d.Input['NotThere']
         self.assertIsNone(notthere)
