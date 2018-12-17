@@ -97,15 +97,15 @@ for root, dirs, filenames in items:
        
 
 rmse_tot=r2+r4
-rCG= ('RMSE_CG ='+(rs1))
-rclo= ('RMSE_Clover ='+(rs2))
-rgras= ('RMSE_Grass ='+(rs4))
+#rCG= ('RMSE_CG ='+(rs1))
+#rclo= ('RMSE_Clover ='+(rs2))
+#rgras= ('RMSE_Grass ='+(rs4))
 rtotal= ('RMSE_Total ='+(rmse_tot))
 
-ax=plt.subplot(5,4)
-plt.text(3,0.2, rCG)
-plt.text(3,0.5, rclo)
-plt.text(3,0.7, rgras)
+#ax=plt.subplot(5,4)
+#plt.text(3,0.2, rCG)
+#plt.text(3,0.5, rclo)
+#plt.text(3,0.7, rgras)
 plt.text(3,0.9, rtotal)
         
 fig.savefig("DM_hhj.pdf", bbox_inches='tight')       
