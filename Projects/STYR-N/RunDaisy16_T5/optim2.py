@@ -35,20 +35,19 @@ def extract(crop_name, filnavn, output):
         
 def opti(crop_name, m_cropname, output='DM', makeplots=False):
     
-    MotherFolder='..\RunDaisy15opt'
+    MotherFolder='..\RunDaisy16_T5'
     items = os.walk(MotherFolder)
     
     rmse_val=0
     index=1
     for root, dirs, filenames in items:
         for d in dirs:    
+            
             rg=extract(crop_name, os.path.join(root, d, "DailyP-harvest.dlf"), output)
             df22= pd.DataFrame([rg]).T
             df22.columns =[crop_name]
-            df2 =df22.loc['2006-1-1':'2011-1-1',:]                 
-    # Vil gerne plott målt mod simuleret output - først et plot for hver id - og så alle samlet.
-    #Udvælger en ny dataframe med data hvor ID = d. Det samme som tidligere blev gjort i loop
-    #Group og tag gennemsnit
+            df2=df22.loc['2006-1-1': '2011-1-1',:]
+            
             s1=xl.loc[xl['id']==d]
             meas =(s1.groupby(s1.index)['grassDM'].mean(),s1.groupby(s1.index)['cloverDM'].mean(),
                    s1.groupby(s1.index)['grassN'].mean(),s1.groupby(s1.index)['cloverN'].mean())
@@ -62,22 +61,21 @@ def opti(crop_name, m_cropname, output='DM', makeplots=False):
             rs=str(round(rmse_val, 2))
             eva= ('RMSE ='+(rs))
         return(rmse_val)
-    
 def func(pars):
     
 
-        cropdai=DaisyModel('./hhj.v2-wclover.dai')
-        cropdai.Input['defcrop']['Prod']['LfDR'][2].setvalue(pars[0])
-        cropdai.Input['defcrop']['Prod']['LfDR'][3].setvalue(pars[1])
-        cropdai.Input['defcrop']['Prod']['RtDR'][2].setvalue(pars[2])
-        cropdai.Input['defcrop']['Prod']['RtDR'][3].setvalue(pars[3])
-        cropdai.Input['defcrop']['LeafPhot']['Fm'].setvalue(pars[4])
+        cropdai=DaisyModel('./hhj.v4-wclover.dai')
+        cropdai.Input['defcrop']['CrpN']['fixate_factor'].setvalue(pars[0])
+        #cropdai.Input['defcrop']['Prod']['LfDR'][3].setvalue(pars[1])
+        #cropdai.Input['defcrop']['Prod']['RtDR'][2].setvalue(pars[2])
+        #cropdai.Input['defcrop']['Prod']['RtDR'][3].setvalue(pars[3])
+        #cropdai.Input['defcrop']['LeafPhot']['Fm'].setvalue(pars[4])
         cropdai.save()       
 #       
-        cropdai=DaisyModel('./hhj-ryegrass.dai')
-        cropdai.Input['defcrop']['LeafPhot']['Fm'].setvalue(pars[5])
+        #cropdai=DaisyModel('./hhj-ryegrass.dai')
+        #cropdai.Input['defcrop']['LeafPhot']['Fm'].setvalue(pars[5])
         #cropdai.Input['defAOM']['C_per_N'].setvalue(pars[3])
-        cropdai.save()
+        #cropdai.save()
         
         
         run_sub_folders(r'.','setup.dai')
@@ -86,7 +84,7 @@ def func(pars):
         r+=opti('Ryegrass','grassDM')
         r+=0.035*opti('Ryegrass','grassN','N')
         r+=0.035*opti('Wclover','cloverN','N')
-        f = open("myfile4.txt", "a")
+        f = open("myfile.txt", "a")
         f.write(str(pars) + " " + str(r) +"\n")
         f.close()
         return r
@@ -95,6 +93,6 @@ def progress_print(x):
     print (x)
 
 if __name__ =='__main__':
-    x0 =[0.12, 0.18, 0.12, 0.18, 2, 2 ] 
+    x0 =[0.3] 
     res = minimize(func, x0, method='Nelder-Mead', callback=progress_print,  options={'disp':True, 'maxiter':100})
 

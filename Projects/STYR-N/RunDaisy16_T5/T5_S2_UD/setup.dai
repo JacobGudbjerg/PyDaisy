@@ -13,7 +13,7 @@
   (input file "Org_fert.dai")
   (input file "Springbarley_MES_23_2.dai")
   (input file "hhj-ryegrass.dai")
-  (input file "hhj.v2-wclover.dai")
+  (input file "hhj.v4-wclover.dai")
   (defaction "S1-3_1994-2010" activity)
   (defaction "A_F_R" activity "S1-3_1994-2010"
     (wait_mm_dd 4 21)

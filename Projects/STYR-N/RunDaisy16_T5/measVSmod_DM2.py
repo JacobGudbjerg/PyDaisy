@@ -108,5 +108,5 @@ plt.text(3,0.5, rclo)
 plt.text(3,0.7, rgras)
 plt.text(3,0.9, rtotal)
         
-fig.savefig("DM_hhj.pdf", bbox_inches='tight')       
+fig.savefig("DM_hhj2.pdf", bbox_inches='tight')       
             
