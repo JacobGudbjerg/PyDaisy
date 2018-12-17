@@ -35,10 +35,18 @@ class Test_DaisyTest(unittest.TestCase):
         self.assertIsNone(notthere)
 
         status = d.run()
-        self.assertEqual(0, status.returncode)
+        if  sys.version_info >= (3, 0):
+            self.assertEqual(0, status.returncode)
+        else:
+            self.assertEqual(0, status)
+
+
         modelwitherror = DaisyModel(r'./../TestData/Exercise01_witherror.dai')
         status = modelwitherror.run()
-        self.assertEqual(1, status.returncode)
+        if  sys.version_info >= (3, 0):
+            self.assertEqual(1, status.returncode)
+        else:
+            self.assertEqual(1, status)
 
         samedir = DaisyModel('Exercise01.dai')
         samedir.save()
@@ -100,19 +108,7 @@ class Test_DaisyTest(unittest.TestCase):
         self.assertEqual(4.86207, dlf_harvest.Data['stem_DM'][0])
         self.assertEqual('M5_2D', dlf_harvest.Data['column'][0])
 
+    
 
-
-       
-
-    @unittest.skip("Only works on Jacobs PLEN PC")
-    def test_netpath(self):
-
-        dai = DaisyModel(r'\\a00519.science.domain\jpq949\Documents\test-pp2.dai')
-        self.assertEqual('"Bromide"', dai.Input['defchemical'].getvalue())
-
-        dwf = DaisyDlf(r'\\a00519.science.domain\jpq949\Documents\Flak_SB_spray.dlf')
-
-      
-
-#if __name__ == '__main__':
-#    unittest.main()
+if __name__ == '__main__':
+    unittest.main()

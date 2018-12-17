@@ -19,6 +19,9 @@ if platform.system()=='Linux':
     daisyexecutable = r'/home/projects/cu_10095/apps/daisy/daisy'
 
 def daisy_installed():
+    """
+    Returns true if it can find the daisy executable
+    """
     return os.path.isfile(daisyexecutable)
 
 def try_cast_number(value):
@@ -480,7 +483,11 @@ class DaisyModel(object):
             sys.stdout.flush()
             return subprocess.call([daisyexecutable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], cwd = os.path.dirname(self.DaisyInputfile))
         else:
-            return subprocess.run([daisyexecutable, os.path.abspath(self.DaisyInputfile)], shell=True)
+            if  sys.version_info >= (3, 0):
+                return subprocess.run([daisyexecutable, os.path.abspath(self.DaisyInputfile)], shell=True)
+            else:
+                return subprocess.call([daisyexecutable, os.path.abspath(self.DaisyInputfile)], shell=True)
+
 
 class DaisyModelStatus(Enum):
     NotRun =1
