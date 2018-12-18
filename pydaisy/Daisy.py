@@ -14,15 +14,6 @@ from enum import Enum
 from datetime import datetime, timedelta
 from multiprocessing import Pool
 
-daisyexecutable = r'C:\Program Files\Daisy 5.64\bin\Daisy.exe'
-if platform.system()=='Linux':
-    daisyexecutable = r'/home/projects/cu_10095/apps/daisy/daisy'
-
-def daisy_installed():
-    """
-    Returns true if it can find the daisy executable
-    """
-    return os.path.isfile(daisyexecutable)
 
 def try_cast_number(value):
     """
@@ -439,6 +430,10 @@ class DaisyModel(object):
     A class that reads a daisy input file (.dai-file)
     """
     def __init__(self, DaisyInputfile):
+        self.daisyexecutable = r'C:\Program Files\Daisy 5.72\bin\Daisy.exe'
+        if platform.system()=='Linux':
+            self.daisyexecutable = r'/home/projects/cu_10095/apps/daisy/daisy'
+
         self.DaisyInputfile =DaisyInputfile
         self.Input = DaisyEntry('',[])
         with open(self.DaisyInputfile,'r') as f:
@@ -474,6 +469,15 @@ class DaisyModel(object):
         """
         return copy.deepcopy(self)    
 
+
+    def daisy_installed(self):
+        """
+        Returns true if it can find the daisy executable
+        """
+        return os.path.isfile(self.daisyexecutable)
+
+
+
     def run(self):
         """
         Calls the Daisy executable and runs the simulation.
@@ -481,12 +485,12 @@ class DaisyModel(object):
         """
         if platform.system()=='Linux':
             sys.stdout.flush()
-            return subprocess.call([daisyexecutable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], cwd = os.path.dirname(self.DaisyInputfile))
+            return subprocess.call([self.daisyexecutable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], cwd = os.path.dirname(self.DaisyInputfile))
         else:
             if  sys.version_info >= (3, 0):
-                return subprocess.run([daisyexecutable, os.path.abspath(self.DaisyInputfile)], shell=True)
+                return subprocess.run([self.daisyexecutable, os.path.abspath(self.DaisyInputfile)], shell=True)
             else:
-                return subprocess.call([daisyexecutable, os.path.abspath(self.DaisyInputfile)], shell=True)
+                return subprocess.call([self.daisyexecutable, os.path.abspath(self.DaisyInputfile)], shell=True)
 
 
 class DaisyModelStatus(Enum):

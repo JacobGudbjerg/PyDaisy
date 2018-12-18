@@ -7,7 +7,7 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "pydaisy", "pydaisy\pydaisy.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5F99A45B-6CEB-447C-B00B-D25336C276F2}"
 	ProjectSection(SolutionItems) = preProject
-		README.rst = README.rst
+		README.md = README.md
 		setup.py = setup.py
 	EndProjectSection
 EndProject

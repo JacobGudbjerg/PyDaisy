@@ -5,18 +5,19 @@ import sys
 _here = os.path.abspath(os.path.dirname(__file__))
 
 if sys.version_info[0] < 3:
-    with open(os.path.join(_here, 'README.rst')) as f:
+    with open(os.path.join(_here, 'README.md')) as f:
         long_description = f.read()
 else:
-    with open(os.path.join(_here, 'README.rst'), encoding='utf-8') as f:
+    with open(os.path.join(_here, 'README.md'), encoding='utf-8') as f:
         long_description = f.read()
 
 
 setup(
     name='pydaisy',
-    version=0.1,
+    version='0.2.1',
     description=('Various helper classes to read and manipulate Daisy input and output files.'),
     long_description=long_description,
+    long_description_content_type='text/markdown',
     author='Jacob Gudbjerg',
     author_email='jacobgudbjerg@gmail.com',
     url='https://github.com/JacobGudbjerg/PyDaisy',
@@ -24,6 +25,7 @@ setup(
     packages=['pydaisy'],
     install_requires=[
         'pandas',
+        'numpy'
     ],
     include_package_data=True,
     classifiers=[

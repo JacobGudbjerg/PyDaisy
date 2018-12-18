@@ -1,7 +1,8 @@
 import unittest
 import sys
 import numpy as np
-sys.path.append(r'../')
+#Insert the path so it does not take the installed version.
+sys.path.insert(0, r'../')
 from pydaisy.DaisyTools import *
 
 class Test_DaisyToolsTest(unittest.TestCase):

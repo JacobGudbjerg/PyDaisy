@@ -1,8 +1,9 @@
 import unittest
 import sys
 from datetime import datetime
-sys.path.append(r'../')
 
+#Insert the path so it does not take the installed version.
+sys.path.insert(0, r'../')
 from pydaisy.Daisy import *
 
 
@@ -28,17 +29,25 @@ class Test_DaisyTest(unittest.TestCase):
         d_saved = DaisyModel(r'./../TestData\Exercise01_saved.dai')
         self.assertEqual(d.endtime, d_saved.endtime)
 
-
-        
-
         notthere = d.Input['NotThere']
         self.assertIsNone(notthere)
 
+        self.assertTrue(d.daisy_installed())
         status = d.run()
         if  sys.version_info >= (3, 0):
             self.assertEqual(0, status.returncode)
         else:
             self.assertEqual(0, status)
+
+        d.daisyexecutable='NotThere'
+        self.assertFalse(d.daisy_installed())
+        status = d.run()
+        if  sys.version_info >= (3, 0):
+            self.assertEqual(1, status.returncode)
+        else:
+            self.assertEqual(1, status)
+
+
 
 
         modelwitherror = DaisyModel(r'./../TestData/Exercise01_witherror.dai')
@@ -48,6 +57,10 @@ class Test_DaisyTest(unittest.TestCase):
         else:
             self.assertEqual(1, status)
 
+
+
+
+        #test that we do not have to provide a path
         samedir = DaisyModel('Exercise01.dai')
         samedir.save()
 
