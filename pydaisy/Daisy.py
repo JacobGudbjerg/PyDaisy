@@ -435,19 +435,42 @@ class DaisyModel(object):
             self.daisyexecutable = r'/home/projects/cu_10095/apps/daisy/daisy'
 
         self.DaisyInputfile =DaisyInputfile
-        self.Input = DaisyEntry('',[])
-        with open(self.DaisyInputfile,'r') as f:
-            self.Input.read(f)
+
+
+    @property 
+    def Input(self): 
+        if not self._input: 
+            self._input = DaisyEntry('',[])
+            with open(self.DaisyInputfile,'r') as f:
+                self._input.read(f)
+        return self._input
+        
+    @property
+    def starttime(self):
+        if not self._starttime:
+            self.__readtime()
+        return self._starttime
+
+    @property
+    def endtime(self):
+        if not self._endtime:
+            self.__readtime()
+        return self._endtime
+
+    def __readtime(self):
+        """
         #now a small section that makes the start and end of the simulation visible    
+        """
         top=self.Input
         if any (c.Keyword=='defprogram' for c in top.Children):
             top=(top['defprogram'])
         if any (c.Keyword=='time' for c in top.Children):
-            self.starttime = DaisyTime((top['time']))
+            self._starttime = DaisyTime((top['time']))
         if any (c.Keyword=='stop' for c in top.Children):
-            self.endtime = DaisyTime(top['stop'])
-            
-    
+            self._endtime = DaisyTime(top['stop'])
+
+
+
     def save_as(self, DaisyInputFile):
         """
         Saves the file to a new filename
@@ -483,6 +506,9 @@ class DaisyModel(object):
         Calls the Daisy executable and runs the simulation.
         Remember to save first    
         """
+        if not self.daisy_installed:
+            raise Exception('Daisy could not be found at: ' + self.daisyexecutable)
+
         if platform.system()=='Linux':
             sys.stdout.flush()
             return subprocess.call([self.daisyexecutable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], cwd = os.path.dirname(self.DaisyInputfile))
@@ -503,7 +529,7 @@ class DaisyModelStatus(Enum):
 
 def run_single(FileNames):
     """
-    Run a single simulation. This method should only be used by RunMany from this class.
+    Run a single simulation. This method should only be used by the run_many() function
     """        
     workdir = os.path.dirname(FileNames[0])
 
