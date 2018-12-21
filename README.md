@@ -10,7 +10,7 @@ print(d.starttime)
 dry_bulk_density = d.Input['defhorizon'][0]['dry_bulk_density'].getvalue()
 d.Input['defhorizon'][0]['dry_bulk_density'].setvalue(1.1*dry_bulk_density)
 d.save_as(r'C:\Program Files\Daisy 5.72\exercises\Exercise01_new.dai')
-d.daisyexecutable = r'C:\Program Files\Daisy 5.72\bin\Daisy.exe'
+DaisyModel.path_to_daisy_executable =  r'C:\Program Files\Daisy 5.72\bin\Daisy.exe'
 d.run()
 ```
 
@@ -29,8 +29,10 @@ dlf.save(r'C:\Program Files\Daisy 5.72\exercises\Taastrup6201_saved.dwf')
 
 Parallel runs:
 ```sh
-from pydaisy.Daisy import *
-daisyfiles =[r'c:\daisy\model1\setup.dai', r'c:\daisy\model2\setup.dai', r'c:\daisy\model3\setup.dai']
-run_many(daisyfiles, NumberOfProcesses=3)
+if __name__ == '__main__':
+    from pydaisy.Daisy import *
+    DaisyModel.path_to_daisy_executable =  r'C:\Program Files\Daisy 5.72\bin\Daisy.exe'
+    daisyfiles =[r'c:\daisy\model1\setup.dai', r'c:\daisy\model2\setup.dai', r'c:\daisy\model3\setup.dai']
+    run_many(daisyfiles, NumberOfProcesses=3)
 ```
 The code above will run the three daisy-simulations in parallel.

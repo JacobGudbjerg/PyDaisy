@@ -13,8 +13,6 @@ class Test_DaisyTest(unittest.TestCase):
         self.assertEqual(4.8, try_cast_float('4.8'))
         self.assertEqual(4, try_cast_number('4'))
 
-
-
     def test_daisyModel(self):
         """
         Test on reading the Exercise01.dai file distributed with Daisy
@@ -39,16 +37,13 @@ class Test_DaisyTest(unittest.TestCase):
         else:
             self.assertEqual(0, status)
 
-        d.daisyexecutable='NotThere'
+        DaisyModel.path_to_daisy_executable='NotThere'
         self.assertFalse(d.daisy_installed())
         status = d.run()
         if  sys.version_info >= (3, 0):
             self.assertEqual(1, status.returncode)
         else:
             self.assertEqual(1, status)
-
-
-
 
         modelwitherror = DaisyModel(r'./../TestData/Exercise01_witherror.dai')
         status = modelwitherror.run()

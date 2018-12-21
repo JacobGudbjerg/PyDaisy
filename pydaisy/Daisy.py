@@ -429,13 +429,14 @@ class DaisyModel(object):
     """
     A class that reads a daisy input file (.dai-file)
     """
+    path_to_daisy_executable = r'C:\Program Files\Daisy 5.72\bin\Daisy.exe'
+
+
     def __init__(self, DaisyInputfile):
-        self.daisyexecutable = r'C:\Program Files\Daisy 5.72\bin\Daisy.exe'
         self._input=None
         self._starttime=None
         self._endtime=None
-        if platform.system()=='Linux':
-            self.daisyexecutable = r'/home/projects/cu_10095/apps/daisy/daisy'
+        
 
         self.DaisyInputfile =DaisyInputfile
 
@@ -500,7 +501,7 @@ class DaisyModel(object):
         """
         Returns true if it can find the daisy executable
         """
-        return os.path.isfile(self.daisyexecutable)
+        return os.path.isfile(DaisyModel.path_to_daisy_executable)
 
 
 
@@ -510,16 +511,16 @@ class DaisyModel(object):
         Remember to save first    
         """
         if not self.daisy_installed:
-            raise Exception('Daisy could not be found at: ' + self.daisyexecutable)
+            raise Exception('Daisy could not be found at: ' + self.path_to_daisy_executable)
 
         if platform.system()=='Linux':
             sys.stdout.flush()
-            return subprocess.call([self.daisyexecutable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], cwd = os.path.dirname(self.DaisyInputfile))
+            return subprocess.call([DaisyModel.path_to_daisy_executable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], cwd = os.path.dirname(self.DaisyInputfile))
         else:
             if  sys.version_info >= (3, 0):
-                return subprocess.run([self.daisyexecutable, os.path.abspath(self.DaisyInputfile)], shell=True)
+                return subprocess.run([DaisyModel.path_to_daisy_executable, os.path.abspath(self.DaisyInputfile)], shell=True)
             else:
-                return subprocess.call([self.daisyexecutable, os.path.abspath(self.DaisyInputfile)], shell=True)
+                return subprocess.call([DaisyModel.path_to_daisy_executable, os.path.abspath(self.DaisyInputfile)], shell=True)
 
 
 class DaisyModelStatus(Enum):
@@ -574,6 +575,7 @@ def run_sub_folders(MotherFolder, DaisyFileName, MaxBatchSize=5000, NumberOfProc
     """
     Runs all the Daisy simulations found below the MotherFolder
     """
+
     DaisyFiles=[]
     Continue=True
     Alreadyrun=[]
