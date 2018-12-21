@@ -431,6 +431,9 @@ class DaisyModel(object):
     """
     def __init__(self, DaisyInputfile):
         self.daisyexecutable = r'C:\Program Files\Daisy 5.72\bin\Daisy.exe'
+        self._input=None
+        self._starttime=None
+        self._endtime=None
         if platform.system()=='Linux':
             self.daisyexecutable = r'/home/projects/cu_10095/apps/daisy/daisy'
 
