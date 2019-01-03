@@ -7,6 +7,7 @@ import sys
 import pandas as pd
 import numpy as np
 import csv
+import errno
 import os
 import zipfile
 import copy
@@ -43,6 +44,9 @@ def is_number(value):
     except ValueError:
         return False
 
+def check_if_file_exists(filename):
+    if not os.path.exists(filename):
+        raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), os.path.abspath( filename))
 
 
 class DaisyDlf(object):
@@ -51,6 +55,7 @@ class DaisyDlf(object):
     Can read directly from a zipped archive
     """
     def __init__(self, DlfFileName, ZipFileName=''):
+        check_if_file_exists(DlfFileName)
         self.DlfFileName = DlfFileName
         self.Description=''
         self.HeaderItems={}
