@@ -2,7 +2,7 @@ dlf-0.0 -- harvest
 
 VERSION: 5.72
 LOGFILE: harvest.dlf
-RUN: Fri Dec 21 13:37:18 2018
+RUN: Thu Jan 03 13:23:15 2019
 
 SIMFILE: C:\GitHub\PyDaisy\TestData\Exercise01_saved.dai
 SIM: Spring Barley; Soil: Fine sandy loam; Weather: Taastrup

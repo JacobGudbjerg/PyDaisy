@@ -1,6 +1,7 @@
 """
 Various helper classes to read and manipulate Daisy input and output files.
 """
+from __future__ import print_function
 import subprocess
 import platform
 import sys
@@ -44,9 +45,11 @@ def is_number(value):
     except ValueError:
         return False
 
-def check_if_file_exists(filename):
-    if not os.path.exists(filename):
-        raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), os.path.abspath( filename))
+def ensure_dir(file_path):
+    directory = os.path.dirname(file_path)
+    if directory!='':
+        if not os.path.exists(directory):
+            os.makedirs(directory)
 
 
 class DaisyDlf(object):
@@ -55,7 +58,6 @@ class DaisyDlf(object):
     Can read directly from a zipped archive
     """
     def __init__(self, DlfFileName, ZipFileName=''):
-        check_if_file_exists(DlfFileName)
         self.DlfFileName = DlfFileName
         self.Description=''
         self.HeaderItems={}
@@ -597,10 +599,11 @@ def run_sub_folders(MotherFolder, DaisyFileName, MaxBatchSize=5000, NumberOfProc
                 try: 
                     workdir = os.path.join(root, d)
                     DaisyFile = os.path.join(workdir, DaisyFileName)
-                    if UseStatusFiles: #This will fail if the "NotRun" file is not there
-                        Notrun=os.path.join(workdir, DaisyModelStatus.NotRun.name)
-                        InQueue =os.path.join(workdir,DaisyModelStatus.Queue.name)
-                        os.rename(Notrun,InQueue)
+                    if UseStatusFiles: 
+                        Notrun = os.path.join(workdir, DaisyModelStatus.NotRun.name)
+                        InQueue = os.path.join(workdir, DaisyModelStatus.Queue.name)
+                        #This will fail if the "NotRun" file is not there
+                        os.rename(Notrun, InQueue)
                     if DaisyFile not in Alreadyrun and os.path.isfile(DaisyFile):
                         DaisyFiles.append(os.path.join(workdir, DaisyFileName)) #Add the directory to the list of directories that needs to be simulated
                 except OSError: 
@@ -618,8 +621,3 @@ def run_sub_folders(MotherFolder, DaisyFileName, MaxBatchSize=5000, NumberOfProc
     else:
         run_many(DaisyFiles, NumberOfProcesses=NumberOfProcesses)
 
-def ensure_dir(file_path):
-    directory = os.path.dirname(file_path)
-    if directory!='':
-        if not os.path.exists(directory):
-            os.makedirs(directory)
