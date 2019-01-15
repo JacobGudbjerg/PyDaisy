@@ -25,7 +25,7 @@ class heatmap(object):
         self.grid_x, self.grid_y = np.mgrid[min(x_coordinates):max(x_coordinates):grid_nx, min(y_coordinates):max(y_coordinates):grid_ny]
         self.extent=[min(x_coordinates), max(x_coordinates), min(y_coordinates), max(y_coordinates)]
     
-    def plot(timestep=1):
+    def plot(self, timestep=1):
         grid_z0 = griddata(self.points, self.daisy_dlf.Data.values[timestep,:], (self.grid_x, self.grid_y), method='nearest')
         plt.clf()
         plt.imshow(grid_z0.T, self.extent, origin='lower') 
