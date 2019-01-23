@@ -92,6 +92,12 @@ class Test_DaisyTest(unittest.TestCase):
         Test on a 2d dlf file with soil water content
         """
 
+
+        dlf = DaisyDlf(r'./../TestData/tertiary-water-matrix.dlf')
+        self.assertEqual(8566, len(dlf.Data))
+
+
+
         dlf_harvest = DaisyDlf(r'./../TestData\DailyP-harvest.dlf')
 
 
@@ -115,6 +121,10 @@ class Test_DaisyTest(unittest.TestCase):
         dlf_harvest = DaisyDlf(r'./../TestData\harvest.dlf')
         self.assertEqual(4.86207, dlf_harvest.Data['stem_DM'][0])
         self.assertEqual('M5_2D', dlf_harvest.Data['column'][0])
+
+        dlf_harvest_i = DaisyDlf(r'./../TestData\harvest_incomplete.dlf')
+        self.assertEqual(6, len(dlf_harvest_i.Data))
+
 
     
 

@@ -132,7 +132,8 @@ class DaisyDlf(object):
                     else:
                         splitted = line.split('\t') #Splits on tab. This is necessary if one of the strings has spaces in it
 
-                    if len(splitted)==len(ColumnHeaders): #We need to make sure the line is complete
+#                    if len(splitted)==len(ColumnHeaders): #We need to make sure the line is complete
+                    if len(splitted)>DateTimeIndex: #We need to make sure the line is complete
                         if DateTimeIndex == 1: #Time is in a single column
                             TimeSteps.append(datetime.strptime(splitted[0], '%Y-%m-%dT%H:%M:%S'))
                         else: #Time is in multiple columns
@@ -150,7 +151,8 @@ class DaisyDlf(object):
 
         if len(raw)>0:
             #Create a dataframe to hold the data 
-            self.Data = pd.DataFrame(raw, columns=ColumnHeaders[DateTimeIndex:], index=TimeSteps)
+            self.Data = pd.DataFrame(raw,  index=TimeSteps)
+            self.Data.columns=ColumnHeaders[DateTimeIndex:DateTimeIndex+len(self.Data.columns)]
             #A trick to remove duplicate columns. Based on the header
             self.Data = self.Data.loc[:,~self.Data.columns.duplicated()]
 

@@ -1,22 +1,22 @@
 dwf-0.0 -- Sample _D_aisy _W_eather _F_ile.
-TAverage: 7.8 dgC
-Begin: 1962-04-01
-Elevation: 30 m
-NH4DryDep: 2.2 kgN/ha/year
-TAmplitude: 8.5 dgC
-Timestep: 0 hours
-MaxTDay: 209 yday
-NH4WetDep: 0.9 ppm
-NO3WetDep: 0.6 ppm
-Surface: reference
-Note: lines, all starting with `Note:'.
-ScreenHeight: 2.0 m
-End: 2001-10-07
 Station: Andeby
+Elevation: 30 m
 Longitude: 12 dgEast
 Latitude: 56 dgNorth
 TimeZone: 15 dgEast
+Surface: reference
+ScreenHeight: 2.0 m
+Begin: 1962-04-01
+End: 2001-10-07
+Timestep: 0 hours
+Note: lines, all starting with `Note:'.
+NH4WetDep: 0.9 ppm
+NH4DryDep: 2.2 kgN/ha/year
+NO3WetDep: 0.6 ppm
 NO3DryDep: 1.1 kgN/ha/year
+TAverage: 7.8 dgC
+TAmplitude: 8.5 dgC
+MaxTDay: 209 yday
 ------------------------------------------------------------------------------
 Year	Month	Day	GlobRad	AirTemp	Precip	RefEvap
 year	month	mday	W/m^2	dgC	mm/d	mm/d
