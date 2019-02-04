@@ -519,7 +519,7 @@ class DaisyModel(object):
         Calls the Daisy executable and runs the simulation.
         Remember to save first    
         """
-        if not self.daisy_installed:
+        if not self.daisy_installed():
             raise Exception('Daisy could not be found at: ' + self.path_to_daisy_executable)
 
         if platform.system()=='Linux':
@@ -527,9 +527,9 @@ class DaisyModel(object):
             return subprocess.call([DaisyModel.path_to_daisy_executable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], cwd = os.path.dirname(self.DaisyInputfile))
         else:
             if  sys.version_info >= (3, 0):
-                return subprocess.run([DaisyModel.path_to_daisy_executable, os.path.abspath(self.DaisyInputfile)], shell=True)
+                return subprocess.run([DaisyModel.path_to_daisy_executable, os.path.split(self.DaisyInputfile)[1]], cwd= os.path.dirname(self.DaisyInputfile), shell=False)
             else:
-                return subprocess.call([DaisyModel.path_to_daisy_executable, os.path.abspath(self.DaisyInputfile)], shell=True)
+                return subprocess.call([DaisyModel.path_to_daisy_executable, os.path.split(self.DaisyInputfile)[1]], cwd= os.path.dirname(self.DaisyInputfile), shell=False)
 
 
 class DaisyModelStatus(Enum):

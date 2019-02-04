@@ -37,13 +37,6 @@ class Test_DaisyTest(unittest.TestCase):
         else:
             self.assertEqual(0, status)
 
-        DaisyModel.path_to_daisy_executable='NotThere'
-        self.assertFalse(d.daisy_installed())
-        status = d.run()
-        if  sys.version_info >= (3, 0):
-            self.assertEqual(1, status.returncode)
-        else:
-            self.assertEqual(1, status)
 
         modelwitherror = DaisyModel(r'./../TestData/Exercise01_witherror.dai')
         status = modelwitherror.run()
@@ -52,12 +45,12 @@ class Test_DaisyTest(unittest.TestCase):
         else:
             self.assertEqual(1, status)
 
-
-
-
         #test that we do not have to provide a path
         samedir = DaisyModel('Exercise01.dai')
         samedir.save()
+
+        DaisyModel.path_to_daisy_executable='NotThere'
+        self.assertFalse(d.daisy_installed())
 
 
 

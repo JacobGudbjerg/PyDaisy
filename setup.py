@@ -14,7 +14,7 @@ else:
 
 setup(
     name='pydaisy',
-    version='0.2.2',
+    version='0.2.4',
     description=('Various helper classes to read and manipulate Daisy input and output files.'),
     long_description=long_description,
     long_description_content_type='text/markdown',

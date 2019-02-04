@@ -2,12 +2,5 @@ dlf-0.0 -- harvest
 
 VERSION: 5.72
 LOGFILE: harvest.dlf
-RUN: Wed Jan 23 12:34:17 2019
+RUN: Mon Feb 04 14:52:08 2019
 
-SIMFILE: C:\GitHub\PyDaisy\TestData\Exercise01_saved.dai
-SIM: Spring Barley; Soil: Fine sandy loam; Weather: Taastrup
-
---------------------
-year	month	day	column	crop	stem_DM	dead_DM	leaf_DM	sorg_DM	stem_N	dead_N	leaf_N	sorg_N	WStress	NStress	WP_ET	HI
-					Mg DM/ha	Mg DM/ha	Mg DM/ha	Mg DM/ha	kg N/ha	kg N/ha	kg N/ha	kg N/ha	d	d	kg/m^3	
-1993	8	9	Fine sandy loam	Spring Barley	4.7001	0.393418	0.192449	4.05392	39.6095	2.43022	5.01685	99.3387	7.05754	2.79316	1.83107	0.391556
