@@ -514,22 +514,26 @@ class DaisyModel(object):
 
 
 
-    def run(self):
+    def run(self, timeout=None):
         """
         Calls the Daisy executable and runs the simulation.
-        Remember to save first    
+        Remember to save first
+        timeout is in seconds
         """
         if not self.daisy_installed():
             raise Exception('Daisy could not be found at: ' + self.path_to_daisy_executable)
 
-        if platform.system()=='Linux':
-            sys.stdout.flush()
-            return subprocess.call([DaisyModel.path_to_daisy_executable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], cwd = os.path.dirname(self.DaisyInputfile))
-        else:
-            if  sys.version_info >= (3, 0):
-                return subprocess.run([DaisyModel.path_to_daisy_executable, os.path.split(self.DaisyInputfile)[1]], cwd= os.path.dirname(self.DaisyInputfile), shell=False)
+        try:
+            if platform.system()=='Linux':
+                sys.stdout.flush()
+                return subprocess.call([DaisyModel.path_to_daisy_executable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], timeout=timeout, cwd = os.path.dirname(self.DaisyInputfile))
             else:
-                return subprocess.call([DaisyModel.path_to_daisy_executable, os.path.split(self.DaisyInputfile)[1]], cwd= os.path.dirname(self.DaisyInputfile), shell=False)
+                if  sys.version_info >= (3, 0):
+                    return subprocess.run([DaisyModel.path_to_daisy_executable, os.path.split(self.DaisyInputfile)[1]], timeout=timeout, cwd= os.path.dirname(self.DaisyInputfile), shell=False)
+                else:
+                    return subprocess.call([DaisyModel.path_to_daisy_executable, os.path.split(self.DaisyInputfile)[1]], timeout=timeout, cwd= os.path.dirname(self.DaisyInputfile), shell=False)
+        except subprocess.TimeoutExpired:
+            return -1
 
 
 class DaisyModelStatus(Enum):

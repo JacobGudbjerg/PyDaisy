@@ -37,6 +37,10 @@ class Test_DaisyTest(unittest.TestCase):
         else:
             self.assertEqual(0, status)
 
+        status = d.run(1)
+        self.assertEqual(-1, status)
+
+
 
         modelwitherror = DaisyModel(r'./../TestData/Exercise01_witherror.dai')
         status = modelwitherror.run()
