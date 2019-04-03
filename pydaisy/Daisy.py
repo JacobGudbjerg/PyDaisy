@@ -14,7 +14,8 @@ import zipfile
 import copy
 from enum import Enum
 from datetime import datetime, timedelta
-from multiprocessing import Pool
+from multiprocessing import Pool, Value
+import uuid
 
 
 def try_cast_number(value):
@@ -64,6 +65,7 @@ class DaisyDlf(object):
         self.__starttimeset=False
         self.__numpydata = np.array([])
         self.__tab_and_space_delimiter=True
+        self.Data = pd.DataFrame()
         filename, file_extension = os.path.splitext(DlfFileName)
 
         if ZipFileName!='':
@@ -270,6 +272,8 @@ class DaisyDlf(object):
 
 
                 
+
+            
 class DaisyEntry(object):
     def __init__(self, Keyword, Words):
         self.Keyword = Keyword
@@ -281,6 +285,9 @@ class DaisyEntry(object):
         
     def __str__(self):
         return self.Keyword
+
+    def __repr__(self):
+        return 'DaisyEntry ('+ self.Keyword +')'
     
     def read(self, sr):
         keywordread = False
@@ -445,8 +452,6 @@ class DaisyModel(object):
         self._input=None
         self._starttime=None
         self._endtime=None
-        
-
         self.DaisyInputfile =DaisyInputfile
 
 
@@ -550,20 +555,30 @@ def run_single(FileNames):
     """        
     workdir = os.path.dirname(FileNames[0])
 
+    uniquelogfilename = os.path.join(workdir, 'run_' + str(uuid.uuid4()) + '.log')
+    with open(uniquelogfilename, "w") as text_file:
+        text_file.write(str(datetime.now()) + ': model run started\n')
+
     try:
         if len(FileNames)>1:
-            os.rename(os.path.join(workdir, FileNames[1]), os.path.join(workdir, FileNames[2]))
+            f1 = os.path.join(workdir, FileNames[1])
+            f2 = os.path.join(workdir, FileNames[2])
+            os.rename(f1, f2)
         dm = DaisyModel(FileNames[0])
         modelrun=dm.run()
+        with open(uniquelogfilename, "a") as text_file:
+            text_file.write(str(datetime.now()) + ': model run finished with return code: ' + str(modelrun)+'\n')
         if len(FileNames)>1:
             if modelrun==0:
-                os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir, FileNames[3] ))
+                os.rename(f2, os.path.join(workdir, FileNames[3] ))
             else:
-                os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir, DaisyModelStatus.Failed.name ))
+                os.rename(f2, os.path.join(workdir, DaisyModelStatus.Failed.name ))
     except: 
         if len(FileNames)>1:
-            os.rename(os.path.join(workdir,FileNames[2]), os.path.join(workdir,  DaisyModelStatus.Failed.name ))
+            os.rename(f2, os.path.join(workdir,  DaisyModelStatus.Failed.name ))
         modelrun=1
+        with open(uniquelogfilename, "a") as text_file:
+            text_file.write(str(datetime.now()) + ': model run failed\n')
         pass    
     return modelrun
 

@@ -17,6 +17,9 @@ class Test_DaisyTest(unittest.TestCase):
         """
         Test on reading the Exercise01.dai file distributed with Daisy
         """
+
+        DaisyModel.path_to_daisy_executable=r'C:\Program Files\Daisy 5.72\bin\Daisy.exe'
+
         d= DaisyModel(r'./../TestData/Exercise01.dai')
         self.assertEqual(17, len(d.Input.Children))
         self.assertEqual(1993, d.starttime.time.year)
@@ -57,6 +60,9 @@ class Test_DaisyTest(unittest.TestCase):
         self.assertFalse(d.daisy_installed())
 
 
+
+    def test_RunSubFolders(self):
+        run_sub_folders(r'./../TestData/subfolders','Exercise01.dai')
 
 
 
@@ -122,6 +128,8 @@ class Test_DaisyTest(unittest.TestCase):
         dlf_harvest_i = DaisyDlf(r'./../TestData\harvest_incomplete.dlf')
         self.assertEqual(6, len(dlf_harvest_i.Data))
 
+        dlf_harvest_i = DaisyDlf(r'./../TestData\harvest_NoData.dlf')
+        self.assertEqual(0, len(dlf_harvest_i.Data))
 
     
 
