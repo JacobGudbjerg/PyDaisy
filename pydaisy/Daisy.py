@@ -249,7 +249,7 @@ class DaisyDlf(object):
         self.__setStartTime()
         self.HeaderItems['Begin']=self.Data.index[0].strftime('%Y-%m-%d')
         self.HeaderItems['End']=self.Data.index[len(self.Data.index)-1].strftime('%Y-%m-%d')
-        self.HeaderItems['Timestep']= str(self.timestep.components.hours) + ' hours'
+        self.HeaderItems['Timestep']= str(self.timestep.total_seconds () / 3600) + ' hours'
         
 #        with codecs.open(FileName, encoding='utf-8', mode='w') as f:
         with open(FileName, 'w') as f:
