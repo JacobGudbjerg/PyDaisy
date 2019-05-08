@@ -2,6 +2,7 @@
 Various helper classes to read and manipulate Daisy input and output files.
 """
 from __future__ import print_function
+from __future__ import division
 import subprocess
 import platform
 import sys
@@ -53,6 +54,55 @@ def ensure_dir(file_path):
             os.makedirs(directory)
 
 
+
+class FixedTimeStepIndexer(object):
+
+    def __init__(self, time_steps):
+        self.time_steps = time_steps
+        self.__starttimeset =False
+        self._timestep=None
+
+    def __setStartTime(self):
+        """
+        Sets starttime and timestep if times are equidistant
+        """
+        if isinstance(self.time_steps[0], pd.Period):
+            self.startTime = self.time_steps[0].start_time.to_pydatetime()
+            self._timestep = self.time_steps[1].start_time.to_pydatetime() - self.startTime
+        else:
+            self.startTime = self.time_steps[0]
+            self._timestep = self.time_steps[1]- self.time_steps[0]
+        self.__starttimeset =True
+
+    def get_index(self, Timestep):
+        """
+        Gets the index of a timestep. This method is fast if the timesteps are equidistant
+        """
+        if not self.__starttimeset:
+            self.__setStartTime()
+
+        if self.timestep != None:
+            return int( (Timestep-self.startTime).total_seconds()/self.timestep.total_seconds())
+        else:
+            return self.Data.index.get_loc(Timestep)
+
+    @property 
+    def timestep(self):
+        if not self._timestep:
+            self.__setStartTime()
+        return self._timestep 
+
+
+    def validate(self):
+        """
+        Validates that all the time steps have the same distance
+        """
+        for i in range(1, len(self.time_steps)):
+            if self.timestep != self.time_steps[i]- self.time_steps[i-1]:
+                self.timestep = None
+                return false
+        return True
+
 class DaisyDlf(object):
     """
     Reads a Daisy .dlf- or .dwf-file.
@@ -62,7 +112,6 @@ class DaisyDlf(object):
         self.DlfFileName = DlfFileName
         self.Description=''
         self.HeaderItems={}
-        self.__starttimeset=False
         self.__numpydata = np.array([])
         self.__tab_and_space_delimiter=True
         self.Data = pd.DataFrame()
@@ -173,31 +222,14 @@ class DaisyDlf(object):
            self.Data.columns=ColumnHeaders[DateTimeIndex:DateTimeIndex+len(self.Data.columns)]
             #A trick to remove duplicate columns. Based on the header
            self.Data = self.Data.loc[:,~self.Data.columns.duplicated()]
+           self._time_indexer = FixedTimeStepIndexer(self.Data.index)
 
-    def __setStartTime(self):
-        """
-        Sets starttime and timestep if times are equidistant
-        """
-        self.startTime = self.Data.index[0]
-        self.timestep = self.Data.index[1]- self.Data.index[0]
-
-        for i in range(1, len(self.Data.index)):
-            if self.timestep != self.Data.index[i]- self.Data.index[i-1]:
-                self.timestep=None
-                break
-        self.__starttimeset =True
 
     def get_index(self, Timestep):
         """
         Gets the index of a timestep. This method is fast if the timesteps are equidistant
         """
-        if not self.__starttimeset:
-            self.__setStartTime()
-
-        if self.timestep != None:
-            return int( (Timestep-self.startTime).total_seconds()/self.timestep.total_seconds())
-        else:
-            return self.Data.index.get_loc(Timestep)
+        return self._time_indexer.get_index(Timestep)
 
 
     @property
@@ -246,10 +278,9 @@ class DaisyDlf(object):
         Only writes daily and hourly values
         """        
         #Make sure timestep is set
-        self.__setStartTime()
         self.HeaderItems['Begin']=self.Data.index[0].strftime('%Y-%m-%d')
         self.HeaderItems['End']=self.Data.index[len(self.Data.index)-1].strftime('%Y-%m-%d')
-        self.HeaderItems['Timestep']= str(self.timestep.total_seconds () / 3600) + ' hours'
+        self.HeaderItems['Timestep']= str(self._time_indexer.timestep.total_seconds () / 3600.0) + ' hours'
         
 #        with codecs.open(FileName, encoding='utf-8', mode='w') as f:
         with open(FileName, 'w') as f:
@@ -261,7 +292,7 @@ class DaisyDlf(object):
 
             f.write('------------------------------------------------------------------------------\n')
             f.write('Year\tMonth\tDay')
-            if(self.timestep==pd.to_timedelta(1, unit="H")):
+            if(self._time_indexer.timestep==pd.to_timedelta(1, unit="H")):
                 f.write('\tHour')
             
             for cu in self.Data.columns:
@@ -270,7 +301,7 @@ class DaisyDlf(object):
             f.write('\n')
 
             f.write('year\tmonth\tmday')
-            if(self.timestep==pd.to_timedelta(1, unit="H")):
+            if(self._time_indexer.timestep==pd.to_timedelta(1, unit="H")):
                 f.write('\thour')
 
             for cu in self.ColumnUnits:
@@ -279,7 +310,7 @@ class DaisyDlf(object):
             f.write('\n')
 
             date_format='%Y\t%m\t%d'
-            if(self.timestep==pd.to_timedelta(1, unit="H")):
+            if(self._time_indexer.timestep==pd.to_timedelta(1, unit="H")):
                 date_format='%Y\t%m\t%d\t%H'
             
             
