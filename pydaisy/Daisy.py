@@ -88,7 +88,7 @@ class FixedTimeStepIndexer(object):
 
     @property 
     def timestep(self):
-        if not self._timestep:
+        if not self.__starttimeset:
             self.__setStartTime()
         return self._timestep 
 
@@ -99,8 +99,8 @@ class FixedTimeStepIndexer(object):
         """
         for i in range(1, len(self.time_steps)):
             if self.timestep != self.time_steps[i]- self.time_steps[i-1]:
-                self.timestep = None
-                return false
+                self._timestep = None
+                return False
         return True
 
 class DaisyDlf(object):
