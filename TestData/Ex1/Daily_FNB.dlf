@@ -2,7 +2,7 @@ dlf-0.0 -- Field nitrogen (defined in 'log-std.dai').
 
 VERSION: 5.72
 LOGFILE: Daily_FNB.dlf
-RUN: Wed May 08 15:15:49 2019
+RUN: Tue May 14 13:52:22 2019
 
 COLUMN: *
 INTERVAL: box [-100; none]

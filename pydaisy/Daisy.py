@@ -82,9 +82,9 @@ class FixedTimeStepIndexer(object):
             self.__setStartTime()
 
         if self.timestep != None:
-            return int( (Timestep-self.startTime).total_seconds()/self.timestep.total_seconds())
+            return int(round( (Timestep-self.startTime).total_seconds()/self.timestep.total_seconds(),0))
         else:
-            return self.Data.index.get_loc(Timestep)
+            return self.time_steps.get_loc(Timestep)
 
     @property 
     def timestep(self):

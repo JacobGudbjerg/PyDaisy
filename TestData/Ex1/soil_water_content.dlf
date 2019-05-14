@@ -2,7 +2,7 @@ dlf-0.0 -- Soil Water Content (defined in 'log.dai').
 
 VERSION: 5.72
 LOGFILE: soil_water_content.dlf
-RUN: Wed May 08 15:15:49 2019
+RUN: Tue May 14 13:52:22 2019
 
 COLUMN: *
 INTERVAL: box none
