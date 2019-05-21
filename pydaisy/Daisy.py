@@ -492,7 +492,7 @@ class DaisyModel(object):
     """
     A class that reads a daisy input file (.dai-file)
     """
-    path_to_daisy_executable = r'C:\Program Files\Daisy 5.72\bin\Daisy.exe'
+    path_to_daisy_executable = r'C:\Program Files (x86)\Daisy 5.83\bin\Daisy.exe'
 
 
     def __init__(self, DaisyInputfile):
@@ -612,6 +612,10 @@ def run_single(FileNames):
             f2 = os.path.join(workdir, FileNames[2])
             os.rename(f1, f2)
         dm = DaisyModel(FileNames[0])
+        if not dm.daisy_installed():
+            with open(uniquelogfilename, "w") as text_file:
+                text_file.write(str(datetime.now()) + ': Could not find Daisy at: '+ DaisyModel.path_to_daisy_executable + '\n')
+
         modelrun=dm.run()
         with open(uniquelogfilename, "a") as text_file:
             text_file.write(str(datetime.now()) + ': model run finished with return code: ' + str(modelrun)+'\n')
@@ -645,6 +649,75 @@ def run_many(DaisyFiles, NumberOfProcesses=6, Queue='', Running= DaisyModelStatu
             FileNamesList.append([f])
     pp.map(run_single, FileNamesList)
     pp.terminate()
+
+def run_sub_folders2(MotherFolder, DaisyFileName, DaisyExecutabl, NumberOfProcesses=6, recursive=False):
+    """
+    Runs all the Daisy simulations found below the MotherFolder
+    """
+    pp = Pool(NumberOfProcesses)
+    input=[]
+    for i in range(NumberOfProcesses):
+        input.append( (MotherFolder, DaisyFileName, DaisyExecutabl, i, recursive, None)  )
+    pp.starmap(run_single2, input)
+    pp.terminate()
+
+
+def set_model_run_status(workdir, status):
+    for file in DaisyModelStatus:
+        try:
+            os.remove(os.path.join(workdir,file.name))
+        except OSError:
+            pass
+    open(os.path.join(workdir, status.name), 'a').close()
+
+
+
+def run_single2(MotherFolder, DaisyFileName, DaisyExecutablePath, delay = 0, recursive=False, timeout=None):
+    """
+    Runs a single simulation and continues until there are no more with status NotRun. The delay is used only once and should be set to avoid race conditions.
+    """
+    Continue=True
+    import time
+    time.sleep(delay)
+    
+    while (Continue):
+        Continue=False
+        if recursive:
+            items = os.walk(MotherFolder)
+        else:
+            items = [next(os.walk(MotherFolder))]
+
+        for root, dirs, filenames in items:
+            for d in dirs:
+                try: 
+                    workdir = os.path.join(root, d)
+                    DaisyFile = os.path.join(workdir, DaisyFileName)
+                    Notrun = os.path.join(workdir, DaisyModelStatus.NotRun.name)
+                    Running = os.path.join(workdir, DaisyModelStatus.Running.name)
+                    #This will fail if the "NotRun" file is not there
+                    os.rename(Notrun, Running)
+
+                    uniquelogfilename = os.path.join(workdir, 'run_' + str(uuid.uuid4()) + '.log')
+                    with open(uniquelogfilename, "w") as text_file:
+                        text_file.write(str(datetime.now()) + ': model run started\n')
+
+                    DaisyModel.path_to_daisy_executable = DaisyExecutablePath
+                    dm = DaisyModel(DaisyFile)
+                    if not dm.daisy_installed():
+                        with open(uniquelogfilename, "a") as text_file:
+                            text_file.write(str(datetime.now()) + ': Could not find Daisy at: '+ DaisyModel.path_to_daisy_executable + '\n')
+                    modelrun=dm.run(timeout)
+                    with open(uniquelogfilename, "a") as text_file:
+                        text_file.write(str(datetime.now()) + ': model run finished with return code: ' + str(modelrun)+'\n')
+                    if modelrun.returncode==0:
+                        os.rename(Running, os.path.join(workdir, DaisyModelStatus.Done.name ))
+                    else:
+                        with open(uniquelogfilename, "a") as text_file:
+                            text_file.write(str(datetime.now()) + ': model run failed\n')
+                        os.rename(Running, os.path.join(workdir, DaisyModelStatus.Failed.name))
+                    Continue=True #After the simulation have finished loop all dirs once more
+                except OSError: 
+                    pass
     
 def run_sub_folders(MotherFolder, DaisyFileName, MaxBatchSize=5000, NumberOfProcesses=6, UseStatusFiles=False, recursive=False):
     """

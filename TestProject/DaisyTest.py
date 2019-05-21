@@ -65,6 +65,14 @@ class Test_DaisyTest(unittest.TestCase):
         run_sub_folders(r'./../TestData/subfolders','Exercise01.dai')
 
 
+    def test_RunSubFolders2(self):
+        set_model_run_status
+        items = [next(os.walk(r'./../TestData/subfolders'))]
+        for root, dirs, filenames in items:
+            for d in dirs:
+                set_model_run_status(os.path.join(root, d), DaisyModelStatus.NotRun)
+        run_sub_folders2(r'./../TestData/subfolders','Exercise01.dai', r'C:\Program Files (x86)\Daisy 5.83\bin\Daisy.exe')
+
 
     #Taastrup weather file
     def test_daisyweatherfile(self):
