@@ -170,7 +170,7 @@ class DaisyDlf(object):
                 SectionIndex=SectionIndex+1
                 continue
             elif (SectionIndex == 3): #Column units. This may be an empty line 
-                self.column_units= dict(zip(ColumnHeaders, line.split('\t')[DateTimeIndex:]))
+                self.column_units= dict(zip(ColumnHeaders[DateTimeIndex:], line.split('\t')[DateTimeIndex:]))
                 SectionIndex=SectionIndex+1
                 continue
             elif (SectionIndex == 4 and line): #Data
