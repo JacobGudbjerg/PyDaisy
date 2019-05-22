@@ -170,7 +170,7 @@ class DaisyDlf(object):
                 SectionIndex=SectionIndex+1
                 continue
             elif (SectionIndex == 3): #Column units. This may be an empty line 
-                self.ColumnUnits=line.split('\t')[DateTimeIndex:]
+                self.column_units= dict(zip(ColumnHeaders, line.split('\t')[DateTimeIndex:]))
                 SectionIndex=SectionIndex+1
                 continue
             elif (SectionIndex == 4 and line): #Data
@@ -304,9 +304,9 @@ class DaisyDlf(object):
             if(self._time_indexer.timestep==pd.to_timedelta(1, unit="H")):
                 f.write('\thour')
 
-            for cu in self.ColumnUnits:
+            for k,v in self.column_units.items():
                 f.write('\t')
-                f.write(cu)
+                f.write(v)
             f.write('\n')
 
             date_format='%Y\t%m\t%d'

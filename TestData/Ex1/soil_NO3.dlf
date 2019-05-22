@@ -2,7 +2,7 @@ dlf-0.0 -- Soil NO3 Concentration (defined in 'log.dai').
 
 VERSION: 5.72
 LOGFILE: soil_NO3.dlf
-RUN: Tue May 21 12:59:10 2019
+RUN: Wed May 22 12:11:25 2019
 
 COLUMN: *
 INTERVAL: box none

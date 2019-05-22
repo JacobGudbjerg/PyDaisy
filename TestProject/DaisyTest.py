@@ -107,6 +107,9 @@ class Test_DaisyTest(unittest.TestCase):
         dlf = DaisyDlf(r'./../TestData/tertiary-water-matrix.dlf')
         self.assertEqual(8566, len(dlf.Data))
 
+        self.assertEqual('cm', dlf.column_units['water_height'])
+
+        self.assertEqual('cm', dlf.column_units[dlf.Data.columns[0]])
 
 
         dlf_harvest = DaisyDlf(r'./../TestData\DailyP-harvest.dlf')
