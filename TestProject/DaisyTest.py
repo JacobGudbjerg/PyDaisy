@@ -66,7 +66,6 @@ class Test_DaisyTest(unittest.TestCase):
 
 
     def test_RunSubFolders2(self):
-        set_model_run_status
         items = [next(os.walk(r'./../TestData/subfolders'))]
         for root, dirs, filenames in items:
             for d in dirs:
