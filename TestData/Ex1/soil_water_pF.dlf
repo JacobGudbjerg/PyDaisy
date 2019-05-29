@@ -2,7 +2,7 @@ dlf-0.0 -- Soil Water Potential (pF) (defined in 'log.dai').
 
 VERSION: 5.72
 LOGFILE: soil_water_pF.dlf
-RUN: Wed May 22 13:38:56 2019
+RUN: Wed May 29 12:33:54 2019
 
 COLUMN: *
 INTERVAL: box none

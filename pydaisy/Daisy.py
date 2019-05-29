@@ -578,7 +578,10 @@ class DaisyModel(object):
         try:
             if platform.system()=='Linux':
                 sys.stdout.flush()
-                return subprocess.call([DaisyModel.path_to_daisy_executable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], timeout=timeout, cwd = os.path.dirname(self.DaisyInputfile))
+                if  sys.version_info >= (3, 0):
+                    return subprocess.run([DaisyModel.path_to_daisy_executable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], timeout=timeout, cwd = os.path.dirname(self.DaisyInputfile))
+                else:
+                    return subprocess.call([DaisyModel.path_to_daisy_executable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], timeout=timeout, cwd = os.path.dirname(self.DaisyInputfile))
             else:
                 if  sys.version_info >= (3, 0):
                     return subprocess.run([DaisyModel.path_to_daisy_executable, os.path.split(self.DaisyInputfile)[1]], timeout=timeout, cwd= os.path.dirname(self.DaisyInputfile), shell=False)
@@ -713,7 +716,13 @@ def run_single2(MotherFolder, DaisyFileName, DaisyExecutablePath, delay = 0, rec
                     modelrun=dm.run(timeout)
                     with open(uniquelogfilename, "a") as text_file:
                         text_file.write(str(datetime.now()) + ': model run finished with return code: ' + str(modelrun)+'\n')
-                    if modelrun.returncode==0:
+                    #In Python 2 we get an integer returned
+                    if isinstance(modelrun, int):
+                        returncode = modelrun
+                    else:
+                        returncode =modelrun.returncode
+
+                    if returncode==0:
                         os.rename(Running, os.path.join(workdir, DaisyModelStatus.Done.name ))
                     else:
                         with open(uniquelogfilename, "a") as text_file:
