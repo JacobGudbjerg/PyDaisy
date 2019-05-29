@@ -662,13 +662,17 @@ def run_sub_folders2(MotherFolder, DaisyFileName, DaisyExecutabl, NumberOfProces
     pp.terminate()
 
 
-def set_model_run_status(workdir, status):
-    for file in DaisyModelStatus:
-        try:
-            os.remove(os.path.join(workdir,file.name))
-        except OSError:
-            pass
-    open(os.path.join(workdir, status.name), 'a').close()
+def set_model_run_status(MotherFolder, status):
+    items = [next(os.walk(MotherFolder))]
+    for root, dirs, filenames in items:
+        for d in dirs:
+            workdir = os.path.join(root, d)
+            for file in DaisyModelStatus:
+                try:
+                    os.remove(os.path.join(workdir,file.name))
+                except OSError:
+                    pass
+            open(os.path.join(workdir, status.name), 'a').close()
 
 
 
