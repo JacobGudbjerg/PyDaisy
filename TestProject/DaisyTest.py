@@ -97,10 +97,15 @@ class Test_DaisyTest(unittest.TestCase):
         self.assertEqual(0, dwf2.get_index(datetime(1962,1,1)))
         self.assertEqual(1, dwf2.get_index(datetime(1962,1,1,1)))
 
+    def test_temp(self):
+        dlf = DaisyDlf(r'I:\SCIENCE-PLEN-PESTCAST\Upscaling\DaisyFiles\SB\600\daily_DFF SB.dlf', FixedTimeStep=False)
+
     def test_daisyDlfFile(self):
         """
         Test on a 2d dlf file with soil water content
         """
+
+
 
 
         dlf = DaisyDlf(r'./../TestData/tertiary-water-matrix.dlf')

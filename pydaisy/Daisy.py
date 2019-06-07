@@ -67,10 +67,10 @@ class FixedTimeStepIndexer(object):
         Sets starttime and timestep if times are equidistant
         """
         if isinstance(self.time_steps[0], pd.Period):
-            self.startTime = self.time_steps[0].start_time.to_pydatetime()
+            self._startTime = self.time_steps[0].start_time.to_pydatetime()
             self._timestep = self.time_steps[1].start_time.to_pydatetime() - self.startTime
         else:
-            self.startTime = self.time_steps[0]
+            self._startTime = self.time_steps[0]
             self._timestep = self.time_steps[1]- self.time_steps[0]
         self.__starttimeset =True
 
@@ -91,6 +91,12 @@ class FixedTimeStepIndexer(object):
         if not self.__starttimeset:
             self.__setStartTime()
         return self._timestep 
+
+    @property 
+    def startTime(self):
+        if not self.__starttimeset:
+            self.__setStartTime()
+        return self._startTime 
 
 
     def validate(self):
@@ -186,27 +192,19 @@ class DaisyDlf(object):
 
 #                    if len(splitted)==len(ColumnHeaders): #We need to make sure the line is complete
                     if len(splitted)>DateTimeIndex: #We need to make sure the line is complete
-                        if DateTimeIndex == 1: #Time is in a single column
-                            if FixedTimeStep:
-                                if DataIndex==0:
-                                    self.startTime = datetime.strptime(splitted[0], '%Y-%m-%dT%H:%M:%S')
-                                    TimeSteps.append(self.startTime)
-                                elif DataIndex==1:
+                        if FixedTimeStep:
+                            if DataIndex<2: #We only need two first timesteps
+                                if DateTimeIndex == 1: #Time is in a single column
                                     TimeSteps.append(datetime.strptime(splitted[0], '%Y-%m-%dT%H:%M:%S'))
-                                    self.timestep = TimeSteps[1]- TimeSteps[0]
-                                    self.__starttimeset=True
-#                                else:
-#                                    TimeSteps.append(self.startTime + self.timestep*DataIndex)
-                            else:
+                                else: #Time is in multiple columns
+                                    timedata = list(map(int, splitted[0:DateTimeIndex])) #First columns are time data
+                                    TimeSteps.append(pd.datetime(*timedata))
+                        else:
+                            if DateTimeIndex == 1: #Time is in a single column
                                 TimeSteps.append(datetime.strptime(splitted[0], '%Y-%m-%dT%H:%M:%S'))
-                        else: #Time is in multiple columns
-                            timedata = list(map(int, splitted[0:DateTimeIndex])) #First columns are time data
-                            if DateTimeIndex == 3:
-                                TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2]))
-                            elif DateTimeIndex == 4:   
-                                TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3]))
-                            elif DateTimeIndex == 5:
-                                TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
+                            else: #Time is in multiple columns
+                                timedata = list(map(int, splitted[0:DateTimeIndex])) #First columns are time data
+                                TimeSteps.append(pd.datetime(*timedata))
                         #Now data        
                         raw.append(map(try_cast_float , splitted[DateTimeIndex:]))
                         DataIndex+=1
@@ -215,14 +213,17 @@ class DaisyDlf(object):
 
         if len(raw)>0:
             #Create a dataframe to hold the data 
+           self._time_indexer = FixedTimeStepIndexer(TimeSteps)
            if FixedTimeStep:
-               self.Data = pd.DataFrame(raw,  index=pd.period_range(self.startTime, self.startTime + self.timestep*(len(raw)-1), freq= 'h'))
+               freq='D'
+               if (self._time_indexer.timestep.seconds==3600):
+                   freq= 'h'
+               self.Data = pd.DataFrame(raw,  index=pd.period_range(self._time_indexer.startTime, self._time_indexer.startTime + self._time_indexer.timestep*(len(raw)-1), freq= freq))
            else:
                self.Data = pd.DataFrame(raw,  index=TimeSteps)
            self.Data.columns=ColumnHeaders[DateTimeIndex:DateTimeIndex+len(self.Data.columns)]
             #A trick to remove duplicate columns. Based on the header
            self.Data = self.Data.loc[:,~self.Data.columns.duplicated()]
-           self._time_indexer = FixedTimeStepIndexer(self.Data.index)
 
 
     def get_index(self, Timestep):

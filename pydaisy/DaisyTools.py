@@ -16,7 +16,7 @@ class vanGenuchten(object):
 
     def thetaFun(self, psi):
         Se=(1+abs(psi*self.pars['alpha'])**self.pars['n'])**(-self.pars['m'])
-        Se[psi>=0]=1.
+#        Se[psi>=0]=1.
         return self.pars['thetaR']+(self.pars['thetaS']-self.pars['thetaR'])*Se
   
     def KFun(self, psi):
