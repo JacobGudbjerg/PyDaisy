@@ -167,9 +167,9 @@ class DaisyDlf(object):
                         self.SimFile = split[1].strip()
             elif SectionIndex == 2: #Column names
                 ColumnHeaders=line.split('\t')
-                if 'minute' in ColumnHeaders:
+                if 'minute' in [ch.lower() for ch in ColumnHeaders]:
                     DateTimeIndex=5
-                elif 'hour' in ColumnHeaders:
+                elif 'hour' in [ch.lower() for ch in ColumnHeaders]:
                     DateTimeIndex=4
                 elif 'Date' in ColumnHeaders:
                     DateTimeIndex=1

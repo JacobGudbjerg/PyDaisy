@@ -105,7 +105,8 @@ class Test_DaisyTest(unittest.TestCase):
         Test on a 2d dlf file with soil water content
         """
 
-
+        dutch = DaisyDlf(r'I:\SCIENCE-PLEN-PESTCAST\2_Optimization track\Optimization\weather_data\hourly_precip-cnz.dlf', FixedTimeStep=True)
+        self.assertTrue(dutch._time_indexer.validate())
 
 
         dlf = DaisyDlf(r'./../TestData/tertiary-water-matrix.dlf')
