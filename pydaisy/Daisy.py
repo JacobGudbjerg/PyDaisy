@@ -68,7 +68,7 @@ class FixedTimeStepIndexer(object):
         """
         if isinstance(self.time_steps[0], pd.Period):
             self._startTime = self.time_steps[0].start_time.to_pydatetime()
-            self._timestep = self.time_steps[1].start_time.to_pydatetime() - self.startTime
+            self._timestep = self.time_steps[1].start_time.to_pydatetime() - self._startTime
         else:
             self._startTime = self.time_steps[0]
             self._timestep = self.time_steps[1]- self.time_steps[0]
