@@ -53,7 +53,7 @@ class Test_DaisyTest(unittest.TestCase):
         samedir = DaisyModel('Exercise01.dai')
         samedir.save()
 
-        samedir._path_to_daisy_executable ='No folder'
+        samedir._lazy_path_to_daisy_executable = 'No folder'
         self.assertEqual(samedir.path_to_daisy_executable, 'No folder')
 
 

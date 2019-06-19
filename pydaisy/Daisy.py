@@ -534,7 +534,12 @@ class DaisyModel(object):
     """
     @lazy_property
     def path_to_daisy_executable(self):
-        self._lazy_path_to_daisy_executable = read_winreg()[0].executable
+        if platform.system()=='Windows':
+            self._lazy_path_to_daisy_executable = read_winreg()[0].executable
+        else:
+            self._lazy_path_to_daisy_executable = r'/home/projects/cu_10095/apps/daisy/daisy' #This is the path on computerome
+
+
         return self.path_to_daisy_executable
 
 
