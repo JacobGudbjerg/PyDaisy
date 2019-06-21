@@ -48,13 +48,17 @@ def is_number(value):
         return False
 
 def ensure_dir(file_path):
+    '''
+    Creates a directory if it does not already exist
+    '''
     directory = os.path.dirname(file_path)
     if directory!='':
         if not os.path.exists(directory):
             os.makedirs(directory)
 
 def lazy_property(fn):
-    '''Decorator that makes a property lazy-evaluated.
+    '''
+    Decorator that makes a property lazy-evaluated.
     '''
     attr_name = '_lazy_' + fn.__name__
 
@@ -65,8 +69,10 @@ def lazy_property(fn):
         return getattr(self, attr_name)
     return _lazy_property
 
-
 def read_winreg():
+    '''
+    Reads the Windows Registry database to find installed Daisy-version. Returns a list ordered by the version number descending
+    '''
     import winreg
     software_key=winreg.OpenKey(winreg.HKEY_CURRENT_USER, 'SOFTWARE')
     number_of_software=winreg.QueryInfoKey(software_key)[0]
@@ -538,25 +544,21 @@ class DaisyModel(object):
             self._lazy_path_to_daisy_executable = read_winreg()[0].executable
         else:
             self._lazy_path_to_daisy_executable = r'/home/projects/cu_10095/apps/daisy/daisy' #This is the path on computerome
-
-
         return self.path_to_daisy_executable
 
 
     def __init__(self, DaisyInputfile):
-        self._input=None
         self._starttime=None
         self._endtime=None
         self.DaisyInputfile =DaisyInputfile
 
 
-    @property 
+    @lazy_property 
     def Input(self): 
-        if not self._input: 
-            self._input = DaisyEntry('',[])
-            with open(self.DaisyInputfile,'r') as f:
-                self._input.read(f)
-        return self._input
+        self.lazy_input = DaisyEntry('',[])
+        with open(self.DaisyInputfile,'r') as f:
+            self.lazy_input.read(f)
+        return self.lazy_input
         
     @property
     def starttime(self):
