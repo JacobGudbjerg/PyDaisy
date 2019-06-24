@@ -699,6 +699,7 @@ def run_sub_folders2(MotherFolder, DaisyFileName, DaisyExecutabl, NumberOfProces
     """
     Runs all the Daisy simulations found below the MotherFolder
     """
+    print('Running ' + str(NumberOfProcesses) + 'parallel processes')
     pp = Pool(NumberOfProcesses)
     input=[]
     for i in range(NumberOfProcesses):
@@ -745,13 +746,12 @@ def run_single2(MotherFolder, DaisyFileName, DaisyExecutablePath, delay = 0, rec
                     Running = os.path.join(workdir, DaisyModelStatus.Running.name)
                     #This will fail if the "NotRun" file is not there
                     os.rename(Notrun, Running)
+                    dm = DaisyModel(DaisyFile)
+                    dm._lazy_path_to_daisy_executable = DaisyExecutablePath
 
                     uniquelogfilename = os.path.join(workdir, 'run_' + str(uuid.uuid4()) + '.log')
                     with open(uniquelogfilename, "w") as text_file:
-                        text_file.write(str(datetime.now()) + ': model run started\n')
-
-                    dm = DaisyModel(DaisyFile)
-                    dm._lazy_path_to_daisy_executable = DaisyExecutablePath
+                        text_file.write(str(datetime.now()) + ': model run started. Daisy-executable: '+ dm.path_to_daisy_executable +'\n')
                     modelrun=dm.run(timeout)
                     with open(uniquelogfilename, "a") as text_file:
                         text_file.write(str(datetime.now()) + ': model run finished with return code: ' + str(modelrun)+'\n')
