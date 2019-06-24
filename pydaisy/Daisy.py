@@ -751,7 +751,7 @@ def run_single2(MotherFolder, DaisyFileName, DaisyExecutablePath, delay = 0, rec
                         text_file.write(str(datetime.now()) + ': model run started\n')
 
                     dm = DaisyModel(DaisyFile)
-                    dm.path_to_daisy_executable = DaisyExecutablePath
+                    dm._lazy_path_to_daisy_executable = DaisyExecutablePath
                     modelrun=dm.run(timeout)
                     with open(uniquelogfilename, "a") as text_file:
                         text_file.write(str(datetime.now()) + ': model run finished with return code: ' + str(modelrun)+'\n')
@@ -769,6 +769,10 @@ def run_single2(MotherFolder, DaisyFileName, DaisyExecutablePath, delay = 0, rec
                         os.rename(Running, os.path.join(workdir, DaisyModelStatus.Failed.name))
                     Continue=True #After the simulation have finished loop all dirs once more
                 except OSError: 
+                    pass
+                except:
+                    with open(uniquelogfilename, "a") as text_file:
+                        text_file.write(str(datetime.now()) + ': model run failed\n')
                     pass
     
 def run_sub_folders(MotherFolder, DaisyFileName, MaxBatchSize=5000, NumberOfProcesses=6, UseStatusFiles=False, recursive=False):
