@@ -541,10 +541,10 @@ class DaisyModel(object):
     @lazy_property
     def path_to_daisy_executable(self):
         if platform.system()=='Windows':
-            self._lazy_path_to_daisy_executable = read_winreg()[0].executable
+            path_to_daisy_executable = read_winreg()[0].executable
         else:
-            self._lazy_path_to_daisy_executable = r'/home/projects/cu_10095/apps/daisy/daisy' #This is the path on computerome
-        return self.path_to_daisy_executable
+            path_to_daisy_executable = r'/home/projects/cu_10095/apps/daisy/daisy' #This is the path on computerome
+        return path_to_daisy_executable
 
 
     def __init__(self, DaisyInputfile):
@@ -555,10 +555,10 @@ class DaisyModel(object):
 
     @lazy_property 
     def Input(self): 
-        self.lazy_input = DaisyEntry('',[])
+        Input = DaisyEntry('',[])
         with open(self.DaisyInputfile,'r') as f:
-            self.lazy_input.read(f)
-        return self.lazy_input
+            Input.read(f)
+        return Input
         
     @property
     def starttime(self):
