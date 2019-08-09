@@ -699,7 +699,7 @@ def run_sub_folders2(MotherFolder, DaisyFileName, DaisyExecutabl, NumberOfProces
     """
     Runs all the Daisy simulations found below the MotherFolder
     """
-    print('Running ' + str(NumberOfProcesses) + 'parallel processes')
+    print('Running ' + str(NumberOfProcesses) + ' parallel processes')
     pp = Pool(NumberOfProcesses)
     input=[]
     for i in range(NumberOfProcesses):
