@@ -11,11 +11,13 @@ def load_file():
     if fname:
         name, ext = os.path.splitext(fname)
         if ext.lower()=='.dai':
-            d=dai_view(fname, root)
-
+            frame = Frame(root, height=400, width=400)
+            frame.grid(row=2)
+            d=dai_view(fname, frame)
 
 if __name__ == "__main__":
     root = tk.Tk()
+    root.minsize(500, 500)
     root.title("ShowDaisy")
     Label(root, text="Daisy file").grid(row=1)
     e1 = Entry(root)

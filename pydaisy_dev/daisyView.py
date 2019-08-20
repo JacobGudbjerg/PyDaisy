@@ -7,7 +7,7 @@ from pydaisy.Daisy import DaisyDlf, DaisyModel
 from scipy.interpolate import griddata
 import tkinter as tk
 import tkinter.ttk as ttk
-from tkinter import filedialog
+from tkinter import filedialog, Frame, Listbox
 import os
 
 class heatmap(object):
@@ -35,28 +35,31 @@ class heatmap(object):
 
 
 class dai_view(object):
-    def __init__(self, filename, root):
-        self.tree = ttk.Treeview(root)
-        self.tree.grid(row=2)
+    def __init__(self, filename, frame):
+
+        self.tree = ttk.Treeview(frame, selectmode='browse')
+        self.tree.pack(side='left')
+        vsb = ttk.Scrollbar(frame, orient="vertical", command=self.tree.yview)
+        self.tree.configure(yscrollcommand=vsb.set)
+        self.tree["columns"]=('Word')
+        self.tree.column("Word", width=100 )
+        self.tree.heading("Word", text="Word")
+        self.tree.bind("<<TreeviewSelect>>", self.selectItem, "+")
+
+        self.listbox = Listbox(frame)
+        self.listbox.pack(side='right', fill='y',  padx=5)
+        vsb.pack(side='right', fill='y')
 
         dm = DaisyModel(filename)
-
-        self.tree["columns"]=('Par1', 'Par2')
-        self.tree.column("Par1", width=100 )
-        self.tree.column("Par2", width=100)
-        self.tree.heading("Par1", text="Par1")
-        self.tree.heading("Par2", text="Par2")
         self.recursiveadd("", dm.Input)
-#        self.tree.pack()
-#        self.tree.bind('<ButtonRelease-1>', self.selectItem)
-
-#        Button(master, text='Quit', command=master.quit).grid(row=3, column=0, sticky=W, pady=4)
-#        Button(master, text='Show', command=show_entry_fields).grid(row=3, column=1, sticky=W, pady=4)
 
 
     def selectItem(self, a):
         curItem = self.tree.focus()
-        print (self.tree.item(curItem))
+        self.listbox.delete(0, tk.END)
+        item = self.tree.item(curItem)
+        for item in self.tree.item(curItem)['values']:
+            self.listbox.insert(tk.END, item)
 
     def recursiveadd(self, parent_item_id, DaisyEntry):
         for cc in DaisyEntry.Children:
