@@ -11,16 +11,20 @@ def load_file():
     if fname:
         name, ext = os.path.splitext(fname)
         if ext.lower()=='.dai':
-            frame = Frame(root, height=400, width=400)
-            frame.grid(row=2)
-            d=dai_view(fname, frame)
+#            frame = Frame(root, height=400, width=400)
+            d=dai_view(fname)
+            d.pack(side='top', anchor="w", fill='y')
 
 if __name__ == "__main__":
     root = tk.Tk()
+#    root.state('zoomed')
     root.minsize(500, 500)
     root.title("ShowDaisy")
-    Label(root, text="Daisy file").grid(row=1)
-    e1 = Entry(root)
-    e1.grid(row=1, column=1)
-    Button(root, text="Browse", command=load_file, width=10).grid(row=1, column=2, sticky=W)
+
+    topframe = Frame(root)
+    Label(topframe, text="Daisy file").pack(side='left')
+    e1 = Entry(topframe)
+    e1.pack(side='left',fill='y')
+    Button(topframe, text="Browse", command=load_file, width=10).pack(side='right')
+    topframe.pack(side='top', anchor="w")
     root.mainloop()
