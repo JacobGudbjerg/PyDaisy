@@ -48,12 +48,48 @@ def is_number(value):
         return False
 
 def ensure_dir(file_path):
+    '''
+    Creates a directory if it does not already exist
+    '''
     directory = os.path.dirname(file_path)
     if directory!='':
         if not os.path.exists(directory):
             os.makedirs(directory)
 
+def lazy_property(fn):
+    '''
+    Decorator that makes a property lazy-evaluated.
+    '''
+    attr_name = '_lazy_' + fn.__name__
 
+    @property
+    def _lazy_property(self):
+        if not hasattr(self, attr_name):
+            setattr(self, attr_name, fn(self))
+        return getattr(self, attr_name)
+    return _lazy_property
+
+def read_winreg():
+    '''
+    Reads the Windows Registry database to find installed Daisy-version. Returns a list ordered by the version number descending
+    '''
+    import winreg
+    software_key=winreg.OpenKey(winreg.HKEY_CURRENT_USER, 'SOFTWARE')
+    number_of_software=winreg.QueryInfoKey(software_key)[0]
+
+    daisy_installs=[]
+
+    for i in range(number_of_software):
+        subkey=winreg.EnumKey(software_key,i)
+        if subkey[0:5]=='Daisy':
+            d=DaisyExecutable()
+            d.executable = os.path.join(winreg.QueryValueEx(winreg.OpenKey(software_key, subkey), 'Install Directory')[0], 'bin', 'Daisy.exe')
+            d.version = try_cast_float(subkey[6:10])
+            d.name= subkey
+            daisy_installs.append(d)
+
+    daisy_installs.sort(key = lambda x:x.version, reverse =True)
+    return daisy_installs
 
 class FixedTimeStepIndexer(object):
 
@@ -108,6 +144,15 @@ class FixedTimeStepIndexer(object):
                 self._timestep = None
                 return False
         return True
+
+
+
+
+class DaisyExecutable(object):
+    def __init__(self):
+        self.version = None
+        self.executable = None
+        self.name = None
 
 class DaisyDlf(object):
     """
@@ -493,23 +538,27 @@ class DaisyModel(object):
     """
     A class that reads a daisy input file (.dai-file)
     """
-    path_to_daisy_executable = r'C:\Program Files (x86)\Daisy 5.83\bin\Daisy.exe'
+    @lazy_property
+    def path_to_daisy_executable(self):
+        if platform.system()=='Windows':
+            path_to_daisy_executable = read_winreg()[0].executable
+        else:
+            path_to_daisy_executable = r'/home/projects/cu_10095/apps/daisy/daisy' #This is the path on computerome
+        return path_to_daisy_executable
 
 
     def __init__(self, DaisyInputfile):
-        self._input=None
         self._starttime=None
         self._endtime=None
         self.DaisyInputfile =DaisyInputfile
 
 
-    @property 
+    @lazy_property 
     def Input(self): 
-        if not self._input: 
-            self._input = DaisyEntry('',[])
-            with open(self.DaisyInputfile,'r') as f:
-                self._input.read(f)
-        return self._input
+        Input = DaisyEntry('',[])
+        with open(self.DaisyInputfile,'r') as f:
+            Input.read(f)
+        return Input
         
     @property
     def starttime(self):
@@ -559,11 +608,6 @@ class DaisyModel(object):
         return copy.deepcopy(self)    
 
 
-    def daisy_installed(self):
-        """
-        Returns true if it can find the daisy executable
-        """
-        return os.path.isfile(DaisyModel.path_to_daisy_executable)
 
 
 
@@ -573,21 +617,21 @@ class DaisyModel(object):
         Remember to save first
         timeout is in seconds
         """
-        if not self.daisy_installed():
+        if not os.path.isfile(self.path_to_daisy_executable):
             raise Exception('Daisy could not be found at: ' + self.path_to_daisy_executable)
 
         try:
             if platform.system()=='Linux':
                 sys.stdout.flush()
                 if  sys.version_info >= (3, 0):
-                    return subprocess.run([DaisyModel.path_to_daisy_executable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], timeout=timeout, cwd = os.path.dirname(self.DaisyInputfile))
+                    return subprocess.run([self.path_to_daisy_executable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], timeout=timeout, cwd = os.path.dirname(self.DaisyInputfile))
                 else:
-                    return subprocess.call([DaisyModel.path_to_daisy_executable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], timeout=timeout, cwd = os.path.dirname(self.DaisyInputfile))
+                    return subprocess.call([self.path_to_daisy_executable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], timeout=timeout, cwd = os.path.dirname(self.DaisyInputfile))
             else:
                 if  sys.version_info >= (3, 0):
-                    return subprocess.run([DaisyModel.path_to_daisy_executable, os.path.split(self.DaisyInputfile)[1]], timeout=timeout, cwd= os.path.dirname(self.DaisyInputfile), shell=False)
+                    return subprocess.run([self.path_to_daisy_executable, os.path.split(self.DaisyInputfile)[1]], timeout=timeout, cwd= os.path.dirname(self.DaisyInputfile), shell=False)
                 else:
-                    return subprocess.call([DaisyModel.path_to_daisy_executable, os.path.split(self.DaisyInputfile)[1]], timeout=timeout, cwd= os.path.dirname(self.DaisyInputfile), shell=False)
+                    return subprocess.call([self.path_to_daisy_executable, os.path.split(self.DaisyInputfile)[1]], timeout=timeout, cwd= os.path.dirname(self.DaisyInputfile), shell=False)
         except subprocess.TimeoutExpired:
             return -1
 
@@ -616,9 +660,6 @@ def run_single(FileNames):
             f2 = os.path.join(workdir, FileNames[2])
             os.rename(f1, f2)
         dm = DaisyModel(FileNames[0])
-        if not dm.daisy_installed():
-            with open(uniquelogfilename, "w") as text_file:
-                text_file.write(str(datetime.now()) + ': Could not find Daisy at: '+ DaisyModel.path_to_daisy_executable + '\n')
 
         modelrun=dm.run()
         with open(uniquelogfilename, "a") as text_file:
@@ -658,6 +699,7 @@ def run_sub_folders2(MotherFolder, DaisyFileName, DaisyExecutabl, NumberOfProces
     """
     Runs all the Daisy simulations found below the MotherFolder
     """
+    print('Running ' + str(NumberOfProcesses) + ' parallel processes')
     pp = Pool(NumberOfProcesses)
     input=[]
     for i in range(NumberOfProcesses):
@@ -704,16 +746,12 @@ def run_single2(MotherFolder, DaisyFileName, DaisyExecutablePath, delay = 0, rec
                     Running = os.path.join(workdir, DaisyModelStatus.Running.name)
                     #This will fail if the "NotRun" file is not there
                     os.rename(Notrun, Running)
+                    dm = DaisyModel(DaisyFile)
+                    dm._lazy_path_to_daisy_executable = DaisyExecutablePath
 
                     uniquelogfilename = os.path.join(workdir, 'run_' + str(uuid.uuid4()) + '.log')
                     with open(uniquelogfilename, "w") as text_file:
-                        text_file.write(str(datetime.now()) + ': model run started\n')
-
-                    DaisyModel.path_to_daisy_executable = DaisyExecutablePath
-                    dm = DaisyModel(DaisyFile)
-                    if not dm.daisy_installed():
-                        with open(uniquelogfilename, "a") as text_file:
-                            text_file.write(str(datetime.now()) + ': Could not find Daisy at: '+ DaisyModel.path_to_daisy_executable + '\n')
+                        text_file.write(str(datetime.now()) + ': model run started. Daisy-executable: '+ dm.path_to_daisy_executable +'\n')
                     modelrun=dm.run(timeout)
                     with open(uniquelogfilename, "a") as text_file:
                         text_file.write(str(datetime.now()) + ': model run finished with return code: ' + str(modelrun)+'\n')
@@ -731,6 +769,10 @@ def run_single2(MotherFolder, DaisyFileName, DaisyExecutablePath, delay = 0, rec
                         os.rename(Running, os.path.join(workdir, DaisyModelStatus.Failed.name))
                     Continue=True #After the simulation have finished loop all dirs once more
                 except OSError: 
+                    pass
+                except:
+                    with open(uniquelogfilename, "a") as text_file:
+                        text_file.write(str(datetime.now()) + ': model run failed\n')
                     pass
     
 def run_sub_folders(MotherFolder, DaisyFileName, MaxBatchSize=5000, NumberOfProcesses=6, UseStatusFiles=False, recursive=False):

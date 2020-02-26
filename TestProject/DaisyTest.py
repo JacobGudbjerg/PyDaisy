@@ -18,8 +18,6 @@ class Test_DaisyTest(unittest.TestCase):
         Test on reading the Exercise01.dai file distributed with Daisy
         """
 
-        DaisyModel.path_to_daisy_executable=r'C:\Program Files\Daisy 5.72\bin\Daisy.exe'
-
         d= DaisyModel(r'./../TestData/Exercise01.dai')
         self.assertEqual(17, len(d.Input.Children))
         self.assertEqual(1993, d.starttime.time.year)
@@ -33,7 +31,6 @@ class Test_DaisyTest(unittest.TestCase):
         notthere = d.Input['NotThere']
         self.assertIsNone(notthere)
 
-        self.assertTrue(d.daisy_installed())
         status = d.run()
         if  sys.version_info >= (3, 0):
             self.assertEqual(0, status.returncode)
@@ -56,8 +53,11 @@ class Test_DaisyTest(unittest.TestCase):
         samedir = DaisyModel('Exercise01.dai')
         samedir.save()
 
-        DaisyModel.path_to_daisy_executable='NotThere'
-        self.assertFalse(d.daisy_installed())
+        sim = samedir.path_to_daisy_executable
+        sim =samedir.path_to_daisy_executable
+
+        samedir._lazy_path_to_daisy_executable = 'No folder'
+        self.assertEqual(samedir.path_to_daisy_executable, 'No folder')
 
 
 
@@ -97,17 +97,15 @@ class Test_DaisyTest(unittest.TestCase):
         self.assertEqual(0, dwf2.get_index(datetime(1962,1,1)))
         self.assertEqual(1, dwf2.get_index(datetime(1962,1,1,1)))
 
-    def test_temp(self):
-        dlf = DaisyDlf(r'I:\SCIENCE-PLEN-PESTCAST\Upscaling\DaisyFiles\SB\600\daily_DFF SB.dlf', FixedTimeStep=False)
+
+    def test_readwinreg(self):
+        installs = read_winreg()
+        self.assertTrue(len(installs)>0)
 
     def test_daisyDlfFile(self):
         """
         Test on a 2d dlf file with soil water content
         """
-
-        dutch = DaisyDlf(r'I:\SCIENCE-PLEN-PESTCAST\2_Optimization track\Optimization\weather_data\hourly_precip-cnz.dlf', FixedTimeStep=True)
-        self.assertTrue(dutch._time_indexer.validate())
-
 
         dlf = DaisyDlf(r'./../TestData/tertiary-water-matrix.dlf')
         self.assertEqual(8566, len(dlf.Data))
