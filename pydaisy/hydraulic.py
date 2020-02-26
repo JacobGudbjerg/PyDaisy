@@ -7,7 +7,7 @@ def pF2h (pF):
   return -pow (10, pF)
 
 def h2pF (h):
-  return log10 (-h)
+  return np.log10 (-h)
 
 # The HYPRES pedotranspher functions find parameters for
 # Mualem-van Genuchten rentention and conductivity curves based
