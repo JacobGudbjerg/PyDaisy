@@ -6,16 +6,16 @@ from __future__ import division
 import subprocess
 import platform
 import sys
-import pandas as pd
-import numpy as np
 import csv
-import os
 import zipfile
-import copy
 from enum import Enum
-from datetime import datetime
 from multiprocessing import Pool
 import uuid
+import pandas as pd
+import numpy as np
+import os
+import copy
+from datetime import datetime
 
 
 def try_cast_number(value):
@@ -51,7 +51,7 @@ def ensure_dir(file_path):
     Creates a directory if it does not already exist
     '''
     directory = os.path.dirname(file_path)
-    if directory!='':
+    if directory != '':
         if not os.path.exists(directory):
             os.makedirs(directory)
 
@@ -73,13 +73,13 @@ def read_winreg():
     Reads the Windows Registry database to find installed Daisy-version. Returns a list ordered by the version number descending
     '''
     import winreg
-    software_key=winreg.OpenKey(winreg.HKEY_CURRENT_USER, 'SOFTWARE')
-    number_of_software=winreg.QueryInfoKey(software_key)[0]
+    software_key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, 'SOFTWARE')
+    number_of_software = winreg.QueryInfoKey(software_key)[0]
 
-    daisy_installs=[]
+    daisy_installs = []
 
     for i in range(number_of_software):
-        subkey=winreg.EnumKey(software_key,i)
+        subkey = winreg.EnumKey(software_key,i)
         if subkey[0:5]=='Daisy':
             d=DaisyExecutable()
             d.executable = os.path.join(winreg.QueryValueEx(winreg.OpenKey(software_key, subkey), 'Install Directory')[0], 'bin', 'Daisy.exe')
