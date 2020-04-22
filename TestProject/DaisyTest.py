@@ -56,7 +56,7 @@ class Test_DaisyTest(unittest.TestCase):
         sim = samedir.path_to_daisy_executable
         sim =samedir.path_to_daisy_executable
 
-        samedir._lazy_path_to_daisy_executable = 'No folder'
+        samedir.path_to_daisy_executable = 'No folder'
         self.assertEqual(samedir.path_to_daisy_executable, 'No folder')
 
 
