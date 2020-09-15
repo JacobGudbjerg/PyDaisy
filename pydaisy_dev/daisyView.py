@@ -7,7 +7,7 @@ from pydaisy.Daisy import DaisyDlf, DaisyModel
 from scipy.interpolate import griddata
 import tkinter as tk
 import tkinter.ttk as ttk
-from tkinter import filedialog
+from tkinter import filedialog, Frame, Listbox, Label
 import os
 
 class heatmap(object):
@@ -34,31 +34,49 @@ class heatmap(object):
 
 
 
-class dai_view(object):
-    def __init__(self, filename, root):
-        self.tree = ttk.Treeview(root)
-        self.tree.grid(row=2)
+
+class daisy_entry_view(Frame):
+    def __init__(self, daisy_entry):
+        super().__init__(padx=5)
+
+        Label(self, text = daisy_entry.Keyword).pack(side='top', anchor="w")
+        listbox = Listbox(self)
+        listbox.pack(side='top', fill='y')
+        for item in daisy_entry.Words:
+            listbox.insert(tk.END, item)
+
+
+
+class dai_view(Frame):
+    def __init__(self, filename):
+        super().__init__()
+
+        self.tree = ttk.Treeview(self, selectmode='browse')
+        self.tree.pack(side='left', fill='y', padx=5)
+        vsb = ttk.Scrollbar(self, orient="vertical", command=self.tree.yview)
+        vsb.pack(side='right', fill='y')
+        self.tree.configure(yscrollcommand=vsb.set)
+        self.tree["columns"]=('Word')
+        self.tree.column("Word", width=100 )
+        self.tree.heading("Word", text="Word")
+        self.tree.bind("<<TreeviewSelect>>", self.selectItem, "+")
+
+        self.item_dictionary={}
 
         dm = DaisyModel(filename)
-
-        self.tree["columns"]=('Par1', 'Par2')
-        self.tree.column("Par1", width=100 )
-        self.tree.column("Par2", width=100)
-        self.tree.heading("Par1", text="Par1")
-        self.tree.heading("Par2", text="Par2")
         self.recursiveadd("", dm.Input)
-#        self.tree.pack()
-#        self.tree.bind('<ButtonRelease-1>', self.selectItem)
-
-#        Button(master, text='Quit', command=master.quit).grid(row=3, column=0, sticky=W, pady=4)
-#        Button(master, text='Show', command=show_entry_fields).grid(row=3, column=1, sticky=W, pady=4)
-
 
     def selectItem(self, a):
         curItem = self.tree.focus()
-        print (self.tree.item(curItem))
+        selected_item = self.item_dictionary[curItem]
+        if hasattr(self, 'dev'):
+            del self.dev
+        self.dev = daisy_entry_view(selected_item)
+        self.dev.pack(side='right')
+
 
     def recursiveadd(self, parent_item_id, DaisyEntry):
         for cc in DaisyEntry.Children:
             child_item_id=self.tree.insert(parent_item_id, 3, text=cc.Keyword, values=cc.Words )
+            self.item_dictionary[child_item_id]=cc
             self.recursiveadd(child_item_id, cc)

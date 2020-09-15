@@ -150,3 +150,4 @@ TestData/Ex1/soil_NO3.dlf
 TestData/Ex1/soil_water_content.dlf
 TestData/Ex1/soil_water_pF.dlf
 *.dlf
+TestResults/

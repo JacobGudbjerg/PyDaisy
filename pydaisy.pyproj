@@ -3,17 +3,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4aeaca0e-d460-44d4-a243-7ea3a1fefd2c}</ProjectGuid>
+    <ProjectGuid>{ae803f61-2275-45bf-9a17-9e2b4bd02f50}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>DaisyTest.py</StartupFile>
-    <SearchPath>
-    </SearchPath>
+    <StartupFile>Daisy.py</StartupFile>
+    <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <InterpreterId>Global|ContinuumAnalytics|Anaconda37-64</InterpreterId>
-    <IsWindowsApplication>False</IsWindowsApplication>
+    <InterpreterId>Global|PythonCore|3.7</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -21,11 +20,26 @@
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DaisyTest.py" />
-    <Compile Include="DaisyToolsTest.py" />
+    <Compile Include="pydaisy/Daisy.py" />
+    <Compile Include="pydaisy/DaisyTools.py" />
+    <Compile Include="pydaisy/__init__.py" />
+    <Compile Include="pydaisy_dev\daisyView.py" />
+    <Compile Include="pydaisy_dev\show_daisy.py" />
+    <Compile Include="test\test_Daisy.py" />
+    <Compile Include="test\test_DaisyTools.py" />
+    <Compile Include="test\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|ContinuumAnalytics|Anaconda37-64" />
+    <InterpreterReference Include="Global|PythonCore|3.7" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="pydaisy\" />
+    <Folder Include="pydaisy_dev\" />
+    <Folder Include="test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="requirements.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>

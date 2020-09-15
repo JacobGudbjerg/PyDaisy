@@ -6,17 +6,16 @@ from __future__ import division
 import subprocess
 import platform
 import sys
+import csv
+import zipfile
+from enum import Enum
+from multiprocessing import Pool
+import uuid
 import pandas as pd
 import numpy as np
-import csv
-import errno
 import os
-import zipfile
 import copy
-from enum import Enum
-from datetime import datetime, timedelta
-from multiprocessing import Pool, Value
-import uuid
+from datetime import datetime
 
 
 def try_cast_number(value):
@@ -48,12 +47,48 @@ def is_number(value):
         return False
 
 def ensure_dir(file_path):
+    '''
+    Creates a directory if it does not already exist
+    '''
     directory = os.path.dirname(file_path)
-    if directory!='':
+    if directory != '':
         if not os.path.exists(directory):
             os.makedirs(directory)
 
+def lazy_property(fn):
+    '''
+    Decorator that makes a property lazy-evaluated.
+    '''
+    attr_name = '_lazy_' + fn.__name__
 
+    @property
+    def _lazy_property(self):
+        if not hasattr(self, attr_name):
+            setattr(self, attr_name, fn(self))
+        return getattr(self, attr_name)
+    return _lazy_property
+
+def read_winreg():
+    '''
+    Reads the Windows Registry database to find installed Daisy-version. Returns a list ordered by the version number descending
+    '''
+    import winreg
+    software_key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, 'SOFTWARE')
+    number_of_software = winreg.QueryInfoKey(software_key)[0]
+
+    daisy_installs = []
+
+    for i in range(number_of_software):
+        subkey = winreg.EnumKey(software_key,i)
+        if subkey[0:5]=='Daisy':
+            d=DaisyExecutable()
+            d.executable = os.path.join(winreg.QueryValueEx(winreg.OpenKey(software_key, subkey), 'Install Directory')[0], 'bin', 'Daisy.exe')
+            d.version = try_cast_float(subkey[6:10])
+            d.name= subkey
+            daisy_installs.append(d)
+
+    daisy_installs.sort(key = lambda x:x.version, reverse =True)
+    return daisy_installs
 
 class FixedTimeStepIndexer(object):
 
@@ -67,10 +102,10 @@ class FixedTimeStepIndexer(object):
         Sets starttime and timestep if times are equidistant
         """
         if isinstance(self.time_steps[0], pd.Period):
-            self.startTime = self.time_steps[0].start_time.to_pydatetime()
-            self._timestep = self.time_steps[1].start_time.to_pydatetime() - self.startTime
+            self._startTime = self.time_steps[0].start_time.to_pydatetime()
+            self._timestep = self.time_steps[1].start_time.to_pydatetime() - self._startTime
         else:
-            self.startTime = self.time_steps[0]
+            self._startTime = self.time_steps[0]
             self._timestep = self.time_steps[1]- self.time_steps[0]
         self.__starttimeset =True
 
@@ -92,6 +127,12 @@ class FixedTimeStepIndexer(object):
             self.__setStartTime()
         return self._timestep 
 
+    @property 
+    def startTime(self):
+        if not self.__starttimeset:
+            self.__setStartTime()
+        return self._startTime 
+
 
     def validate(self):
         """
@@ -102,6 +143,15 @@ class FixedTimeStepIndexer(object):
                 self._timestep = None
                 return False
         return True
+
+
+
+
+class DaisyExecutable(object):
+    def __init__(self):
+        self.version = None
+        self.executable = None
+        self.name = None
 
 class DaisyDlf(object):
     """
@@ -115,7 +165,6 @@ class DaisyDlf(object):
         self.__numpydata = np.array([])
         self.__tab_and_space_delimiter=True
         self.Data = pd.DataFrame()
-        filename, file_extension = os.path.splitext(DlfFileName)
 
         if ZipFileName!='':
             with zipfile.ZipFile(ZipFileName,'r') as z:
@@ -151,7 +200,7 @@ class DaisyDlf(object):
                     SectionIndex=SectionIndex+1
                     continue
                 elif (line.startswith('#')):
-                        continue                    
+                    continue                    
                 else:
                     split = line.split(':',1)
                     self.HeaderItems[split[0]] = split[1].lstrip()
@@ -186,27 +235,19 @@ class DaisyDlf(object):
 
 #                    if len(splitted)==len(ColumnHeaders): #We need to make sure the line is complete
                     if len(splitted)>DateTimeIndex: #We need to make sure the line is complete
-                        if DateTimeIndex == 1: #Time is in a single column
-                            if FixedTimeStep:
-                                if DataIndex==0:
-                                    self.startTime = datetime.strptime(splitted[0], '%Y-%m-%dT%H:%M:%S')
-                                    TimeSteps.append(self.startTime)
-                                elif DataIndex==1:
+                        if FixedTimeStep:
+                            if DataIndex<2: #We only need two first timesteps
+                                if DateTimeIndex == 1: #Time is in a single column
                                     TimeSteps.append(datetime.strptime(splitted[0], '%Y-%m-%dT%H:%M:%S'))
-                                    self.timestep = TimeSteps[1]- TimeSteps[0]
-                                    self.__starttimeset=True
-#                                else:
-#                                    TimeSteps.append(self.startTime + self.timestep*DataIndex)
-                            else:
+                                else: #Time is in multiple columns
+                                    timedata = list(map(int, splitted[0:DateTimeIndex])) #First columns are time data
+                                    TimeSteps.append(pd.datetime(*timedata))
+                        else:
+                            if DateTimeIndex == 1: #Time is in a single column
                                 TimeSteps.append(datetime.strptime(splitted[0], '%Y-%m-%dT%H:%M:%S'))
-                        else: #Time is in multiple columns
-                            timedata = list(map(int, splitted[0:DateTimeIndex])) #First columns are time data
-                            if DateTimeIndex == 3:
-                                TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2]))
-                            elif DateTimeIndex == 4:   
-                                TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3]))
-                            elif DateTimeIndex == 5:
-                                TimeSteps.append(pd.datetime(timedata[0],timedata[1],timedata[2],timedata[3],timedata[4]))
+                            else: #Time is in multiple columns
+                                timedata = list(map(int, splitted[0:DateTimeIndex])) #First columns are time data
+                                TimeSteps.append(pd.datetime(*timedata))
                         #Now data        
                         raw.append(map(try_cast_float , splitted[DateTimeIndex:]))
                         DataIndex+=1
@@ -215,14 +256,17 @@ class DaisyDlf(object):
 
         if len(raw)>0:
             #Create a dataframe to hold the data 
-           if FixedTimeStep:
-               self.Data = pd.DataFrame(raw,  index=pd.period_range(self.startTime, self.startTime + self.timestep*(len(raw)-1), freq= 'h'))
-           else:
-               self.Data = pd.DataFrame(raw,  index=TimeSteps)
-           self.Data.columns=ColumnHeaders[DateTimeIndex:DateTimeIndex+len(self.Data.columns)]
+            self._time_indexer = FixedTimeStepIndexer(TimeSteps)
+            if FixedTimeStep:
+                freq='D'
+                if (self._time_indexer.timestep.seconds==3600):
+                    freq= 'h'
+                self.Data = pd.DataFrame(raw,  index=pd.period_range(self._time_indexer.startTime, self._time_indexer.startTime + self._time_indexer.timestep*(len(raw)-1), freq= freq))
+            else:
+                self.Data = pd.DataFrame(raw,  index=TimeSteps)
+            self.Data.columns=ColumnHeaders[DateTimeIndex:DateTimeIndex+len(self.Data.columns)]
             #A trick to remove duplicate columns. Based on the header
-           self.Data = self.Data.loc[:,~self.Data.columns.duplicated()]
-           self._time_indexer = FixedTimeStepIndexer(self.Data.index)
+            self.Data = self.Data.loc[:,~self.Data.columns.duplicated()]
 
 
     def get_index(self, Timestep):
@@ -359,8 +403,8 @@ class DaisyEntry(object):
                     if (nextchar!=' ' and nextchar != '\t'):
                         self.Keyword += nextchar
                     else:
-                         keywordread = True
-                         self.Words.append('')              
+                        keywordread = True
+                        self.Words.append('')              
                 else:
                     if(len(self.Children)==0):
                         CurrentWord =self.Words
@@ -372,7 +416,7 @@ class DaisyEntry(object):
                         if ( CurrentWord[len(CurrentWord) - 1]):
                             CurrentWord.append('')
                     elif(nextchar== '[' and is_number( CurrentWord[len(CurrentWord) - 1])):
-                            CurrentWord.append('[')
+                        CurrentWord.append('[')
                     else:
                         CurrentWord[len(CurrentWord) - 1] += nextchar
 
@@ -404,7 +448,7 @@ class DaisyEntry(object):
         Returns a list with all values. Integer, float or string
         """
         for w in self.Words:
-            yield self.__tryCast(w)
+            yield try_cast_number(w)
 
         
     def setvalue(self, value, index=0):
@@ -492,23 +536,27 @@ class DaisyModel(object):
     """
     A class that reads a daisy input file (.dai-file)
     """
-    path_to_daisy_executable = r'C:\Program Files (x86)\Daisy 5.83\bin\Daisy.exe'
+    @lazy_property
+    def path_to_daisy_executable(self):
+        if platform.system()=='Windows':
+            self._lazy_path_to_daisy_executable = read_winreg()[0].executable
+        else:
+            self._lazy_path_to_daisy_executable = r'/home/projects/cu_10095/apps/daisy/daisy' #This is the path on computerome
+        return self._lazy_path_to_daisy_executable
 
 
     def __init__(self, DaisyInputfile):
-        self._input=None
         self._starttime=None
         self._endtime=None
         self.DaisyInputfile =DaisyInputfile
 
 
-    @property 
+    @lazy_property 
     def Input(self): 
-        if not self._input: 
-            self._input = DaisyEntry('',[])
-            with open(self.DaisyInputfile,'r') as f:
-                self._input.read(f)
-        return self._input
+        Input = DaisyEntry('',[])
+        with open(self.DaisyInputfile,'r') as f:
+            Input.read(f)
+        return Input
         
     @property
     def starttime(self):
@@ -558,35 +606,27 @@ class DaisyModel(object):
         return copy.deepcopy(self)    
 
 
-    def daisy_installed(self):
-        """
-        Returns true if it can find the daisy executable
-        """
-        return os.path.isfile(DaisyModel.path_to_daisy_executable)
-
-
-
     def run(self, timeout=None):
         """
         Calls the Daisy executable and runs the simulation.
         Remember to save first
         timeout is in seconds
         """
-        if not self.daisy_installed():
+        if not os.path.isfile(self.path_to_daisy_executable):
             raise Exception('Daisy could not be found at: ' + self.path_to_daisy_executable)
 
         try:
             if platform.system()=='Linux':
                 sys.stdout.flush()
                 if  sys.version_info >= (3, 0):
-                    return subprocess.run([DaisyModel.path_to_daisy_executable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], timeout=timeout, cwd = os.path.dirname(self.DaisyInputfile))
+                    return subprocess.run([self.path_to_daisy_executable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], timeout=timeout, cwd = os.path.dirname(self.DaisyInputfile))
                 else:
-                    return subprocess.call([DaisyModel.path_to_daisy_executable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], timeout=timeout, cwd = os.path.dirname(self.DaisyInputfile))
+                    return subprocess.call([self.path_to_daisy_executable, '-q', self.DaisyInputfile, '-p', self.Input['run'].getvalue().replace('"','')], timeout=timeout, cwd = os.path.dirname(self.DaisyInputfile))
             else:
                 if  sys.version_info >= (3, 0):
-                    return subprocess.run([DaisyModel.path_to_daisy_executable, os.path.split(self.DaisyInputfile)[1]], timeout=timeout, cwd= os.path.dirname(self.DaisyInputfile), shell=False)
+                    return subprocess.run([self.path_to_daisy_executable, os.path.split(self.DaisyInputfile)[1]], timeout=timeout, cwd= os.path.dirname(self.DaisyInputfile), shell=False)
                 else:
-                    return subprocess.call([DaisyModel.path_to_daisy_executable, os.path.split(self.DaisyInputfile)[1]], timeout=timeout, cwd= os.path.dirname(self.DaisyInputfile), shell=False)
+                    return subprocess.call([self.path_to_daisy_executable, os.path.split(self.DaisyInputfile)[1]], timeout=timeout, cwd= os.path.dirname(self.DaisyInputfile), shell=False)
         except subprocess.TimeoutExpired:
             return -1
 
@@ -615,9 +655,6 @@ def run_single(FileNames):
             f2 = os.path.join(workdir, FileNames[2])
             os.rename(f1, f2)
         dm = DaisyModel(FileNames[0])
-        if not dm.daisy_installed():
-            with open(uniquelogfilename, "w") as text_file:
-                text_file.write(str(datetime.now()) + ': Could not find Daisy at: '+ DaisyModel.path_to_daisy_executable + '\n')
 
         modelrun=dm.run()
         with open(uniquelogfilename, "a") as text_file:
@@ -633,7 +670,6 @@ def run_single(FileNames):
         modelrun=1
         with open(uniquelogfilename, "a") as text_file:
             text_file.write(str(datetime.now()) + ': model run failed\n')
-        pass    
     return modelrun
 
 def run_many(DaisyFiles, NumberOfProcesses=6, Queue='', Running= DaisyModelStatus.Running.name, Done=DaisyModelStatus.Done.name):
@@ -657,11 +693,12 @@ def run_sub_folders2(MotherFolder, DaisyFileName, DaisyExecutabl, NumberOfProces
     """
     Runs all the Daisy simulations found below the MotherFolder
     """
+    print('Running ' + str(NumberOfProcesses) + ' parallel processes')
     pp = Pool(NumberOfProcesses)
-    input=[]
+    inp=[]
     for i in range(NumberOfProcesses):
-        input.append( (MotherFolder, DaisyFileName, DaisyExecutabl, i, recursive, None)  )
-    pp.starmap(run_single2, input)
+        inp.append( (MotherFolder, DaisyFileName, DaisyExecutabl, i, recursive, None)  )
+    pp.starmap(run_single2, inp)
     pp.terminate()
 
 
@@ -703,16 +740,12 @@ def run_single2(MotherFolder, DaisyFileName, DaisyExecutablePath, delay = 0, rec
                     Running = os.path.join(workdir, DaisyModelStatus.Running.name)
                     #This will fail if the "NotRun" file is not there
                     os.rename(Notrun, Running)
+                    dm = DaisyModel(DaisyFile)
+                    dm.path_to_daisy_executable = DaisyExecutablePath
 
                     uniquelogfilename = os.path.join(workdir, 'run_' + str(uuid.uuid4()) + '.log')
                     with open(uniquelogfilename, "w") as text_file:
-                        text_file.write(str(datetime.now()) + ': model run started\n')
-
-                    DaisyModel.path_to_daisy_executable = DaisyExecutablePath
-                    dm = DaisyModel(DaisyFile)
-                    if not dm.daisy_installed():
-                        with open(uniquelogfilename, "a") as text_file:
-                            text_file.write(str(datetime.now()) + ': Could not find Daisy at: '+ DaisyModel.path_to_daisy_executable + '\n')
+                        text_file.write(str(datetime.now()) + ': model run started. Daisy-executable: '+ dm.path_to_daisy_executable +'\n')
                     modelrun=dm.run(timeout)
                     with open(uniquelogfilename, "a") as text_file:
                         text_file.write(str(datetime.now()) + ': model run finished with return code: ' + str(modelrun)+'\n')
@@ -731,6 +764,9 @@ def run_single2(MotherFolder, DaisyFileName, DaisyExecutablePath, delay = 0, rec
                     Continue=True #After the simulation have finished loop all dirs once more
                 except OSError: 
                     pass
+                except:
+                    with open(uniquelogfilename, "a") as text_file:
+                        text_file.write(str(datetime.now()) + ': model run failed\n')
     
 def run_sub_folders(MotherFolder, DaisyFileName, MaxBatchSize=5000, NumberOfProcesses=6, UseStatusFiles=False, recursive=False):
     """
