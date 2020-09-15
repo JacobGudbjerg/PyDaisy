@@ -214,7 +214,7 @@ class DaisyDlf(object):
                     DateTimeIndex=5
                 elif set(['hour', 'Hour']) & set (ColumnHeaders):
                     DateTimeIndex=4
-                elif set('time', 'Date']) & set (ColumnHeaders):
+                elif set(['time', 'Date']) & set (ColumnHeaders):
                     DateTimeIndex=1
                 SectionIndex=SectionIndex+1
                 continue
