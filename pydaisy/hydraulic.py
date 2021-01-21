@@ -118,7 +118,7 @@ class M_vG:
         a=self.a
         n=self.n
         m=self.m
-        return pow (1.0 / (1.0 + pow (a * h, n)), m)
+        return pow (1.0 / (1.0 + pow (np.absolute(a * h), n)), m)
         
     def Theta (self, h):
         Theta_sat=self.Theta_sat
