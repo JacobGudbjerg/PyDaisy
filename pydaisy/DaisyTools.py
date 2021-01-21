@@ -1,4 +1,3 @@
-import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -20,15 +19,15 @@ class vanGenuchten(object):
         return self.pars['thetaR']+(self.pars['thetaS']-self.pars['thetaR'])*Se
   
     def KFun(self, psi):
-      Se=(1+abs(psi*self.pars['alpha'])**self.pars['n'])**(-self.pars['m'])
-      Se[psi>=0]=1.
-      return self.pars['Ks']*Se**self.pars['l']*(1-(1-Se**(1/self.pars['m']))**self.pars['m'])**2
+        Se=(1+abs(psi*self.pars['alpha'])**self.pars['n'])**(-self.pars['m'])
+        Se[psi>=0]=1.
+        return self.pars['Ks']*Se**self.pars['l']*(1-(1-Se**(1/self.pars['m']))**self.pars['m'])**2
 
     def plotH(self, head_end =-1000):
-        psi = np.linspace(head_end, 0, 101);
+        psi = np.linspace(head_end, 0, 101)
         return plt.plot(self.thetaFun(psi),-psi)
 
     def plotK(self, head_end =-1000):
-        psi = np.linspace(head_end, 0, 101);
+        psi = np.linspace(head_end, 0, 101)
         return plt.plot(self.thetaFun(psi),-psi)
 
