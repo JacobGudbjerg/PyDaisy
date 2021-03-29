@@ -28,7 +28,7 @@ kiwisolver==1.2.0
 matplot==0.1.9
 matplotlib==3.2.1
 pkginfo==1.5.0.1
-Pygments==2.6.1
+Pygments==2.7.4
 pyloco==0.0.139
 pywin32-ctypes==0.2.0
 readme-renderer==25.0
