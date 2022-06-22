@@ -3,7 +3,7 @@ attrs==19.3.0
 colorama==0.4.3
 importlib-metadata==1.6.0
 more-itertools==8.2.0
-numpy==1.18.3
+numpy==1.22.0
 packaging==20.3
 pandas==1.0.3
 pip==20.0.2
